@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Bulldog_Buck___Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Open the App to Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaf-Qy-nSr">
+                                <rect key="frame" x="46.5" y="9.5" width="227" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROy-qO-JRf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="inK-pT-nfn">
+                                        <rect key="frame" x="20" y="10" width="280" height="20"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nEU-Yj-fBq">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="11"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulldog Bucks Remaining:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acT-KI-fXb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="11"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x">
+                                                        <rect key="frame" x="251" y="0.0" width="29" height="11"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="acT-KI-fXb" firstAttribute="centerY" secondItem="rm7-9F-b5x" secondAttribute="centerY" id="lx9-4s-YzH"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="AB7-Y1-NxK">
+                                                <rect key="frame" x="0.0" y="17" width="280" height="3"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated: Never" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaj-of-aAV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="3"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="inK-pT-nfn" firstAttribute="leading" secondItem="ROy-qO-JRf" secondAttribute="leading" constant="20" id="9eV-wo-QXl"/>
+                                    <constraint firstAttribute="trailing" secondItem="inK-pT-nfn" secondAttribute="trailing" constant="20" id="DNV-e9-pjk"/>
+                                    <constraint firstItem="inK-pT-nfn" firstAttribute="top" secondItem="ROy-qO-JRf" secondAttribute="top" constant="10" id="Jdy-2b-mNX"/>
+                                    <constraint firstAttribute="bottom" secondItem="inK-pT-nfn" secondAttribute="bottom" constant="10" id="MMW-X8-s9U"/>
+                                    <constraint firstAttribute="height" constant="40" id="jXk-fx-MJk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vaf-Qy-nSr" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="D4f-YN-6Z2"/>
+                            <constraint firstAttribute="trailing" secondItem="ROy-qO-JRf" secondAttribute="trailing" id="FT3-ps-Lic"/>
+                            <constraint firstItem="ROy-qO-JRf" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="SKa-NO-vGW"/>
+                            <constraint firstItem="vaf-Qy-nSr" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="Z4Q-Sa-OP6"/>
+                            <constraint firstAttribute="bottom" secondItem="ROy-qO-JRf" secondAttribute="bottom" id="lHq-ce-kWx"/>
+                            <constraint firstItem="ROy-qO-JRf" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="plL-lP-SUM"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="40"/>
+                    <connections>
+                        <outlet property="errorMessageLabel" destination="vaf-Qy-nSr" id="SEE-9G-hlM"/>
+                        <outlet property="remainderTextField" destination="rm7-9F-b5x" id="osT-Cm-BeC"/>
+                        <outlet property="staticTextLabel" destination="acT-KI-fXb" id="q0Z-d5-KBS"/>
+                        <outlet property="timeUpdatedLabel" destination="Iaj-of-aAV" id="hoE-OH-yST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>

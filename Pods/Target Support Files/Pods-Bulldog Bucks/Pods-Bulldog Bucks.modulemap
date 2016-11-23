@@ -1,0 +1,6 @@
+framework module Pods_Bulldog_Bucks {
+  umbrella header "Pods-Bulldog Bucks-umbrella.h"
+
+  export *
+  module * { export * }
+}

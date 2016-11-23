@@ -1,0 +1,745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3ACA768DF0EDBCF6611A97AE /* Pods_Bulldog_Bucks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1FB4F0187042B62C5DE809 /* Pods_Bulldog_Bucks.framework */; };
+		432EB3631001DE08BAD18D89 /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B7A73963ED8A8F1DD5E219 /* Pods_Bulldog_Bucks___Widget.framework */; };
+		47234DA41DE19ABF00C25C8F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47234DA31DE19ABF00C25C8F /* CustomAlert.swift */; };
+		472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */; };
+		472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */; };
+		472F33141DE2BC6A001D4B4C /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33101DE2BC6A001D4B4C /* SpinerLayer.swift */; };
+		472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */; };
+		472F33171DE3A196001D4B4C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33161DE3A196001D4B4C /* Reachability.swift */; };
+		472F33181DE3A196001D4B4C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33161DE3A196001D4B4C /* Reachability.swift */; };
+		472F331A1DE3D5E5001D4B4C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
+		472F331D1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472F331C1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf */; };
+		4784980E1DA0721700E8ADFA /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */; };
+		4784980F1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */; };
+		479447CD1D99F2C1007847BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479447CC1D99F2C1007847BE /* AppDelegate.swift */; };
+		479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479447CE1D99F2C1007847BE /* LoginViewController.swift */; };
+		479447D21D99F2C1007847BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479447D01D99F2C1007847BE /* Main.storyboard */; };
+		479447D41D99F2C1007847BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479447D31D99F2C1007847BE /* Assets.xcassets */; };
+		479447D71D99F2C1007847BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479447D51D99F2C1007847BE /* LaunchScreen.storyboard */; };
+		479448011D9A4409007847BE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479448001D9A4409007847BE /* NotificationCenter.framework */; };
+		479448041D9A4409007847BE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479448031D9A4409007847BE /* TodayViewController.swift */; };
+		479448071D9A4409007847BE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479448051D9A4409007847BE /* MainInterface.storyboard */; };
+		4794480B1D9A4409007847BE /* Bulldog Bucks - Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC3AB61DA09D29001C3FD2 /* ViewController.swift */; };
+		47D10B401DE11B4B0041064C /* API Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* API Client.swift */; };
+		47D47F321DDFCCCC0094D448 /* API Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* API Client.swift */; };
+		47DAF0771DE5166E00499185 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		479448091D9A4409007847BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479447C11D99F2C1007847BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 479447FD1D9A4409007847BE;
+			remoteInfo = "Bulldog Bucks Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47234DF81DE212D200C25C8F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4794480F1D9A4409007847BE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4794480B1D9A4409007847BE /* Bulldog Bucks - Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F1FB4F0187042B62C5DE809 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		363A97FEA833C692132DAFF4 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		47234DA31DE19ABF00C25C8F /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		472F33101DE2BC6A001D4B4C /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
+		472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
+		472F33161DE3A196001D4B4C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		472F33191DE3D5E5001D4B4C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		472F331C1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Regular_13937.ttf"; sourceTree = "<group>"; };
+		4765FC1B1DDFC6FA00BB2EBB /* API Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API Client.swift"; sourceTree = "<group>"; };
+		478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		479447C91D99F2C1007847BE /* Bulldog Bucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulldog Bucks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		479447CC1D99F2C1007847BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		479447CE1D99F2C1007847BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		479447D11D99F2C1007847BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		479447D31D99F2C1007847BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		479447D61D99F2C1007847BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		479447D81D99F2C1007847BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bulldog Bucks - Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		479448001D9A4409007847BE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		479448031D9A4409007847BE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		479448061D9A4409007847BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		479448081D9A4409007847BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks.entitlements"; sourceTree = "<group>"; };
+		4794B01B1DE5126C00F71077 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
+		47BC3AB61DA09D29001C3FD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
+		6187D7BC18A978BB74DA6013 /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
+		C398E21E56E7AA40D8F301FE /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
+		D1E3CC46F41E4D9EAB808BB8 /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
+		D4B7A73963ED8A8F1DD5E219 /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		479447C61D99F2C1007847BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ACA768DF0EDBCF6611A97AE /* Pods_Bulldog_Bucks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479447FB1D9A4409007847BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479448011D9A4409007847BE /* NotificationCenter.framework in Frameworks */,
+				432EB3631001DE08BAD18D89 /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A7F4B20ECF777BD3D30CAC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1E3CC46F41E4D9EAB808BB8 /* Pods-Bulldog Bucks.debug.xcconfig */,
+				6187D7BC18A978BB74DA6013 /* Pods-Bulldog Bucks.release.xcconfig */,
+				363A97FEA833C692132DAFF4 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
+				C398E21E56E7AA40D8F301FE /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		472F32F91DE2B6FA001D4B4C /* Custom Login Animation */ = {
+			isa = PBXGroup;
+			children = (
+				472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */,
+				472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */,
+				472F33101DE2BC6A001D4B4C /* SpinerLayer.swift */,
+				472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */,
+			);
+			path = "Custom Login Animation";
+			sourceTree = "<group>";
+		};
+		472F331B1DE3DB9A001D4B4C /* DinPro */ = {
+			isa = PBXGroup;
+			children = (
+				472F331C1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf */,
+			);
+			name = DinPro;
+			path = Shared/Fonts;
+			sourceTree = "<group>";
+		};
+		4765FC1A1DDFC6D000BB2EBB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				47234DA31DE19ABF00C25C8F /* CustomAlert.swift */,
+				472F33161DE3A196001D4B4C /* Reachability.swift */,
+				472F33191DE3D5E5001D4B4C /* Extensions.swift */,
+				4765FC1B1DDFC6FA00BB2EBB /* API Client.swift */,
+			);
+			name = API;
+			path = Shared/API;
+			sourceTree = "<group>";
+		};
+		478497EB1DA06BA800E8ADFA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				478498141DA0723300E8ADFA /* Fonts */,
+				4765FC1A1DDFC6D000BB2EBB /* API */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		478498141DA0723300E8ADFA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				472F331B1DE3DB9A001D4B4C /* DinPro */,
+				478498151DA0724100E8ADFA /* Lato */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		478498151DA0724100E8ADFA /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */,
+				478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */,
+			);
+			name = Lato;
+			path = Shared/Fonts;
+			sourceTree = "<group>";
+		};
+		479447C01D99F2C1007847BE = {
+			isa = PBXGroup;
+			children = (
+				4794B01B1DE5126C00F71077 /* gitignore */,
+				4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */,
+				478497EB1DA06BA800E8ADFA /* Shared */,
+				479447CB1D99F2C1007847BE /* Bulldog Bucks */,
+				479448021D9A4409007847BE /* Bulldog Bucks Widget */,
+				479447FF1D9A4409007847BE /* Frameworks */,
+				479447CA1D99F2C1007847BE /* Products */,
+				0A7F4B20ECF777BD3D30CAC5 /* Pods */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		479447CA1D99F2C1007847BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				479447C91D99F2C1007847BE /* Bulldog Bucks.app */,
+				479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		479447CB1D99F2C1007847BE /* Bulldog Bucks */ = {
+			isa = PBXGroup;
+			children = (
+				479447D31D99F2C1007847BE /* Assets.xcassets */,
+				479447D01D99F2C1007847BE /* Main.storyboard */,
+				479447D51D99F2C1007847BE /* LaunchScreen.storyboard */,
+				479447D81D99F2C1007847BE /* Info.plist */,
+				4794B0151DE502A700F71077 /* Sources */,
+				4794B0161DE502AD00F71077 /* Resources */,
+			);
+			path = "Bulldog Bucks";
+			sourceTree = "<group>";
+		};
+		479447FF1D9A4409007847BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				479448001D9A4409007847BE /* NotificationCenter.framework */,
+				2F1FB4F0187042B62C5DE809 /* Pods_Bulldog_Bucks.framework */,
+				D4B7A73963ED8A8F1DD5E219 /* Pods_Bulldog_Bucks___Widget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		479448021D9A4409007847BE /* Bulldog Bucks Widget */ = {
+			isa = PBXGroup;
+			children = (
+				47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */,
+				479448031D9A4409007847BE /* TodayViewController.swift */,
+				479448051D9A4409007847BE /* MainInterface.storyboard */,
+				479448081D9A4409007847BE /* Info.plist */,
+			);
+			path = "Bulldog Bucks Widget";
+			sourceTree = "<group>";
+		};
+		4794B0151DE502A700F71077 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				479447CC1D99F2C1007847BE /* AppDelegate.swift */,
+				47BC3AB31DA09C9B001C3FD2 /* View Controllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4794B0161DE502AD00F71077 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				472F32F91DE2B6FA001D4B4C /* Custom Login Animation */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		47BC3AB31DA09C9B001C3FD2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				479447CE1D99F2C1007847BE /* LoginViewController.swift */,
+				47BC3AB61DA09D29001C3FD2 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		479447C81D99F2C1007847BE /* Bulldog Bucks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 479447F11D99F2C2007847BE /* Build configuration list for PBXNativeTarget "Bulldog Bucks" */;
+			buildPhases = (
+				D942AB099A08A6B7F5DD81FD /* [CP] Check Pods Manifest.lock */,
+				479447C51D99F2C1007847BE /* Sources */,
+				479447C61D99F2C1007847BE /* Frameworks */,
+				479447C71D99F2C1007847BE /* Resources */,
+				4794480F1D9A4409007847BE /* Embed App Extensions */,
+				47234DF81DE212D200C25C8F /* Embed Watch Content */,
+				6E32806D9D3E2F8F9C733AFC /* [CP] Embed Pods Frameworks */,
+				A57E7B32C2302A5A913CCC53 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4794480A1D9A4409007847BE /* PBXTargetDependency */,
+			);
+			name = "Bulldog Bucks";
+			productName = "Bulldog Bucks";
+			productReference = 479447C91D99F2C1007847BE /* Bulldog Bucks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4794480C1D9A4409007847BE /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Widget" */;
+			buildPhases = (
+				5879D112046DB4FB6AACA9A0 /* [CP] Check Pods Manifest.lock */,
+				479447FA1D9A4409007847BE /* Sources */,
+				479447FB1D9A4409007847BE /* Frameworks */,
+				479447FC1D9A4409007847BE /* Resources */,
+				9C66A3F7706B1BD3DAF9917F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bulldog Bucks - Widget";
+			productName = "Bulldog Bucks Widget";
+			productReference = 479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		479447C11D99F2C1007847BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					479447C81D99F2C1007847BE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = NZ8449Y9W6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					479447FD1D9A4409007847BE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = NZ8449Y9W6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 479447C41D99F2C1007847BE /* Build configuration list for PBXProject "Bulldog Bucks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 479447C01D99F2C1007847BE;
+			productRefGroup = 479447CA1D99F2C1007847BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				479447C81D99F2C1007847BE /* Bulldog Bucks */,
+				479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		479447C71D99F2C1007847BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479447D71D99F2C1007847BE /* LaunchScreen.storyboard in Resources */,
+				4784980F1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf in Resources */,
+				479447D41D99F2C1007847BE /* Assets.xcassets in Resources */,
+				472F331D1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf in Resources */,
+				4784980E1DA0721700E8ADFA /* Lato-Semibold.ttf in Resources */,
+				479447D21D99F2C1007847BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479447FC1D9A4409007847BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479448071D9A4409007847BE /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5879D112046DB4FB6AACA9A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E32806D9D3E2F8F9C733AFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C66A3F7706B1BD3DAF9917F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A57E7B32C2302A5A913CCC53 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D942AB099A08A6B7F5DD81FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		479447C51D99F2C1007847BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D47F321DDFCCCC0094D448 /* API Client.swift in Sources */,
+				472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */,
+				472F33141DE2BC6A001D4B4C /* SpinerLayer.swift in Sources */,
+				47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */,
+				479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */,
+				472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */,
+				479447CD1D99F2C1007847BE /* AppDelegate.swift in Sources */,
+				472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */,
+				472F33171DE3A196001D4B4C /* Reachability.swift in Sources */,
+				472F331A1DE3D5E5001D4B4C /* Extensions.swift in Sources */,
+				47234DA41DE19ABF00C25C8F /* CustomAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479447FA1D9A4409007847BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D10B401DE11B4B0041064C /* API Client.swift in Sources */,
+				479448041D9A4409007847BE /* TodayViewController.swift in Sources */,
+				472F33181DE3A196001D4B4C /* Reachability.swift in Sources */,
+				47DAF0771DE5166E00499185 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4794480A1D9A4409007847BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */;
+			targetProxy = 479448091D9A4409007847BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		479447D01D99F2C1007847BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479447D11D99F2C1007847BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		479447D51D99F2C1007847BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479447D61D99F2C1007847BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		479448051D9A4409007847BE /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479448061D9A4409007847BE /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		479447EF1D99F2C2007847BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		479447F01D99F2C2007847BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		479447F21D99F2C2007847BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E3CC46F41E4D9EAB808BB8 /* Pods-Bulldog Bucks.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks.entitlements";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		479447F31D99F2C2007847BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6187D7BC18A978BB74DA6013 /* Pods-Bulldog Bucks.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks.entitlements";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4794480D1D9A4409007847BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 363A97FEA833C692132DAFF4 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks Widget/Bulldog Bucks Widget.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog Bucks Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4794480E1D9A4409007847BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C398E21E56E7AA40D8F301FE /* Pods-Bulldog Bucks - Widget.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks Widget/Bulldog Bucks Widget.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog Bucks Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		479447C41D99F2C1007847BE /* Build configuration list for PBXProject "Bulldog Bucks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479447EF1D99F2C2007847BE /* Debug */,
+				479447F01D99F2C2007847BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		479447F11D99F2C2007847BE /* Build configuration list for PBXNativeTarget "Bulldog Bucks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479447F21D99F2C2007847BE /* Debug */,
+				479447F31D99F2C2007847BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4794480C1D9A4409007847BE /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4794480D1D9A4409007847BE /* Debug */,
+				4794480E1D9A4409007847BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 479447C11D99F2C1007847BE /* Project object */;
+}

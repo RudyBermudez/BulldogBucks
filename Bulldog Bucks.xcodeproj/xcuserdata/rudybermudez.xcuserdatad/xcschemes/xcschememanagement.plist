@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Bulldog Bucks - Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Bulldog Bucks.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>47234DD31DE212D200C25C8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>479447C81D99F2C1007847BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>479447DC1D99F2C2007847BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>479447E71D99F2C2007847BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>479447FD1D9A4409007847BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
