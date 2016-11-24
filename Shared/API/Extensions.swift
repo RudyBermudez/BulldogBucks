@@ -10,8 +10,14 @@ import UIKit
 
 extension UIView {
 	
+    /**
+     Set the background of current view with a gradient of two colors.
+     - Note: The gradient is made from top to bottom
+     - Parameters:
+        - topColor: Instance of UIColor that represents the top of the view. This is the starting color of the gradient.
+        - bottomColor: Instance of UIColor that represents the bottom of the view. This is the end color of the gradient.
+     */
 	func setGradientBackground(topColor: UIColor, bottomColor: UIColor) {
-		
 		let gradientLayer = CAGradientLayer()
 		gradientLayer.colors = [ topColor.cgColor, bottomColor.cgColor]
 		gradientLayer.locations = [ 0.0, 1.0]
@@ -21,6 +27,10 @@ extension UIView {
 }
 
 extension NSDate {
+    
+    /**
+     Creates a pretty printed `String` representation of the difference in time from `timeIntervalSinceNow` to the time initialized in the instance of NSDate.
+     */
 	var timeAgoInWords: String {
 		let intervalInSeconds = fabs(timeIntervalSinceNow)
 		let intervalInMinutes = round(intervalInSeconds / 60.0)
