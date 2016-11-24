@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	@IBOutlet weak var userIDTextField: UITextField!
 	@IBOutlet weak var userPinTextField: UITextField!
 	@IBOutlet weak var loginButton: TKTransitionSubmitButton!
+    
 	
 	// MARK: - Properties
 	var delegate: LoginViewControllerDelegate?
@@ -28,11 +29,16 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 		return NotificationCenter.default
 	}()
 	
-	var savedUsername: String!
-	var savedPassword: String!
+    /// User's Student ID as a String
+	var savedStudentID: String!
+    
+    /// User's PIN as a String. Set in
+	var savedPIN: String!
 	
-	let client = APIClient()
+    /// Class Instance of ZagwebClient
+	let client = ZagwebClient()
 	
+    
 	// MARK: - UIViewController
 	override var prefersStatusBarHidden: Bool {
 		return true
@@ -40,51 +46,72 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		if let username = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "username"), let password = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "password") {
-			self.savedUsername = username
-			self.savedPassword = password
-		}
-		
-		// Notification Center Observers
-		notificationCenter.addObserver(self, selector: #selector(self.keyboardWillAppear(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-		notificationCenter.addObserver(self, selector: #selector(self.keyboardWillDisappear(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-		
-		
-		// Keyboard Dismissal 
-		let tapper = UITapGestureRecognizer(target: view, action:#selector(UIView.endEditing))
-		tapper.cancelsTouchesInView = false
-		view.addGestureRecognizer(tapper)
+        if let studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID"), let PIN = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") {
+            self.savedStudentID = studentID
+            self.savedPIN = PIN
+        }
+		setupNotificationCenter()
+        setupGestureRecognizer()
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 	
-	// MARK: - Login Action Methods
-	
+    /**
+     Login Action
+     
+     Checks if there is internet connection, checks to make sure fields are not empty, then attempts to authenticate by calling `self.checkCredentials()`
+     
+     - Parameter sender: The instance of UIButton that sends the action
+     */
 	@IBAction func Login(_ sender: UIButton) {
-		if Reachability.isConnectedToNetwork() {
-			loginButton.startLoadingAnimation()
+		if isConnectedToNetwork() {
 			guard let userIDTextFieldText = userIDTextField.text, let userPinTextFieldText = userPinTextField.text else {
-				loginButton.setOriginalState()
 				return
 			}
 			if userIDTextFieldText.isEmpty || userPinTextFieldText.isEmpty {
-				//TODO: Show alert
-				loginButton.setOriginalState()
+				showAlert(target: self, title: "Error", message: "Student ID and PIN cannot be left empty")
 				return
 			} else {
-				checkCredentials(withUsername: userIDTextFieldText, withPin: userPinTextFieldText)
+                self.loginButton.startLoadingAnimation()
+                checkCredentials(withStudentID: userIDTextFieldText, withPIN: userPinTextFieldText)
 			}
 		} else {
 			showAlert(target: self, title: "No Active Connection to Internet")
 		}
 	}
 	
-	// MARK: - Keyboard Methods
+    // MARK: - UI Helper Functions
+    
+    /**
+     Adds NotificationCenter Observers for when the Keyboard Appears and Disappears. 
+     - When keyboard appears, `self.keyboardWillAppear()` is called
+     - When keyboard disappers, `self.keyboardWillDisappear()` is called
+     */
+    func setupNotificationCenter() {
+        // Notification Center Observers
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillAppear(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillDisappear(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
 	
+    /**
+     Adds a UITapGestureRecognizer to see if the user taps outside of the text field.
+     
+     If a tap is recognized, `UIView.endEditing` is called
+    */
+    func setupGestureRecognizer() {
+        // Keyboard Dismissal
+        let tapper = UITapGestureRecognizer(target: view, action:#selector(UIView.endEditing))
+        tapper.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapper)
+    }
+    
+    /**
+     Animation that moves the `loginButtonBottomConstraint` 20 points higher than the top of the keyboard frame.
+     
+     Called when notification is posted for `NSNotification.Name.UIKeyboardWillShow`
+     */
 	func keyboardWillAppear(notification: NSNotification){
 		if let userInfoDict = notification.userInfo, let keyboardFrameValue = userInfoDict[UIKeyboardFrameEndUserInfoKey] as? NSValue {
 			let keyboardFrame = keyboardFrameValue.cgRectValue
@@ -98,6 +125,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 		}
 	}
 	
+    /**
+     Animation that moves the loginButtonBottomConstraint to it's original position.
+     
+     Called when notification is posted for `NSNotification.Name.UIKeyboardDidHide`
+     */
 	func keyboardWillDisappear(notification: NSNotification){
 		UIView.animate(withDuration: 0.5) {
 			self.loginButtonBottomConstraint.constant = 202.0
@@ -105,24 +137,31 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 		}
 	}
 	
-	func checkCredentials(withUsername: String, withPin: String) {
-		client.authenticate(withStudentID: withUsername, withPIN: withPin).then { (_) -> Void in
-			self.savedUsername = withUsername
-			self.savedPassword = withPin
-			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedUsername, forKey: "username")
-			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedPassword, forKey: "password")
+    /**
+     Checks to see if the authentication to Zagweb is successful. If successful, `delegate?.didLoginSuccessfully()` is called and transitions to `ViewController`. If fails, shows alert.
+     
+     - Parameters:
+        - withStudentID: The student ID of the user as a `String`
+        - withPIN: The PIN of the user as a `String`
+     */
+	func checkCredentials(withStudentID: String, withPIN: String) {
+		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
+            self.savedStudentID = withStudentID
+            self.savedPIN = withPIN
+			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedStudentID, forKey: "studentID")
+			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedPIN, forKey: "PIN")
 			self.loginButton.startFinishAnimation {
 				self.delegate?.didLoginSuccessfully()
 			}
 			
 		}.catch { (error) in
 			if let error = error as? ClientError {
-				self.loginButton.setOriginalState()
+				self.loginButton.returnToOriginalState()
 				showAlert(target: self, title: error.domain())
 			}
 			print(error)
-			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "username")
-			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "password")
+			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "studentID")
+			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "PIN")
 		}
 	}
 	

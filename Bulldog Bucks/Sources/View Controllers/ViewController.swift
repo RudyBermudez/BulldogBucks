@@ -21,13 +21,24 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	@IBOutlet weak var staticMessageLabel: UILabel!
 	@IBOutlet weak var fab: KCFloatingActionButton!
 	
+	/// Class Instance of ZagwebClient
+	let client = ZagwebClient()
+    
+    /// User's Student ID as a String
+	var studentID: String!
+    
+    /// User's PIN as a String
+	var PIN: String!
+    
+    /**
+     The number of times `ClientError.invalidCredentials` occurs. 
+     
+     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
+     */
+	var numOfFailedAttmps = 0
 	
-	let client = APIClient()
-	var username: String!
-	var password: String!
-	var loginErrors = 0
-	
-	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "username") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "password") != nil
+    /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
+	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil
 	
 	// MARK: - UIViewController
 	
@@ -35,16 +46,12 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		return true
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		if !loggedIn {
-			showLoginPage()
-		}
-	}
-	
 	override func viewDidAppear(_ animated: Bool) {
 		if loggedIn {
 			refresh()
-		}
+        } else {
+            showLoginPage()
+        }
 	}
 	
 	override func viewDidLoad() {
@@ -57,6 +64,9 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
 	// MARK: - LoginViewControllerDelegate
+    
+
+    /// Set `loggedIn` flag to `true` and dismiss the `loginViewController`
 	func didLoginSuccessfully() {
 		loggedIn = true
 		DispatchQueue.main.async {
@@ -66,6 +76,8 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
 	// MARK: - UI Helper Functions
 	
+
+    /// Initialize the `KCFloatingActionButton` with a logout button and a refresh button
 	func initializeButtonItem(){
 		let logoutItem = KCFloatingActionButtonItem()
 		logoutItem.title = "Logout"
@@ -88,21 +100,24 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
 	
+    /// Refresh data if active internet connection is present
 	func refresh() {
-		if Reachability.isConnectedToNetwork() {
+		if isConnectedToNetwork() {
 			SwiftSpinner.show("Getting Fresh Data...").addTapHandler({ 
 				SwiftSpinner.hide()
 			}, subtitle: "Tap to Cancel")
 			
-			updateRemainderTextLabel()
+			updateLabels()
 		} else {
 			showAlert(target: self, title: "No Active Connection to Internet", message: "Please connect to the internet and try again")
 		}
 	}
 	
+    
+    /// Logs out the user. Deletes data from UserDefaults, deletes cookies, and shows `LoginViewController`
 	func logout() {
-		UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "username")
-		UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "password")
+		UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "studentID")
+		UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "PIN")
 		
 		self.dollarSignLabel.isHidden = true
 		self.staticMessageLabel.isHidden = true
@@ -121,34 +136,44 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		showLoginPage()
 	}
 	
+    /// Instantiates and shows `LoginViewController`
 	func showLoginPage() {
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
 		vc.delegate = self
 		self.show(vc, sender: self)
 	}
 	
-	func updateRemainderTextLabel() {
+    /// Updates the `dollarAmountLabel` & `centsLabel` with the latest data from Zagweb
+	func updateLabels() {
 		checkCredentials()
-		client.getBulldogBucks(withStudentID: username, withPIN: password).then { (result) -> Void in
+		client.getBulldogBucks(withStudentID: studentID, withPIN: PIN).then { (result) -> Void in
+            
+            // Get the result, Strip the "$", and then break it up into dollars and cents
 			let array = result.replacingOccurrences(of: "$", with: "").components(separatedBy: ".")
+            
+            self.dollarAmountLabel.text = array[0]
+            self.centsLabel.text = array[1]
+            
 			self.dollarSignLabel.isHidden = false
 			self.staticMessageLabel.isHidden = false
-			self.loginErrors = 0
-			self.dollarAmountLabel.text = array[0]
-			self.centsLabel.text = array[1]
+            
+            // Reset number of failed attempts to 0
+			self.numOfFailedAttmps = 0
+			
 			SwiftSpinner.hide()
+            
 			}.catch { (error) in
 				if let error = error as? ClientError {
 					switch error {
 					case .invalidCredentials:
-						self.loginErrors += 1
-						if self.loginErrors >= 3 {
+						self.numOfFailedAttmps += 1
+						if self.numOfFailedAttmps >= 3 {
 							let action = UIAlertAction(title: "Logout", style: .default, handler: { (_) in
 								self.logout()
 							})
 							SwiftSpinner.hide()
-							showAlert(target: self, title: "Too Many Failed Attempts", message: "It is possible that your password has changed. Logout and Try Again", actionList: [action])
-						} else if self.loginErrors > 1 {
+							showAlert(target: self, title: "Too Many Failed Attempts", message: "It is possible that your PIN has changed. Logout and Try Again", actionList: [action])
+						} else if self.numOfFailedAttmps > 1 {
 							SwiftSpinner.hide()
 							showAlert(target: self, title: "Error", message: error.domain())
 						} else {
@@ -166,10 +191,11 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		}
 	}
 	
+    /// Checks to see if credentials exist, else calls `self.logout()`
 	func checkCredentials() {
-		if let username = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "username"), let password = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "password") {
-			self.username = username
-			self.password = password
+		if let studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID"), let PIN = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") {
+			self.studentID = studentID
+			self.PIN = PIN
 		} else {
 			logout()
 		}

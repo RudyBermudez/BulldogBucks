@@ -11,7 +11,7 @@
         <!--Today View Controller-->
         <scene sceneID="cwh-vc-ff4">
             <objects>
-                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Bulldog_Buck___Widget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Bulldog_Bucks___Widget" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
@@ -41,7 +41,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x" userLabel="Remaining BulldogBucks Label">
                                                         <rect key="frame" x="251" y="0.0" width="29" height="11"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -92,7 +92,7 @@
                     <size key="freeformSize" width="320" height="40"/>
                     <connections>
                         <outlet property="errorMessageLabel" destination="vaf-Qy-nSr" id="SEE-9G-hlM"/>
-                        <outlet property="remainderTextField" destination="rm7-9F-b5x" id="osT-Cm-BeC"/>
+                        <outlet property="remainingBdbLabel" destination="rm7-9F-b5x" id="8Aa-Rk-ueR"/>
                         <outlet property="staticTextLabel" destination="acT-KI-fXb" id="q0Z-d5-KBS"/>
                         <outlet property="timeUpdatedLabel" destination="Iaj-of-aAV" id="hoE-OH-yST"/>
                     </connections>

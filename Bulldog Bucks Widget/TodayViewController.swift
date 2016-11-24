@@ -11,50 +11,56 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
 	
-	@IBOutlet weak var remainderTextField: UILabel!
+    // MARK: - Properties
+	
+	@IBOutlet weak var remainingBdbLabel: UILabel!
 	@IBOutlet weak var timeUpdatedLabel: UILabel!
 	@IBOutlet weak var errorMessageLabel: UILabel!
 	@IBOutlet weak var staticTextLabel: UILabel!
 	
-	let client = APIClient()
+    /// Class Instance of ZagwebClient
+    let client = ZagwebClient()
+    
+    /// User's Student ID as a String
+    var studentID: String!
+    
+    /// User's PIN as a String
+    var PIN: String!
 	
-	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "username") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "password") != nil
+    /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
+	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil
 	
-	var username: String!
-	var password: String!
-	
+    // MARK: - UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		update()
 	}
 	
-	func showErrorMessage(_ enabled: Bool, withText: String = "Please Open the App to Login") {
-		errorMessageLabel.text = withText
-		errorMessageLabel.isHidden = !enabled
-		remainderTextField.isHidden = enabled
-		timeUpdatedLabel.isHidden = enabled
-		staticTextLabel.isHidden = enabled
-	}
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 	
-	func checkCredentials() {
-		if let username = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "username"), let password = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "password") {
-			self.username = username
-			self.password = password
-			print(username,password)
-		} else {
-			showErrorMessage(true)
-			print("couldnt get user and pass")
-		}
-	}
+    // MARK: - UI Helper Functions
+    
+    /**
+     If enabled, hides all labels except for `errorMessageLabel` and sets `errorMessageLabel` with message `withText`. Else, hides `errorMessageLabel`
+     
+     - Note: If `withText` is left blank, default will be "Please Open the App to Login"
+     */
+    func showErrorMessage(_ enabled: Bool, withText: String = "Please Open the App to Login") {
+        errorMessageLabel.text = withText
+        errorMessageLabel.isHidden = !enabled
+        remainingBdbLabel.isHidden = enabled
+        timeUpdatedLabel.isHidden = enabled
+        staticTextLabel.isHidden = enabled
+    }
 	
+    /// Updates the `remainingBdbLabel` with the latest data from Zagweb
 	func updateRemainderTextLabel() {
-		client.getBulldogBucks(withStudentID: username, withPIN: password).then { (result) -> Void in
+		client.getBulldogBucks(withStudentID: studentID, withPIN: PIN).then { (result) -> Void in
 			self.showErrorMessage(false)
-			self.remainderTextField.text = result
+			self.remainingBdbLabel.text = result
 			let date = NSDate()
 			self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
 			print(result)
@@ -62,13 +68,26 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 				print(error)
 		}
 	}
+    
+    // MARK: - ZagwebAPI Helpers
+    
+    /// Checks to see if credentials exist, else calls `self.showErrorMessage(true)`
+    func checkCredentials() {
+        if let studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID"), let PIN = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") {
+            self.studentID = studentID
+            self.PIN = PIN
+        } else {
+            showErrorMessage(true)
+        }
+    }
 	
+    /// Essentially the main function of the ViewController.
 	func update() {
 		if !loggedIn {
 			checkCredentials()
 			showErrorMessage(true)
 		} else {
-			if Reachability.isConnectedToNetwork() {
+			if isConnectedToNetwork() {
 				checkCredentials()
 				updateRemainderTextLabel()
 				let deadlineTime = DispatchTime.now() + .seconds(3)
@@ -81,6 +100,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		}
 	}
 	
+    // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
 		update()
 		completionHandler(NCUpdateResult.newData)
