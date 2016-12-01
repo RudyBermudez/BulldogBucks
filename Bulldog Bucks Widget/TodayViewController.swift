@@ -34,6 +34,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFontColor()
 		update()
 	}
 	
@@ -68,6 +69,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 				print(error)
 		}
 	}
+    /// Sets labels `textColor = UIColor.white` if User is using iOS 9 and black if on iOS 10
+    func setFontColor() {
+        if #available(iOS 9, *) {
+            self.staticTextLabel.textColor = UIColor.white
+            self.timeUpdatedLabel.textColor = UIColor.white
+            self.errorMessageLabel.textColor = UIColor.white
+            self.remainingBdbLabel.textColor = UIColor.white
+        }
+        if #available(iOS 10, *) {
+            self.staticTextLabel.textColor = UIColor.black
+            self.timeUpdatedLabel.textColor = UIColor.black
+            self.errorMessageLabel.textColor = UIColor.black
+            self.remainingBdbLabel.textColor = UIColor.black
+        }
+    }
     
     // MARK: - ZagwebAPI Helpers
     
