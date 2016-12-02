@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,32 +17,36 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Open the App to Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaf-Qy-nSr">
-                                <rect key="frame" x="46.5" y="9.5" width="227" height="20.5"/>
+                                <rect key="frame" x="46.5" y="45" width="227" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROy-qO-JRf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="inK-pT-nfn">
-                                        <rect key="frame" x="20" y="10" width="280" height="20"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="inK-pT-nfn">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="100"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nEU-Yj-fBq">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="11"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="nEU-Yj-fBq">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="58"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulldog Bucks Remaining:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acT-KI-fXb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="11"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulldog Bucks Remaining:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="acT-KI-fXb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="239" height="58"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x" userLabel="Remaining BulldogBucks Label">
-                                                        <rect key="frame" x="251" y="0.0" width="29" height="11"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x" userLabel="Remaining BulldogBucks Label">
+                                                        <rect key="frame" x="252" y="0.0" width="28" height="58"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="72.5" id="bC0-ge-Ahe"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40.5" id="lP8-Uq-0gU"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -52,11 +56,11 @@
                                                     <constraint firstItem="acT-KI-fXb" firstAttribute="centerY" secondItem="rm7-9F-b5x" secondAttribute="centerY" id="lx9-4s-YzH"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="AB7-Y1-NxK">
-                                                <rect key="frame" x="0.0" y="17" width="280" height="3"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="AB7-Y1-NxK">
+                                                <rect key="frame" x="0.0" y="73" width="280" height="27"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated: Never" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaj-of-aAV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="3"/>
+                                                        <rect key="frame" x="0.0" y="12.5" width="280" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -69,9 +73,8 @@
                                 <constraints>
                                     <constraint firstItem="inK-pT-nfn" firstAttribute="leading" secondItem="ROy-qO-JRf" secondAttribute="leading" constant="20" id="9eV-wo-QXl"/>
                                     <constraint firstAttribute="trailing" secondItem="inK-pT-nfn" secondAttribute="trailing" constant="20" id="DNV-e9-pjk"/>
-                                    <constraint firstItem="inK-pT-nfn" firstAttribute="top" secondItem="ROy-qO-JRf" secondAttribute="top" constant="10" id="Jdy-2b-mNX"/>
+                                    <constraint firstItem="inK-pT-nfn" firstAttribute="top" secondItem="ROy-qO-JRf" secondAttribute="top" id="Jdy-2b-mNX"/>
                                     <constraint firstAttribute="bottom" secondItem="inK-pT-nfn" secondAttribute="bottom" constant="10" id="MMW-X8-s9U"/>
-                                    <constraint firstAttribute="height" constant="40" id="jXk-fx-MJk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -89,7 +92,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="40"/>
+                    <size key="freeformSize" width="320" height="110"/>
                     <connections>
                         <outlet property="errorMessageLabel" destination="vaf-Qy-nSr" id="SEE-9G-hlM"/>
                         <outlet property="remainingBdbLabel" destination="rm7-9F-b5x" id="8Aa-Rk-ueR"/>

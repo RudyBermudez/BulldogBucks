@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,35 +18,35 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pigIcon" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-gT-Kth">
-                                <rect key="frame" x="-41.5" y="-12.5" width="750" height="160"/>
+                                <rect key="frame" x="-215" y="40" width="750" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="yI6-eb-RxM"/>
                                 </constraints>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-h2-BLQ" userLabel="emptyPlaceholder">
-                                <rect key="frame" x="333.5" y="187.5" width="0.0" height="0.0"/>
+                                <rect key="frame" x="160" y="240" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="d8e-7u-ouZ"/>
                                     <constraint firstAttribute="width" id="o9b-JU-Tzd"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulldog Bucks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyy-5E-BTU">
-                                <rect key="frame" x="173" y="280.5" width="321" height="64"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulldog Bucks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="gyy-5E-BTU">
+                                <rect key="frame" x="27" y="205" width="266" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Va5-y3-EjL"/>
-                                    <constraint firstAttribute="width" constant="321" id="W2t-L2-pPT"/>
+                                    <constraint firstAttribute="width" priority="999" constant="321" id="W2t-L2-pPT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ⓒ 2016 Rudy Bermudez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="956-Yl-gDr">
-                                <rect key="frame" x="250.5" y="345" width="166.5" height="18"/>
+                                <rect key="frame" x="76.5" y="450" width="167" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -54,11 +55,13 @@
                         <color key="backgroundColor" red="0.0" green="0.24705882352941178" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9Ku-h2-BLQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0dI-3z-xL0"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gyy-5E-BTU" secondAttribute="bottom" constant="211" id="AyH-6p-pAZ"/>
                             <constraint firstItem="956-Yl-gDr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dku-us-Jdn"/>
                             <constraint firstItem="9Ku-h2-BLQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OeK-UD-mus"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="956-Yl-gDr" secondAttribute="bottom" constant="12" id="Q99-QA-QGO"/>
                             <constraint firstItem="9Ku-h2-BLQ" firstAttribute="top" secondItem="aMx-gT-Kth" secondAttribute="bottom" constant="40" id="Riv-ld-EhZ"/>
-                            <constraint firstItem="gyy-5E-BTU" firstAttribute="top" secondItem="9Ku-h2-BLQ" secondAttribute="bottom" constant="93" id="XRb-2J-a96"/>
+                            <constraint firstItem="gyy-5E-BTU" firstAttribute="top" secondItem="9Ku-h2-BLQ" secondAttribute="bottom" priority="999" constant="93" id="XRb-2J-a96"/>
+                            <constraint firstItem="gyy-5E-BTU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="11" id="o1b-8w-kuS"/>
                             <constraint firstItem="aMx-gT-Kth" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pi8-II-jU0"/>
                             <constraint firstItem="gyy-5E-BTU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="unX-DZ-dAY"/>
                         </constraints>

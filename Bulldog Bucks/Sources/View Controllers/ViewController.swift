@@ -35,7 +35,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
      
      - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
      */
-	var numOfFailedAttmps = 0
+	var failedAttempts = 0
 	
     /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
 	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil
@@ -106,7 +106,6 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 			SwiftSpinner.show("Getting Fresh Data...").addTapHandler({ 
 				SwiftSpinner.hide()
 			}, subtitle: "Tap to Cancel")
-			
 			updateLabels()
 		} else {
 			showAlert(target: self, title: "No Active Connection to Internet", message: "Please connect to the internet and try again")
@@ -158,7 +157,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 			self.staticMessageLabel.isHidden = false
             
             // Reset number of failed attempts to 0
-			self.numOfFailedAttmps = 0
+			self.failedAttempts = 0
 			
 			SwiftSpinner.hide()
             
@@ -166,14 +165,14 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 				if let error = error as? ClientError {
 					switch error {
 					case .invalidCredentials:
-						self.numOfFailedAttmps += 1
-						if self.numOfFailedAttmps >= 3 {
+						self.failedAttempts += 1
+						if self.failedAttempts >= 3 {
 							let action = UIAlertAction(title: "Logout", style: .default, handler: { (_) in
 								self.logout()
 							})
 							SwiftSpinner.hide()
 							showAlert(target: self, title: "Too Many Failed Attempts", message: "It is possible that your PIN has changed. Logout and Try Again", actionList: [action])
-						} else if self.numOfFailedAttmps > 1 {
+						} else if self.failedAttempts > 1 {
 							SwiftSpinner.hide()
 							showAlert(target: self, title: "Error", message: error.domain())
 						} else {

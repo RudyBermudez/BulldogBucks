@@ -85,8 +85,10 @@ class ZagwebClient {
 				}
 				// If SESSID Cookie is not found, then credentials must be wrong
 				if !cookieFound {
+                    print("Authentication Failed")
 					reject(ClientError.invalidCredentials)
 				} else {
+                    print("Authentication Successful")
 					fulfill(cookies)
 				}
 			})
@@ -100,7 +102,7 @@ class ZagwebClient {
      
      - Throws: `ClientError.htmlCouldNotBeParsed` when the downloaded page html could not be parsed. This most likely means that the user is not authenticated.
      
-     - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain a `String` of the form "$235.32" that denotes the amount of Bulldog Bucks Remaining.  If the authenication fails, the `Promise` will be rejected and contain `ClientError.htmlCouldNotBeParsed`. The explanation of this `ClientError` is noted in the `Throws` Section of documentaion.
+     - Returns: A fulfilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fulfilled and contain a `String` of the form "$235.32" that denotes the amount of Bulldog Bucks Remaining.  If the authentication fails, the `Promise` will be rejected and contain `ClientError.htmlCouldNotBeParsed`. The explanation of this `ClientError` is noted in the `Throws` Section of documentation.
      */
 	private func downloadHTML() -> Promise<String> {
 		return Promise { fulfill, reject in
@@ -122,7 +124,7 @@ class ZagwebClient {
 	}
 	
     /**
-     Parses HTML and looks for the first occurance of a pllabel with a "$". The very first "$" on the page is the user's amount of Bulldog Bucks remaining. Method is called in `downloadHTML()`
+     Parses HTML and looks for the first occurrence of a pllabel with a "$". The very first "$" on the page is the user's amount of Bulldog Bucks remaining. Method is called in `downloadHTML()`
      
      - Parameter html: HTML source from https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions as a String
      - Returns: If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If fails, returns nil
@@ -133,7 +135,7 @@ class ZagwebClient {
 			for name in doc.css("td, pllabel") {
 				if let text = name.text {
 					if text.contains("$") {
-						// I return immediately because it should always be the first occurance
+						// I return immediately because it should always be the first occurrence
 						return text.replacingOccurrences(of: " ", with: "")
 					}
 				}
@@ -156,7 +158,7 @@ class ZagwebClient {
         - `ClientError.invalidCredentials` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
         - `ClientError.htmlCouldNotBeParsed` when the downloaded page html could not be parsed. This most likely means that the user is not authenticated.
      
-     - Returns: A fufilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
+     - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
 	func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
 		return Promise { fulfill, reject in
