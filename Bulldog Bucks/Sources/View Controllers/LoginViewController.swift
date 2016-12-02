@@ -23,6 +23,14 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
 	
 	// MARK: - Properties
+    
+    /**
+     The number of times `ClientError.invalidCredentials` occurs.
+     
+     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
+     */
+    var failedAttempts = 0
+    
 	var delegate: LoginViewControllerDelegate?
 	
 	lazy var notificationCenter: NotificationCenter = {
@@ -46,10 +54,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        if let studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID"), let PIN = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") {
-            self.savedStudentID = studentID
-            self.savedPIN = PIN
-        }
 		setupNotificationCenter()
         setupGestureRecognizer()
 	}
@@ -61,26 +65,43 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     /**
      Login Action
      
-     Checks if there is internet connection, checks to make sure fields are not empty, then attempts to authenticate by calling `self.checkCredentials()`
+     Checks if there is internet connection, checks to make sure fields are not empty, then attempts to authenticate by calling `self.login()`
      
      - Parameter sender: The instance of UIButton that sends the action
      */
-	@IBAction func Login(_ sender: UIButton) {
-		if isConnectedToNetwork() {
-			guard let userIDTextFieldText = userIDTextField.text, let userPinTextFieldText = userPinTextField.text else {
-				return
-			}
-			if userIDTextFieldText.isEmpty || userPinTextFieldText.isEmpty {
-				showAlert(target: self, title: "Error", message: "Student ID and PIN cannot be left empty")
-				return
-			} else {
+
+	@IBAction func loginAction(_ sender: Any) {
+        if isConnectedToNetwork() {
+            guard let userIDTextFieldText = userIDTextField.text, let userPinTextFieldText = userPinTextField.text else {
+                return
+            }
+            if userIDTextFieldText.isEmpty || userPinTextFieldText.isEmpty {
+                showAlert(target: self, title: "Error", message: "Student ID and PIN cannot be left empty")
+                return
+            } else {
                 self.loginButton.startLoadingAnimation()
-                checkCredentials(withStudentID: userIDTextFieldText, withPIN: userPinTextFieldText)
-			}
-		} else {
-			showAlert(target: self, title: "No Active Connection to Internet")
-		}
+                self.savedStudentID = userIDTextFieldText
+                self.savedPIN = userPinTextFieldText
+                login()
+            }
+        } else {
+            showAlert(target: self, title: "No Active Connection to Internet")
+        }
 	}
+    
+    /**
+     Login Action
+     
+     Checks if there is internet connection, then attempts to authenticate by calling `self.checkCredentials()`
+     
+     */
+    func login() {
+        if isConnectedToNetwork() {
+            checkCredentials(withStudentID: savedStudentID, withPIN: savedPIN)
+        } else {
+            showAlert(target: self, title: "No Active Connection to Internet")
+        }
+    }
 	
     // MARK: - UI Helper Functions
     
@@ -146,6 +167,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      */
 	func checkCredentials(withStudentID: String, withPIN: String) {
 		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
+            self.failedAttempts = 0
             self.savedStudentID = withStudentID
             self.savedPIN = withPIN
 			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedStudentID, forKey: "studentID")
@@ -156,10 +178,21 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 			
 		}.catch { (error) in
 			if let error = error as? ClientError {
-				self.loginButton.returnToOriginalState()
-				showAlert(target: self, title: error.domain())
+                switch error {
+                case .invalidCredentials:
+                    self.failedAttempts += 1
+                    if self.failedAttempts > 1 {
+                        self.loginButton.returnToOriginalState()
+                        showAlert(target: self, title: error.domain())
+                    } else {
+                        self.login()
+                    }
+                default:
+                    self.loginButton.returnToOriginalState()
+                    showAlert(target: self, title: error.domain())
+                }
+				
 			}
-			print(error)
 			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "studentID")
 			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "PIN")
 		}

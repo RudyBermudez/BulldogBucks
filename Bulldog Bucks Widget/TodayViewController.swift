@@ -29,6 +29,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
 	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil
+    
+    /**
+     The number of times `ClientError.invalidCredentials` occurs.
+     
+     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
+     */
+    var failedAttempts = 0
 	
     // MARK: - UIViewController
     
@@ -60,12 +67,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
 	func updateRemainderTextLabel() {
 		client.getBulldogBucks(withStudentID: studentID, withPIN: PIN).then { (result) -> Void in
+            self.failedAttempts = 0
 			self.showErrorMessage(false)
 			self.remainingBdbLabel.text = result
 			let date = NSDate()
 			self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
 			print(result)
 			}.catch { (error) in
+                if let error = error as? ClientError {
+                    switch error {
+                    case .invalidCredentials:
+                        self.failedAttempts += 1
+                        if self.failedAttempts > 2 {
+                            self.showErrorMessage(true, withText: "Invalid Credentials")
+                        } else {
+                            let deadlineTime = DispatchTime.now() + .seconds(3)
+                            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                                self.update()
+                            }
+                        }
+                    default: break
+                
+                    }
+                }
 				print(error)
 		}
 	}
@@ -106,10 +130,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			if isConnectedToNetwork() {
 				checkCredentials()
 				updateRemainderTextLabel()
-				let deadlineTime = DispatchTime.now() + .seconds(3)
-				DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-					self.updateRemainderTextLabel()
-				}
 			} else {
 				showErrorMessage(true, withText: "No Active Connection to Internet")
 			}
