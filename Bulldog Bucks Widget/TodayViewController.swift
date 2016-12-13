@@ -17,6 +17,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	@IBOutlet weak var timeUpdatedLabel: UILabel!
 	@IBOutlet weak var errorMessageLabel: UILabel!
 	@IBOutlet weak var staticTextLabel: UILabel!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
     /// Class Instance of ZagwebClient
     let client = ZagwebClient()
@@ -27,6 +28,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// User's PIN as a String
     var PIN: String!
 	
+    
+    let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
+    
     /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
 	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil
     
@@ -41,7 +45,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        preferredContentSize = CGSize(width: self.view.bounds.width, height: 100.0)
         setFontColor()
+        if loggedIn {
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
+        }
 		update()
 	}
 	
@@ -70,7 +78,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.failedAttempts = 0
 			self.showErrorMessage(false)
 			self.remainingBdbLabel.text = result
+            self.activityIndicator.stopAnimating()
 			let date = NSDate()
+            self.userDefaults.set(date, forKey: "timeOfLastUpdate")
 			self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
 			print(result)
 			}.catch { (error) in
@@ -80,6 +90,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         self.failedAttempts += 1
                         if self.failedAttempts > 2 {
                             self.showErrorMessage(true, withText: "Invalid Credentials")
+                            self.activityIndicator.stopAnimating()
                         } else {
                             let deadlineTime = DispatchTime.now() + .seconds(3)
                             DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
@@ -100,15 +111,35 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.timeUpdatedLabel.textColor = UIColor.white
             self.errorMessageLabel.textColor = UIColor.white
             self.remainingBdbLabel.textColor = UIColor.white
+            self.activityIndicator.color = UIColor.white
         }
         if #available(iOS 10, *) {
             self.staticTextLabel.textColor = UIColor.black
             self.timeUpdatedLabel.textColor = UIColor.black
             self.errorMessageLabel.textColor = UIColor.black
             self.remainingBdbLabel.textColor = UIColor.black
+            self.activityIndicator.color = UIColor.gray
         }
     }
     
+    /// Updates the `timeUpdatedLabel` with the amount of time that has passed since the last update
+    func updateTimeOfLastUpdate() {
+        if let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate {
+            self.timeUpdatedLabel.text = "Updated: \(timeOfLastUpdate.timeAgoInWords)"
+        } else {
+            self.timeUpdatedLabel.text = "Updated: Never"
+        }
+    }
+	
+    /// Launches the Main App only when user taps error message that shows "Please Open the App to Login"
+	@IBAction func openMainApp() {
+		if !errorMessageLabel.isHidden && errorMessageLabel.text == "Please Open the App to Login" {
+			let url = URL(string: "bdb://")!
+			extensionContext?.open(url, completionHandler: nil)
+		}
+	}
+	
+	
     // MARK: - ZagwebAPI Helpers
     
     /// Checks to see if credentials exist, else calls `self.showErrorMessage(true)`
@@ -126,8 +157,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		if !loggedIn {
 			checkCredentials()
 			showErrorMessage(true)
+            self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
 		} else {
 			if isConnectedToNetwork() {
+                activityIndicator.startAnimating()
 				checkCredentials()
 				updateRemainderTextLabel()
 			} else {

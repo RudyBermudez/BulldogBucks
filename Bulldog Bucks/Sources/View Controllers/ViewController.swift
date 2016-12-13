@@ -79,6 +79,8 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 
     /// Initialize the `KCFloatingActionButton` with a logout button and a refresh button
 	func initializeButtonItem(){
+        
+        // Logout Button
 		let logoutItem = KCFloatingActionButtonItem()
 		logoutItem.title = "Logout"
 		logoutItem.icon = UIImage(named: "logout")
@@ -88,7 +90,17 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		logoutItem.handler = { _ in self.logout() }
 		fab.addItem(item: logoutItem)
 		
-		
+        // Open in WebViewButton
+        let webviewItem = KCFloatingActionButtonItem()
+        webviewItem.title = "View on Web"
+        webviewItem.icon = UIImage(named: "openInBrowser")
+        webviewItem.buttonColor = UIColor.clear
+        webviewItem.backgroundColor = UIColor.clear
+        webviewItem.itemBackgroundColor = UIColor.clear
+        webviewItem.handler = { _ in self.showWebView() }
+        fab.addItem(item: webviewItem)
+        
+        // Refresh Button
 		let refreshItem = KCFloatingActionButtonItem()
 		refreshItem.title = "Refresh"
 		refreshItem.icon = UIImage(named: "reload")
@@ -97,8 +109,12 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		refreshItem.itemBackgroundColor = UIColor.clear
 		refreshItem.handler = { _ in self.refresh() }
 		fab.addItem(item: refreshItem)
+        
 	}
 	
+    func showWebView() {
+        self.present(WebViewController(), animated: true, completion: nil)
+    }
 	
     /// Refresh data if active internet connection is present
 	func refresh() {
