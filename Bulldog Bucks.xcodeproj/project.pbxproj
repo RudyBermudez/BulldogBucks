@@ -20,6 +20,7 @@
 		477BE1691DE618B300F39E46 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE1671DE618B300F39E46 /* NetworkReachability.swift */; };
 		4784980E1DA0721700E8ADFA /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */; };
 		4784980F1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */; };
+		478D1A0A1DFF6BF000B25164 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478D1A091DFF6BF000B25164 /* WebViewController.swift */; };
 		479447CD1D99F2C1007847BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479447CC1D99F2C1007847BE /* AppDelegate.swift */; };
 		479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479447CE1D99F2C1007847BE /* LoginViewController.swift */; };
 		479447D21D99F2C1007847BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479447D01D99F2C1007847BE /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		477BE1671DE618B300F39E46 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
 		478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		478D1A091DFF6BF000B25164 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		479447C91D99F2C1007847BE /* Bulldog Bucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulldog Bucks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		479447CC1D99F2C1007847BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479447CE1D99F2C1007847BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				472F32F91DE2B6FA001D4B4C /* Custom Login Animation */,
+				478D1A091DFF6BF000B25164 /* WebViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */,
 				479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */,
 				472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */,
+				478D1A0A1DFF6BF000B25164 /* WebViewController.swift in Sources */,
 				479447CD1D99F2C1007847BE /* AppDelegate.swift in Sources */,
 				472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */,
 				472F331A1DE3D5E5001D4B4C /* Extensions.swift in Sources */,
