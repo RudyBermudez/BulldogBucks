@@ -24,6 +24,12 @@ SOFTWARE.
 */
 import Foundation
 
+#if SWIFT_PACKAGE
+import SwiftClibxml2
+#else
+import libxml2
+#endif
+
 /**
 libxmlHTMLNode
 */
@@ -117,7 +123,11 @@ internal final class libxmlHTMLNode: XMLElement {
                 let mem = attr?.pointee
                 if let tagName = String(validatingUTF8: UnsafeRawPointer((mem?.name)!).assumingMemoryBound(to: CChar.self)) {
                     if attributeName == tagName {
-                        return libxmlGetNodeContent((mem?.children)!)
+                        if let children = mem?.children {
+                            return libxmlGetNodeContent(children)
+                        } else {
+                            return ""
+                        }
                     }
                 }
                 attr = attr?.pointee.next

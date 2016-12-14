@@ -1,4 +1,7 @@
 import Foundation
+#if !COCOAPODS
+import PromiseKit
+#endif
 
 public enum Encoding {
     /// Decode as JSON
@@ -26,7 +29,7 @@ public class URLDataPromise: Promise<Data> {
     public func asString() -> Promise<String> {
         return then(on: waldo) { data -> String in
             guard let str = String(bytes: data, encoding: self.URLResponse.stringEncoding ?? .utf8) else {
-                throw URLError.stringEncoding(self.URLRequest, data, self.URLResponse)
+                throw PMKURLError.stringEncoding(self.URLRequest, data, self.URLResponse)
             }
             return str
         }
@@ -77,7 +80,7 @@ public class URLDataPromise: Promise<Data> {
             } else if let data = data, !(rsp is HTTPURLResponse) {
                 fulfill(data)
             } else {
-                reject(URLError.badResponse(request, data, rsp))
+                reject(PMKURLError.badResponse(request, data, rsp))
             }
         }
         
@@ -93,7 +96,7 @@ public class URLDataPromise: Promise<Data> {
         public func asImage() -> Promise<UIImage> {
             return then(on: waldo) { data -> UIImage in
                 guard let img = UIImage(data: data), let cgimg = img.cgImage else {
-                    throw URLError.invalidImageData(self.URLRequest, data)
+                    throw PMKURLError.invalidImageData(self.URLRequest, data)
                 }
                 // this way of decoding the image limits main thread impact when displaying the image
                 return UIImage(cgImage: cgimg, scale: img.scale, orientation: img.imageOrientation)

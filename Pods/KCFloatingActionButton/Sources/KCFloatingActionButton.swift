@@ -577,7 +577,6 @@ open class KCFloatingActionButton: UIView {
                 width: size,
                 height: size
             )
-            print(frame)
         }
 
         if friendlyTap == true {
@@ -687,6 +686,10 @@ open class KCFloatingActionButton: UIView {
         guard let keyboardSize: CGFloat = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size.height else {
             return
         }
+        
+        if sticky == true {
+            return
+        }
 
         if isCustomFrame == false {
             setRightBottomFrame(keyboardSize)
@@ -705,6 +708,11 @@ open class KCFloatingActionButton: UIView {
     }
 
     internal func keyboardWillHide(_ notification: Notification) {
+        
+        if sticky == true {
+            return
+        }
+        
         UIView.animate(withDuration: 0.2, delay: 0, options: UIViewAnimationOptions(), animations: {
             if self.isCustomFrame == false {
                 self.setRightBottomFrame()
@@ -864,7 +872,6 @@ extension KCFloatingActionButton {
             itemHeight += item.size + itemSpace
             UIView.animate(withDuration: 0.2, delay: 0, options: [], animations: { () -> Void in
                                         item.frame.origin.y = itemHeight
-                                        item.frame.origin.x = 4
                                         item.alpha = 1
                 }, completion: nil)
         }

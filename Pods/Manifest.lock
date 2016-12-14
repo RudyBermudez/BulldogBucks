@@ -1,17 +1,17 @@
 PODS:
-  - Alamofire (4.1.0)
-  - Kanna (2.0.0)
-  - KCFloatingActionButton (2.1.1)
-  - PromiseKit (4.0.4):
-    - PromiseKit/Foundation (= 4.0.4)
-    - PromiseKit/QuartzCore (= 4.0.4)
-    - PromiseKit/UIKit (= 4.0.4)
-  - PromiseKit/CorePromise (4.0.4)
-  - PromiseKit/Foundation (4.0.4):
+  - Alamofire (4.2.0)
+  - Kanna (2.1.1)
+  - KCFloatingActionButton (2.1.2)
+  - PromiseKit (4.1.0):
+    - PromiseKit/Foundation (= 4.1.0)
+    - PromiseKit/QuartzCore (= 4.1.0)
+    - PromiseKit/UIKit (= 4.1.0)
+  - PromiseKit/CorePromise (4.1.0)
+  - PromiseKit/Foundation (4.1.0):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.0.4):
+  - PromiseKit/QuartzCore (4.1.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.0.4):
+  - PromiseKit/UIKit (4.1.0):
     - PromiseKit/CorePromise
   - SwiftSpinner (1.1.0)
 
@@ -23,10 +23,10 @@ DEPENDENCIES:
   - SwiftSpinner
 
 SPEC CHECKSUMS:
-  Alamofire: e266cf991b933498df791e645e0d8ac294492153
-  Kanna: 9a6637f72f5c77fe9c045b1efb2a5bb074754af8
-  KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
-  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  KCFloatingActionButton: 1b22ce95d44b51915280df8a8b277eae4a06c3f1
+  PromiseKit: c98453ff78544c0ad5bb0ea980782e6875f47978
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
 
 PODFILE CHECKSUM: a4216e98f2b8758fef0956ba3fa8d9b011da1021

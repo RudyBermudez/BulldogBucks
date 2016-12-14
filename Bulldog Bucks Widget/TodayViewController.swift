@@ -171,6 +171,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
+        if loggedIn {
+            self.updateTimeOfLastUpdate()
+        }
 		update()
 		completionHandler(NCUpdateResult.newData)
 	}
