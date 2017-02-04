@@ -19,7 +19,13 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	@IBOutlet weak var dollarAmountLabel: UILabel!
 	@IBOutlet weak var centsLabel: UILabel!
 	@IBOutlet weak var staticMessageLabel: UILabel!
+	@IBOutlet weak var dailyBalanceLabel: UILabel!
 	@IBOutlet weak var fab: KCFloatingActionButton!
+    
+    
+    /// Last Day of the Current of Semester in UNIX time
+    /// This is used to calculate the amount of money remaining per week
+    let lastDayOfSemester = Date(timeIntervalSince1970: 1494720000)
 	
 	/// Class Instance of ZagwebClient
 	let client = ZagwebClient()
@@ -136,8 +142,10 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		
 		self.dollarSignLabel.isHidden = true
 		self.staticMessageLabel.isHidden = true
+        self.dailyBalanceLabel.isHidden = true
 		self.dollarAmountLabel.text = ""
 		self.centsLabel.text = ""
+        self.dailyBalanceLabel.text = ""
 		
 		let cookieStorage: HTTPCookieStorage = HTTPCookieStorage.shared
 		let cookies = cookieStorage.cookies(for: URL(string: "zagweb.gonzaga.edu")!)
@@ -169,6 +177,15 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
             self.dollarAmountLabel.text = array[0]
             self.centsLabel.text = array[1]
             
+            let currentBalance = Double(result.replacingOccurrences(of: "$", with: ""))!
+            let weeksUntilEndOfSchoolYear = NSDate().weeks(to: self.lastDayOfSemester)
+            if weeksUntilEndOfSchoolYear > 0 {
+                let dailyBalance = currentBalance / Double(weeksUntilEndOfSchoolYear)
+                self.dailyBalanceLabel.text = String(format: "That's $%.2f left per week", dailyBalance)
+                self.dailyBalanceLabel.isHidden = false
+            }
+			
+			
 			self.dollarSignLabel.isHidden = false
 			self.staticMessageLabel.isHidden = false
             

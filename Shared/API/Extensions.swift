@@ -63,4 +63,20 @@ extension NSDate {
 		
 		return "\(Int(ceil(intervalInMinutes / 525600.0))) years ago"
 	}
+    
+    /// Returns the amount of days from another date. If the amount of days is negative it will return -1
+    func days(to date: Date) -> Int {
+        if Calendar.current.dateComponents([.day], from: self as Date, to: date).day ?? -1 < 0 {
+            return -1
+        }
+        else {
+            return Calendar.current.dateComponents([.day], from: self as Date, to: date).day ?? -1
+        }
+        
+    }
+    
+    func weeks(to date: Date) -> Int {
+       return days(to: date)/7
+    }
+    
 }
