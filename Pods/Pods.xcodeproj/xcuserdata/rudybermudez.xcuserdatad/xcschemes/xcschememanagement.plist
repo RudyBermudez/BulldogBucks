@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Locksmith.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Bulldog Bucks - Widget.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,22 +47,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05F6437C459CA553722F193539857E56</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0C46E4A8904E4D31464649E124DEDF25</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4D10E4FF5A483B852B47CCA0B994E340</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F6027306B57AA340BB6854CC6E8E12C</key>
+		<key>85C712A641C044F07F514685BCC1283E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>985FBF260B3182D30CC7028C4342B542</key>
+		<key>A28B72158607F813FBB4AE681E113C36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7F727D48928BF47D913AFC48BB6A978</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE7B8CF51CEC9008A89168F658650942</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC2A7CE399A1A7718BD1B6EE3F6038D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

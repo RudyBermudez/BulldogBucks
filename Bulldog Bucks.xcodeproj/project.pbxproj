@@ -16,6 +16,8 @@
 		472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */; };
 		472F331A1DE3D5E5001D4B4C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
 		472F331D1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472F331C1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf */; };
+		4761DF0C1E47D9C8004755EB /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* Authentication.swift */; };
+		4761DF0D1E47D9C8004755EB /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* Authentication.swift */; };
 		477BE1681DE618B300F39E46 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE1671DE618B300F39E46 /* NetworkReachability.swift */; };
 		477BE1691DE618B300F39E46 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE1671DE618B300F39E46 /* NetworkReachability.swift */; };
 		4784980E1DA0721700E8ADFA /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */; };
@@ -80,6 +82,7 @@
 		472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
 		472F33191DE3D5E5001D4B4C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		472F331C1DE3DBAB001D4B4C /* DINPro-Regular_13937.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Regular_13937.ttf"; sourceTree = "<group>"; };
+		4761DF0B1E47D9C8004755EB /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZagwebAPI.swift; sourceTree = "<group>"; };
 		477BE1671DE618B300F39E46 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
@@ -166,6 +169,7 @@
 				47234DA31DE19ABF00C25C8F /* CustomAlert.swift */,
 				472F33191DE3D5E5001D4B4C /* Extensions.swift */,
 				477BE1671DE618B300F39E46 /* NetworkReachability.swift */,
+				4761DF0B1E47D9C8004755EB /* Authentication.swift */,
 			);
 			name = API;
 			path = Shared/API;
@@ -346,6 +350,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 						};
 					};
 					479447FD1D9A4409007847BE = {
@@ -354,6 +361,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
 								enabled = 1;
 							};
 						};
@@ -490,6 +500,7 @@
 				47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */,
 				472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */,
 				472F33141DE2BC6A001D4B4C /* SpinerLayer.swift in Sources */,
+				4761DF0C1E47D9C8004755EB /* Authentication.swift in Sources */,
 				47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */,
 				479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */,
 				472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */,
@@ -508,6 +519,7 @@
 				47D10B401DE11B4B0041064C /* ZagwebAPI.swift in Sources */,
 				479448041D9A4409007847BE /* TodayViewController.swift in Sources */,
 				47DAF0771DE5166E00499185 /* Extensions.swift in Sources */,
+				4761DF0D1E47D9C8004755EB /* Authentication.swift in Sources */,
 				477BE1691DE618B300F39E46 /* NetworkReachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

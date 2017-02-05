@@ -11,7 +11,7 @@ target 'Bulldog Bucks' do
   pod 'Alamofire', '~> 4.0'
   pod "SwiftSpinner"
   pod "KCFloatingActionButton", "~> 2.1"
-
+  pod 'Locksmith'
 end
 
 target 'Bulldog Bucks - Widget' do
@@ -22,5 +22,5 @@ target 'Bulldog Bucks - Widget' do
   pod 'Kanna', '~> 2.0'
   pod "PromiseKit", "~> 4.0"
   pod 'Alamofire', '~> 4.0'
-
+  pod 'Locksmith'
 end
