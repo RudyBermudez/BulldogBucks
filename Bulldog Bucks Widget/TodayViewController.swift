@@ -23,17 +23,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let client = ZagwebClient()
     
     /// User's Student ID as a String
-    var studentID: String!
+    var studentID: String?
     
     /// User's PIN as a String
-    var PIN: String!
+    var PIN: String?
 	
-    
     let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
-    
-    /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
-	var loggedIn: Bool = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID") != nil && UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil
-    
     /**
      The number of times `ClientError.invalidCredentials` occurs.
      
@@ -47,7 +42,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         preferredContentSize = CGSize(width: self.view.bounds.width, height: 100.0)
         setFontColor()
-        if loggedIn {
+        if Authentication.isLoggedIn() {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
         }
 		update()
@@ -74,7 +69,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
 	func updateRemainderTextLabel() {
-		client.getBulldogBucks(withStudentID: studentID, withPIN: PIN).then { (result) -> Void in
+		client.getBulldogBucks(withStudentID: studentID!, withPIN: PIN!).then { (result) -> Void in
             self.failedAttempts = 0
 			self.showErrorMessage(false)
 			self.remainingBdbLabel.text = result
@@ -141,37 +136,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
 	
     // MARK: - ZagwebAPI Helpers
-    
-    /// Checks to see if credentials exist, else calls `self.showErrorMessage(true)`
-    func checkCredentials() {
-        if let studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID"), let PIN = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") {
-            self.studentID = studentID
-            self.PIN = PIN
-        } else {
-            showErrorMessage(true)
-        }
-    }
 	
     /// Essentially the main function of the ViewController.
 	func update() {
-		if !loggedIn {
-			checkCredentials()
-			showErrorMessage(true)
-            self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
-		} else {
-			if isConnectedToNetwork() {
+		if Authentication.isLoggedIn() {
+            if isConnectedToNetwork() {
                 activityIndicator.startAnimating()
-				checkCredentials()
-				updateRemainderTextLabel()
-			} else {
-				showErrorMessage(true, withText: "No Active Connection to Internet")
-			}
+                self.studentID = Authentication.loadCredentials()?.studentID
+                self.PIN = Authentication.loadCredentials()?.PIN
+                updateRemainderTextLabel()
+            } else {
+                showErrorMessage(true, withText: "No Active Connection to Internet")
+            }
+		} else {
+            self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
+			showErrorMessage(true)
 		}
 	}
 	
     // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
-        if loggedIn {
+        if Authentication.isLoggedIn() {
             self.updateTimeOfLastUpdate()
         }
 		update()

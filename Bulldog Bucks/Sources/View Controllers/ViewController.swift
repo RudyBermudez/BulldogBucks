@@ -52,7 +52,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		if isloggedIn() {
+		if Authentication.isLoggedIn() {
 			refresh()
         } else {
             logout()
@@ -139,19 +139,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         // Check to see if a username is stored in UserDefaults, if it is,
         // Set the value to be nil, set the PIN to be nil if it exists,
         // and finally delete keychain data for the user if it exists
-        if let username = UserDefaults(suiteName: "group.bdbMeter")?.string(forKey: "studentID") {
-            do {
-                UserDefaults(suiteName: "group.bdbMeter")?.set(nil, forKey: "studentID")
-                if UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil {
-                    UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "PIN")
-                }
-                try Locksmith.deleteDataForUserAccount(userAccount: username)
-                
-            } catch let error {
-                UserDefaults(suiteName: "group.bdbMeter")?.set(nil, forKey: "studentID")
-                print(error.localizedDescription)
-            }
-        }
+        Authentication.deleteCredentials()
 		
 		self.dollarSignLabel.isHidden = true
 		self.staticMessageLabel.isHidden = true
@@ -181,7 +169,8 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
     /// Updates the `dollarAmountLabel` & `centsLabel` with the latest data from Zagweb
 	func updateLabels() {
-		loadCredentials()
+        self.studentID = Authentication.loadCredentials()?.studentID
+        self.PIN = Authentication.loadCredentials()?.PIN
 		client.getBulldogBucks(withStudentID: studentID!, withPIN: PIN!).then { (result) -> Void in
             
             // Get the result, Strip the "$", and then break it up into dollars and cents
@@ -235,24 +224,5 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 				
 		}
 	}
-    
-    /// Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
-    func isloggedIn() -> Bool {
-        guard let username = UserDefaults(suiteName: "group.bdbMeter")?.string(forKey: "studentID"), let _ = Locksmith.loadDataForUserAccount(userAccount: username)?["password"] as? String else {
-            return false
-        }
-        return true
-    }
-    
-    /// Loads credentials to memory if they exist, else calls `self.logout()`
-    func loadCredentials() {
-        if isloggedIn() {
-            self.studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID")
-            self.PIN = Locksmith.loadDataForUserAccount(userAccount: self.studentID!)?["password"] as? String
-        } else {
-            logout()
-        }
-    }
-	
 	
 }
