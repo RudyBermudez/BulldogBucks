@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Locksmith
 
 protocol LoginViewControllerDelegate {
 	func didLoginSuccessfully()
@@ -170,8 +170,9 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
             self.failedAttempts = 0
             self.savedStudentID = withStudentID
             self.savedPIN = withPIN
+            
 			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedStudentID, forKey: "studentID")
-			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedPIN, forKey: "PIN")
+            try Locksmith.saveData(data: ["password": self.savedPIN], forUserAccount: self.savedStudentID)
 			self.loginButton.startFinishAnimation {
 				self.delegate?.didLoginSuccessfully()
 			}
@@ -193,8 +194,12 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 }
 				
 			}
-			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "studentID")
-			UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "PIN")
+            do {
+                try Locksmith.deleteDataForUserAccount(userAccount: self.savedStudentID)
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
 		}
 	}
 	
