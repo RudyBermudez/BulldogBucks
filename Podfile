@@ -7,8 +7,8 @@ target 'Bulldog Bucks' do
 
   # Pods for Bulldog Bucks
   pod 'Kanna', '~> 2.0'
-  pod "PromiseKit", "~> 4.0"
   pod 'Alamofire', '~> 4.0'
+  pod "PromiseKit", "~> 4.0"
   pod "SwiftSpinner"
   pod "KCFloatingActionButton", "~> 2.1"
   pod 'Locksmith'
@@ -20,7 +20,7 @@ target 'Bulldog Bucks - Widget' do
 
   # Pods for Bulldog Bucks - Widget
   pod 'Kanna', '~> 2.0'
-  pod "PromiseKit", "~> 4.0"
   pod 'Alamofire', '~> 4.0'
+  pod "PromiseKit", "~> 4.0"
   pod 'Locksmith'
 end
