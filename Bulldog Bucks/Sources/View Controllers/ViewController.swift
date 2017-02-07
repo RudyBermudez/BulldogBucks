@@ -10,7 +10,6 @@ import UIKit
 import Kanna
 import SwiftSpinner
 import KCFloatingActionButton
-import Locksmith
 
 class ViewController: UIViewController, LoginViewControllerDelegate {
 	

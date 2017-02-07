@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.3.0)
   - Kanna (2.1.1)
   - KCFloatingActionButton (2.1.2)
-  - Locksmith (3.0.0)
+  - KeychainAccess (3.0.1)
   - PromiseKit (4.1.7):
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
@@ -20,7 +20,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Kanna (~> 2.0)
   - KCFloatingActionButton (~> 2.1)
-  - Locksmith
+  - KeychainAccess
   - PromiseKit (~> 4.0)
   - SwiftSpinner
 
@@ -28,10 +28,10 @@ SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
   KCFloatingActionButton: 1b22ce95d44b51915280df8a8b277eae4a06c3f1
-  Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
 
-PODFILE CHECKSUM: 78d8f85b0af3af3b4cda4a94967ee659473b6df1
+PODFILE CHECKSUM: dc22ee2f34b2a31c3a1c38f719ed55a5f67cc5d1
 
 COCOAPODS: 1.2.0

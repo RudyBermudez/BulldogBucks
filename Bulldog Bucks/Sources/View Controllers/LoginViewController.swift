@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Locksmith
 
 protocol LoginViewControllerDelegate {
 	func didLoginSuccessfully()
@@ -172,10 +171,15 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
             self.savedPIN = withPIN
             
 			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedStudentID, forKey: "studentID")
-            try Locksmith.saveData(data: ["password": self.savedPIN], forUserAccount: self.savedStudentID)
-			self.loginButton.startFinishAnimation {
-				self.delegate?.didLoginSuccessfully()
-			}
+            let success = Authentication.addCredentials(studentID: withStudentID, PIN: withPIN)
+            if success {
+                self.loginButton.startFinishAnimation {
+                    self.delegate?.didLoginSuccessfully()
+                }
+            } else {
+                throw AuthenticationError.DidNotSaveCredentials
+            }
+			
 			
 		}.catch { (error) in
 			if let error = error as? ClientError {
@@ -194,12 +198,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 }
 				
 			}
-            do {
-                try Locksmith.deleteDataForUserAccount(userAccount: self.savedStudentID)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
+            Authentication.deleteCredentials()
 		}
 	}
 	
