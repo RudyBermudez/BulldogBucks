@@ -22,11 +22,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Class Instance of ZagwebClient
     let client = ZagwebClient()
     
-    /// User's Student ID as a String
-    var studentID: String?
-    
-    /// User's PIN as a String
-    var PIN: String?
 	
     let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
     /**
@@ -69,7 +64,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
 	func updateRemainderTextLabel() {
-		client.getBulldogBucks(withStudentID: studentID!, withPIN: PIN!).then { (result) -> Void in
+        guard let credentials = Authentication.getCredentials() else {
+            self.showErrorMessage(true)
+            return
+        }
+		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
             self.failedAttempts = 0
 			self.showErrorMessage(false)
 			self.remainingBdbLabel.text = result
@@ -77,7 +76,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 			let date = NSDate()
             self.userDefaults.set(date, forKey: "timeOfLastUpdate")
 			self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
-			print(result)
 			}.catch { (error) in
                 if let error = error as? ClientError {
                     switch error {
@@ -142,8 +140,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		if Authentication.isLoggedIn() {
             if isConnectedToNetwork() {
                 activityIndicator.startAnimating()
-                self.studentID = Authentication.loadCredentials()?.studentID
-                self.PIN = Authentication.loadCredentials()?.PIN
                 updateRemainderTextLabel()
             } else {
                 showErrorMessage(true, withText: "No Active Connection to Internet")

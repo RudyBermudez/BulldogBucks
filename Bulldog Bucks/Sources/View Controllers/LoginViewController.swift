@@ -36,12 +36,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 		return NotificationCenter.default
 	}()
 	
-    /// User's Student ID as a String
-	var savedStudentID: String!
-    
-    /// User's PIN as a String. Set in
-	var savedPIN: String!
-	
     /// Class Instance of ZagwebClient
 	let client = ZagwebClient()
 	
@@ -79,9 +73,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 return
             } else {
                 self.loginButton.startLoadingAnimation()
-                self.savedStudentID = userIDTextFieldText
-                self.savedPIN = userPinTextFieldText
-                login()
+                login(studentID: userIDTextFieldText,PIN: userPinTextFieldText)
             }
         } else {
             showAlert(target: self, title: "No Active Connection to Internet")
@@ -94,9 +86,9 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      Checks if there is internet connection, then attempts to authenticate by calling `self.checkCredentials()`
      
      */
-    func login() {
+    func login(studentID: String, PIN:String) {
         if isConnectedToNetwork() {
-            checkCredentials(withStudentID: savedStudentID, withPIN: savedPIN)
+            checkCredentials(withStudentID: studentID, withPIN: PIN)
         } else {
             showAlert(target: self, title: "No Active Connection to Internet")
         }
@@ -167,10 +159,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	func checkCredentials(withStudentID: String, withPIN: String) {
 		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
             self.failedAttempts = 0
-            self.savedStudentID = withStudentID
-            self.savedPIN = withPIN
             
-			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedStudentID, forKey: "studentID")
             let success = Authentication.addCredentials(studentID: withStudentID, PIN: withPIN)
             if success {
                 self.loginButton.startFinishAnimation {
@@ -190,7 +179,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                         self.loginButton.returnToOriginalState()
                         showAlert(target: self, title: error.domain())
                     } else {
-                        self.login()
+                        self.login(studentID: withStudentID, PIN: withPIN)
                     }
                 default:
                     self.loginButton.returnToOriginalState()
@@ -198,7 +187,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 }
 				
 			}
-            Authentication.deleteCredentials()
+            let _ = Authentication.deleteCredentials()
 		}
 	}
 	

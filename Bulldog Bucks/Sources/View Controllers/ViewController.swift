@@ -30,11 +30,6 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	/// Class Instance of ZagwebClient
 	let client = ZagwebClient()
     
-    /// User's Student ID as a String
-	var studentID: String?
-    
-    /// User's PIN as a String
-	var PIN: String?
     
     /**
      The number of times `ClientError.invalidCredentials` occurs. 
@@ -63,10 +58,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		initializeButtonItem()
 	}
 	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-	}
-	
+    
 	// MARK: - LoginViewControllerDelegate
     
 
@@ -138,7 +130,6 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         // Check to see if a username is stored in UserDefaults, if it is,
         // Set the value to be nil, set the PIN to be nil if it exists,
         // and finally delete keychain data for the user if it exists
-        Authentication.deleteCredentials()
 		
 		self.dollarSignLabel.isHidden = true
 		self.staticMessageLabel.isHidden = true
@@ -156,21 +147,31 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 			}
 		}
 		
-		showLoginPage()
+        let logoutSuccess = Authentication.deleteCredentials()
+        if logoutSuccess {
+            showLoginPage(animated: true)
+        } else {
+            // This should never happen, but it is good to handle the error just in case.
+            showAlert(target: self, title: "Houston we have a problem!", message: "Logout failed. Please try again.")
+        }
+        
+        
 	}
 	
     /// Instantiates and shows `LoginViewController`
-	func showLoginPage() {
+    func showLoginPage(animated: Bool) {
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
 		vc.delegate = self
-		self.show(vc, sender: self)
+        self.present(vc, animated: animated, completion: nil)
 	}
 	
     /// Updates the `dollarAmountLabel` & `centsLabel` with the latest data from Zagweb
 	func updateLabels() {
-        self.studentID = Authentication.loadCredentials()?.studentID
-        self.PIN = Authentication.loadCredentials()?.PIN
-		client.getBulldogBucks(withStudentID: studentID!, withPIN: PIN!).then { (result) -> Void in
+        guard let credentials = Authentication.getCredentials() else {
+            self.logout()
+            return
+        }
+		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
             
             // Get the result, Strip the "$", and then break it up into dollars and cents
 			let array = result.replacingOccurrences(of: "$", with: "").components(separatedBy: ".")

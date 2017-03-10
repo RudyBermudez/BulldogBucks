@@ -13,6 +13,15 @@ enum AuthenticationError: Error {
     case DidNotSaveCredentials
 }
 
+protocol AuthenticationStateDelegate {
+    func didLoginSuccessfully(animated: Bool)
+    func didLogoutSuccessfully()
+}
+
+enum KeychainKey: String {
+    case studentID = "studentID"
+    case pin = "PIN"
+}
 
 /// Serves as the point of authentication for Bulldog Bucks App
 class Authentication {
@@ -25,22 +34,19 @@ class Authentication {
      - Returns: Boolean representing whether the user is logged in
      */
     static func isLoggedIn() -> Bool {
-        guard let username = UserDefaults(suiteName: "group.bdbMeter")?.string(forKey: "studentID"), let _ = keychain[username] else {
-            return false
-        }
-        
-        return true
+        return keychain[KeychainKey.studentID.rawValue] != nil && keychain[KeychainKey.pin.rawValue] != nil
     }
     
     /**
      Saves user's credentials to an instance of `keychain`
      - Parameters:
-        - studentID: `String` representation of the User's StudentID
-        - PIN: `String` representation of the User's PIN
+     - studentID: `String` representation of the User's StudentID
+     - PIN: `String` representation of the User's PIN
      */
     static func addCredentials(studentID: String, PIN: String) -> Bool {
         do {
-            try keychain.set(PIN, key: studentID)
+            try keychain.set(studentID, key: KeychainKey.studentID.rawValue)
+            try keychain.set(PIN, key: KeychainKey.pin.rawValue)
             return true
         }
         catch let error {
@@ -50,30 +56,22 @@ class Authentication {
     }
     
     /// Loads credentials to memory if they exist, else returns nil
-    static func loadCredentials() -> (studentID: String, PIN: String)? {
+    static func getCredentials() -> (studentID: String, PIN: String)? {
         if isLoggedIn() {
-            let studentID = UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "studentID")!
-            let PIN = keychain[studentID]
-            return (studentID, PIN!)
+            return (keychain[KeychainKey.studentID.rawValue]!, keychain[KeychainKey.pin.rawValue]!)
         } else {
             return nil
         }
     }
     
     /// Deletes credentials from instance of `keychain`
-    static func deleteCredentials() {
-        if let username = UserDefaults(suiteName: "group.bdbMeter")?.string(forKey: "studentID") {
-            do {
-                UserDefaults(suiteName: "group.bdbMeter")?.set(nil, forKey: "studentID")
-                if UserDefaults(suiteName: "group.bdbMeter")!.string(forKey: "PIN") != nil {
-                    UserDefaults(suiteName: "group.bdbMeter")!.set(nil, forKey: "PIN")
-                }
-                try keychain.remove(username)
-                
-            } catch let error {
-                UserDefaults(suiteName: "group.bdbMeter")?.set(nil, forKey: "studentID")
-                print(error.localizedDescription)
-            }
+    static func deleteCredentials() -> Bool {
+        do {
+            try keychain.removeAll()
+            return true
+        } catch let error {
+            print("error: \(error.localizedDescription)")
+            return false
         }
     }
 }
