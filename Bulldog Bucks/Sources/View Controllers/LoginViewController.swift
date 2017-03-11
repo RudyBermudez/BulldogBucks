@@ -23,13 +23,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	
 	// MARK: - Properties
     
-    /**
-     The number of times `ClientError.invalidCredentials` occurs.
-     
-     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
-     */
-    var failedAttempts = 0
-    
 	var delegate: LoginViewControllerDelegate?
 	
 	lazy var notificationCenter: NotificationCenter = {
@@ -158,7 +151,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      */
 	func checkCredentials(withStudentID: String, withPIN: String) {
 		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
-            self.failedAttempts = 0
             
             let success = Authentication.addCredentials(studentID: withStudentID, PIN: withPIN)
             if success {
@@ -174,13 +166,8 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 			if let error = error as? ClientError {
                 switch error {
                 case .invalidCredentials:
-                    self.failedAttempts += 1
-                    if self.failedAttempts > 1 {
-                        self.loginButton.returnToOriginalState()
-                        showAlert(target: self, title: error.domain())
-                    } else {
-                        self.login(studentID: withStudentID, PIN: withPIN)
-                    }
+                    self.loginButton.returnToOriginalState()
+                    showAlert(target: self, title: error.domain())
                 default:
                     self.loginButton.returnToOriginalState()
                     showAlert(target: self, title: error.domain())

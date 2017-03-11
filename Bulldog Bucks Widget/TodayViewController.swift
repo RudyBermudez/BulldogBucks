@@ -23,12 +23,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
 	
     let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
-    /**
-     The number of times `ClientError.invalidCredentials` occurs.
-     
-     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
-     */
-    var failedAttempts = 0
+
 	
     // MARK: - UIViewController
     
@@ -61,42 +56,39 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 	
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
-	func updateRemainderTextLabel() {
+    func updateRemainderTextLabel() {
         guard let credentials = Authentication.getCredentials() else {
             self.showErrorMessage(true)
             return
         }
-		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
-            self.failedAttempts = 0
-			self.showErrorMessage(false)
-           
+        client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
+            self.showErrorMessage(false)
+            
             self.remainingBdbLabel.attributedText = self.formatAmountLabel(withResult: result)
-
+            
             self.activityIndicator.stopAnimating()
-			let date = NSDate()
+            let date = NSDate()
             self.userDefaults.set(date, forKey: "timeOfLastUpdate")
-			self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
-			}.catch { (error) in
+            self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
+            }.catch { (error) in
                 if let error = error as? ClientError {
                     switch error {
                     case .invalidCredentials:
-                        self.failedAttempts += 1
-                        if self.failedAttempts > 2 {
-                            self.showErrorMessage(true, withText: "Invalid Credentials")
-                            self.activityIndicator.stopAnimating()
-                        } else {
-                            let deadlineTime = DispatchTime.now() + .seconds(3)
-                            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-                                self.update()
-                            }
-                        }
-                    default: break
-                
+                        self.showErrorMessage(true, withText: "Invalid Credentials")
+                        self.activityIndicator.stopAnimating()
+                    default:
+                        self.showErrorMessage(true, withText: "An error occured while trying to update your balance")
+                        self.activityIndicator.stopAnimating()
+                        
                     }
+                } else {
+                    self.showErrorMessage(true, withText: "An error occured while trying to update your balance")
+                    self.activityIndicator.stopAnimating()
                 }
-				print(error)
-		}
-	}
+                print(error)
+        }
+        
+    }
     /// Sets labels `textColor = UIColor.white` if User is using iOS 9 and black if on iOS 10
     func setFontColor() {
         if #available(iOS 9, *) {
@@ -115,8 +107,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func formatAmountLabel(withResult result: String) -> NSMutableAttributedString {
         
-        let dollarSignAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 30)]
-        let amountAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 50)]
+        let dollarSignAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 30)!]
+        let amountAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 50)!]
         
         
         let dollarSignPart = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)

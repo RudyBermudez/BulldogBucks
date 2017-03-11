@@ -8,11 +8,17 @@
 
 import UIKit
 
+typealias WebViewAction = ((WebViewController) -> Void)
+
 /**
  WebViewController is a ViewController than contains a `UINavigationBar` and a `UIWebView` that loads `https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions`
 */
 class WebViewController: UIViewController {
 
+    
+    var logoutFunc: WebViewAction?
+    
+    var webView = UIWebView()
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -30,10 +36,8 @@ class WebViewController: UIViewController {
         view.addSubview(bar)
         
         // Setup UIWebView
-        let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0.0, y: navigationBarHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - navigationBarHeight))
-        let request = URLRequest(url: URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!)
-        myWebView.loadRequest(request)
-        view.addSubview(myWebView)
+        webView = UIWebView(frame: CGRect(x: 0.0, y: navigationBarHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - navigationBarHeight))
+        view.addSubview(webView)
 
     }
     
@@ -42,14 +46,15 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loadWebView() {
+        let request = URLRequest(url: URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!)
+        webView.loadRequest(request)
     }
+
     
     func closeWebView() {
-        self.dismiss(animated: true, completion: nil)
+        logoutFunc?(self)
     }
 
 }

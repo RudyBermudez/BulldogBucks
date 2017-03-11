@@ -262,9 +262,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpM-U6-jiw" userLabel="ErrorMessage">
+                                <rect key="frame" x="20" y="147" width="281" height="66.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Server is not responding
+Please try again</string>
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="26" name="DINPro-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ST3-uu-CtL" firstAttribute="centerX" secondItem="B50-ue-Hd4" secondAttribute="centerX" id="2vr-sJ-Z8q"/>
+                            <constraint firstItem="JpM-U6-jiw" firstAttribute="centerY" secondItem="B50-ue-Hd4" secondAttribute="centerY" constant="-60" id="CbR-Qi-xEu"/>
                             <constraint firstItem="hTb-DU-bIN" firstAttribute="top" secondItem="hjh-0o-PKQ" secondAttribute="top" id="EqE-vf-GFB"/>
                             <constraint firstItem="JL5-pW-yxu" firstAttribute="centerX" secondItem="B50-ue-Hd4" secondAttribute="centerX" id="GV2-DO-dfd"/>
                             <constraint firstItem="JL5-pW-yxu" firstAttribute="top" secondItem="Q4Z-nT-Fdc" secondAttribute="bottom" constant="-25" id="M2H-4B-1KK"/>
@@ -280,6 +296,7 @@
                             <constraint firstItem="Q4Z-nT-Fdc" firstAttribute="leading" secondItem="hTb-DU-bIN" secondAttribute="trailing" id="oq7-uS-mEx"/>
                             <constraint firstItem="lKY-I3-eNW" firstAttribute="leading" secondItem="B50-ue-Hd4" secondAttribute="leadingMargin" constant="10" id="qxB-sH-avU"/>
                             <constraint firstItem="lKY-I3-eNW" firstAttribute="top" secondItem="03A-uf-w28" secondAttribute="top" id="s3e-1b-Sj1"/>
+                            <constraint firstItem="JpM-U6-jiw" firstAttribute="centerX" secondItem="B50-ue-Hd4" secondAttribute="centerX" id="tPx-kA-FQg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="03A-uf-w28" secondAttribute="trailing" constant="20" id="wov-YL-cs6"/>
                             <constraint firstItem="Q4Z-nT-Fdc" firstAttribute="centerX" secondItem="B50-ue-Hd4" secondAttribute="centerX" id="zGC-BF-u5J"/>
                         </constraints>
@@ -289,6 +306,7 @@
                         <outlet property="dailyBalanceLabel" destination="lKY-I3-eNW" id="nJm-Zq-znJ"/>
                         <outlet property="dollarAmountLabel" destination="Q4Z-nT-Fdc" id="CbK-J7-hAQ"/>
                         <outlet property="dollarSignLabel" destination="hTb-DU-bIN" id="dYF-wG-h2P"/>
+                        <outlet property="errorMessageLabel" destination="JpM-U6-jiw" id="SfW-EW-LY3"/>
                         <outlet property="fab" destination="03A-uf-w28" id="GPX-eG-ZxF"/>
                         <outlet property="staticMessageLabel" destination="ST3-uu-CtL" id="QJN-xC-lId"/>
                     </connections>
