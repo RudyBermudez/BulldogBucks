@@ -336,7 +336,10 @@ Please try again</string>
                                 </items>
                             </toolbar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifb-HN-HZb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WZA-5s-PTl"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Zagweb" id="DmY-aJ-B4c">
                                         <barButtonItem key="leftBarButtonItem" title="Close" id="OFP-rQ-3bK"/>
@@ -345,7 +348,7 @@ Please try again</string>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umy-Hh-cFk">
-                                <rect key="frame" x="0.0" y="44" width="320" height="392"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="386"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -353,8 +356,8 @@ Please try again</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fYu-zl-beN" secondAttribute="trailing" id="0wQ-Na-Lb1"/>
                             <constraint firstAttribute="trailing" secondItem="umy-Hh-cFk" secondAttribute="trailing" id="7Gz-RG-KoT"/>
+                            <constraint firstItem="Ifb-HN-HZb" firstAttribute="top" secondItem="q4b-GF-po8" secondAttribute="top" id="9Nk-au-Gq5"/>
                             <constraint firstAttribute="trailing" secondItem="Ifb-HN-HZb" secondAttribute="trailing" id="9pk-1R-caP"/>
-                            <constraint firstItem="Ifb-HN-HZb" firstAttribute="top" secondItem="q4b-GF-po8" secondAttribute="top" id="Bja-8t-35O"/>
                             <constraint firstItem="Ifb-HN-HZb" firstAttribute="leading" secondItem="q4b-GF-po8" secondAttribute="leading" id="HKz-R5-Kob"/>
                             <constraint firstItem="fYu-zl-beN" firstAttribute="top" secondItem="umy-Hh-cFk" secondAttribute="bottom" id="Jdf-Lc-Zjy"/>
                             <constraint firstItem="LQI-XJ-Tv0" firstAttribute="top" secondItem="fYu-zl-beN" secondAttribute="bottom" id="bnI-87-GUb"/>
@@ -373,7 +376,7 @@ Please try again</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbm-cv-hCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="122.5"/>
+            <point key="canvasLocation" x="1729" y="131"/>
         </scene>
     </scenes>
     <resources>

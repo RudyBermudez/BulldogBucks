@@ -107,7 +107,7 @@
 		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
 		CB75D62564F427A3F2B0441A /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8FEB92AF750989FA8205DE /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		DC2CAB0151D39FA642693880 /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks___Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2CAB0151D39FA642693880 /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6080BC5E5FFFCA3E3AE696 /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -710,6 +710,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -728,6 +729,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
