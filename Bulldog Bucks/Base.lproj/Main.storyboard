@@ -263,7 +263,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpM-U6-jiw" userLabel="ErrorMessage">
-                                <rect key="frame" x="20" y="147.5" width="281" height="66.5"/>
+                                <rect key="frame" x="20" y="147" width="281" height="66.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Server is not responding
