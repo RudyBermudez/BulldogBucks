@@ -47,6 +47,43 @@ enum ClientError: Error {
  */
 class ZagwebClient {
 	
+    
+    func setupRequest() -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            
+            // Fetch Request
+            Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_WWWLogin", method: .get)
+                .validate()
+                .response() { response in
+                    
+                    if (response.error == nil) {
+                        fulfill(true)
+                    } else {
+                        reject(response.error!)
+                    }
+                }
+                    
+            }
+        }
+
+    
+    func sendLogoutRequest() -> Promise<Bool> {
+        
+        return Promise { fulfill, reject in
+            
+            // Fetch Request
+            Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_Logout", method: .post)
+                .validate()
+                .response() { response in
+                    if (response.error == nil) {
+                        fulfill(true)
+                    } else {
+                        reject(response.error!)
+                    }
+            }
+        }
+    }
+    
     /**
      Authenticates the user to the zagweb service.
      
@@ -71,7 +108,7 @@ class ZagwebClient {
 		return Promise { fulfill, reject in
 			var cookieFound = false
 			let urlString = "https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_ValLogin?sid=\(withStudentID)&PIN=\(withPIN)"
-			Alamofire.request(urlString, method: .post).validate().response(completionHandler: { (response) in
+			Alamofire.request(urlString, method: .post).validate().response(){ (response) in
 				guard let headerFields = response.response?.allHeaderFields as? [String:String], let url = response.request?.url else {
 					reject(ClientError.noHeadersReturned)
 					return
@@ -91,7 +128,7 @@ class ZagwebClient {
                     print("Authentication Successful")
 					fulfill(cookies)
 				}
-			})
+			}
 		}
 	}
 	
@@ -107,7 +144,7 @@ class ZagwebClient {
 	private func downloadHTML() -> Promise<String> {
 		return Promise { fulfill, reject in
 			let url = URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!
-			Alamofire.request(url, method: .post).validate().responseString(completionHandler: { (response) in
+			Alamofire.request(url, method: .post).validate().responseString(){ (response) in
 				switch response.result {
 				case .success(let html):
 					guard let bulldogBucksRemaining = self.parseHTML(html: html) else {
@@ -117,8 +154,7 @@ class ZagwebClient {
 					fulfill(bulldogBucksRemaining)
 				case .failure(let error): reject(error); print("Error in Download HTML")
 				}
-				
-			})
+			}
 			
 		}
 	}
@@ -160,18 +196,32 @@ class ZagwebClient {
      
      - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
-	func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
-		return Promise { fulfill, reject in
-			authenticate(withStudentID: withStudentID, withPIN: withPIN)
-				.then { (_) -> Promise<String> in
-					return self.downloadHTML()
-				}.then { (result) in
-					fulfill(result)
-				}.catch { (error) in
-					reject(error)
-			}
-		}
-	}
+    func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
+        return Promise { fulfill, reject in
+            
+            firstly {
+                self.setupRequest()
+                }
+            .then { _ in
+                self.authenticate(withStudentID: withStudentID, withPIN: withPIN)
+                }
+            .then { (_) -> Promise<String> in
+                return self.downloadHTML()
+                }
+            .then { (result) -> Promise<(Bool, String)> in
+                let logout = self.sendLogoutRequest()
+                let result = Promise(value: result)
+                return when(fulfilled: logout, result)
+                }
+            .then { (results) in
+                fulfill(results.1)
+                }
+            .catch { (error) in
+                reject(error)
+                }
+        }
+    }
+    
 	
 }
 
