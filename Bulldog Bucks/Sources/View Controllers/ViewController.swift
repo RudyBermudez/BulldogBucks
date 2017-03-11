@@ -173,13 +173,13 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         }
 		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
             
-            // Get the result, Strip the "$", and then break it up into dollars and cents
-			let array = result.replacingOccurrences(of: "$", with: "").components(separatedBy: ".")
+            // Get the result and then break it up into dollars and cents
+			let array = result.components(separatedBy: ".")
             
             self.dollarAmountLabel.text = array[0]
             self.centsLabel.text = array[1]
             
-            let currentBalance = Double(result.replacingOccurrences(of: "$", with: ""))!
+            let currentBalance = Double(result)!
             let weeksUntilEndOfSchoolYear = NSDate().weeks(to: self.lastDayOfSemester)
             if weeksUntilEndOfSchoolYear > 0 {
                 let dailyBalance = currentBalance / Double(weeksUntilEndOfSchoolYear)

@@ -16,7 +16,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	@IBOutlet weak var remainingBdbLabel: UILabel!
 	@IBOutlet weak var timeUpdatedLabel: UILabel!
 	@IBOutlet weak var errorMessageLabel: UILabel!
-	@IBOutlet weak var staticTextLabel: UILabel!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
     /// Class Instance of ZagwebClient
@@ -59,7 +58,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         errorMessageLabel.isHidden = !enabled
         remainingBdbLabel.isHidden = enabled
         timeUpdatedLabel.isHidden = enabled
-        staticTextLabel.isHidden = enabled
     }
 	
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
@@ -71,7 +69,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
             self.failedAttempts = 0
 			self.showErrorMessage(false)
-			self.remainingBdbLabel.text = result
+           
+            self.remainingBdbLabel.attributedText = self.formatAmountLabel(withResult: result)
+
             self.activityIndicator.stopAnimating()
 			let date = NSDate()
             self.userDefaults.set(date, forKey: "timeOfLastUpdate")
@@ -100,19 +100,33 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Sets labels `textColor = UIColor.white` if User is using iOS 9 and black if on iOS 10
     func setFontColor() {
         if #available(iOS 9, *) {
-            self.staticTextLabel.textColor = UIColor.white
             self.timeUpdatedLabel.textColor = UIColor.white
             self.errorMessageLabel.textColor = UIColor.white
             self.remainingBdbLabel.textColor = UIColor.white
             self.activityIndicator.color = UIColor.white
         }
         if #available(iOS 10, *) {
-            self.staticTextLabel.textColor = UIColor.black
             self.timeUpdatedLabel.textColor = UIColor.black
             self.errorMessageLabel.textColor = UIColor.black
             self.remainingBdbLabel.textColor = UIColor.black
             self.activityIndicator.color = UIColor.gray
         }
+    }
+    
+    func formatAmountLabel(withResult result: String) -> NSMutableAttributedString {
+        
+        let dollarSignAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 30)]
+        let amountAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 50)]
+        
+        
+        let dollarSignPart = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
+        let amountPart = NSMutableAttributedString(string: result, attributes: amountAttributes)
+        
+        let attributedString = NSMutableAttributedString()
+        attributedString.append(dollarSignPart)
+        attributedString.append(amountPart)
+        
+        return attributedString
     }
     
     /// Updates the `timeUpdatedLabel` with the amount of time that has passed since the last update
@@ -126,10 +140,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Launches the Main App only when user taps error message that shows "Please Open the App to Login"
 	@IBAction func openMainApp() {
-		if !errorMessageLabel.isHidden && errorMessageLabel.text == "Please Open the App to Login" {
-			let url = URL(string: "bdb://")!
-			extensionContext?.open(url, completionHandler: nil)
-		}
+        let url = URL(string: "bdb://")!
+        extensionContext?.open(url, completionHandler: nil)
 	}
 	
 	

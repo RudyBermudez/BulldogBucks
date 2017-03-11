@@ -127,7 +127,7 @@ class ZagwebClient {
      Parses HTML and looks for the first occurrence of a pllabel with a "$". The very first "$" on the page is the user's amount of Bulldog Bucks remaining. Method is called in `downloadHTML()`
      
      - Parameter html: HTML source from https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions as a String
-     - Returns: If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If fails, returns nil
+     - Returns: If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If fails, returns nil
      */
 	private func parseHTML(html: String) -> String? {
 		
@@ -136,7 +136,7 @@ class ZagwebClient {
 				if let text = name.text {
 					if text.contains("$") {
 						// I return immediately because it should always be the first occurrence
-						return text.replacingOccurrences(of: " ", with: "")
+						return text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "$", with: "")
 					}
 				}
 			}
@@ -158,7 +158,7 @@ class ZagwebClient {
         - `ClientError.invalidCredentials` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
         - `ClientError.htmlCouldNotBeParsed` when the downloaded page html could not be parsed. This most likely means that the user is not authenticated.
      
-     - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
+     - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
 	func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
 		return Promise { fulfill, reject in

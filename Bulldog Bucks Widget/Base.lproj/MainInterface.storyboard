@@ -22,41 +22,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Open the App to Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaf-Qy-nSr">
-                                <rect key="frame" x="46.5" y="39" width="227" height="33"/>
+                                <rect key="frame" x="46.5" y="45.5" width="227" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulldog Bucks Remaining:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="acT-KI-fXb">
-                                <rect key="frame" x="26" y="20" width="188.5" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="233" id="KcH-tS-Sob"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x" userLabel="Remaining BulldogBucks Label">
-                                <rect key="frame" x="221.5" y="12" width="72.5" height="40.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72.5" id="bC0-ge-Ahe"/>
-                                    <constraint firstAttribute="height" constant="40.5" id="lP8-Uq-0gU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-9F-b5x" userLabel="Remaining BulldogBucks Label">
+                                <rect key="frame" x="161" y="23.5" width="0.0" height="33"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="0.74553189212328763" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-me-Bn9">
-                                <rect key="frame" x="248" y="22" width="20" height="20"/>
+                                <rect key="frame" x="150" y="30" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaj-of-aAV">
-                                <rect key="frame" x="294" y="90" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated: Tuesday 2:30 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaj-of-aAV">
+                                <rect key="frame" x="84" y="90.5" width="152" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pm-Z5-wLm" userLabel="OpenAppButton">
-                                <rect key="frame" x="145" y="38.5" width="30" height="33"/>
+                                <rect key="frame" x="46.5" y="38.5" width="227" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,27 +54,19 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="rm7-9F-b5x" secondAttribute="trailing" constant="10" id="0w4-TG-9TS"/>
+                            <constraint firstItem="Iaj-of-aAV" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="4oc-jv-l4w"/>
                             <constraint firstItem="7Pm-Z5-wLm" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="5vS-zQ-Ji5"/>
                             <constraint firstItem="7Pm-Z5-wLm" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="7U0-gd-tzs"/>
                             <constraint firstItem="7Pm-Z5-wLm" firstAttribute="width" secondItem="vaf-Qy-nSr" secondAttribute="width" id="Ahj-lA-UtK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Iaj-of-aAV" secondAttribute="bottom" constant="5" id="Bak-sj-tTq"/>
                             <constraint firstItem="vaf-Qy-nSr" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="D4f-YN-6Z2"/>
-                            <constraint firstItem="7Pm-Z5-wLm" firstAttribute="height" secondItem="vaf-Qy-nSr" secondAttribute="height" id="HI7-B1-j50"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Iaj-of-aAV" secondAttribute="bottom" constant="20" id="LDY-sn-cP3"/>
-                            <constraint firstItem="rm7-9F-b5x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="acT-KI-fXb" secondAttribute="trailing" constant="7" id="V1P-LS-YgA"/>
+                            <constraint firstItem="rm7-9F-b5x" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="L6W-Ap-YCz"/>
+                            <constraint firstItem="rm7-9F-b5x" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" constant="-15" id="SdC-Gq-yLY"/>
                             <constraint firstItem="vaf-Qy-nSr" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="Z4Q-Sa-OP6"/>
                             <constraint firstItem="9AT-me-Bn9" firstAttribute="centerX" secondItem="rm7-9F-b5x" secondAttribute="centerX" id="ZAS-uP-hFL"/>
-                            <constraint firstItem="acT-KI-fXb" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="10" id="c5G-HE-giL"/>
-                            <constraint firstItem="acT-KI-fXb" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="20" id="dyQ-Hk-Tf4"/>
                             <constraint firstItem="9AT-me-Bn9" firstAttribute="centerY" secondItem="rm7-9F-b5x" secondAttribute="centerY" id="kgW-7t-U3s"/>
-                            <constraint firstItem="rm7-9F-b5x" firstAttribute="centerY" secondItem="acT-KI-fXb" secondAttribute="centerY" id="lA7-8X-Yei"/>
-                            <constraint firstItem="Iaj-of-aAV" firstAttribute="trailing" secondItem="rm7-9F-b5x" secondAttribute="trailing" id="vNQ-v0-uP3"/>
+                            <constraint firstItem="7Pm-Z5-wLm" firstAttribute="height" secondItem="rm7-9F-b5x" secondAttribute="height" id="sl0-Ei-vgK"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="vaf-Qy-nSr"/>
-                            </mask>
-                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -99,7 +78,6 @@
                         <outlet property="activityIndicator" destination="9AT-me-Bn9" id="luI-db-XPp"/>
                         <outlet property="errorMessageLabel" destination="vaf-Qy-nSr" id="SEE-9G-hlM"/>
                         <outlet property="remainingBdbLabel" destination="rm7-9F-b5x" id="8Aa-Rk-ueR"/>
-                        <outlet property="staticTextLabel" destination="acT-KI-fXb" id="q0Z-d5-KBS"/>
                         <outlet property="timeUpdatedLabel" destination="Iaj-of-aAV" id="hoE-OH-yST"/>
                     </connections>
                 </viewController>

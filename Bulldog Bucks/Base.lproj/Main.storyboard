@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="DINPro-Regular_13937.ttf">
+        <array key="DINPro-Regular.ttf">
             <string>DINPro-Regular</string>
         </array>
         <array key="Lato-Semibold.ttf">
@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjh-0o-PKQ" userLabel="cents">
-                                <rect key="frame" x="191.5" y="121" width="55" height="49"/>
+                                <rect key="frame" x="192" y="121" width="55" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="bMa-LC-98t"/>
                                     <constraint firstAttribute="width" constant="55" id="dVt-Fp-31b"/>
@@ -211,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-DU-bIN">
-                                <rect key="frame" x="94.5" y="121" width="34" height="60"/>
+                                <rect key="frame" x="95" y="121" width="34" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Me7-dI-hob"/>
                                     <constraint firstAttribute="width" constant="34" id="NV2-z7-6IX"/>
@@ -229,7 +229,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="80" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-nT-Fdc" userLabel="DollarAmount">
-                                <rect key="frame" x="128.5" y="111" width="63" height="154"/>
+                                <rect key="frame" x="129" y="111" width="63" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="63" id="B2E-R7-WCh"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="220" id="YhU-RG-cH9"/>
