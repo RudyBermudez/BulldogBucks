@@ -106,7 +106,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
             return
         }
         
-        let webVC = WebViewController()
+        let webVC = storyboard?.instantiateViewController(withIdentifier: WebViewController.storyboardIdentifier) as! WebViewController
         webVC.logoutFunc = { webView in
             webView.dismiss(animated: true, completion: nil)
             let _ = self.client.logout()

@@ -263,7 +263,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpM-U6-jiw" userLabel="ErrorMessage">
-                                <rect key="frame" x="20" y="147" width="281" height="66.5"/>
+                                <rect key="frame" x="20" y="147.5" width="281" height="66.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Server is not responding
@@ -315,8 +315,70 @@ Please try again</string>
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="132.06521739130434"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ckh-Qk-kkL">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="VGh-bR-9Ey" customClass="WebViewController" customModule="Bulldog_Bucks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O76-Xs-8P1"/>
+                        <viewControllerLayoutGuide type="bottom" id="LQI-XJ-Tv0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q4b-GF-po8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYu-zl-beN">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" image="back" id="j6Z-EU-ehW"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="zmQ-gA-9Ka"/>
+                                    <barButtonItem enabled="NO" image="forward" id="BPO-w5-m0d"/>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifb-HN-HZb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Zagweb" id="DmY-aJ-B4c">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="OFP-rQ-3bK"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Zuu-dB-mKu"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umy-Hh-cFk">
+                                <rect key="frame" x="0.0" y="44" width="320" height="392"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fYu-zl-beN" secondAttribute="trailing" id="0wQ-Na-Lb1"/>
+                            <constraint firstAttribute="trailing" secondItem="umy-Hh-cFk" secondAttribute="trailing" id="7Gz-RG-KoT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ifb-HN-HZb" secondAttribute="trailing" id="9pk-1R-caP"/>
+                            <constraint firstItem="Ifb-HN-HZb" firstAttribute="top" secondItem="q4b-GF-po8" secondAttribute="top" id="Bja-8t-35O"/>
+                            <constraint firstItem="Ifb-HN-HZb" firstAttribute="leading" secondItem="q4b-GF-po8" secondAttribute="leading" id="HKz-R5-Kob"/>
+                            <constraint firstItem="fYu-zl-beN" firstAttribute="top" secondItem="umy-Hh-cFk" secondAttribute="bottom" id="Jdf-Lc-Zjy"/>
+                            <constraint firstItem="LQI-XJ-Tv0" firstAttribute="top" secondItem="fYu-zl-beN" secondAttribute="bottom" id="bnI-87-GUb"/>
+                            <constraint firstItem="fYu-zl-beN" firstAttribute="leading" secondItem="q4b-GF-po8" secondAttribute="leading" id="kPr-aT-1TA"/>
+                            <constraint firstItem="umy-Hh-cFk" firstAttribute="leading" secondItem="q4b-GF-po8" secondAttribute="leading" id="nAM-PH-djI"/>
+                            <constraint firstItem="umy-Hh-cFk" firstAttribute="top" secondItem="Ifb-HN-HZb" secondAttribute="bottom" id="xPi-y0-1Hg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBarButton" destination="j6Z-EU-ehW" id="kEd-yU-x9g"/>
+                        <outlet property="closeNavButton" destination="OFP-rQ-3bK" id="mvu-AZ-i2E"/>
+                        <outlet property="forwardBarButton" destination="BPO-w5-m0d" id="Oxq-wk-vKb"/>
+                        <outlet property="refreshNavButton" destination="Zuu-dB-mKu" id="lFM-zj-7jh"/>
+                        <outlet property="webView" destination="umy-Hh-cFk" id="Dtm-0a-E5R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbm-cv-hCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935" y="122.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="back" width="25" height="25"/>
+        <image name="forward" width="25" height="25"/>
         <image name="loginPageBackground" width="2592" height="3872"/>
         <image name="mainPageBackground15pxBlur" width="1382" height="2022"/>
         <image name="pinIcon" width="75" height="75"/>

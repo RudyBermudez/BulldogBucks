@@ -15,46 +15,73 @@ typealias WebViewAction = ((WebViewController) -> Void)
 */
 class WebViewController: UIViewController {
 
+    public static let storyboardIdentifier: String = "webView"
     
     var logoutFunc: WebViewAction?
     
-    var webView = UIWebView()
-    
+	@IBOutlet weak var webView: UIWebView!
+	@IBOutlet weak var backBarButton: UIBarButtonItem!
+	@IBOutlet weak var forwardBarButton: UIBarButtonItem!
+	@IBOutlet weak var closeNavButton: UIBarButtonItem!
+	@IBOutlet weak var refreshNavButton: UIBarButtonItem!
+	
+	
     override func viewWillAppear(_ animated: Bool) {
-        
-        let navigationBarHeight = CGFloat(44 + UIApplication.shared.statusBarFrame.size.height)
-        let frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: navigationBarHeight)
-        
-         // Setup NavBar and NavItem
-        let bar = UINavigationBar(frame: frame)
-        let navItem =  UINavigationItem(title: "Zagweb")
-        
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.closeWebView))
-        navItem.leftBarButtonItem = doneItem
-        bar.items = [navItem]
-        
-        view.addSubview(bar)
-        
-        // Setup UIWebView
-        webView = UIWebView(frame: CGRect(x: 0.0, y: navigationBarHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - navigationBarHeight))
-        view.addSubview(webView)
-
+		closeNavButton.action = #selector(self.closeWebView)
+        refreshNavButton.action = #selector(self.reloadWebPage)
+        backBarButton.action = #selector(self.goBack)
+        forwardBarButton.action = #selector(self.goForward)
+        self.webView.delegate = self
     }
     
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+ 
     
     func loadWebView() {
         let request = URLRequest(url: URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!)
         webView.loadRequest(request)
     }
-
     
+    
+    func reloadWebPage() {
+        webView.reload()
+    }
+   
+    func goBack() {
+        webView.goBack()
+    }
+    
+    func goForward() {
+        webView.goForward()
+    }
     func closeWebView() {
         logoutFunc?(self)
     }
 
+}
+
+extension WebViewController: UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        if webView.canGoBack {
+            backBarButton.isEnabled = true
+        } else {
+            backBarButton.isEnabled = false
+        }
+        
+        if webView.canGoForward {
+            forwardBarButton.isEnabled = true
+        } else {
+            forwardBarButton.isEnabled = false
+        }
+    }
+    
 }
