@@ -21,6 +21,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	@IBOutlet weak var staticMessageLabel: UILabel!
 	@IBOutlet weak var dailyBalanceLabel: UILabel!
 	@IBOutlet weak var fab: KCFloatingActionButton!
+	@IBOutlet weak var errorMessageLabel: UILabel!
     
     
     /// Last Day of the Current of Semester in UNIX time
@@ -30,19 +31,6 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	/// Class Instance of ZagwebClient
 	let client = ZagwebClient()
     
-    /// User's Student ID as a String
-	var studentID: String?
-    
-    /// User's PIN as a String
-	var PIN: String?
-    
-    /**
-     The number of times `ClientError.invalidCredentials` occurs. 
-     
-     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
-     */
-	var failedAttempts = 0
-	
 	
 	// MARK: - UIViewController
 	
@@ -63,10 +51,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		initializeButtonItem()
 	}
 	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-	}
-	
+    
 	// MARK: - LoginViewControllerDelegate
     
 
@@ -116,9 +101,32 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
     func showWebView() {
-        self.present(WebViewController(), animated: true, completion: nil)
+        guard let credentials = Authentication.getCredentials() else {
+            self.logout()
+            return
+        }
+        
+        let webVC = storyboard?.instantiateViewController(withIdentifier: WebViewController.storyboardIdentifier) as! WebViewController
+        webVC.logoutFunc = { webView in
+            webView.dismiss(animated: true, completion: nil)
+            let _ = self.client.logout()
+        }
+        self.present(webVC, animated: true, completion: nil)
+        
+        client.authenticationHelper(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (_) -> Void in
+            DispatchQueue.main.async {
+                webVC.loadWebView()
+            }
+            }.catch { (error) in
+                DispatchQueue.main.async {
+                    webVC.closeWebView()
+                    showAlert(target: self, title: "Error", message: "We had some trouble authenticating while opening the WebView.\nPlease Try Again.")
+                }
+                
+        }
+        
     }
-	
+    
     /// Refresh data if active internet connection is present
 	func refresh() {
 		if isConnectedToNetwork() {
@@ -138,11 +146,11 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         // Check to see if a username is stored in UserDefaults, if it is,
         // Set the value to be nil, set the PIN to be nil if it exists,
         // and finally delete keychain data for the user if it exists
-        Authentication.deleteCredentials()
 		
 		self.dollarSignLabel.isHidden = true
 		self.staticMessageLabel.isHidden = true
         self.dailyBalanceLabel.isHidden = true
+		self.errorMessageLabel.isHidden = true
 		self.dollarAmountLabel.text = ""
 		self.centsLabel.text = ""
         self.dailyBalanceLabel.text = ""
@@ -156,29 +164,44 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 			}
 		}
 		
-		showLoginPage()
+        client.logout().then { (_) -> Void in
+            let logoutSuccess = Authentication.deleteCredentials()
+            if logoutSuccess {
+                self.showLoginPage(animated: true)
+            } else {
+                // This should never happen, but it is good to handle the error just in case.
+                showAlert(target: self, title: "Houston we have a problem!", message: "Logout failed. Please try again.")
+            }
+        }.catch { (error) in
+            showAlert(target: self, title: "Houston we have a problem!", message: "Logout failed. Please try again.")
+        }
+        
+        
+        
 	}
 	
     /// Instantiates and shows `LoginViewController`
-	func showLoginPage() {
+    func showLoginPage(animated: Bool) {
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
 		vc.delegate = self
-		self.show(vc, sender: self)
+        self.present(vc, animated: animated, completion: nil)
 	}
 	
     /// Updates the `dollarAmountLabel` & `centsLabel` with the latest data from Zagweb
 	func updateLabels() {
-        self.studentID = Authentication.loadCredentials()?.studentID
-        self.PIN = Authentication.loadCredentials()?.PIN
-		client.getBulldogBucks(withStudentID: studentID!, withPIN: PIN!).then { (result) -> Void in
+        guard let credentials = Authentication.getCredentials() else {
+            self.logout()
+            return
+        }
+		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
             
-            // Get the result, Strip the "$", and then break it up into dollars and cents
-			let array = result.replacingOccurrences(of: "$", with: "").components(separatedBy: ".")
+            // Get the result and then break it up into dollars and cents
+			let array = result.components(separatedBy: ".")
             
             self.dollarAmountLabel.text = array[0]
             self.centsLabel.text = array[1]
             
-            let currentBalance = Double(result.replacingOccurrences(of: "$", with: ""))!
+            let currentBalance = Double(result)!
             let weeksUntilEndOfSchoolYear = NSDate().weeks(to: self.lastDayOfSemester)
             if weeksUntilEndOfSchoolYear > 0 {
                 let dailyBalance = currentBalance / Double(weeksUntilEndOfSchoolYear)
@@ -186,32 +209,23 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
                 self.dailyBalanceLabel.isHidden = false
             }
 			
-			
+			self.errorMessageLabel.isHidden = true
 			self.dollarSignLabel.isHidden = false
 			self.staticMessageLabel.isHidden = false
             
-            // Reset number of failed attempts to 0
-			self.failedAttempts = 0
 			
 			SwiftSpinner.hide()
             
 			}.catch { (error) in
+                self.errorMessageLabel.isHidden = false
 				if let error = error as? ClientError {
 					switch error {
 					case .invalidCredentials:
-						self.failedAttempts += 1
-						if self.failedAttempts >= 3 {
-							let action = UIAlertAction(title: "Logout", style: .default, handler: { (_) in
-								self.logout()
-							})
-							SwiftSpinner.hide()
-							showAlert(target: self, title: "Too Many Failed Attempts", message: "It is possible that your PIN has changed. Logout and Try Again", actionList: [action])
-						} else if self.failedAttempts > 1 {
-							SwiftSpinner.hide()
-							showAlert(target: self, title: "Error", message: error.domain())
-						} else {
-							self.refresh()
-						}
+                        SwiftSpinner.hide()
+                        let action = UIAlertAction(title: "Logout", style: .default){ (_) in
+                            self.logout()
+                        }
+                        showAlert(target: self, title: "Hold Up!", message: "It looks like you have changed your password. Logout and Try Again", actionList: [action])
 					default:
 						SwiftSpinner.hide()
 						showAlert(target: self, title: "Error", message: error.domain())

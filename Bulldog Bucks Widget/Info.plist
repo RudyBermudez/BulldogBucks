@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.0</string>
+	<string>1.3.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -29,5 +29,11 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DINPro-Regular.ttf</string>
+		<string>Lato-Semibold.ttf</string>
+		<string>Lato-SemiboldItalic.ttf</string>
+	</array>
 </dict>
 </plist>

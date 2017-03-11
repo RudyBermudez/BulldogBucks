@@ -24,5 +24,8 @@ func showAlert(target: UIViewController, title: String, message: String? = nil, 
 	for action in actionList {
 		alert.addAction(action)
 	}
-	target.present(alert, animated: true, completion: nil)
+    // Check to see if the target viewController current is currently presenting a ViewController
+    if target.presentedViewController == nil {
+        target.present(alert, animated: true, completion: nil)
+    }
 }

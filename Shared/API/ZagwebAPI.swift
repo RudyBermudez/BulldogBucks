@@ -33,9 +33,9 @@ enum ClientError: Error {
 		case .invalidCredentials:
 			return "Incorrect Student ID or PIN"
         case .noHeadersReturned:
-            return "No headers were returned. "
+            return "No headers were returned."
         case .htmlCouldNotBeParsed:
-            return "Failed to parse data source"
+            return "Failed to parse data source."
 		}
 	}
 }
@@ -47,6 +47,27 @@ enum ClientError: Error {
  */
 class ZagwebClient {
 	
+    
+    func setupRequest() -> Promise<Void> {
+        return Promise { fulfill, reject in
+            
+            // Fetch Request
+            Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_WWWLogin", method: .get)
+                .validate()
+                .response() { response in
+                    
+                    if (response.error == nil) {
+                        print("Completed Setup Request")
+                        fulfill()
+                    } else {
+                        reject(response.error!)
+                    }
+                }
+                    
+            }
+        }
+
+    
     /**
      Authenticates the user to the zagweb service.
      
@@ -67,11 +88,13 @@ class ZagwebClient {
      - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `[HTTPCookie]`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
      
      */
-	func authenticate(withStudentID: String, withPIN: String) -> Promise<[HTTPCookie]> {
+	func authenticationHelper(withStudentID: String, withPIN: String) -> Promise<Void> {
+        
 		return Promise { fulfill, reject in
+            
 			var cookieFound = false
 			let urlString = "https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_ValLogin?sid=\(withStudentID)&PIN=\(withPIN)"
-			Alamofire.request(urlString, method: .post).validate().response(completionHandler: { (response) in
+			Alamofire.request(urlString, method: .post).validate().response(){ (response) in
 				guard let headerFields = response.response?.allHeaderFields as? [String:String], let url = response.request?.url else {
 					reject(ClientError.noHeadersReturned)
 					return
@@ -79,7 +102,6 @@ class ZagwebClient {
 				let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
 				for cookie in cookies {
 					if cookie.name == "SESSID" && !cookie.value.isEmpty{
-						NSLog("SESSID Cookie Exists")
 						cookieFound = true
 					}
 				}
@@ -89,11 +111,24 @@ class ZagwebClient {
 					reject(ClientError.invalidCredentials)
 				} else {
                     print("Authentication Successful")
-					fulfill(cookies)
+					fulfill()
 				}
-			})
+			}
 		}
 	}
+    
+    func authenticate(withStudentID studentID: String, withPIN PIN: String) -> Promise <Void> {
+        return Promise { fulfill, reject in
+            
+            setupRequest().then { (_) -> Promise<Void> in
+                return self.authenticationHelper(withStudentID: studentID, withPIN: PIN)
+                }.then { (result) in
+                    fulfill()
+                }.catch{ (error) in
+                    reject(error)
+            }
+        }
+    }
 	
     /**
      Downloads the html from https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions for the authenticated user. Then calls `parseHTML()` to parse the HTML and return the amount of Bulldog Bucks remaining as a `String`.
@@ -107,18 +142,18 @@ class ZagwebClient {
 	private func downloadHTML() -> Promise<String> {
 		return Promise { fulfill, reject in
 			let url = URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!
-			Alamofire.request(url, method: .post).validate().responseString(completionHandler: { (response) in
+			Alamofire.request(url, method: .post).validate().responseString(){ (response) in
 				switch response.result {
 				case .success(let html):
 					guard let bulldogBucksRemaining = self.parseHTML(html: html) else {
 						reject(ClientError.htmlCouldNotBeParsed)
 						return
 					}
+                    print("HTML Parsed")
 					fulfill(bulldogBucksRemaining)
 				case .failure(let error): reject(error); print("Error in Download HTML")
 				}
-				
-			})
+			}
 			
 		}
 	}
@@ -127,7 +162,7 @@ class ZagwebClient {
      Parses HTML and looks for the first occurrence of a pllabel with a "$". The very first "$" on the page is the user's amount of Bulldog Bucks remaining. Method is called in `downloadHTML()`
      
      - Parameter html: HTML source from https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions as a String
-     - Returns: If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If fails, returns nil
+     - Returns: If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If fails, returns nil
      */
 	private func parseHTML(html: String) -> String? {
 		
@@ -136,7 +171,7 @@ class ZagwebClient {
 				if let text = name.text {
 					if text.contains("$") {
 						// I return immediately because it should always be the first occurrence
-						return text.replacingOccurrences(of: " ", with: "")
+						return text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "$", with: "")
 					}
 				}
 			}
@@ -144,6 +179,24 @@ class ZagwebClient {
 		return nil
 	}
 	
+    func logout() -> Promise<Void> {
+        
+        return Promise { fulfill, reject in
+            
+            // Fetch Request
+            Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_Logout", method: .post)
+                .validate()
+                .response() { response in
+                    if (response.error == nil) {
+                        print("Logout Complete")
+                        fulfill()
+                    } else {
+                        reject(response.error!)
+                    }
+            }
+        }
+    }
+    
     /**
      Authenticates the user, downloads & parses HTML, and returns the amount of Bulldog Bucks Remaining.
      
@@ -158,20 +211,31 @@ class ZagwebClient {
         - `ClientError.invalidCredentials` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
         - `ClientError.htmlCouldNotBeParsed` when the downloaded page html could not be parsed. This most likely means that the user is not authenticated.
      
-     - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "$235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
+     - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
-	func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
-		return Promise { fulfill, reject in
-			authenticate(withStudentID: withStudentID, withPIN: withPIN)
-				.then { (_) -> Promise<String> in
-					return self.downloadHTML()
-				}.then { (result) in
-					fulfill(result)
-				}.catch { (error) in
-					reject(error)
-			}
-		}
-	}
+    func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
+        return Promise { fulfill, reject in
+            
+            firstly {
+                self.authenticate(withStudentID: withStudentID, withPIN: withPIN)
+                }
+            .then { (_) -> Promise<String> in
+                return self.downloadHTML()
+                }
+            .then { (result) -> Promise<(Void, String)> in
+                let logout = self.logout()
+                let result = Promise(value: result)
+                return when(fulfilled: logout, result)
+                }
+            .then { (results) in
+                fulfill(results.1)
+                }
+            .catch { (error) in
+                reject(error)
+                }
+        }
+    }
+    
 	
 }
 

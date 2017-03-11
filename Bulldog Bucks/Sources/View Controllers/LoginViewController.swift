@@ -23,24 +23,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	
 	// MARK: - Properties
     
-    /**
-     The number of times `ClientError.invalidCredentials` occurs.
-     
-     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect the connection to another url the first time the user connects, for that reason, if there is a saved username and password; the invalidCredentials error will only be shown when there are 2 or more failed attempts.
-     */
-    var failedAttempts = 0
-    
 	var delegate: LoginViewControllerDelegate?
 	
 	lazy var notificationCenter: NotificationCenter = {
 		return NotificationCenter.default
 	}()
-	
-    /// User's Student ID as a String
-	var savedStudentID: String!
-    
-    /// User's PIN as a String. Set in
-	var savedPIN: String!
 	
     /// Class Instance of ZagwebClient
 	let client = ZagwebClient()
@@ -79,9 +66,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 return
             } else {
                 self.loginButton.startLoadingAnimation()
-                self.savedStudentID = userIDTextFieldText
-                self.savedPIN = userPinTextFieldText
-                login()
+                login(studentID: userIDTextFieldText,PIN: userPinTextFieldText)
             }
         } else {
             showAlert(target: self, title: "No Active Connection to Internet")
@@ -94,9 +79,9 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      Checks if there is internet connection, then attempts to authenticate by calling `self.checkCredentials()`
      
      */
-    func login() {
+    func login(studentID: String, PIN:String) {
         if isConnectedToNetwork() {
-            checkCredentials(withStudentID: savedStudentID, withPIN: savedPIN)
+            checkCredentials(withStudentID: studentID, withPIN: PIN)
         } else {
             showAlert(target: self, title: "No Active Connection to Internet")
         }
@@ -166,11 +151,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      */
 	func checkCredentials(withStudentID: String, withPIN: String) {
 		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
-            self.failedAttempts = 0
-            self.savedStudentID = withStudentID
-            self.savedPIN = withPIN
             
-			UserDefaults(suiteName: "group.bdbMeter")!.set(self.savedStudentID, forKey: "studentID")
             let success = Authentication.addCredentials(studentID: withStudentID, PIN: withPIN)
             if success {
                 self.loginButton.startFinishAnimation {
@@ -185,20 +166,15 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 			if let error = error as? ClientError {
                 switch error {
                 case .invalidCredentials:
-                    self.failedAttempts += 1
-                    if self.failedAttempts > 1 {
-                        self.loginButton.returnToOriginalState()
-                        showAlert(target: self, title: error.domain())
-                    } else {
-                        self.login()
-                    }
+                    self.loginButton.returnToOriginalState()
+                    showAlert(target: self, title: error.domain())
                 default:
                     self.loginButton.returnToOriginalState()
                     showAlert(target: self, title: error.domain())
                 }
 				
 			}
-            Authentication.deleteCredentials()
+            let _ = Authentication.deleteCredentials()
 		}
 	}
 	

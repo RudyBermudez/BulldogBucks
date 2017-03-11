@@ -8,48 +8,80 @@
 
 import UIKit
 
+typealias WebViewAction = ((WebViewController) -> Void)
+
 /**
  WebViewController is a ViewController than contains a `UINavigationBar` and a `UIWebView` that loads `https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions`
 */
 class WebViewController: UIViewController {
 
+    public static let storyboardIdentifier: String = "webView"
     
+    var logoutFunc: WebViewAction?
+    
+	@IBOutlet weak var webView: UIWebView!
+	@IBOutlet weak var backBarButton: UIBarButtonItem!
+	@IBOutlet weak var forwardBarButton: UIBarButtonItem!
+	@IBOutlet weak var closeNavButton: UIBarButtonItem!
+	@IBOutlet weak var refreshNavButton: UIBarButtonItem!
+	
+	
     override func viewWillAppear(_ animated: Bool) {
-        
-        let navigationBarHeight = CGFloat(44 + UIApplication.shared.statusBarFrame.size.height)
-        let frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: navigationBarHeight)
-        
-         // Setup NavBar and NavItem
-        let bar = UINavigationBar(frame: frame)
-        let navItem =  UINavigationItem(title: "Zagweb")
-        
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.closeWebView))
-        navItem.leftBarButtonItem = doneItem
-        bar.items = [navItem]
-        
-        view.addSubview(bar)
-        
-        // Setup UIWebView
-        let myWebView:UIWebView = UIWebView(frame: CGRect(x: 0.0, y: navigationBarHeight, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - navigationBarHeight))
-        let request = URLRequest(url: URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!)
-        myWebView.loadRequest(request)
-        view.addSubview(myWebView)
-
+		closeNavButton.action = #selector(self.closeWebView)
+        refreshNavButton.action = #selector(self.reloadWebPage)
+        backBarButton.action = #selector(self.goBack)
+        forwardBarButton.action = #selector(self.goForward)
+        self.webView.delegate = self
     }
     
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
+    
+    func loadWebView() {
+        let request = URLRequest(url: URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!)
+        webView.loadRequest(request)
     }
     
+    
+    func reloadWebPage() {
+        webView.reload()
+    }
+   
+    func goBack() {
+        webView.goBack()
+    }
+    
+    func goForward() {
+        webView.goForward()
+    }
     func closeWebView() {
-        self.dismiss(animated: true, completion: nil)
+        logoutFunc?(self)
     }
 
+}
+
+extension WebViewController: UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        if webView.canGoBack {
+            backBarButton.isEnabled = true
+        } else {
+            backBarButton.isEnabled = false
+        }
+        
+        if webView.canGoForward {
+            forwardBarButton.isEnabled = true
+        } else {
+            forwardBarButton.isEnabled = false
+        }
+    }
+    
 }
