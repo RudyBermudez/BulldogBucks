@@ -55,6 +55,12 @@ class ZagwebClient {
             Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_WWWLogin", method: .get)
                 .validate()
                 .response() { response in
+                    guard let headerFields = response.response?.allHeaderFields as? [String:String], let url = response.request?.url else {
+                        reject(ClientError.noHeadersReturned)
+                        return
+                    }
+                    let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+                    HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: nil)
                     
                     if (response.error == nil) {
                         print("Completed Setup Request")
@@ -99,8 +105,8 @@ class ZagwebClient {
 					reject(ClientError.noHeadersReturned)
 					return
 				}
-                print(headerFields)
 				let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+                HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: nil)
 				for cookie in cookies {
 					if cookie.name == "SESSID" && !cookie.value.isEmpty{
 						cookieFound = true
@@ -144,6 +150,13 @@ class ZagwebClient {
 		return Promise { fulfill, reject in
 			let url = URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!
 			Alamofire.request(url, method: .post).validate().responseString(){ (response) in
+                guard let headerFields = response.response?.allHeaderFields as? [String:String], let url = response.request?.url else {
+                    reject(ClientError.noHeadersReturned)
+                    return
+                }
+                let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+                HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: nil)
+                
 				switch response.result {
 				case .success(let html):
 					guard let bulldogBucksRemaining = self.parseHTML(html: html) else {
@@ -188,6 +201,13 @@ class ZagwebClient {
             Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_Logout", method: .post)
                 .validate()
                 .response() { response in
+                    guard let headerFields = response.response?.allHeaderFields as? [String:String], let url = response.request?.url else {
+                        reject(ClientError.noHeadersReturned)
+                        return
+                    }
+                    let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+                    HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: nil)
+                    
                     if (response.error == nil) {
                         print("Logout Complete")
                         fulfill()

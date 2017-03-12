@@ -43,6 +43,7 @@
 		479448041D9A4409007847BE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479448031D9A4409007847BE /* TodayViewController.swift */; };
 		479448071D9A4409007847BE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479448051D9A4409007847BE /* MainInterface.storyboard */; };
 		4794480B1D9A4409007847BE /* Bulldog Bucks - Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4797116C1E75CC940060DC97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
 		47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC3AB61DA09D29001C3FD2 /* ViewController.swift */; };
 		47D10B401DE11B4B0041064C /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
@@ -753,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				476E51061E74FDD5005CD02C /* ExtensionDelegate.swift in Sources */,
+				4797116C1E75CC940060DC97 /* Extensions.swift in Sources */,
 				476E511B1E751B01005CD02C /* ZagwebAPI.swift in Sources */,
 				476E51041E74FDD5005CD02C /* InterfaceController.swift in Sources */,
 				476E51081E74FDD5005CD02C /* ComplicationController.swift in Sources */,
