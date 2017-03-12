@@ -21,6 +21,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Class Instance of ZagwebClient
     let client = ZagwebClient()
     
+    let keychain = BDBKeychain.phoneKeychain
+    
 	
     let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
 
@@ -31,7 +33,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         preferredContentSize = CGSize(width: self.view.bounds.width, height: 100.0)
         setFontColor()
-        if Authentication.isLoggedIn() {
+        if keychain.isLoggedIn() {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
         }
 		update()
@@ -57,7 +59,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
     func updateRemainderTextLabel() {
-        guard let credentials = Authentication.getCredentials() else {
+        guard let credentials = keychain.getCredentials() else {
             self.showErrorMessage(true)
             return
         }
@@ -141,7 +143,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Essentially the main function of the ViewController.
 	func update() {
-		if Authentication.isLoggedIn() {
+		if keychain.isLoggedIn() {
             if isConnectedToNetwork() {
                 activityIndicator.startAnimating()
                 updateRemainderTextLabel()
@@ -156,7 +158,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
-        if Authentication.isLoggedIn() {
+        if keychain.isLoggedIn() {
             self.updateTimeOfLastUpdate()
         }
 		update()

@@ -31,6 +31,11 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	/// Class Instance of ZagwebClient
 	let client = ZagwebClient()
     
+    let keychain = BDBKeychain.phoneKeychain
+    
+    lazy var notificationCenter: NotificationCenter = {
+        return NotificationCenter.default
+    }()
 	
 	// MARK: - UIViewController
 	
@@ -39,7 +44,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		if Authentication.isLoggedIn() {
+		if keychain.isLoggedIn() {
 			refresh()
         } else {
             logout()
@@ -59,6 +64,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	func didLoginSuccessfully() {
 		DispatchQueue.main.async {
 			self.dismiss(animated: true, completion: nil)
+            self.notificationCenter.post(name: Notification.Name(UserLoggedInNotificaiton), object: nil)
 		}
 	}
 	
@@ -101,7 +107,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
     func showWebView() {
-        guard let credentials = Authentication.getCredentials() else {
+        guard let credentials = keychain.getCredentials() else {
             self.logout()
             return
         }
@@ -113,7 +119,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         }
         self.present(webVC, animated: true, completion: nil)
         
-        client.authenticationHelper(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (_) -> Void in
+        client.authenticate(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (_) -> Void in
             DispatchQueue.main.async {
                 webVC.loadWebView()
             }
@@ -165,9 +171,13 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 		}
 		
         client.logout().then { (_) -> Void in
-            let logoutSuccess = Authentication.deleteCredentials()
+            let logoutSuccess = self.keychain.deleteCredentials()
             if logoutSuccess {
-                self.showLoginPage(animated: true)
+                DispatchQueue.main.async {
+                    self.showLoginPage(animated: true)
+                    self.notificationCenter.post(name: Notification.Name(UserLoggedOutNotification), object: nil)
+                }
+                
             } else {
                 // This should never happen, but it is good to handle the error just in case.
                 showAlert(target: self, title: "Houston we have a problem!", message: "Logout failed. Please try again.")
@@ -189,7 +199,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
     /// Updates the `dollarAmountLabel` & `centsLabel` with the latest data from Zagweb
 	func updateLabels() {
-        guard let credentials = Authentication.getCredentials() else {
+        guard let credentials = keychain.getCredentials() else {
             self.logout()
             return
         }

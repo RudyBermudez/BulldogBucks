@@ -22,6 +22,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
 	
 	// MARK: - Properties
+    let keychain = BDBKeychain.phoneKeychain
     
 	var delegate: LoginViewControllerDelegate?
 	
@@ -152,7 +153,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	func checkCredentials(withStudentID: String, withPIN: String) {
 		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
             
-            let success = Authentication.addCredentials(studentID: withStudentID, PIN: withPIN)
+            let success = self.keychain.addCredentials(studentID: withStudentID, PIN: withPIN)
             if success {
                 self.loginButton.startFinishAnimation {
                     self.delegate?.didLoginSuccessfully()
@@ -174,7 +175,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 }
 				
 			}
-            let _ = Authentication.deleteCredentials()
+            let _ = self.keychain.deleteCredentials()
 		}
 	}
 	

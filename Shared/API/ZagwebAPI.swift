@@ -48,7 +48,7 @@ enum ClientError: Error {
 class ZagwebClient {
 	
     
-    func setupRequest() -> Promise<Void> {
+    private func setupRequest() -> Promise<Void> {
         return Promise { fulfill, reject in
             
             // Fetch Request
@@ -88,17 +88,18 @@ class ZagwebClient {
      - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `[HTTPCookie]`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
      
      */
-	func authenticationHelper(withStudentID: String, withPIN: String) -> Promise<Void> {
+	private func authenticationHelper(withStudentID: String, withPIN: String) -> Promise<Void> {
         
 		return Promise { fulfill, reject in
             
 			var cookieFound = false
 			let urlString = "https://zagweb.gonzaga.edu/pls/gonz/twbkwbis.P_ValLogin?sid=\(withStudentID)&PIN=\(withPIN)"
-			Alamofire.request(urlString, method: .post).validate().response(){ (response) in
+			Alamofire.request(urlString, method: .post).validate().response() { (response) in
 				guard let headerFields = response.response?.allHeaderFields as? [String:String], let url = response.request?.url else {
 					reject(ClientError.noHeadersReturned)
 					return
 				}
+                print(headerFields)
 				let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
 				for cookie in cookies {
 					if cookie.name == "SESSID" && !cookie.value.isEmpty{
@@ -179,7 +180,7 @@ class ZagwebClient {
 		return nil
 	}
 	
-    func logout() -> Promise<Void> {
+    public func logout() -> Promise<Void> {
         
         return Promise { fulfill, reject in
             

@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>Alamofire-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Alamofire-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,12 +19,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Kanna.xcscheme</key>
+		<key>Kanna-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>KeychainAccess.xcscheme</key>
+		<key>Kanna-watchOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KeychainAccess-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KeychainAccess-watchOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Bulldog Buck Balance Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Bulldog Buck Balance.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,7 +59,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PromiseKit.xcscheme</key>
+		<key>PromiseKit-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PromiseKit-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,27 +77,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3B3CCE36A56C1F24618DE17B8B9706D7</key>
+		<key>0CCDF2DF0D8B0256ABB1AC444A7FDDDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4D10E4FF5A483B852B47CCA0B994E340</key>
+		<key>173E4104E4F2CE5ECC896A154802C6D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83841BD29F32F840A0662C377C1D9A9C</key>
+		<key>2511DF280125F2908F875613E6876909</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>4D8199C20C1BE5F5BCDBC8F8CB4BF089</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8905DB6521F8FDC34752B69DEE3FDEB7</key>
+		<key>5A878DD99216B954D4147D6A3E1AE491</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78DE093D2802C5E9E13CB516F108A220</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7D8ADCF2084F11EE1B1C95B612D9A58A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>82C2A688F4E6949BB99839CE9A9AB688</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A49ED4C88E6803C1E136D164DA0E1AEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +127,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB880EEAE9146E26CE9B2F5F94AA6BE0</key>
+		<key>B831FE5A6C518C66357AE5A422B5D33D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB3C7F8B0FF73728D1D01B74E754C6F0</key>
+		<key>DA30F5EE4A3D09EA571BCEF3787571BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F95D0093C7B3D3ABEC4A632A9DFE6298</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE955014E0980285B8A9F8D54C3B0234</key>
 		<dict>
 			<key>primary</key>
 			<true/>

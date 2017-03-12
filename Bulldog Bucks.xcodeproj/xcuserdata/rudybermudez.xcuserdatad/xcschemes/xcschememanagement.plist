@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bulldog Buck Balance (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>Bulldog Buck Balance.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Bulldog Bucks - Widget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -20,27 +30,32 @@
 		<key>47234DD31DE212D200C25C8F</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
+		</dict>
+		<key>476E50F11E74FDD5005CD02C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 		<key>479447C81D99F2C1007847BE</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>479447DC1D99F2C2007847BE</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>479447E71D99F2C2007847BE</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>479447FD1D9A4409007847BE</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 	</dict>
 </dict>

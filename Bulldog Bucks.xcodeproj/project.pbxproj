@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E778B660D1F2650EA417E28 /* Pods_Bulldog_Bucks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB75D62564F427A3F2B0441A /* Pods_Bulldog_Bucks.framework */; };
+		0DEB502425CAFFDE634B3C22 /* Pods_Bulldog_Buck_Balance_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F40F414EF9E62852FD71C43 /* Pods_Bulldog_Buck_Balance_Extension.framework */; };
+		106DB19224626209DEA4C2C9 /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CAFCADD9AFDA53F23F5B5A /* Pods_Bulldog_Bucks___Widget.framework */; };
 		47234DA41DE19ABF00C25C8F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47234DA31DE19ABF00C25C8F /* CustomAlert.swift */; };
 		472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */; };
 		472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */; };
@@ -15,8 +16,18 @@
 		472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */; };
 		472F331A1DE3D5E5001D4B4C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
 		472F331D1DE3DBAB001D4B4C /* DINPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472F331C1DE3DBAB001D4B4C /* DINPro-Regular.ttf */; };
-		4761DF0C1E47D9C8004755EB /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* Authentication.swift */; };
-		4761DF0D1E47D9C8004755EB /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* Authentication.swift */; };
+		4761DF0C1E47D9C8004755EB /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
+		4761DF0D1E47D9C8004755EB /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
+		476E50F61E74FDD5005CD02C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476E50F41E74FDD5005CD02C /* Interface.storyboard */; };
+		476E50F81E74FDD5005CD02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476E50F71E74FDD5005CD02C /* Assets.xcassets */; };
+		476E50FF1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		476E51041E74FDD5005CD02C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E51031E74FDD5005CD02C /* InterfaceController.swift */; };
+		476E51061E74FDD5005CD02C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */; };
+		476E51081E74FDD5005CD02C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E51071E74FDD5005CD02C /* ComplicationController.swift */; };
+		476E510A1E74FDD5005CD02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476E51091E74FDD5005CD02C /* Assets.xcassets */; };
+		476E510E1E74FDD5005CD02C /* Bulldog Buck Balance.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */; };
+		476E51191E750A63005CD02C /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
+		476E511B1E751B01005CD02C /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		477383E71E737062002053F0 /* DINPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472F331C1DE3DBAB001D4B4C /* DINPro-Regular.ttf */; };
 		477BE1681DE618B300F39E46 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE1671DE618B300F39E46 /* NetworkReachability.swift */; };
 		477BE1691DE618B300F39E46 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE1671DE618B300F39E46 /* NetworkReachability.swift */; };
@@ -36,10 +47,25 @@
 		47D10B401DE11B4B0041064C /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47DAF0771DE5166E00499185 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
-		9125B9807C42C89E13B0E01F /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2CAB0151D39FA642693880 /* Pods_Bulldog_Bucks___Widget.framework */; };
+		9DD10C4FADD22D745135B55F /* Pods_Bulldog_Bucks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959AB96D91F2D29E011B9582 /* Pods_Bulldog_Bucks.framework */; };
+		F5DBA00B9A4D83F0D08830E8 /* Pods_Bulldog_Buck_Balance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4560E44659E91E4401C3C606 /* Pods_Bulldog_Buck_Balance.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		476E51001E74FDD5005CD02C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479447C11D99F2C1007847BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 476E50FD1E74FDD5005CD02C;
+			remoteInfo = "Bulldog Buck Balance Extension";
+		};
+		476E510C1E74FDD5005CD02C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479447C11D99F2C1007847BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 476E50F11E74FDD5005CD02C;
+			remoteInfo = "Bulldog Buck Balance";
+		};
 		479448091D9A4409007847BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 479447C11D99F2C1007847BE /* Project object */;
@@ -56,8 +82,20 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
+				476E510E1E74FDD5005CD02C /* Bulldog Buck Balance.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		476E51141E74FDD5005CD02C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				476E50FF1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4794480F1D9A4409007847BE /* Embed App Extensions */ = {
@@ -74,8 +112,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		024BD3168428D87B52A5E1AB /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
-		0B8FBBC77312C52F06AD47EF /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
+		4560E44659E91E4401C3C606 /* Pods_Bulldog_Buck_Balance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Buck_Balance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BCAB5AE4B339C5B0E25ACA /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
 		47234DA31DE19ABF00C25C8F /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
 		472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
@@ -83,8 +121,19 @@
 		472F33111DE2BC6A001D4B4C /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
 		472F33191DE3D5E5001D4B4C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		472F331C1DE3DBAB001D4B4C /* DINPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Regular.ttf"; sourceTree = "<group>"; };
-		4761DF0B1E47D9C8004755EB /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDBKeychain.swift; sourceTree = "<group>"; };
 		4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZagwebAPI.swift; sourceTree = "<group>"; };
+		476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulldog Buck Balance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		476E50F51E74FDD5005CD02C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		476E50F71E74FDD5005CD02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		476E50F91E74FDD5005CD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bulldog Buck Balance Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		476E51031E74FDD5005CD02C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		476E51071E74FDD5005CD02C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		476E51091E74FDD5005CD02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		476E510B1E74FDD5005CD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		476E511A1E750AFF005CD02C /* Bulldog Buck Balance Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Buck Balance Extension.entitlements"; sourceTree = "<group>"; };
 		477BE1671DE618B300F39E46 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
 		478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
@@ -105,18 +154,32 @@
 		4794B01B1DE5126C00F71077 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		47BC3AB61DA09D29001C3FD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
-		CB75D62564F427A3F2B0441A /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB8FEB92AF750989FA8205DE /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		DC2CAB0151D39FA642693880 /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA6080BC5E5FFFCA3E3AE696 /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
+		4F40F414EF9E62852FD71C43 /* Pods_Bulldog_Buck_Balance_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Buck_Balance_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		629616AC6B5667910919A048 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		65E6949883F01EE0066D448D /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
+		6A74392C9E0E7FA7CD591F60 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		959AB96D91F2D29E011B9582 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F84E5A93D8B8327F35F2F94 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension.release.xcconfig"; sourceTree = "<group>"; };
+		C8FEC397C2188390D6CD994B /* Pods-Bulldog Buck Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance.release.xcconfig"; sourceTree = "<group>"; };
+		D1CAFCADD9AFDA53F23F5B5A /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C1C8059BA0A7D705970B70 /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
+		F4B4FCBF02C139B336973CB1 /* Pods-Bulldog Buck Balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		476E50FB1E74FDD5005CD02C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEB502425CAFFDE634B3C22 /* Pods_Bulldog_Buck_Balance_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		479447C61D99F2C1007847BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E778B660D1F2650EA417E28 /* Pods_Bulldog_Bucks.framework in Frameworks */,
+				9DD10C4FADD22D745135B55F /* Pods_Bulldog_Bucks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,13 +188,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				479448011D9A4409007847BE /* NotificationCenter.framework in Frameworks */,
-				9125B9807C42C89E13B0E01F /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */,
+				106DB19224626209DEA4C2C9 /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816571289F1651D68B0238FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DBA00B9A4D83F0D08830E8 /* Pods_Bulldog_Buck_Balance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10CE779D9951235C223FEA97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4B4FCBF02C139B336973CB1 /* Pods-Bulldog Buck Balance.debug.xcconfig */,
+				C8FEC397C2188390D6CD994B /* Pods-Bulldog Buck Balance.release.xcconfig */,
+				6A74392C9E0E7FA7CD591F60 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */,
+				9F84E5A93D8B8327F35F2F94 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */,
+				46BCAB5AE4B339C5B0E25ACA /* Pods-Bulldog Bucks.debug.xcconfig */,
+				65E6949883F01EE0066D448D /* Pods-Bulldog Bucks.release.xcconfig */,
+				629616AC6B5667910919A048 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
+				F0C1C8059BA0A7D705970B70 /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		472F32F91DE2B6FA001D4B4C /* Custom Login Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +245,33 @@
 				47234DA31DE19ABF00C25C8F /* CustomAlert.swift */,
 				472F33191DE3D5E5001D4B4C /* Extensions.swift */,
 				477BE1671DE618B300F39E46 /* NetworkReachability.swift */,
-				4761DF0B1E47D9C8004755EB /* Authentication.swift */,
+				4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */,
 			);
 			name = API;
 			path = Shared/API;
+			sourceTree = "<group>";
+		};
+		476E50F31E74FDD5005CD02C /* Bulldog Buck Balance */ = {
+			isa = PBXGroup;
+			children = (
+				476E50F41E74FDD5005CD02C /* Interface.storyboard */,
+				476E50F71E74FDD5005CD02C /* Assets.xcassets */,
+				476E50F91E74FDD5005CD02C /* Info.plist */,
+			);
+			path = "Bulldog Buck Balance";
+			sourceTree = "<group>";
+		};
+		476E51021E74FDD5005CD02C /* Bulldog Buck Balance Extension */ = {
+			isa = PBXGroup;
+			children = (
+				476E511A1E750AFF005CD02C /* Bulldog Buck Balance Extension.entitlements */,
+				476E51031E74FDD5005CD02C /* InterfaceController.swift */,
+				476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */,
+				476E51071E74FDD5005CD02C /* ComplicationController.swift */,
+				476E51091E74FDD5005CD02C /* Assets.xcassets */,
+				476E510B1E74FDD5005CD02C /* Info.plist */,
+			);
+			path = "Bulldog Buck Balance Extension";
 			sourceTree = "<group>";
 		};
 		478497EB1DA06BA800E8ADFA /* Shared */ = {
@@ -201,9 +310,11 @@
 				478497EB1DA06BA800E8ADFA /* Shared */,
 				479447CB1D99F2C1007847BE /* Bulldog Bucks */,
 				479448021D9A4409007847BE /* Bulldog Bucks Widget */,
+				476E50F31E74FDD5005CD02C /* Bulldog Buck Balance */,
+				476E51021E74FDD5005CD02C /* Bulldog Buck Balance Extension */,
 				479447FF1D9A4409007847BE /* Frameworks */,
 				479447CA1D99F2C1007847BE /* Products */,
-				C34FB1927CFB861DF4AD0973 /* Pods */,
+				10CE779D9951235C223FEA97 /* Pods */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -213,6 +324,8 @@
 			children = (
 				479447C91D99F2C1007847BE /* Bulldog Bucks.app */,
 				479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */,
+				476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */,
+				476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,8 +347,10 @@
 			isa = PBXGroup;
 			children = (
 				479448001D9A4409007847BE /* NotificationCenter.framework */,
-				CB75D62564F427A3F2B0441A /* Pods_Bulldog_Bucks.framework */,
-				DC2CAB0151D39FA642693880 /* Pods_Bulldog_Bucks___Widget.framework */,
+				4560E44659E91E4401C3C606 /* Pods_Bulldog_Buck_Balance.framework */,
+				4F40F414EF9E62852FD71C43 /* Pods_Bulldog_Buck_Balance_Extension.framework */,
+				959AB96D91F2D29E011B9582 /* Pods_Bulldog_Bucks.framework */,
+				D1CAFCADD9AFDA53F23F5B5A /* Pods_Bulldog_Bucks___Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,37 +393,67 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		C34FB1927CFB861DF4AD0973 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FA6080BC5E5FFFCA3E3AE696 /* Pods-Bulldog Bucks.debug.xcconfig */,
-				024BD3168428D87B52A5E1AB /* Pods-Bulldog Bucks.release.xcconfig */,
-				DB8FEB92AF750989FA8205DE /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
-				0B8FBBC77312C52F06AD47EF /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		476E50F11E74FDD5005CD02C /* Bulldog Buck Balance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 476E51151E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance" */;
+			buildPhases = (
+				68ED82B9607D392874030253 /* [CP] Check Pods Manifest.lock */,
+				476E50F01E74FDD5005CD02C /* Resources */,
+				476E51141E74FDD5005CD02C /* Embed App Extensions */,
+				816571289F1651D68B0238FA /* Frameworks */,
+				BC9CAF8F7A59BA2F5C73AE57 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				476E51011E74FDD5005CD02C /* PBXTargetDependency */,
+			);
+			name = "Bulldog Buck Balance";
+			productName = "Bulldog Buck Balance";
+			productReference = 476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		476E50FD1E74FDD5005CD02C /* Bulldog Buck Balance Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 476E51131E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance Extension" */;
+			buildPhases = (
+				C93DD87AAE07F77E3DFE6C92 /* [CP] Check Pods Manifest.lock */,
+				476E50FA1E74FDD5005CD02C /* Sources */,
+				476E50FB1E74FDD5005CD02C /* Frameworks */,
+				476E50FC1E74FDD5005CD02C /* Resources */,
+				C7586027935CAE84FAD18842 /* [CP] Embed Pods Frameworks */,
+				3D4F0FDD02A18EAB7A03EAAE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bulldog Buck Balance Extension";
+			productName = "Bulldog Buck Balance Extension";
+			productReference = 476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		479447C81D99F2C1007847BE /* Bulldog Bucks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 479447F11D99F2C2007847BE /* Build configuration list for PBXNativeTarget "Bulldog Bucks" */;
 			buildPhases = (
-				39DD3A62F84382177BFCE5EB /* [CP] Check Pods Manifest.lock */,
+				F9863C3650E649E12E6DD226 /* [CP] Check Pods Manifest.lock */,
 				479447C51D99F2C1007847BE /* Sources */,
 				479447C61D99F2C1007847BE /* Frameworks */,
 				479447C71D99F2C1007847BE /* Resources */,
 				4794480F1D9A4409007847BE /* Embed App Extensions */,
 				47234DF81DE212D200C25C8F /* Embed Watch Content */,
-				E408C6E5A0EB9BA392E1D0EC /* [CP] Embed Pods Frameworks */,
-				77420D979D9F10F5540B6A54 /* [CP] Copy Pods Resources */,
+				423743B060B078851816AC5F /* [CP] Embed Pods Frameworks */,
+				8755464B080B9C6CD54D069C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4794480A1D9A4409007847BE /* PBXTargetDependency */,
+				476E510D1E74FDD5005CD02C /* PBXTargetDependency */,
 			);
 			name = "Bulldog Bucks";
 			productName = "Bulldog Bucks";
@@ -319,11 +464,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4794480C1D9A4409007847BE /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Widget" */;
 			buildPhases = (
-				7AD0B2F5E9CF9BA896AD86D3 /* [CP] Check Pods Manifest.lock */,
+				469076F5E0C3120E74270D77 /* [CP] Check Pods Manifest.lock */,
 				479447FA1D9A4409007847BE /* Sources */,
 				479447FB1D9A4409007847BE /* Frameworks */,
 				479447FC1D9A4409007847BE /* Resources */,
-				06CABA3CC36DB66C735BC7B7 /* [CP] Copy Pods Resources */,
+				B78923E0ECBADAD471BEFFA7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,9 +485,24 @@
 		479447C11D99F2C1007847BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
+					476E50F11E74FDD5005CD02C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NZ8449Y9W6;
+						ProvisioningStyle = Automatic;
+					};
+					476E50FD1E74FDD5005CD02C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NZ8449Y9W6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 					479447C81D99F2C1007847BE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = NZ8449Y9W6;
@@ -386,11 +546,30 @@
 			targets = (
 				479447C81D99F2C1007847BE /* Bulldog Bucks */,
 				479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */,
+				476E50F11E74FDD5005CD02C /* Bulldog Buck Balance */,
+				476E50FD1E74FDD5005CD02C /* Bulldog Buck Balance Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		476E50F01E74FDD5005CD02C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				476E50F81E74FDD5005CD02C /* Assets.xcassets in Resources */,
+				476E50F61E74FDD5005CD02C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		476E50FC1E74FDD5005CD02C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				476E510A1E74FDD5005CD02C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		479447C71D99F2C1007847BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,7 +595,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06CABA3CC36DB66C735BC7B7 /* [CP] Copy Pods Resources */ = {
+		3D4F0FDD02A18EAB7A03EAAE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,55 +607,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		39DD3A62F84382177BFCE5EB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		77420D979D9F10F5540B6A54 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AD0B2F5E9CF9BA896AD86D3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E408C6E5A0EB9BA392E1D0EC /* [CP] Embed Pods Frameworks */ = {
+		423743B060B078851816AC5F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,9 +625,141 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		469076F5E0C3120E74270D77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		68ED82B9607D392874030253 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8755464B080B9C6CD54D069C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B78923E0ECBADAD471BEFFA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC9CAF8F7A59BA2F5C73AE57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7586027935CAE84FAD18842 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C93DD87AAE07F77E3DFE6C92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9863C3650E649E12E6DD226 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		476E50FA1E74FDD5005CD02C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				476E51061E74FDD5005CD02C /* ExtensionDelegate.swift in Sources */,
+				476E511B1E751B01005CD02C /* ZagwebAPI.swift in Sources */,
+				476E51041E74FDD5005CD02C /* InterfaceController.swift in Sources */,
+				476E51081E74FDD5005CD02C /* ComplicationController.swift in Sources */,
+				476E51191E750A63005CD02C /* BDBKeychain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		479447C51D99F2C1007847BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,7 +768,7 @@
 				47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */,
 				472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */,
 				472F33141DE2BC6A001D4B4C /* SpinerLayer.swift in Sources */,
-				4761DF0C1E47D9C8004755EB /* Authentication.swift in Sources */,
+				4761DF0C1E47D9C8004755EB /* BDBKeychain.swift in Sources */,
 				47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */,
 				479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */,
 				472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */,
@@ -521,7 +787,7 @@
 				47D10B401DE11B4B0041064C /* ZagwebAPI.swift in Sources */,
 				479448041D9A4409007847BE /* TodayViewController.swift in Sources */,
 				47DAF0771DE5166E00499185 /* Extensions.swift in Sources */,
-				4761DF0D1E47D9C8004755EB /* Authentication.swift in Sources */,
+				4761DF0D1E47D9C8004755EB /* BDBKeychain.swift in Sources */,
 				477BE1691DE618B300F39E46 /* NetworkReachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +795,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		476E51011E74FDD5005CD02C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 476E50FD1E74FDD5005CD02C /* Bulldog Buck Balance Extension */;
+			targetProxy = 476E51001E74FDD5005CD02C /* PBXContainerItemProxy */;
+		};
+		476E510D1E74FDD5005CD02C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 476E50F11E74FDD5005CD02C /* Bulldog Buck Balance */;
+			targetProxy = 476E510C1E74FDD5005CD02C /* PBXContainerItemProxy */;
+		};
 		4794480A1D9A4409007847BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */;
@@ -537,6 +813,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		476E50F41E74FDD5005CD02C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				476E50F51E74FDD5005CD02C /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		479447D01D99F2C1007847BE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -564,6 +848,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		476E510F1E74FDD5005CD02C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4B4FCBF02C139B336973CB1 /* Pods-Bulldog Buck Balance.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				IBSC_MODULE = Bulldog_Buck_Balance_Extension;
+				INFOPLIST_FILE = "Bulldog Buck Balance/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		476E51101E74FDD5005CD02C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8FEC397C2188390D6CD994B /* Pods-Bulldog Buck Balance.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				IBSC_MODULE = Bulldog_Buck_Balance_Extension;
+				INFOPLIST_FILE = "Bulldog Buck Balance/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		476E51111E74FDD5005CD02C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A74392C9E0E7FA7CD591F60 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Buck Balance Extension/Bulldog Buck Balance Extension.entitlements";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog Buck Balance Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		476E51121E74FDD5005CD02C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F84E5A93D8B8327F35F2F94 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Buck Balance Extension/Bulldog Buck Balance Extension.entitlements";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog Buck Balance Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 		479447EF1D99F2C2007847BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -605,7 +965,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -650,7 +1010,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -661,14 +1021,14 @@
 		};
 		479447F21D99F2C2007847BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA6080BC5E5FFFCA3E3AE696 /* Pods-Bulldog Bucks.debug.xcconfig */;
+			baseConfigurationReference = 46BCAB5AE4B339C5B0E25ACA /* Pods-Bulldog Bucks.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks.entitlements";
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
 				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -679,14 +1039,14 @@
 		};
 		479447F31D99F2C2007847BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 024BD3168428D87B52A5E1AB /* Pods-Bulldog Bucks.release.xcconfig */;
+			baseConfigurationReference = 65E6949883F01EE0066D448D /* Pods-Bulldog Bucks.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks.entitlements";
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
 				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -697,14 +1057,14 @@
 		};
 		4794480D1D9A4409007847BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB8FEB92AF750989FA8205DE /* Pods-Bulldog Bucks - Widget.debug.xcconfig */;
+			baseConfigurationReference = 629616AC6B5667910919A048 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks Widget/Bulldog Bucks Widget.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
 				INFOPLIST_FILE = "Bulldog Bucks Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -718,14 +1078,14 @@
 		};
 		4794480E1D9A4409007847BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B8FBBC77312C52F06AD47EF /* Pods-Bulldog Bucks - Widget.release.xcconfig */;
+			baseConfigurationReference = F0C1C8059BA0A7D705970B70 /* Pods-Bulldog Bucks - Widget.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks Widget/Bulldog Bucks Widget.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
 				INFOPLIST_FILE = "Bulldog Bucks Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -738,6 +1098,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		476E51131E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				476E51111E74FDD5005CD02C /* Debug */,
+				476E51121E74FDD5005CD02C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		476E51151E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				476E510F1E74FDD5005CD02C /* Debug */,
+				476E51101E74FDD5005CD02C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		479447C41D99F2C1007847BE /* Build configuration list for PBXProject "Bulldog Bucks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
