@@ -36,9 +36,9 @@ extension NSDate {
 		let intervalInMinutes = round(intervalInSeconds / 60.0)
 		
 		if intervalInMinutes >= 0 && intervalInMinutes <= 1 {
-			if intervalInSeconds >= 0 && intervalInSeconds < 10 {
+			if intervalInSeconds >= 0 && intervalInSeconds < 5 {
 				return "just now"
-			} else if intervalInSeconds >= 10 && intervalInSeconds < 60 {
+			} else if intervalInSeconds >= 5 && intervalInSeconds < 60 {
 				return "\(Int(intervalInSeconds)) seconds ago"
 			} else {
 				return "1 minute ago"
@@ -77,6 +77,10 @@ extension NSDate {
     
     func weeks(to date: Date) -> Int {
        return days(to: date)/7
+    }
+    
+    func minutes(fromDate date: NSDate) -> Int {
+        return Calendar.current.dateComponents([.minute], from: date as Date, to: self as Date).minute!
     }
     
 }

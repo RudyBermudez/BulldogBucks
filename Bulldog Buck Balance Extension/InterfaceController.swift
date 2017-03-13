@@ -17,6 +17,12 @@ class InterfaceController: WKInterfaceController {
 	@IBOutlet var errorLabel: WKInterfaceLabel!
 	@IBOutlet var footerLabel: WKInterfaceLabel!
     @IBOutlet var loadingGroup: WKInterfaceGroup!
+	@IBOutlet var detailGroup: WKInterfaceGroup!
+	@IBOutlet var errorGroup: WKInterfaceGroup!
+	
+	@IBAction func reloadButton() {
+		updateDisplay()
+	}
 	
 	let keychain = BDBKeychain.watchKeychain
     let client = ZagwebClient()
@@ -27,16 +33,29 @@ class InterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
 		
-		
-		
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        // Start a timer that updates the time since last update
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
-        updateDisplay()
-
+        
+        // Check to see if there is a balance stored in memory, if it cannot be found, update the display with new data
+        guard let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate, let lastBalance = userDefaults.string(forKey: "lastBalance") else {
+            updateDisplay()
+            return
+        }
+        
+        // Check to see if it has been 60 minutes from the last update,
+        if NSDate().minutes(fromDate: timeOfLastUpdate) > 60 {
+            // If it has been, then update
+            updateDisplay()
+        } else {
+            // If not, update the label with the last balance
+            amountLabel.setText("$\(lastBalance)")
+        }
     }
     
     override func didDeactivate() {
@@ -46,37 +65,36 @@ class InterfaceController: WKInterfaceController {
     
     func updateDisplay() {
         DispatchQueue.main.async {
+            self.errorGroup.setHidden(true)
+            self.detailGroup.setHidden(true)
             self.loadingGroup.setHidden(false)
             if let credentials = self.keychain.getCredentials() {
                 
                 self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
-                    self.loadingGroup.setHidden(true)
-                    self.errorLabel.setHidden(true)
+    
+                    
                     self.amountLabel.setText("$\(balance)")
-                    self.amountLabel.setHidden(false)
                     let date = NSDate()
+                    self.userDefaults.set(balance, forKey: "lastBalance")
                     self.userDefaults.set(date, forKey: "timeOfLastUpdate")
                     self.footerLabel.setText("Updated: \(date.timeAgoInWords)")
-                    self.headerLabel.setHidden(false)
-                    self.footerLabel.setHidden(false)
+                    self.loadingGroup.setHidden(true)
+                    self.detailGroup.setHidden(false)
                     
                     }.catch(execute: { (_) in
                         self.showError(msg: "Trouble Getting Data")
                     })
                 
             } else {
-                self.loadingGroup.setHidden(true)
                 self.showError()
-                
             }
         }
     }
     
     func showError(msg: String = "Open App to Update") {
-        amountLabel.setHidden(true)
-        headerLabel.setHidden(true)
-        footerLabel.setHidden(true)
-        errorLabel.setHidden(false)
+        self.loadingGroup.setHidden(true)
+        self.detailGroup.setHidden(true)
+        self.errorGroup.setHidden(false)
         errorLabel.setText(msg)
     }
     
