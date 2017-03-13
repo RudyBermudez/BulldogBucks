@@ -154,7 +154,6 @@
 		479448061D9A4409007847BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		479448081D9A4409007847BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks.entitlements"; sourceTree = "<group>"; };
-		4794B01B1DE5126C00F71077 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		479C4D0E1E76826F005DAC22 /* Bulldog Bucks - Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks - Watch Extension.entitlements"; sourceTree = "<group>"; };
 		47BC3AB61DA09D29001C3FD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
@@ -320,7 +319,6 @@
 		479447C01D99F2C1007847BE = {
 			isa = PBXGroup;
 			children = (
-				4794B01B1DE5126C00F71077 /* gitignore */,
 				4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */,
 				478497EB1DA06BA800E8ADFA /* Shared */,
 				479447CB1D99F2C1007847BE /* Bulldog Bucks */,
