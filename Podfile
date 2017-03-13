@@ -15,7 +15,7 @@
 
  end
 
-target 'Bulldog Buck Balance' do
+target 'Bulldog Bucks - Watch' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   platform :watchos, '3.0'
@@ -27,7 +27,7 @@ target 'Bulldog Buck Balance' do
 
 end
 
-target 'Bulldog Buck Balance Extension' do
+target 'Bulldog Bucks - Watch Extension' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   platform :watchos, '3.0'

@@ -1,6 +1,0 @@
-framework module Pods_Bulldog_Buck_Balance {
-  umbrella header "Pods-Bulldog Buck Balance-umbrella.h"
-
-  export *
-  module * { export * }
-}

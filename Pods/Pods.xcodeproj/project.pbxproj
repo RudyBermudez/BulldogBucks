@@ -7,37 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01031AFAC86AAF3805F82462F5D03933 /* Pods-Bulldog Buck Balance-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9A32623246C95C30EF53D25ED0021 /* Pods-Bulldog Buck Balance-dummy.m */; };
 		032CD4569361986C9A3F5AE810E3B664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
 		036A80FBFD07E2D89996515B4297601C /* Kanna.h in Headers */ = {isa = PBXBuildFile; fileRef = 668FA6EABB66668B30DA7AD38A6DA46B /* Kanna.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03D07E2BF08D9F1D2DD35F601B870D03 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7E10F28C9BAFA7E058CBC293AD19E /* MultipartFormData.swift */; };
 		0595F8820EBE7C729A464A49E0348034 /* KeychainAccess-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 732B525F48C27F1757E888F2032143C3 /* KeychainAccess-watchOS-dummy.m */; };
+		05D1AEB0EDF0330267B2B6257789F1A6 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A2869244A0EF99A09B0849726B883 /* when.swift */; };
 		05D5C1B99E1A82B1602CE778B24F822B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
-		06A4A03465474C1A5010B2C9C6240C65 /* Pods-Bulldog Buck Balance Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0CBF2A962235E555733A86BB90954D /* Pods-Bulldog Buck Balance Extension-dummy.m */; };
 		06E74605750CCD28617BFDB5AB766528 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0B9986E788148307925953014E374 /* Response.swift */; };
 		07DE6EE0792E6EBC979A0C1DF7E587BF /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF950C87219852DC1B0AB553B5292303 /* race.swift */; };
 		08BF56F2B8324E2E804B2467EAAC356B /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEA063215E9E92E1CE373BF7FB2998 /* TaskDelegate.swift */; };
 		099297A0628BAC20F1F9F7C7E2D1552B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1750D8231D6766EDE06BF8D7FD0D2 /* Notifications.swift */; };
+		09A7D51C7E5D0B3FD7BFA78D6777579A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
 		0CB83F29D9D9EDEECB7D10AF9278D37E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7594C6D38288E178C1184441184492C1 /* UIKit.framework */; };
 		0D8735125AAD7E4797ECDDFD583CE1FC /* AAA-CocoaPods-Hack.h in Headers */ = {isa = PBXBuildFile; fileRef = 165C87380D7393E0E3A1A24A18E4CA37 /* AAA-CocoaPods-Hack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1060C018264B55B214B5C548C89E35DD /* SwiftSpinner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D44920DEDD2D780FB71D34F2256BF88 /* SwiftSpinner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10CEBF517626BC801B754C713EA48570 /* UIViewController+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A739E098C850E0E5FEB8F4E8FCCD708 /* UIViewController+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		134BFE9FF3D0299F1AE2F5BCA35A27C1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585904883BB827F745A7AEC63EDCD2 /* Error.swift */; };
 		140455824D22327B3FDB6BE5135B3038 /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EADC9E27EB51D05C42E1BE37D1EE4 /* NSTask+AnyPromise.m */; };
-		142C30AD91628E1BED5F9A9EB87D40EB /* Pods-Bulldog Bucks - Widget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B08B5667D20698D74558118AF2CC91 /* Pods-Bulldog Bucks - Widget-dummy.m */; };
+		142C30AD91628E1BED5F9A9EB87D40EB /* Pods-Bulldog Bucks - Widget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E66AFF8F2E918146B83D94191057 /* Pods-Bulldog Bucks - Widget-dummy.m */; };
 		158206526A0A246ED84C0E200B3795A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
-		15BB2B1902D93EB90CBDB2DD2EC7E9F9 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BA40048FAE9F2F73D5A1A5C66916 /* hang.m */; };
 		17BFC6477276AB6C5AAD0F6035429CC4 /* Kanna-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADCCAD3A1347EA5DC522CDB3095AF96 /* Kanna-watchOS-dummy.m */; };
-		17C955AB871424F31EE254163DE4525B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
 		18794A707880E1423D9F615DA4C9C940 /* Promise+AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEEBE5FA9B07C76DC20E4701E4E206 /* Promise+AnyPromise.swift */; };
-		19B1E41763DE558441F5961A4F6212FC /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6F745CBBA2BE44CBC91BB9EEFF7E /* Promise.swift */; };
-		1A949603B9364A88B945A999B663DE5D /* Process+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346412A7EBDBA20902376AA5AF4B8968 /* Process+Promise.swift */; };
 		1ABFAA464B83B215FE45D1133AD5C305 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
 		1C07A3BD3D48293C03CF496B47A3D966 /* KCFABWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97FD1F12E5CAE34AC60D04A3EB97B4 /* KCFABWindow.swift */; };
 		1C48326BEF717CBC24CA3A445E9A250B /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A32580B7F5C32709A859A37EDF4AD /* URLDataPromise.swift */; };
 		1D4A875CD6971AB9764EE801357E0F05 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAB57C4381BADFA2C14D1D7677891 /* DispatchQueue+Promise.swift */; };
+		1FBF7B1D90B6FE35DB9AEDB370830947 /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65281F699FDF8B0AE11B1063D2EF89DF /* wrap.swift */; };
 		1FD137B9C8DB27E8B1758711A725BEB5 /* Alamofire-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 685437BF0BE04A14ABE1C26ADF436819 /* Alamofire-watchOS-dummy.m */; };
 		1FD435AC2536D52727AD5DAFDFAC32A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
 		240C86D86FA18B59CEB4889E93083018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
+		24208155C6C9F1953F1B23D463C44005 /* AAA-CocoaPods-Hack.h in Headers */ = {isa = PBXBuildFile; fileRef = 165C87380D7393E0E3A1A24A18E4CA37 /* AAA-CocoaPods-Hack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2473226E93D5755365DD2CF578365273 /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D6C2DECC366E44242D01131EE70E4 /* Kanna.swift */; };
 		264AD62A8D32E5F912731C8741EA8017 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
 		26A890304C5793BF8F1F16F290C22CB1 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3169496ED4488CB6D44773C93BC674 /* Timeline.swift */; };
@@ -47,98 +46,102 @@
 		28E1381EE6C540560ED3C3EB3EEFB602 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A2869244A0EF99A09B0849726B883 /* when.swift */; };
 		29563E581C50753801C2BD34435DB608 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD136ABB67ED89851D370ACA6B9B94B /* DispatchQueue+Alamofire.swift */; };
 		2966026EE26B981BCD1E840E11144557 /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFABDB2505845B531FDFBA34CFAFB5D /* GlobalState.m */; };
+		2B7A4C05BBE9B301F6C2CE9235B5C28A /* PromiseKit-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A35EECF8C9B9977D4D0FFA5604A5C7 /* PromiseKit-watchOS-dummy.m */; };
 		2CE0939239CE7E003EABC740D3894CED /* Alamofire-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C8E3260A7F8038C2FAEAB8D3CA22C0 /* Alamofire-iOS-dummy.m */; };
 		2D37A91A1DAC12E6F904D49987058F78 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD151523BB1480B13D96EE0B4EFEF2F /* dispatch_promise.m */; };
+		2ECD2E2547A5CAE71B49062C0FC64AC0 /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A32580B7F5C32709A859A37EDF4AD /* URLDataPromise.swift */; };
 		2EFBE1D459A7BD743E1C963892241E8D /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EE8EFDD9F4A6C45651AE2329B17903 /* CSS.swift */; };
+		2F9D820B0443B533A97E82F331AE8C1A /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F1D89E58EBAD14E244D5D1A1DC9996 /* when.m */; };
 		30E3A932E6C98BEF3CFBB612F0EF745C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE5DBE91366CFC634A7A1BC6587DE2 /* Validation.swift */; };
 		30FC1FB7E05ADF46E91977CD1A1DAC50 /* PMKQuartzCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B22604780A21B918DF1F401B1CA8E0A7 /* PMKQuartzCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		343982E7166122162C0A57FF60E1824F /* PromiseKit-watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D3F5C69D056CC4AC040273D28529AB /* PromiseKit-watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3535FB23DCBD9044C866EED6CD91EC7A /* Promise+AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEEBE5FA9B07C76DC20E4701E4E206 /* Promise+AnyPromise.swift */; };
+		34512782E83E8A032D0D067636F0EDA8 /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50E240AE83AC996FF569FFD267DBFBF /* NSNotificationCenter+Promise.swift */; };
 		35E8CA67DEC919A6152AE88CFBADC41E /* KCFloatingActionButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF9C8E73C0003E014949C8AFADE8D908 /* KCFloatingActionButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35EC1FD9592E685E4701ABED767E30F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
+		36AC03708886DDC48FFF0C33763BD9C0 /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C239164C0E78D855116B1FE1E3A380 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36C408C92502B794686FBD84DD82ACFD /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBD81ABE1B117C7C9C326F489C05E6 /* NSURLSession+Promise.swift */; };
-		397096790430B4B9B42276DD7FB41521 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAB57C4381BADFA2C14D1D7677891 /* DispatchQueue+Promise.swift */; };
-		3B3E134182FD12662F4B41DEF4B0907A /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A32580B7F5C32709A859A37EDF4AD /* URLDataPromise.swift */; };
+		385009FADE0849BCF100BEA23932EC8C /* join.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9FCF445A7F23299EB506BD9367258 /* join.swift */; };
 		3B7C8E887444F98D4D92A274838BD921 /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA514F3927A95EFEF365F0A7A46B8BE /* NSNotificationCenter+AnyPromise.m */; };
 		3B7DE09246792F8F2E6EF8CA884E4408 /* KeychainAccess-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 579017529C6D2993BE0F89FE5FCF136B /* KeychainAccess-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C049DD110DE86B477B31E96D86F57DB /* KCFABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D13156333DA9E5788BBA191416AD7A /* KCFABViewController.swift */; };
 		3D3ADB67474B92FE2BD310BA81B76465 /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675CBA11D01E6585D600BDEE1359874 /* libxmlHTMLNode.swift */; };
-		3E0014A5334DC17D86349455A50ABA59 /* join.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9FCF445A7F23299EB506BD9367258 /* join.swift */; };
 		4057E3847560E56A7B243BDDA79A1448 /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0437C3C30FCC1423D4A1CD92E575F4B4 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		406B6E8B40CB22A5A9B6C33D6CD0C398 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A913D1E208033F5EF1AD3A6E0A3AE0B /* State.swift */; };
 		4081AD0173085B597680758BC93CDFFB /* afterlife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69E3DD0ECBCC20FAC808FCEFA69239 /* afterlife.swift */; };
-		4098AD2BCFB7F7BE69395EB8652041EB /* Pods-Bulldog Buck Balance Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96F38F18E5542D876CFA9990818CC187 /* Pods-Bulldog Buck Balance Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40DE1BD040CA863BF37B2F40534B8A76 /* PMKUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7A4B176148683A89531B44397166D8 /* PMKUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41399A1E3D3BB00E5C3796A136800BB2 /* Alamofire-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF54D83AE01269D45EAE147B080F95B3 /* Alamofire-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		416227002AE6444117180580C2E9C5E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
+		41E4054A8C1FEC99D6B92E6D24A9FACF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
 		47413251D665BDF06931B43B2FA883E2 /* Kanna-watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B474CF1BF0E41F9786B0BCAB4ED129C8 /* Kanna-watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47C89FA79B9B61747990BE9001CF9AFC /* PMKAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F07A814198CCC6392D43718C27E1A5E /* PMKAlertController.swift */; };
-		4A8C893D9A3AB0695BC1E1CF513BE8CF /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFABDB2505845B531FDFBA34CFAFB5D /* GlobalState.m */; };
+		48DC8443BBDFA21A17934757EC7694D8 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD151523BB1480B13D96EE0B4EFEF2F /* dispatch_promise.m */; };
 		4AD9400617A3C3E3E9FB8FAE8FDEF6EE /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3169496ED4488CB6D44773C93BC674 /* Timeline.swift */; };
 		4C8FF0FAFFBC0BB1AD72C30DBD06C17B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091648CBB699FCFD2C64E508F9A36152 /* SessionManager.swift */; };
 		4CA5531E21B8076D12E326E501DF7891 /* UIViewController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C810784976AA2E822B4E02721A84BC5 /* UIViewController+Promise.swift */; };
-		4E53C71FAC335501E22CC153FA6CF151 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF277FEB3655B4E5D278A41623E639B /* after.m */; };
-		4EEEAC74EE9FFD0532945C5FB47DE224 /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AD8D7C4ABD6139B4CDBC52AF42579 /* NSObject+Promise.swift */; };
 		4F211C953D923D5FD30F7BEE88F92CE4 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E5926BB1414CC2BBA69D6CC5054AE /* Alamofire.swift */; };
-		52274E74BD227878B06DEB777549DB53 /* PromiseKit-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A35EECF8C9B9977D4D0FFA5604A5C7 /* PromiseKit-watchOS-dummy.m */; };
 		526F229A0CF6B198D30E13F59412EF36 /* CALayer+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63B86B982891F2E7F68CF14852ECA3 /* CALayer+AnyPromise.m */; };
-		546D81D2258CE99E9C741A4A56869198 /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C239164C0E78D855116B1FE1E3A380 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52E02D9AFF9B29B604C7454DB5A60EBB /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0437C3C30FCC1423D4A1CD92E575F4B4 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		555B0E86991BE8FEFCB0292F10437A22 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A67B1010AF9436EF31F11BB2D2F2A59 /* Result.swift */; };
+		5629213EB6FA21919343F46724D2A476 /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBD81ABE1B117C7C9C326F489C05E6 /* NSURLSession+Promise.swift */; };
 		5819C72B6A933289591AF5E380AA981E /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB82E42002CF8358A5A7882980FAC5F /* ServerTrustPolicy.swift */; };
 		5991E162C47AFE360E7D5AE3A8EEBF89 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AEA063215E9E92E1CE373BF7FB2998 /* TaskDelegate.swift */; };
-		5CE598BDDA8DD035049BA3FF7DF5473B /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65281F699FDF8B0AE11B1063D2EF89DF /* wrap.swift */; };
 		5DF116EA39A8EB315EA65160D6BB9DF0 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3EDD20A48654B42A2A1229C30BA89 /* SessionDelegate.swift */; };
+		5F9D4D0B8FCE3C7F09F245D13970DE15 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48AA24A1B0AB02238B0E8E4BF3952 /* Zalgo.swift */; };
 		610017AA401B43AB241D006B9C3D708C /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F87202DFC3D9450ABF534C388C236 /* AFError.swift */; };
-		643D15CAC99696D8BF28F42BBB67597E /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF950C87219852DC1B0AB553B5292303 /* race.swift */; };
+		643948BDEB9AC8DB33DD3B002177AF90 /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BFABDB2505845B531FDFBA34CFAFB5D /* GlobalState.m */; };
+		64D863BCCDCCBC85B16CBA5049FD05DC /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA3B15B2C8604DBF690DA1CF5893F7 /* AnyPromise.swift */; };
 		655B22C3C0C3C3F5AF19018976BA52FF /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57F87202DFC3D9450ABF534C388C236 /* AFError.swift */; };
 		663D3FEC91D38CF59AE2707944CB22CB /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091648CBB699FCFD2C64E508F9A36152 /* SessionManager.swift */; };
-		66815B9489E31C5DCE20844F297929DB /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBD81ABE1B117C7C9C326F489C05E6 /* NSURLSession+Promise.swift */; };
-		66C287201D04DAACFF1688FEFEE50168 /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50E240AE83AC996FF569FFD267DBFBF /* NSNotificationCenter+Promise.swift */; };
+		66BAFC380DB10D01D2EE861948D02342 /* Process+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346412A7EBDBA20902376AA5AF4B8968 /* Process+Promise.swift */; };
 		675FFE02C3971E418785629F8D2CEAF9 /* PromiseKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 935A095E307B56B7245E83A18274A3D1 /* PromiseKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		689300A8B53213F8C613EEC67222AB95 /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = A710E3F032DE95384128919CB4C92BEB /* join.m */; };
-		6934EC691D96D8B9FC86E732D6B42489 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931871176E987E32DDCF8C587B1890F /* after.swift */; };
+		6932F5721D0028241B7B810F1290E13D /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B472D7DCCEEE2B940FEB4D7B6C3C0B /* AnyPromise.m */; };
+		69C87A9255FF2C402C7F4650D9D8D974 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC0D4713EE13B7B48DE353254ED93D /* Promise+Properties.swift */; };
 		6A37DB55DEC5540FEA003571E3BB9824 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7E10F28C9BAFA7E058CBC293AD19E /* MultipartFormData.swift */; };
-		6C82131F1E8F159EF0CF085F2DC3B04C /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48AA24A1B0AB02238B0E8E4BF3952 /* Zalgo.swift */; };
 		6E0323E208FD0D9183A84B5293E62824 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E47268CA1C6D0CD0747CE029803CCA /* Foundation.framework */; };
 		6EB868B78206A970600441F26D817A1F /* libxmlHTMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675CBA11D01E6585D600BDEE1359874 /* libxmlHTMLNode.swift */; };
-		7012A42BB7E38FC6F1585A276E228A0E /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = AF0E3C31424A64BD2F53BBCD910CA0E9 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		703932EF779A74C0FAE64785346A0A3E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4E5926BB1414CC2BBA69D6CC5054AE /* Alamofire.swift */; };
 		70649DF87C2ECD38CEDF24179304326A /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50E240AE83AC996FF569FFD267DBFBF /* NSNotificationCenter+Promise.swift */; };
-		71BE8531C133594302E9BD9670FBBD68 /* AAA-CocoaPods-Hack.h in Headers */ = {isa = PBXBuildFile; fileRef = 165C87380D7393E0E3A1A24A18E4CA37 /* AAA-CocoaPods-Hack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70CA931710F0DA2080014FA4CF2C7ED3 /* Promise+AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBEEBE5FA9B07C76DC20E4701E4E206 /* Promise+AnyPromise.swift */; };
+		719FBBFD39FAA5F853D9747E5756BC16 /* Pods-Bulldog Bucks - Watch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E276D522580A7CBF4A70CF804F928AC /* Pods-Bulldog Bucks - Watch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73B15E5CE13F0261DDA153242D3354B8 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF277FEB3655B4E5D278A41623E639B /* after.m */; };
 		788C4D189E5D838B93CD6A0E6A6DE5A6 /* UIViewController+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7934875D5D697F97F0C7932FD233DFBC /* UIViewController+AnyPromise.m */; };
+		78D8F88708FE76663F036E720EAA064D /* Pods-Bulldog Bucks - Watch Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 101B47EFADD786A54AD5404236B30E71 /* Pods-Bulldog Bucks - Watch Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A64AE157C59F9FFB600D419234D0B2E /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AD8D7C4ABD6139B4CDBC52AF42579 /* NSObject+Promise.swift */; };
 		7AEC4D4357DACF46689436014E0F1CC2 /* KCFloatingActionButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A870D226B80915899A0AE4504755D9B /* KCFloatingActionButton-dummy.m */; };
-		7B594CC5BAFA36D5584295652DBA772F /* Pods-Bulldog Buck Balance-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B668AFBF406F4633952C9176B079F05F /* Pods-Bulldog Buck Balance-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CA4E671538199F688F268CDAF360ADA /* NSTask+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7DADA4565FC19B59ACD117CDCFA868 /* NSTask+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D7A15C112C8E4A0C187A475A79C935D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1750D8231D6766EDE06BF8D7FD0D2 /* Notifications.swift */; };
 		7FA3873EFD6607719939B02B560BFCF6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA6D6C5C4722891686F68AFAACB2B7C /* Request.swift */; };
-		803F46C39AD04F775CB72E5594B2A2EA /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA514F3927A95EFEF365F0A7A46B8BE /* NSNotificationCenter+AnyPromise.m */; };
 		807DB6BE25F9713B8A8DFF39F41FD47E /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = AF0E3C31424A64BD2F53BBCD910CA0E9 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84947F24FDFE2B54FFF8AD8D8057F478 /* KeychainAccess-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9536EBC491D070D1F0E10B694C24D8E8 /* KeychainAccess-iOS-dummy.m */; };
 		84EE205B5A4773F7FFDA7415BE0B7CDA /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FD1DF392C2D49500C6E2A8AC3B49C /* libxmlParserOption.swift */; };
-		89167B029F633C55BF2653FEC936762C /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0437C3C30FCC1423D4A1CD92E575F4B4 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8513FC7E0F807A067B1D4C10FC2BE397 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF277FEB3655B4E5D278A41623E639B /* after.m */; };
 		8D28F2DA49F4FE76218ACFADF490E9E2 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6F745CBBA2BE44CBC91BB9EEFF7E /* Promise.swift */; };
 		8FA936C50C1CD7B4EC196B167BA04B61 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A67B1010AF9436EF31F11BB2D2F2A59 /* Result.swift */; };
+		8FB199BC4BFFD5FBC8EFA3D494636792 /* Pods-Bulldog Bucks - Watch Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15247B2EA7DDC7F4E3690ADC493D1ACD /* Pods-Bulldog Bucks - Watch Extension-dummy.m */; };
 		8FD7D6616022C01888557B8A0506FC97 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766705FCBB7C272F85802944C5EFE980 /* NetworkReachabilityManager.swift */; };
 		90E821B8DB5C248AA44F08F68264487E /* Kanna-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB752C7A1322F9C1567A097FCB285EB5 /* Kanna-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91F102CBBD09F2CD7D6F95DB50DEE49A /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA3B15B2C8604DBF690DA1CF5893F7 /* AnyPromise.swift */; };
+		94B3A704B12919C1C38682EBBB426E62 /* PromiseKit-watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D3F5C69D056CC4AC040273D28529AB /* PromiseKit-watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94C27247739449C1E14518CF80CAEC15 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931871176E987E32DDCF8C587B1890F /* after.swift */; };
-		94D540DE5DE8C99DFFB18039CC5C2054 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A913D1E208033F5EF1AD3A6E0A3AE0B /* State.swift */; };
 		9690EE5CCC86EF0848A7B969E88A8408 /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B472D7DCCEEE2B940FEB4D7B6C3C0B /* AnyPromise.m */; };
+		97604BD2AAB6FDD4CCF9298E4E0E250C /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E8CA57DE96E199AD57C62EAF207181 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97736132F8C0171245CB755E17E56995 /* UIView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 68807CBAD2EF912D5554FC30CD21B19C /* UIView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98461E03B65ED94ADDBFB58FE8CE76C7 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF950C87219852DC1B0AB553B5292303 /* race.swift */; };
 		994F0EFFD0779FB3499BC907F5F2FDA8 /* Kanna-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0200574BF31350BA2B8C09EA0537771E /* Kanna-iOS-dummy.m */; };
+		9A38B0400E7EA26BBBBEE75F4576A23B /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EADC9E27EB51D05C42E1BE37D1EE4 /* NSTask+AnyPromise.m */; };
 		9A925F435552D97196973D3B14953090 /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EE8B43EFA1043E2C2C488BAD3A048 /* libxmlHTMLDocument.swift */; };
 		9B5E2EC0AB5F40EF26E311A9605A7985 /* libxmlParserOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507FD1DF392C2D49500C6E2A8AC3B49C /* libxmlParserOption.swift */; };
+		9D5A4A0D9CB849680817468A488256A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
+		A0B96701AD9ECAB4C6FDB3B28A76BA1E /* NSURLSession+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 968D7D657BBDF36968FAE43B6D435B57 /* NSURLSession+AnyPromise.m */; };
 		A0F154A348C0B3923D37341D322BE5C1 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC0D4713EE13B7B48DE353254ED93D /* Promise+Properties.swift */; };
-		A1120F6689DD690EC51E1D18AD4BC3CD /* Pods-Bulldog Bucks-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EF7694D9B78E6D270FB9C6006E71C78 /* Pods-Bulldog Bucks-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1120F6689DD690EC51E1D18AD4BC3CD /* Pods-Bulldog Bucks-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74C9DA0D365F5051013BC585E290A01A /* Pods-Bulldog Bucks-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1BA28434ABC4D98872C9064A24AA18B /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE5DBE91366CFC634A7A1BC6587DE2 /* Validation.swift */; };
-		A2D27964BD4C02342234C41057383755 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
+		A3E973ABECE03A54BCC7E5ACAE9B7459 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931871176E987E32DDCF8C587B1890F /* after.swift */; };
 		A43341A061B40B5386766296024CC11F /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AD8D7C4ABD6139B4CDBC52AF42579 /* NSObject+Promise.swift */; };
-		A532F9236593DA5E7C1C676C2393FC8A /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = A710E3F032DE95384128919CB4C92BEB /* join.m */; };
-		A5AB41C9F1F1A42AB23CD183836477B5 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD151523BB1480B13D96EE0B4EFEF2F /* dispatch_promise.m */; };
 		A5DC9428BE3DB10BD754AFC90F9D2A18 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585904883BB827F745A7AEC63EDCD2 /* Error.swift */; };
 		A65A1D331B4BFE8724130617D6D37FAA /* Kanna.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D6C2DECC366E44242D01131EE70E4 /* Kanna.swift */; };
 		A9F865046BCD50D82F21FC0CBDC46077 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D433F59F62A7BBB2CA65A6B35BB86 /* ParameterEncoding.swift */; };
-		ABC272D13BB727ED417A763238F2F4AD /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E8CA57DE96E199AD57C62EAF207181 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE1D477FF0F7D3C0E60036619B1E4F79 /* CALayer+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 843EFF553D7D17BB7D19569465CC4862 /* CALayer+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE2A241E2F4EBA4B7A5E25B7F4525701 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6F745CBBA2BE44CBC91BB9EEFF7E /* Promise.swift */; };
 		AF0D78B6C155660BC9AC45C7AD0C062C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A913D1E208033F5EF1AD3A6E0A3AE0B /* State.swift */; };
 		B068EE9DA7C493E5652BA4887207BA01 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3EDD20A48654B42A2A1229C30BA89 /* SessionDelegate.swift */; };
 		B07438C2081AF7961A3A64B7E8794E0F /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F1D89E58EBAD14E244D5D1A1DC9996 /* when.m */; };
@@ -147,42 +150,39 @@
 		B3E5E90321771F7968D4C72F2A994ADD /* NSTask+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7DADA4565FC19B59ACD117CDCFA868 /* NSTask+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B68EB16133854CF4C5D0E91848BC2B8C /* NSURLSession+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A89485CDA8EF89B8CE5A6824524D527 /* NSURLSession+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7869BE417FAA81E2113CBE30C2F24B2 /* KeychainAccess-watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6BE59912957E4C1026D95AB80E6272 /* KeychainAccess-watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7DC117C2BA2C495D4EE1E47A4197249 /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F1D89E58EBAD14E244D5D1A1DC9996 /* when.m */; };
 		B9D4E4A35B95788AD61F64D550826424 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA6D6C5C4722891686F68AFAACB2B7C /* Request.swift */; };
 		BB7FF528EDE47182BA912C6774A65C2D /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA3B15B2C8604DBF690DA1CF5893F7 /* AnyPromise.swift */; };
-		BC6674FF957BEB17E9B5684545B3D75E /* NSURLSession+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 968D7D657BBDF36968FAE43B6D435B57 /* NSURLSession+AnyPromise.m */; };
 		BDCFE712B32ACF0F1018B333C076DB4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
 		BEFB286F797B17C412B2E0914B70F331 /* KCFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B556128FEC4E7FDB6863FDA8CDFC9F77 /* KCFloatingActionButton.swift */; };
 		C08E9F09701B2FF36088560A0BA4233B /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766705FCBB7C272F85802944C5EFE980 /* NetworkReachabilityManager.swift */; };
 		C0E9E3DA83897EE9E0944A6FA6BD932C /* SwiftSpinner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10F7C75DC60E192452EF24A8985A85 /* SwiftSpinner-dummy.m */; };
-		C105AA27611CC2F487DB8A9B16531634 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24585904883BB827F745A7AEC63EDCD2 /* Error.swift */; };
 		C4F5362674B643FD5F7F463806114556 /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = C4C239164C0E78D855116B1FE1E3A380 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5E078759E6F1CEEF25956D698A57D3B /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = AF0E3C31424A64BD2F53BBCD910CA0E9 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C658665DC1D7EA9BF2555D39CE711B98 /* CSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EE8EFDD9F4A6C45651AE2329B17903 /* CSS.swift */; };
 		C72C4A966C3F4E6B0F0C542A5BEF5719 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BA40048FAE9F2F73D5A1A5C66916 /* hang.m */; };
 		CC4AF9A26D53C19FC3AF9C1A2578391C /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DB1FFBE4975EEC0415113B9C437F8 /* UIView+AnyPromise.m */; };
 		CD6F705538BCD119DA4AE3F2B9255F31 /* KCFloatingActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219454935D238526929CB913E284D476 /* KCFloatingActionButtonItem.swift */; };
-		D2C164E60BB77947A4F4C0C64E1A3DD6 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A2869244A0EF99A09B0849726B883 /* when.swift */; };
-		D302DC6CE8ABF427681A3FED34B12F78 /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B472D7DCCEEE2B940FEB4D7B6C3C0B /* AnyPromise.m */; };
+		D3E32E1C53C9792E799BA1B33BD4370A /* NSURLSession+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A89485CDA8EF89B8CE5A6824524D527 /* NSURLSession+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4691C21B46883966D026D66F96D234F /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112BA40048FAE9F2F73D5A1A5C66916 /* hang.m */; };
 		D54F26B9A7742946358AEA4C8D81EFC9 /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65281F699FDF8B0AE11B1063D2EF89DF /* wrap.swift */; };
 		D67DB0D45C517BF8279A119C812D27B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7594C6D38288E178C1184441184492C1 /* UIKit.framework */; };
 		D6F10F27E3C306B7607251E4058DB05B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A0B9986E788148307925953014E374 /* Response.swift */; };
-		D781004C9AD338C296325619E399AA8A /* Pods-Bulldog Bucks - Widget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F576142BE8DDA38161D3241D7AD037D5 /* Pods-Bulldog Bucks - Widget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D7EF0209F98494FD5DC3D4BA259B96D3 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC0D4713EE13B7B48DE353254ED93D /* Promise+Properties.swift */; };
-		DB6B82EAFF406E4384B34700F147ED73 /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6EADC9E27EB51D05C42E1BE37D1EE4 /* NSTask+AnyPromise.m */; };
+		D781004C9AD338C296325619E399AA8A /* Pods-Bulldog Bucks - Widget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59970FA05C9AD356B800398FD3A59ED4 /* Pods-Bulldog Bucks - Widget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAD1D562457127A5A60542DE8D4FA272 /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA514F3927A95EFEF365F0A7A46B8BE /* NSNotificationCenter+AnyPromise.m */; };
 		DC6439DA44ED40BF4D65C269051368D0 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9FB148F1313527225C9144A8DE786 /* Keychain.swift */; };
-		DE1A5B02474CF7CAA35922E7F5A4FFC1 /* NSURLSession+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A89485CDA8EF89B8CE5A6824524D527 /* NSURLSession+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2CA5AD7B62C296DA7B132619BD86640 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3569E53796C459F7CC51E63968ACC /* ResponseSerialization.swift */; };
 		E35EF038EB66E52EE842E0FDD41EC794 /* Alamofire-watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BC1B871C25101EBA7947D709C28830D /* Alamofire-watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46D85B909EA84E45CD7913DE16D1863 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF48AA24A1B0AB02238B0E8E4BF3952 /* Zalgo.swift */; };
+		E4D50A097E3FE33AB7E77D7E44E1AED6 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAB57C4381BADFA2C14D1D7677891 /* DispatchQueue+Promise.swift */; };
+		E539DF8A3AACEDF7A63AF8D5149FA5EE /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = A710E3F032DE95384128919CB4C92BEB /* join.m */; };
 		E63256D51D22A319AE8F40EC36D66396 /* libxmlHTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EE8B43EFA1043E2C2C488BAD3A048 /* libxmlHTMLDocument.swift */; };
-		E66621134B9843EA1067FABCC26574DE /* afterlife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69E3DD0ECBCC20FAC808FCEFA69239 /* afterlife.swift */; };
 		E74621BA2D51B248472B4A1515636D33 /* UIView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D99510D941D13F37E059592B5897F1 /* UIView+Promise.swift */; };
 		E80F184AFC57C3EB80FEBBF9A641D14E /* KCFABManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8518830CC127365B399EA8E0E555DF6 /* KCFABManager.swift */; };
 		E83194B1D952AA3C4D269B67327A5054 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB82E42002CF8358A5A7882980FAC5F /* ServerTrustPolicy.swift */; };
-		E83EFE83C91DACE9BB17A45C20AC56B0 /* Pods-Bulldog Bucks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA96842E4CCF642F9FE97C4ED3921232 /* Pods-Bulldog Bucks-dummy.m */; };
+		E83EFE83C91DACE9BB17A45C20AC56B0 /* Pods-Bulldog Bucks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC66618B5314D2032A072EB45BDF02CF /* Pods-Bulldog Bucks-dummy.m */; };
 		E8759746082B5E3F22DEDA655F43939A /* Process+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346412A7EBDBA20902376AA5AF4B8968 /* Process+Promise.swift */; };
 		EDB783B2FA69BF3480B071BF56D4F509 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14211D922DC34B609B16D64F6C724EAF /* SwiftSpinner.swift */; };
-		EEF90DAE2F8391A695B70C2F28C737E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */; };
+		EFEA9E4A75E265B8877E1C160BECA280 /* afterlife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69E3DD0ECBCC20FAC808FCEFA69239 /* afterlife.swift */; };
 		F1F2683650ABE9114758E3017DCC90FA /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2E8CA57DE96E199AD57C62EAF207181 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3D285B938761F63CF126192D3EBB451 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7594C6D38288E178C1184441184492C1 /* UIKit.framework */; };
 		F4206355260A2D03E04176A2A8105C52 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D433F59F62A7BBB2CA65A6B35BB86 /* ParameterEncoding.swift */; };
@@ -190,31 +190,31 @@
 		F64DE616FF0621E0DBE963A660B4C86C /* KCFloatingActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC9AB01A6DEDB5C89EFF487149F87C8 /* KCFloatingActionButtonDelegate.swift */; };
 		F80FDB230BB5B3766EC81B67FBC02560 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD136ABB67ED89851D370ACA6B9B94B /* DispatchQueue+Alamofire.swift */; };
 		F9544C87AA1FDFE62C914EA6D88085A3 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3569E53796C459F7CC51E63968ACC /* ResponseSerialization.swift */; };
-		FA2C079366D7141B6D5A850D45178535 /* NSTask+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7DADA4565FC19B59ACD117CDCFA868 /* NSTask+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE24680A19DD239D025FE4E528405BDA /* Pods-Bulldog Bucks - Watch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 374DE7750B4C23FD2109118B64915469 /* Pods-Bulldog Bucks - Watch-dummy.m */; };
 		FF1C2E110ABD78D5DBE2B2DF4AF1A682 /* join.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB9FCF445A7F23299EB506BD9367258 /* join.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		219DB5FF62AD87363738F785128DE825 /* PBXContainerItemProxy */ = {
+		0ED5ABC3EB6D697B59975134EA3188ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FE955014E0980285B8A9F8D54C3B0234;
-			remoteInfo = "Kanna-watchOS";
+			remoteGlobalIDString = EBF87BB8B18C65890F9880AE4D627110;
+			remoteInfo = "PromiseKit-watchOS";
 		};
-		3D59DC0399B41E1392A4EBE59951482D /* PBXContainerItemProxy */ = {
+		1EBF7605C37186F560833F4D7549AC4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7D8ADCF2084F11EE1B1C95B612D9A58A;
 			remoteInfo = "KeychainAccess-watchOS";
 		};
-		3E4DAD8FC639594D0110081A0F6A0287 /* PBXContainerItemProxy */ = {
+		202799E7A24A0D2D006F5F70F26E536C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 173E4104E4F2CE5ECC896A154802C6D5;
-			remoteInfo = "Alamofire-watchOS";
+			remoteGlobalIDString = 7D8ADCF2084F11EE1B1C95B612D9A58A;
+			remoteInfo = "KeychainAccess-watchOS";
 		};
 		439F995F9CB2FC6B411AE1AE25306850 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -223,12 +223,12 @@
 			remoteGlobalIDString = 78DE093D2802C5E9E13CB516F108A220;
 			remoteInfo = "PromiseKit-iOS";
 		};
-		52BF517DD5730C3AF2DA790B980D8B2D /* PBXContainerItemProxy */ = {
+		4A98CA6360EF007F19B5C5793F1BCA72 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FE955014E0980285B8A9F8D54C3B0234;
-			remoteInfo = "Kanna-watchOS";
+			remoteGlobalIDString = 173E4104E4F2CE5ECC896A154802C6D5;
+			remoteInfo = "Alamofire-watchOS";
 		};
 		60BA561AD532B15C02CCE9B82593FD50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -237,19 +237,33 @@
 			remoteGlobalIDString = 4D8199C20C1BE5F5BCDBC8F8CB4BF089;
 			remoteInfo = "Alamofire-iOS";
 		};
-		6F393BB16C8CB7AD6A7311CD6F5DDA85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82C2A688F4E6949BB99839CE9A9AB688;
-			remoteInfo = "PromiseKit-watchOS";
-		};
 		75ED97C436735A359DBFBEA101BE8B60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DA30F5EE4A3D09EA571BCEF3787571BE;
 			remoteInfo = "Kanna-iOS";
+		};
+		79AA2DD2BA008C3526B3428348411EC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBF87BB8B18C65890F9880AE4D627110;
+			remoteInfo = "PromiseKit-watchOS";
+		};
+		7E248FAA70E9DD291135F231937AB69F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE955014E0980285B8A9F8D54C3B0234;
+			remoteInfo = "Kanna-watchOS";
+		};
+		8159BA09A63BBC89654C4FCF5F820E61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 173E4104E4F2CE5ECC896A154802C6D5;
+			remoteInfo = "Alamofire-watchOS";
 		};
 		904ECEDB5BDB2563F7E8A057BCE8D128 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -258,26 +272,12 @@
 			remoteGlobalIDString = 5A878DD99216B954D4147D6A3E1AE491;
 			remoteInfo = SwiftSpinner;
 		};
-		9077D97D6F9FA8B9BA784872954D37FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7D8ADCF2084F11EE1B1C95B612D9A58A;
-			remoteInfo = "KeychainAccess-watchOS";
-		};
 		9FB196C9934AF2B45BDA4328C54F90DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DA30F5EE4A3D09EA571BCEF3787571BE;
 			remoteInfo = "Kanna-iOS";
-		};
-		AD37004C3ADAA31930270BC6B6704943 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 173E4104E4F2CE5ECC896A154802C6D5;
-			remoteInfo = "Alamofire-watchOS";
 		};
 		AE93070A9F36FA194CD10056A6A67E4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -293,12 +293,12 @@
 			remoteGlobalIDString = 2511DF280125F2908F875613E6876909;
 			remoteInfo = "KeychainAccess-iOS";
 		};
-		C5DDC3BC6AC6BACBD17F6C238CE9250D /* PBXContainerItemProxy */ = {
+		BA5CF3F950D0530AB9FD4D98444CB819 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 82C2A688F4E6949BB99839CE9A9AB688;
-			remoteInfo = "PromiseKit-watchOS";
+			remoteGlobalIDString = FE955014E0980285B8A9F8D54C3B0234;
+			remoteInfo = "Kanna-watchOS";
 		};
 		D6F038D52505BFDC147E82241681E075 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -324,41 +324,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0061D54698C744DFC7013DD57D0FBDB1 /* Pods-Bulldog Bucks - Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Watch.release.xcconfig"; sourceTree = "<group>"; };
 		0200574BF31350BA2B8C09EA0537771E /* Kanna-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kanna-iOS-dummy.m"; sourceTree = "<group>"; };
 		02FF9C7186E73C8D862BA74552637077 /* SwiftSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftSpinner.h; path = SwiftSpinner/SwiftSpinner.h; sourceTree = "<group>"; };
 		0437C3C30FCC1423D4A1CD92E575F4B4 /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
 		04CBD81ABE1B117C7C9C326F489C05E6 /* NSURLSession+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Promise.swift"; path = "Extensions/Foundation/Sources/NSURLSession+Promise.swift"; sourceTree = "<group>"; };
-		058A36DBFFF9462E4A3C7A6E0D719448 /* Pods-Bulldog Buck Balance-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Buck Balance-frameworks.sh"; sourceTree = "<group>"; };
+		066EE22976E5612D0282230127EFD1AA /* KCFloatingActionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KCFloatingActionButton.framework; path = KCFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		075845CE2ACFC08C68CAF1251D7CF17B /* Pods-Bulldog Bucks - Widget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Bucks - Widget-acknowledgements.markdown"; sourceTree = "<group>"; };
 		08EE8EFDD9F4A6C45651AE2329B17903 /* CSS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSS.swift; path = Sources/Kanna/CSS.swift; sourceTree = "<group>"; };
 		091648CBB699FCFD2C64E508F9A36152 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		09B7EABC15414332D52DCB3A03B6924C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../PromiseKit-watchOS/Info.plist"; sourceTree = "<group>"; };
-		0A7C2089E31EFB6B0CBE4582F43DFDE3 /* Pods-Bulldog Bucks-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Bucks-acknowledgements.plist"; sourceTree = "<group>"; };
+		0C866CC5B0C32BE2A16B2E0D1EA93054 /* Pods-Bulldog Bucks - Watch Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks - Watch Extension-resources.sh"; sourceTree = "<group>"; };
 		0D44920DEDD2D780FB71D34F2256BF88 /* SwiftSpinner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-umbrella.h"; sourceTree = "<group>"; };
 		0D815DA0972064AA6AEE7769732B77E7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Alamofire-watchOS/Info.plist"; sourceTree = "<group>"; };
+		0DB632CA7E6E7C8388DEFC11ECC52955 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = "Kanna-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F066D868831E08941C77D7E455521A5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FA2A568A5B53EEB4D3790FC9D5E2C9C /* KCFloatingActionButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KCFloatingActionButton-prefix.pch"; sourceTree = "<group>"; };
+		101B47EFADD786A54AD5404236B30E71 /* Pods-Bulldog Bucks - Watch Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Bucks - Watch Extension-umbrella.h"; sourceTree = "<group>"; };
 		14211D922DC34B609B16D64F6C724EAF /* SwiftSpinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
+		15247B2EA7DDC7F4E3690ADC493D1ACD /* Pods-Bulldog Bucks - Watch Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Bucks - Watch Extension-dummy.m"; sourceTree = "<group>"; };
 		165C87380D7393E0E3A1A24A18E4CA37 /* AAA-CocoaPods-Hack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AAA-CocoaPods-Hack.h"; path = "Sources/AAA-CocoaPods-Hack.h"; sourceTree = "<group>"; };
 		197EE8B43EFA1043E2C2C488BAD3A048 /* libxmlHTMLDocument.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLDocument.swift; path = Sources/Kanna/libxmlHTMLDocument.swift; sourceTree = "<group>"; };
-		198325413BFECBBCB6BFDDA5437CCFF8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A67B1010AF9436EF31F11BB2D2F2A59 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		1A870D226B80915899A0AE4504755D9B /* KCFloatingActionButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KCFloatingActionButton-dummy.m"; sourceTree = "<group>"; };
 		1ADCCAD3A1347EA5DC522CDB3095AF96 /* Kanna-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Kanna-watchOS-dummy.m"; path = "../Kanna-watchOS/Kanna-watchOS-dummy.m"; sourceTree = "<group>"; };
 		1BEE168A5731E8686373DE2F01A897C7 /* Alamofire-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-iOS-prefix.pch"; sourceTree = "<group>"; };
+		1CB461890E16D96BC91A309A81F5A64C /* Pods-Bulldog Bucks - Widget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Bucks - Widget.modulemap"; sourceTree = "<group>"; };
 		1E733049C7C54B208B59638830BBA813 /* Alamofire-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Alamofire-iOS.modulemap"; sourceTree = "<group>"; };
 		20DA80C1CBC5219E0BE0C1EDDA393205 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20ECDF89AA589443CD31B44502C95D9C /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		219454935D238526929CB913E284D476 /* KCFloatingActionButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButtonItem.swift; path = Sources/KCFloatingActionButtonItem.swift; sourceTree = "<group>"; };
-		22FF83283FE849E4F761A5568B95559F /* Pods-Bulldog Bucks-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks-resources.sh"; sourceTree = "<group>"; };
+		23D0E66AFF8F2E918146B83D94191057 /* Pods-Bulldog Bucks - Widget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Bucks - Widget-dummy.m"; sourceTree = "<group>"; };
 		24585904883BB827F745A7AEC63EDCD2 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
 		28EA3B15B2C8604DBF690DA1CF5893F7 /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
+		29CFF3DE05B14F15D542CF59C1FD557B /* Pods-Bulldog Bucks - Watch Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks - Watch Extension-frameworks.sh"; sourceTree = "<group>"; };
+		2A43BC69885735AD7C4F7FDE246531A8 /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Bucks___Widget.framework; path = "Pods-Bulldog Bucks - Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBEEBE5FA9B07C76DC20E4701E4E206 /* Promise+AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+AnyPromise.swift"; path = "Sources/Promise+AnyPromise.swift"; sourceTree = "<group>"; };
 		2C7A4B176148683A89531B44397166D8 /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
-		2DDEE6ACD1677240BDC3EAC9403E3DE1 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7DADA4565FC19B59ACD117CDCFA868 /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
 		2F07A814198CCC6392D43718C27E1A5E /* PMKAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PMKAlertController.swift; path = Extensions/UIKit/Sources/PMKAlertController.swift; sourceTree = "<group>"; };
 		2F69E3DD0ECBCC20FAC808FCEFA69239 /* afterlife.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = afterlife.swift; path = Extensions/Foundation/Sources/afterlife.swift; sourceTree = "<group>"; };
-		307DE532BB22EE83D3FF2DC74C1DB286 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		30B247191A98EC819EA1393DA67D08AD /* KeychainAccess-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "KeychainAccess-watchOS-prefix.pch"; path = "../KeychainAccess-watchOS/KeychainAccess-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		3172F81522D0540FF977B37521D18D42 /* KeychainAccess-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "KeychainAccess-watchOS.modulemap"; path = "../KeychainAccess-watchOS/KeychainAccess-watchOS.modulemap"; sourceTree = "<group>"; };
 		32DA6F745CBBA2BE44CBC91BB9EEFF7E /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
@@ -368,78 +372,84 @@
 		346412A7EBDBA20902376AA5AF4B8968 /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
 		354E11F6302CE16F40D28375C8C68947 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35923AC99A108C4A501E53276DD65679 /* KeychainAccess-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "KeychainAccess-iOS.modulemap"; sourceTree = "<group>"; };
+		359747CFA08A55A74EC920AFCD2F5323 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3662F343A7E0970AAB90816D5F6EAB62 /* SwiftSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSpinner.xcconfig; sourceTree = "<group>"; };
 		36A0B9986E788148307925953014E374 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		374DE7750B4C23FD2109118B64915469 /* Pods-Bulldog Bucks - Watch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Bucks - Watch-dummy.m"; sourceTree = "<group>"; };
 		3A913D1E208033F5EF1AD3A6E0A3AE0B /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
 		3A97456F52563B7B5AEB0B8EED18EBF7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB82E42002CF8358A5A7882980FAC5F /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		3B7A2869244A0EF99A09B0849726B883 /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
-		3BE042F5512A3C556AFB6F50E3B1CFDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB9FB148F1313527225C9144A8DE786 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Lib/KeychainAccess/Keychain.swift; sourceTree = "<group>"; };
 		3FF48AA24A1B0AB02238B0E8E4BF3952 /* Zalgo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zalgo.swift; path = Sources/Zalgo.swift; sourceTree = "<group>"; };
+		404BE561C46EA5F0CDDADD3DE0FFE757 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		40B8B67712124996F7D30910AD1DB41A /* KeychainAccess-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-iOS-prefix.pch"; sourceTree = "<group>"; };
-		414B3186148E5A15C22E5FCE3A59036C /* KCFloatingActionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KCFloatingActionButton.framework; path = KCFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4449E229903CBEFAF0665F554C19A11E /* Pods-Bulldog Buck Balance Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Buck Balance Extension-resources.sh"; sourceTree = "<group>"; };
-		448FCE90FE963DB0674C419F12EDC2B1 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A4F355B37CA7C8B47E76100EF217C9 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC1B871C25101EBA7947D709C28830D /* Alamofire-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-watchOS-umbrella.h"; path = "../Alamofire-watchOS/Alamofire-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		4E0CBF2A962235E555733A86BB90954D /* Pods-Bulldog Buck Balance Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Buck Balance Extension-dummy.m"; sourceTree = "<group>"; };
-		4EF7694D9B78E6D270FB9C6006E71C78 /* Pods-Bulldog Bucks-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Bucks-umbrella.h"; sourceTree = "<group>"; };
 		4FFFAB57C4381BADFA2C14D1D7677891 /* DispatchQueue+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Promise.swift"; path = "Sources/DispatchQueue+Promise.swift"; sourceTree = "<group>"; };
 		507FD1DF392C2D49500C6E2A8AC3B49C /* libxmlParserOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlParserOption.swift; path = Sources/Kanna/libxmlParserOption.swift; sourceTree = "<group>"; };
 		5112BA40048FAE9F2F73D5A1A5C66916 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
-		5113FA3330C9EB677DA9A7E17C7E51FA /* Pods-Bulldog Bucks-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks-frameworks.sh"; sourceTree = "<group>"; };
 		517EAD05DDC4211FD14E1E4A6F4A650A /* PromiseKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-iOS-dummy.m"; sourceTree = "<group>"; };
-		5769648E27812976E45F56A6B3FCCBDA /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Bucks___Widget.framework; path = "Pods-Bulldog Bucks - Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5257615354F3EC3B1E66B8781974C6EC /* Pods-Bulldog Bucks - Watch Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Bucks - Watch Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		52B988EDC43BB3208BE36BD2C76C3A4E /* Pods-Bulldog Bucks-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks-resources.sh"; sourceTree = "<group>"; };
+		56B833EC372E161F7FCA82F0943AE92A /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = "KeychainAccess-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579017529C6D2993BE0F89FE5FCF136B /* KeychainAccess-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-iOS-umbrella.h"; sourceTree = "<group>"; };
 		57B6BFDD032CC5FF6E8102F00AAF4243 /* KeychainAccess-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "KeychainAccess-watchOS.xcconfig"; path = "../KeychainAccess-watchOS/KeychainAccess-watchOS.xcconfig"; sourceTree = "<group>"; };
 		5974608085C0067096781B76CE9CACBE /* KCFloatingActionButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KCFloatingActionButton.xcconfig; sourceTree = "<group>"; };
-		59C0A888A919B925DBAAE7FC093DF9A2 /* Pods-Bulldog Bucks-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Bucks-acknowledgements.markdown"; sourceTree = "<group>"; };
+		59970FA05C9AD356B800398FD3A59ED4 /* Pods-Bulldog Bucks - Widget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Bucks - Widget-umbrella.h"; sourceTree = "<group>"; };
 		5A739E098C850E0E5FEB8F4E8FCCD708 /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
 		5A89485CDA8EF89B8CE5A6824524D527 /* NSURLSession+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.h"; sourceTree = "<group>"; };
 		5B3CAA5765A591818D7510FAA2D7ABD7 /* Alamofire-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Alamofire-watchOS.modulemap"; path = "../Alamofire-watchOS/Alamofire-watchOS.modulemap"; sourceTree = "<group>"; };
 		5BF9070F1A07CC7D4D0733A132EA0A26 /* Kanna-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Kanna-iOS.xcconfig"; sourceTree = "<group>"; };
 		5BFABDB2505845B531FDFBA34CFAFB5D /* GlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GlobalState.m; path = Sources/GlobalState.m; sourceTree = "<group>"; };
-		5E0B7CC32CCECE2368AD68D421E2B981 /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
+		5C4CEFC0FC9135B7F1393C39179D1C07 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2482C2C97CA581D680D608D6AF831C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Kanna-watchOS/Info.plist"; sourceTree = "<group>"; };
+		5E276D522580A7CBF4A70CF804F928AC /* Pods-Bulldog Bucks - Watch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Bucks - Watch-umbrella.h"; sourceTree = "<group>"; };
 		6010094017CDC6DD2670F09371DCCDDF /* PromiseKit-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "PromiseKit-watchOS.modulemap"; path = "../PromiseKit-watchOS/PromiseKit-watchOS.modulemap"; sourceTree = "<group>"; };
 		601119063835189C61053952D827E1BC /* KCFloatingActionButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KCFloatingActionButton.modulemap; sourceTree = "<group>"; };
 		60FC0D4713EE13B7B48DE353254ED93D /* Promise+Properties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Properties.swift"; path = "Sources/Promise+Properties.swift"; sourceTree = "<group>"; };
-		625D2D25B246F59F2CC1ED5D5BC5DFB2 /* Pods-Bulldog Bucks - Widget-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks - Widget-resources.sh"; sourceTree = "<group>"; };
 		62A35EECF8C9B9977D4D0FFA5604A5C7 /* PromiseKit-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PromiseKit-watchOS-dummy.m"; path = "../PromiseKit-watchOS/PromiseKit-watchOS-dummy.m"; sourceTree = "<group>"; };
 		63E844CFE8C6014F4C1044AC2D646202 /* Kanna-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Kanna-watchOS-prefix.pch"; path = "../Kanna-watchOS/Kanna-watchOS-prefix.pch"; sourceTree = "<group>"; };
-		6431A05DBB828F546DD2E5115A09474F /* Pods-Bulldog Buck Balance Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Buck Balance Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		65281F699FDF8B0AE11B1063D2EF89DF /* wrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = wrap.swift; path = Sources/wrap.swift; sourceTree = "<group>"; };
 		667AD8D7C4ABD6139B4CDBC52AF42579 /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
 		668FA6EABB66668B30DA7AD38A6DA46B /* Kanna.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kanna.h; path = Sources/Kanna/Kanna.h; sourceTree = "<group>"; };
-		683F3C80535E04928D6B7A281449C9EC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		685437BF0BE04A14ABE1C26ADF436819 /* Alamofire-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Alamofire-watchOS-dummy.m"; path = "../Alamofire-watchOS/Alamofire-watchOS-dummy.m"; sourceTree = "<group>"; };
 		68807CBAD2EF912D5554FC30CD21B19C /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.h"; sourceTree = "<group>"; };
 		6BC9AB01A6DEDB5C89EFF487149F87C8 /* KCFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButtonDelegate.swift; path = Sources/KCFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
+		6C0FEBE3744D5579143CD8AD4C5E5929 /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		6CA6D6C5C4722891686F68AFAACB2B7C /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		6D7D51524997691CF6A1D2C312F786DC /* Pods-Bulldog Bucks-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Bucks-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6FD151523BB1480B13D96EE0B4EFEF2F /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
 		71FCFAB87359C2EF49E212BBDDBC2FEF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72EB8B952138E126D2EAF25DF2A3B71E /* Kanna-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-iOS-prefix.pch"; sourceTree = "<group>"; };
 		732B525F48C27F1757E888F2032143C3 /* KeychainAccess-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "KeychainAccess-watchOS-dummy.m"; path = "../KeychainAccess-watchOS/KeychainAccess-watchOS-dummy.m"; sourceTree = "<group>"; };
 		7469E2A7F874BA0D13399D1E06717292 /* Kanna-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Kanna-iOS.modulemap"; sourceTree = "<group>"; };
+		74C9DA0D365F5051013BC585E290A01A /* Pods-Bulldog Bucks-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Bucks-umbrella.h"; sourceTree = "<group>"; };
 		7594C6D38288E178C1184441184492C1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7644C54977CDA5BEC7C48A459AD5EC5B /* Pods-Bulldog Bucks - Watch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks - Watch-resources.sh"; sourceTree = "<group>"; };
 		765A62686559899632BC8290FE8FBCD0 /* Alamofire-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-watchOS-prefix.pch"; path = "../Alamofire-watchOS/Alamofire-watchOS-prefix.pch"; sourceTree = "<group>"; };
 		766705FCBB7C272F85802944C5EFE980 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		7676691832B490B66D3DF39B5E2CF53D /* Pods-Bulldog Bucks - Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Watch.debug.xcconfig"; sourceTree = "<group>"; };
 		77C3EDD20A48654B42A2A1229C30BA89 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		7934875D5D697F97F0C7932FD233DFBC /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
+		7B66C327351AFD25FED4F902559BBF4C /* Pods-Bulldog Bucks - Watch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Bucks - Watch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7BF528F0FA374BF6430DE7B2904D5087 /* Pods-Bulldog Bucks-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks-frameworks.sh"; sourceTree = "<group>"; };
 		7C810784976AA2E822B4E02721A84BC5 /* UIViewController+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Promise.swift"; path = "Extensions/UIKit/Sources/UIViewController+Promise.swift"; sourceTree = "<group>"; };
 		7E2D240053E873D32555B8CE9F187CFF /* SwiftSpinner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-prefix.pch"; sourceTree = "<group>"; };
 		7E3169496ED4488CB6D44773C93BC674 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		7F7D433F59F62A7BBB2CA65A6B35BB86 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		804B724831B278086D9380AB5457DDF3 /* Pods-Bulldog Bucks.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Bucks.modulemap"; sourceTree = "<group>"; };
 		80950BA23E2D0D132C826FE31CBB1B0C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		8221624C213FDF08666153FA321CC30C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80CE0B591564C2457267F34133EEBA1D /* Pods-Bulldog Bucks - Watch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks - Watch-frameworks.sh"; sourceTree = "<group>"; };
 		82F0CF74271F2514DD07F3607C2DA921 /* PromiseKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PromiseKit-iOS.xcconfig"; sourceTree = "<group>"; };
+		83B55044A6921FD93FE02C7FAD4EBF95 /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
 		843EFF553D7D17BB7D19569465CC4862 /* CALayer+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+AnyPromise.h"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.h"; sourceTree = "<group>"; };
 		85E1750D8231D6766EDE06BF8D7FD0D2 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		878771D46B0C8D415FBE310F7AF15112 /* Pods_Bulldog_Bucks___Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Bucks___Watch.framework; path = "Pods-Bulldog Bucks - Watch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AEA063215E9E92E1CE373BF7FB2998 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		88D3569E53796C459F7CC51E63968ACC /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		8C0A32580B7F5C32709A859A37EDF4AD /* URLDataPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLDataPromise.swift; path = Extensions/Foundation/Sources/URLDataPromise.swift; sourceTree = "<group>"; };
 		8CD136ABB67ED89851D370ACA6B9B94B /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		8DB9A32623246C95C30EF53D25ED0021 /* Pods-Bulldog Buck Balance-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Buck Balance-dummy.m"; sourceTree = "<group>"; };
 		91D99510D941D13F37E059592B5897F1 /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
 		92C8E3260A7F8038C2FAEAB8D3CA22C0 /* Alamofire-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-iOS-dummy.m"; sourceTree = "<group>"; };
 		92E9B90FAB58FFDA44848F0815A8A9E9 /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
@@ -447,78 +457,68 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9536EBC491D070D1F0E10B694C24D8E8 /* KeychainAccess-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainAccess-iOS-dummy.m"; sourceTree = "<group>"; };
 		968D7D657BBDF36968FAE43B6D435B57 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
-		96F38F18E5542D876CFA9990818CC187 /* Pods-Bulldog Buck Balance Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Buck Balance Extension-umbrella.h"; sourceTree = "<group>"; };
-		98C9F2A32EBFC33385531B114A4C2D01 /* Pods-Bulldog Bucks - Widget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Bucks - Widget-acknowledgements.markdown"; sourceTree = "<group>"; };
+		975396D7AB25C91ADDAAA98DFA1D97B5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9849507C6592480A48A6645939651C9A /* Pods-Bulldog Bucks-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Bucks-acknowledgements.plist"; sourceTree = "<group>"; };
 		9BF277FEB3655B4E5D278A41623E639B /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
-		9F1F84FDC395E134CBF933F15C4C0BF9 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = "Kanna-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FF6FCD04E5884F3C0677562E1E586C1 /* Pods-Bulldog Buck Balance Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Buck Balance Extension-frameworks.sh"; sourceTree = "<group>"; };
+		9C61109B734F5A0E2FDE90707E076032 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F4AD91B8734616AD57AC5A4A1AB78C9 /* Pods-Bulldog Bucks - Watch Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Bucks - Watch Extension.modulemap"; sourceTree = "<group>"; };
+		9F775581622DEA8431475EF59FD64406 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1081E379437A8C200242A2A20D707CC /* Pods-Bulldog Bucks - Watch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Bucks - Watch-acknowledgements.plist"; sourceTree = "<group>"; };
+		A1886BC845015835B311C5B19F7FCCD9 /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = "KeychainAccess-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E8CA57DE96E199AD57C62EAF207181 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
-		A55434C92C9AD154F19C5F6E61A4449B /* Pods-Bulldog Buck Balance Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Buck Balance Extension.modulemap"; sourceTree = "<group>"; };
 		A710E3F032DE95384128919CB4C92BEB /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
-		A973EE585658C6FEF8E7B5007AD71651 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Buck Balance Extension.release.xcconfig"; sourceTree = "<group>"; };
 		AA10F7C75DC60E192452EF24A8985A85 /* SwiftSpinner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSpinner-dummy.m"; sourceTree = "<group>"; };
 		AA5DB1FFBE4975EEC0415113B9C437F8 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
 		AC2D6C2DECC366E44242D01131EE70E4 /* Kanna.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Kanna.swift; path = Sources/Kanna/Kanna.swift; sourceTree = "<group>"; };
-		AD4108FBE0A3938692F63705E465FA99 /* Pods-Bulldog Buck Balance-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Buck Balance-acknowledgements.plist"; sourceTree = "<group>"; };
 		AF0E3C31424A64BD2F53BBCD910CA0E9 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
 		AF9C8E73C0003E014949C8AFADE8D908 /* KCFloatingActionButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KCFloatingActionButton-umbrella.h"; sourceTree = "<group>"; };
 		B22604780A21B918DF1F401B1CA8E0A7 /* PMKQuartzCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKQuartzCore.h; path = Extensions/QuartzCore/Sources/PMKQuartzCore.h; sourceTree = "<group>"; };
-		B43DC0E6237CE17D8FD842A0C825E997 /* Pods-Bulldog Buck Balance-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bulldog Buck Balance-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B474CF1BF0E41F9786B0BCAB4ED129C8 /* Kanna-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Kanna-watchOS-umbrella.h"; path = "../Kanna-watchOS/Kanna-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		B53D467801411DFB67B088C86FBCBDC4 /* Pods-Bulldog Bucks - Widget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Bucks - Widget-acknowledgements.plist"; sourceTree = "<group>"; };
+		B51DDE4F6084C76763FCA429118F11E6 /* Pods-Bulldog Bucks - Watch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Bucks - Watch.modulemap"; sourceTree = "<group>"; };
 		B556128FEC4E7FDB6863FDA8CDFC9F77 /* KCFloatingActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCFloatingActionButton.swift; path = Sources/KCFloatingActionButton.swift; sourceTree = "<group>"; };
 		B5BBB5B87A530EAAC37860121BF62F6D /* Alamofire-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-watchOS.xcconfig"; path = "../Alamofire-watchOS/Alamofire-watchOS.xcconfig"; sourceTree = "<group>"; };
 		B5FE5DBE91366CFC634A7A1BC6587DE2 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		B668AFBF406F4633952C9176B079F05F /* Pods-Bulldog Buck Balance-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Buck Balance-umbrella.h"; sourceTree = "<group>"; };
-		B673060055B81169EDE624C81FFB86E0 /* Pods-Bulldog Buck Balance-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Buck Balance-resources.sh"; sourceTree = "<group>"; };
-		B7399FE0223F9B7C1B5E29CD4A331634 /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = "KeychainAccess-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8518830CC127365B399EA8E0E555DF6 /* KCFABManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCFABManager.swift; path = Sources/KCFABManager.swift; sourceTree = "<group>"; };
-		B9B705235BD5408C5DA0C45D70E5E61C /* Pods-Bulldog Bucks - Widget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Bucks - Widget.modulemap"; sourceTree = "<group>"; };
 		B9FB4CEF97A7EB17B308EAAC6DEDE8E7 /* PromiseKit-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PromiseKit-watchOS.xcconfig"; path = "../PromiseKit-watchOS/PromiseKit-watchOS.xcconfig"; sourceTree = "<group>"; };
 		BA7B538197B13460C0E2A549919EC58B /* Kanna-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Kanna-watchOS.modulemap"; path = "../Kanna-watchOS/Kanna-watchOS.modulemap"; sourceTree = "<group>"; };
 		BBB9FCF445A7F23299EB506BD9367258 /* join.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = join.swift; path = Sources/join.swift; sourceTree = "<group>"; };
 		BCC4C52BEA13498325F9DE5787459A21 /* PromiseKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-prefix.pch"; sourceTree = "<group>"; };
-		C021EAEB3A5FF85C76ACECF2CDD9D5A5 /* Pods-Bulldog Bucks.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Bucks.modulemap"; sourceTree = "<group>"; };
+		BECF453DFDF1D146C0FC0EE0F2BEF21F /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C01A7ECA228493382236299037CCDB68 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C166F2024AB1BFE5E8F7D5C1357D788C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C3B49956AD34CE658FC1DD5D0353A95F /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = "KeychainAccess-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3DA9A0E4D50BA58F67CBF36DF0C6F3B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C473D643EF19ABF59A879AA453FEBE6A /* Pods-Bulldog Buck Balance.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bulldog Buck Balance.modulemap"; sourceTree = "<group>"; };
 		C4C239164C0E78D855116B1FE1E3A380 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
-		C6C89C575829D5DD202BCDA3522EDAF7 /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
+		C59CA2F5F3A39C029657D7AE1F11BF7D /* Pods-Bulldog Bucks - Widget-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bulldog Bucks - Widget-resources.sh"; sourceTree = "<group>"; };
+		C784BD5458201D3E436C27AE5FDDB3B0 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = "Kanna-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA124AC5368320AF29A30FC4354EDD20 /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4E5926BB1414CC2BBA69D6CC5054AE /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		CCA514F3927A95EFEF365F0A7A46B8BE /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
 		CE97FD1F12E5CAE34AC60D04A3EB97B4 /* KCFABWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCFABWindow.swift; path = Sources/KCFABWindow.swift; sourceTree = "<group>"; };
-		D045375F5FC6442E34A2D930077F78FF /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
 		D143328AC536F4E0C17C301AD89299A4 /* Kanna-watchOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Kanna-watchOS.xcconfig"; path = "../Kanna-watchOS/Kanna-watchOS.xcconfig"; sourceTree = "<group>"; };
-		D15DDA47DD6BBF90929B209B7F25D0F3 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Buck Balance Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		D50E240AE83AC996FF569FFD267DBFBF /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Extensions/Foundation/Sources/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
 		D57F87202DFC3D9450ABF534C388C236 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		D675CBA11D01E6585D600BDEE1359874 /* libxmlHTMLNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = libxmlHTMLNode.swift; path = Sources/Kanna/libxmlHTMLNode.swift; sourceTree = "<group>"; };
-		D6A152B06E2FC07796F263C79B011CE3 /* Pods-Bulldog Buck Balance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Buck Balance.debug.xcconfig"; sourceTree = "<group>"; };
-		D7B08B5667D20698D74558118AF2CC91 /* Pods-Bulldog Bucks - Widget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Bucks - Widget-dummy.m"; sourceTree = "<group>"; };
 		D931871176E987E32DDCF8C587B1890F /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
 		DC1B2F879E86F6D2B1948C585173786C /* PromiseKit-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit-watchOS-prefix.pch"; path = "../PromiseKit-watchOS/PromiseKit-watchOS-prefix.pch"; sourceTree = "<group>"; };
+		DE17BB9C3A2A99D278791A97F6CDE123 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE317FCC5848F3FF519EF4CA7A8EDF2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../KeychainAccess-watchOS/Info.plist"; sourceTree = "<group>"; };
 		DF54D83AE01269D45EAE147B080F95B3 /* Alamofire-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-iOS-umbrella.h"; sourceTree = "<group>"; };
-		DF996458877B844853838D3BBD2BE561 /* Pods_Bulldog_Buck_Balance_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Buck_Balance_Extension.framework; path = "Pods-Bulldog Buck Balance Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFFC609ADA80C377237F34BA6338DB3C /* PromiseKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "PromiseKit-iOS.modulemap"; sourceTree = "<group>"; };
-		E1EA52E3798402E40954F7C3A7FB1AB4 /* Pods_Bulldog_Buck_Balance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Buck_Balance.framework; path = "Pods-Bulldog Buck Balance.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D13156333DA9E5788BBA191416AD7A /* KCFABViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KCFABViewController.swift; path = Sources/KCFABViewController.swift; sourceTree = "<group>"; };
 		E4AA72FC0BC9815897AC123142002CBD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6ADF96CA77E4D99EFFC61B9F585CFC2 /* KeychainAccess-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "KeychainAccess-iOS.xcconfig"; sourceTree = "<group>"; };
-		E7587E7B6F627B086C1B3C1AFFD28E6B /* Pods-Bulldog Buck Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Buck Balance.release.xcconfig"; sourceTree = "<group>"; };
-		E93EC8BDE3B82565F3AD2B22F6450912 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kanna.framework; path = "Kanna-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B472D7DCCEEE2B940FEB4D7B6C3C0B /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
 		EA6EADC9E27EB51D05C42E1BE37D1EE4 /* NSTask+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTask+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.m"; sourceTree = "<group>"; };
+		EAD1B3FBC36DD9CD120EB403EEB240BE /* Pods_Bulldog_Bucks___Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Bucks___Watch_Extension.framework; path = "Pods-Bulldog Bucks - Watch Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC66618B5314D2032A072EB45BDF02CF /* Pods-Bulldog Bucks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Bucks-dummy.m"; sourceTree = "<group>"; };
+		ED6EAA9745EB1B57200EC973A58AA858 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6BE59912957E4C1026D95AB80E6272 /* KeychainAccess-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "KeychainAccess-watchOS-umbrella.h"; path = "../KeychainAccess-watchOS/KeychainAccess-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		F0CEFA0013DCE30D2C9D0981A09039C1 /* Pods-Bulldog Buck Balance Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Buck Balance Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		EF569E5F56040DAF8DA9A099BC0C22E9 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Bucks.framework; path = "Pods-Bulldog Bucks.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA11EF2E29D398A6AA9CD66A3C3AC7F /* Pods-Bulldog Bucks - Watch Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Bucks - Watch Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		EFBA9F1BBDDD37348B2CC974D131B78A /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
+		F0E855D90973AF11665D2E9B7BD31C26 /* Pods-Bulldog Bucks - Widget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bulldog Bucks - Widget-acknowledgements.plist"; sourceTree = "<group>"; };
 		F4AD201BC97DBD143B920EF007168CB5 /* Alamofire-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-iOS.xcconfig"; sourceTree = "<group>"; };
-		F576142BE8DDA38161D3241D7AD037D5 /* Pods-Bulldog Bucks - Widget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bulldog Bucks - Widget-umbrella.h"; sourceTree = "<group>"; };
 		F8D3F5C69D056CC4AC040273D28529AB /* PromiseKit-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit-watchOS-umbrella.h"; path = "../PromiseKit-watchOS/PromiseKit-watchOS-umbrella.h"; sourceTree = "<group>"; };
-		FA96842E4CCF642F9FE97C4ED3921232 /* Pods-Bulldog Bucks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bulldog Bucks-dummy.m"; sourceTree = "<group>"; };
-		FB1B1386473462FDA2211C503E7AD2B1 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bulldog_Bucks.framework; path = "Pods-Bulldog Bucks.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB752C7A1322F9C1567A097FCB285EB5 /* Kanna-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kanna-iOS-umbrella.h"; sourceTree = "<group>"; };
-		FC3AAC8576153C714856C8AF73EA21E6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF63B86B982891F2E7F68CF14852ECA3 /* CALayer+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+AnyPromise.m"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.m"; sourceTree = "<group>"; };
 		FF950C87219852DC1B0AB553B5292303 /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -567,11 +567,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AB48F8CFF0D99D220DF2D3401FE94E1 /* Frameworks */ = {
+		59B6B542615195D4BA4F04EA403E9DD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C955AB871424F31EE254163DE4525B /* Foundation.framework in Frameworks */,
+				41E4054A8C1FEC99D6B92E6D24A9FACF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72DDFA4FA397B76CB4249DE76704A5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A7D51C7E5D0B3FD7BFA78D6777579A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,14 +608,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2AA682FBC30DA29A63C01713BD877F3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EEF90DAE2F8391A695B70C2F28C737E9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDD4474A98E9092AC7A175B9DB5ADEEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,11 +616,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E8B4ED2A2D72F00FACCDF543DCD44C73 /* Frameworks */ = {
+		D86D74BBDAFB6411B94691D4A99DF0D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2D27964BD4C02342234C41057383755 /* Foundation.framework in Frameworks */,
+				9D5A4A0D9CB849680817468A488256A5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,24 +643,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		054F8242C367DD21C7BCBF480912A46F /* Pods-Bulldog Buck Balance Extension */ = {
-			isa = PBXGroup;
-			children = (
-				FC3AAC8576153C714856C8AF73EA21E6 /* Info.plist */,
-				A55434C92C9AD154F19C5F6E61A4449B /* Pods-Bulldog Buck Balance Extension.modulemap */,
-				6431A05DBB828F546DD2E5115A09474F /* Pods-Bulldog Buck Balance Extension-acknowledgements.markdown */,
-				F0CEFA0013DCE30D2C9D0981A09039C1 /* Pods-Bulldog Buck Balance Extension-acknowledgements.plist */,
-				4E0CBF2A962235E555733A86BB90954D /* Pods-Bulldog Buck Balance Extension-dummy.m */,
-				9FF6FCD04E5884F3C0677562E1E586C1 /* Pods-Bulldog Buck Balance Extension-frameworks.sh */,
-				4449E229903CBEFAF0665F554C19A11E /* Pods-Bulldog Buck Balance Extension-resources.sh */,
-				96F38F18E5542D876CFA9990818CC187 /* Pods-Bulldog Buck Balance Extension-umbrella.h */,
-				D15DDA47DD6BBF90929B209B7F25D0F3 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */,
-				A973EE585658C6FEF8E7B5007AD71651 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */,
-			);
-			name = "Pods-Bulldog Buck Balance Extension";
-			path = "Target Support Files/Pods-Bulldog Buck Balance Extension";
-			sourceTree = "<group>";
-		};
 		0B431B5957DAEC29BC76534B85254CE0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +654,17 @@
 				38006A32DDEDF2C4E20F2728ABFA868A /* SwiftSpinner */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		20CC8AC542091C2741B6681DFA217DC9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				649FB6B03887B56920A0376B25801FCF /* Pods-Bulldog Bucks */,
+				732F1EA8AF7FB2B10EF03907D183B45A /* Pods-Bulldog Bucks - Watch */,
+				6CAA9A74C244D6C96B5742FE45483610 /* Pods-Bulldog Bucks - Watch Extension */,
+				6F12D4A24603E3F0FEFA277DDE798276 /* Pods-Bulldog Bucks - Widget */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		38006A32DDEDF2C4E20F2728ABFA868A /* SwiftSpinner */ = {
@@ -749,6 +742,24 @@
 			path = "../Target Support Files/SwiftSpinner";
 			sourceTree = "<group>";
 		};
+		649FB6B03887B56920A0376B25801FCF /* Pods-Bulldog Bucks */ = {
+			isa = PBXGroup;
+			children = (
+				975396D7AB25C91ADDAAA98DFA1D97B5 /* Info.plist */,
+				804B724831B278086D9380AB5457DDF3 /* Pods-Bulldog Bucks.modulemap */,
+				6D7D51524997691CF6A1D2C312F786DC /* Pods-Bulldog Bucks-acknowledgements.markdown */,
+				9849507C6592480A48A6645939651C9A /* Pods-Bulldog Bucks-acknowledgements.plist */,
+				EC66618B5314D2032A072EB45BDF02CF /* Pods-Bulldog Bucks-dummy.m */,
+				7BF528F0FA374BF6430DE7B2904D5087 /* Pods-Bulldog Bucks-frameworks.sh */,
+				52B988EDC43BB3208BE36BD2C76C3A4E /* Pods-Bulldog Bucks-resources.sh */,
+				74C9DA0D365F5051013BC585E290A01A /* Pods-Bulldog Bucks-umbrella.h */,
+				CA124AC5368320AF29A30FC4354EDD20 /* Pods-Bulldog Bucks.debug.xcconfig */,
+				EFBA9F1BBDDD37348B2CC974D131B78A /* Pods-Bulldog Bucks.release.xcconfig */,
+			);
+			name = "Pods-Bulldog Bucks";
+			path = "Target Support Files/Pods-Bulldog Bucks";
+			sourceTree = "<group>";
+		};
 		68F6107FFB3FF6676DC063DB415E9CC1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +778,24 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire-iOS";
+			sourceTree = "<group>";
+		};
+		6CAA9A74C244D6C96B5742FE45483610 /* Pods-Bulldog Bucks - Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9F775581622DEA8431475EF59FD64406 /* Info.plist */,
+				9F4AD91B8734616AD57AC5A4A1AB78C9 /* Pods-Bulldog Bucks - Watch Extension.modulemap */,
+				5257615354F3EC3B1E66B8781974C6EC /* Pods-Bulldog Bucks - Watch Extension-acknowledgements.markdown */,
+				EFA11EF2E29D398A6AA9CD66A3C3AC7F /* Pods-Bulldog Bucks - Watch Extension-acknowledgements.plist */,
+				15247B2EA7DDC7F4E3690ADC493D1ACD /* Pods-Bulldog Bucks - Watch Extension-dummy.m */,
+				29CFF3DE05B14F15D542CF59C1FD557B /* Pods-Bulldog Bucks - Watch Extension-frameworks.sh */,
+				0C866CC5B0C32BE2A16B2E0D1EA93054 /* Pods-Bulldog Bucks - Watch Extension-resources.sh */,
+				101B47EFADD786A54AD5404236B30E71 /* Pods-Bulldog Bucks - Watch Extension-umbrella.h */,
+				BECF453DFDF1D146C0FC0EE0F2BEF21F /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */,
+				6C0FEBE3744D5579143CD8AD4C5E5929 /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */,
+			);
+			name = "Pods-Bulldog Bucks - Watch Extension";
+			path = "Target Support Files/Pods-Bulldog Bucks - Watch Extension";
 			sourceTree = "<group>";
 		};
 		6E37EB3E8180D4655C4E819D8D580960 /* Alamofire */ = {
@@ -795,26 +824,71 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
+		6F12D4A24603E3F0FEFA277DDE798276 /* Pods-Bulldog Bucks - Widget */ = {
+			isa = PBXGroup;
+			children = (
+				9C61109B734F5A0E2FDE90707E076032 /* Info.plist */,
+				1CB461890E16D96BC91A309A81F5A64C /* Pods-Bulldog Bucks - Widget.modulemap */,
+				075845CE2ACFC08C68CAF1251D7CF17B /* Pods-Bulldog Bucks - Widget-acknowledgements.markdown */,
+				F0E855D90973AF11665D2E9B7BD31C26 /* Pods-Bulldog Bucks - Widget-acknowledgements.plist */,
+				23D0E66AFF8F2E918146B83D94191057 /* Pods-Bulldog Bucks - Widget-dummy.m */,
+				C59CA2F5F3A39C029657D7AE1F11BF7D /* Pods-Bulldog Bucks - Widget-resources.sh */,
+				59970FA05C9AD356B800398FD3A59ED4 /* Pods-Bulldog Bucks - Widget-umbrella.h */,
+				404BE561C46EA5F0CDDADD3DE0FFE757 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
+				83B55044A6921FD93FE02C7FAD4EBF95 /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
+			);
+			name = "Pods-Bulldog Bucks - Widget";
+			path = "Target Support Files/Pods-Bulldog Bucks - Widget";
+			sourceTree = "<group>";
+		};
+		732F1EA8AF7FB2B10EF03907D183B45A /* Pods-Bulldog Bucks - Watch */ = {
+			isa = PBXGroup;
+			children = (
+				DE17BB9C3A2A99D278791A97F6CDE123 /* Info.plist */,
+				B51DDE4F6084C76763FCA429118F11E6 /* Pods-Bulldog Bucks - Watch.modulemap */,
+				7B66C327351AFD25FED4F902559BBF4C /* Pods-Bulldog Bucks - Watch-acknowledgements.markdown */,
+				A1081E379437A8C200242A2A20D707CC /* Pods-Bulldog Bucks - Watch-acknowledgements.plist */,
+				374DE7750B4C23FD2109118B64915469 /* Pods-Bulldog Bucks - Watch-dummy.m */,
+				80CE0B591564C2457267F34133EEBA1D /* Pods-Bulldog Bucks - Watch-frameworks.sh */,
+				7644C54977CDA5BEC7C48A459AD5EC5B /* Pods-Bulldog Bucks - Watch-resources.sh */,
+				5E276D522580A7CBF4A70CF804F928AC /* Pods-Bulldog Bucks - Watch-umbrella.h */,
+				7676691832B490B66D3DF39B5E2CF53D /* Pods-Bulldog Bucks - Watch.debug.xcconfig */,
+				0061D54698C744DFC7013DD57D0FBDB1 /* Pods-Bulldog Bucks - Watch.release.xcconfig */,
+			);
+			name = "Pods-Bulldog Bucks - Watch";
+			path = "Target Support Files/Pods-Bulldog Bucks - Watch";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				97E811D73B8632F57466A1B09AAA4E66 /* Frameworks */,
 				0B431B5957DAEC29BC76534B85254CE0 /* Pods */,
-				FAAED22DFDC9AD3647331B6E40AE61AD /* Products */,
-				8D8F8F9759BEF51732BE736E4158E04A /* Targets Support Files */,
+				923540EE64F62943B35E0254CCD1A327 /* Products */,
+				20CC8AC542091C2741B6681DFA217DC9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8D8F8F9759BEF51732BE736E4158E04A /* Targets Support Files */ = {
+		923540EE64F62943B35E0254CCD1A327 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D94B8584278B5DB502E4D81E02163CDE /* Pods-Bulldog Buck Balance */,
-				054F8242C367DD21C7BCBF480912A46F /* Pods-Bulldog Buck Balance Extension */,
-				B44768DA7782B920BCB2E914787BBCF3 /* Pods-Bulldog Bucks */,
-				F11915CA59F1532C0A6EE9B927668E9D /* Pods-Bulldog Bucks - Widget */,
+				C01A7ECA228493382236299037CCDB68 /* Alamofire.framework */,
+				359747CFA08A55A74EC920AFCD2F5323 /* Alamofire.framework */,
+				0DB632CA7E6E7C8388DEFC11ECC52955 /* Kanna.framework */,
+				C784BD5458201D3E436C27AE5FDDB3B0 /* Kanna.framework */,
+				066EE22976E5612D0282230127EFD1AA /* KCFloatingActionButton.framework */,
+				56B833EC372E161F7FCA82F0943AE92A /* KeychainAccess.framework */,
+				A1886BC845015835B311C5B19F7FCCD9 /* KeychainAccess.framework */,
+				EF569E5F56040DAF8DA9A099BC0C22E9 /* Pods_Bulldog_Bucks.framework */,
+				878771D46B0C8D415FBE310F7AF15112 /* Pods_Bulldog_Bucks___Watch.framework */,
+				EAD1B3FBC36DD9CD120EB403EEB240BE /* Pods_Bulldog_Bucks___Watch_Extension.framework */,
+				2A43BC69885735AD7C4F7FDE246531A8 /* Pods_Bulldog_Bucks___Widget.framework */,
+				ED6EAA9745EB1B57200EC973A58AA858 /* PromiseKit.framework */,
+				44A4F355B37CA7C8B47E76100EF217C9 /* PromiseKit.framework */,
+				5C4CEFC0FC9135B7F1393C39179D1C07 /* SwiftSpinner.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		97E811D73B8632F57466A1B09AAA4E66 /* Frameworks */ = {
@@ -896,24 +970,6 @@
 			path = KeychainAccess;
 			sourceTree = "<group>";
 		};
-		B44768DA7782B920BCB2E914787BBCF3 /* Pods-Bulldog Bucks */ = {
-			isa = PBXGroup;
-			children = (
-				3BE042F5512A3C556AFB6F50E3B1CFDF /* Info.plist */,
-				C021EAEB3A5FF85C76ACECF2CDD9D5A5 /* Pods-Bulldog Bucks.modulemap */,
-				59C0A888A919B925DBAAE7FC093DF9A2 /* Pods-Bulldog Bucks-acknowledgements.markdown */,
-				0A7C2089E31EFB6B0CBE4582F43DFDE3 /* Pods-Bulldog Bucks-acknowledgements.plist */,
-				FA96842E4CCF642F9FE97C4ED3921232 /* Pods-Bulldog Bucks-dummy.m */,
-				5113FA3330C9EB677DA9A7E17C7E51FA /* Pods-Bulldog Bucks-frameworks.sh */,
-				22FF83283FE849E4F761A5568B95559F /* Pods-Bulldog Bucks-resources.sh */,
-				4EF7694D9B78E6D270FB9C6006E71C78 /* Pods-Bulldog Bucks-umbrella.h */,
-				D045375F5FC6442E34A2D930077F78FF /* Pods-Bulldog Bucks.debug.xcconfig */,
-				5E0B7CC32CCECE2368AD68D421E2B981 /* Pods-Bulldog Bucks.release.xcconfig */,
-			);
-			name = "Pods-Bulldog Bucks";
-			path = "Target Support Files/Pods-Bulldog Bucks";
-			sourceTree = "<group>";
-		};
 		C0D5483EC13AB2EDC6AE12A92489FF58 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,24 +997,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KCFloatingActionButton";
-			sourceTree = "<group>";
-		};
-		D94B8584278B5DB502E4D81E02163CDE /* Pods-Bulldog Buck Balance */ = {
-			isa = PBXGroup;
-			children = (
-				C3DA9A0E4D50BA58F67CBF36DF0C6F3B /* Info.plist */,
-				C473D643EF19ABF59A879AA453FEBE6A /* Pods-Bulldog Buck Balance.modulemap */,
-				B43DC0E6237CE17D8FD842A0C825E997 /* Pods-Bulldog Buck Balance-acknowledgements.markdown */,
-				AD4108FBE0A3938692F63705E465FA99 /* Pods-Bulldog Buck Balance-acknowledgements.plist */,
-				8DB9A32623246C95C30EF53D25ED0021 /* Pods-Bulldog Buck Balance-dummy.m */,
-				058A36DBFFF9462E4A3C7A6E0D719448 /* Pods-Bulldog Buck Balance-frameworks.sh */,
-				B673060055B81169EDE624C81FFB86E0 /* Pods-Bulldog Buck Balance-resources.sh */,
-				B668AFBF406F4633952C9176B079F05F /* Pods-Bulldog Buck Balance-umbrella.h */,
-				D6A152B06E2FC07796F263C79B011CE3 /* Pods-Bulldog Buck Balance.debug.xcconfig */,
-				E7587E7B6F627B086C1B3C1AFFD28E6B /* Pods-Bulldog Buck Balance.release.xcconfig */,
-			);
-			name = "Pods-Bulldog Buck Balance";
-			path = "Target Support Files/Pods-Bulldog Buck Balance";
 			sourceTree = "<group>";
 		};
 		DF99915D019E69C0C48C99B9805562BE /* QuartzCore */ = {
@@ -989,23 +1027,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KeychainAccess-iOS";
-			sourceTree = "<group>";
-		};
-		F11915CA59F1532C0A6EE9B927668E9D /* Pods-Bulldog Bucks - Widget */ = {
-			isa = PBXGroup;
-			children = (
-				8221624C213FDF08666153FA321CC30C /* Info.plist */,
-				B9B705235BD5408C5DA0C45D70E5E61C /* Pods-Bulldog Bucks - Widget.modulemap */,
-				98C9F2A32EBFC33385531B114A4C2D01 /* Pods-Bulldog Bucks - Widget-acknowledgements.markdown */,
-				B53D467801411DFB67B088C86FBCBDC4 /* Pods-Bulldog Bucks - Widget-acknowledgements.plist */,
-				D7B08B5667D20698D74558118AF2CC91 /* Pods-Bulldog Bucks - Widget-dummy.m */,
-				625D2D25B246F59F2CC1ED5D5BC5DFB2 /* Pods-Bulldog Bucks - Widget-resources.sh */,
-				F576142BE8DDA38161D3241D7AD037D5 /* Pods-Bulldog Bucks - Widget-umbrella.h */,
-				307DE532BB22EE83D3FF2DC74C1DB286 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
-				C6C89C575829D5DD202BCDA3522EDAF7 /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
-			);
-			name = "Pods-Bulldog Bucks - Widget";
-			path = "Target Support Files/Pods-Bulldog Bucks - Widget";
 			sourceTree = "<group>";
 		};
 		F24E89E6E596D1E7D3EDCBFE3C79A035 /* watchOS */ = {
@@ -1049,27 +1070,6 @@
 			path = PromiseKit;
 			sourceTree = "<group>";
 		};
-		FAAED22DFDC9AD3647331B6E40AE61AD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				683F3C80535E04928D6B7A281449C9EC /* Alamofire.framework */,
-				198325413BFECBBCB6BFDDA5437CCFF8 /* Alamofire.framework */,
-				9F1F84FDC395E134CBF933F15C4C0BF9 /* Kanna.framework */,
-				E93EC8BDE3B82565F3AD2B22F6450912 /* Kanna.framework */,
-				414B3186148E5A15C22E5FCE3A59036C /* KCFloatingActionButton.framework */,
-				B7399FE0223F9B7C1B5E29CD4A331634 /* KeychainAccess.framework */,
-				C3B49956AD34CE658FC1DD5D0353A95F /* KeychainAccess.framework */,
-				E1EA52E3798402E40954F7C3A7FB1AB4 /* Pods_Bulldog_Buck_Balance.framework */,
-				DF996458877B844853838D3BBD2BE561 /* Pods_Bulldog_Buck_Balance_Extension.framework */,
-				FB1B1386473462FDA2211C503E7AD2B1 /* Pods_Bulldog_Bucks.framework */,
-				5769648E27812976E45F56A6B3FCCBDA /* Pods_Bulldog_Bucks___Widget.framework */,
-				20ECDF89AA589443CD31B44502C95D9C /* PromiseKit.framework */,
-				2DDEE6ACD1677240BDC3EAC9403E3DE1 /* PromiseKit.framework */,
-				448FCE90FE963DB0674C419F12EDC2B1 /* SwiftSpinner.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1087,14 +1087,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35EF038EB66E52EE842E0FDD41EC794 /* Alamofire-watchOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2878916D2F9EE886957945CA5ED9C3CB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4098AD2BCFB7F7BE69395EB8652041EB /* Pods-Bulldog Buck Balance Extension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,6 +1123,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7E9A544FB287FCE4471FC564F3B87367 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				719FBBFD39FAA5F853D9747E5756BC16 /* Pods-Bulldog Bucks - Watch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EB09F51EF7866E23D50E88AAFC05723 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D8F88708FE76663F036E720EAA064D /* Pods-Bulldog Bucks - Watch Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A503BFCABB6D102E36B182412895ED6D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1145,21 +1153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7869BE417FAA81E2113CBE30C2F24B2 /* KeychainAccess-watchOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B4C02B37CBC34038183C90252D1F39A8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71BE8531C133594302E9BD9670FBBD68 /* AAA-CocoaPods-Hack.h in Headers */,
-				7012A42BB7E38FC6F1585A276E228A0E /* AnyPromise.h in Headers */,
-				546D81D2258CE99E9C741A4A56869198 /* NSNotificationCenter+AnyPromise.h in Headers */,
-				FA2C079366D7141B6D5A850D45178535 /* NSTask+AnyPromise.h in Headers */,
-				DE1A5B02474CF7CAA35922E7F5A4FFC1 /* NSURLSession+AnyPromise.h in Headers */,
-				89167B029F633C55BF2653FEC936762C /* PMKFoundation.h in Headers */,
-				343982E7166122162C0A57FF60E1824F /* PromiseKit-watchOS-umbrella.h in Headers */,
-				ABC272D13BB727ED417A763238F2F4AD /* PromiseKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1191,11 +1184,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1D850A2ECB4F5FBC0899ABFCB226CA7 /* Headers */ = {
+		C7AD580D0C0DA0173EB68C824923FE31 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B594CC5BAFA36D5584295652DBA772F /* Pods-Bulldog Buck Balance-umbrella.h in Headers */,
+				24208155C6C9F1953F1B23D463C44005 /* AAA-CocoaPods-Hack.h in Headers */,
+				C5E078759E6F1CEEF25956D698A57D3B /* AnyPromise.h in Headers */,
+				36AC03708886DDC48FFF0C33763BD9C0 /* NSNotificationCenter+AnyPromise.h in Headers */,
+				7CA4E671538199F688F268CDAF360ADA /* NSTask+AnyPromise.h in Headers */,
+				D3E32E1C53C9792E799BA1B33BD4370A /* NSURLSession+AnyPromise.h in Headers */,
+				52E02D9AFF9B29B604C7454DB5A60EBB /* PMKFoundation.h in Headers */,
+				94B3A704B12919C1C38682EBBB426E62 /* PromiseKit-watchOS-umbrella.h in Headers */,
+				97604BD2AAB6FDD4CCF9298E4E0E250C /* PromiseKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,7 +1228,7 @@
 			);
 			name = "Pods-Bulldog Bucks - Widget";
 			productName = "Pods-Bulldog Bucks - Widget";
-			productReference = 5769648E27812976E45F56A6B3FCCBDA /* Pods_Bulldog_Bucks___Widget.framework */;
+			productReference = 2A43BC69885735AD7C4F7FDE246531A8 /* Pods_Bulldog_Bucks___Widget.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		173E4104E4F2CE5ECC896A154802C6D5 /* Alamofire-watchOS */ = {
@@ -1245,7 +1245,7 @@
 			);
 			name = "Alamofire-watchOS";
 			productName = "Alamofire-watchOS";
-			productReference = 198325413BFECBBCB6BFDDA5437CCFF8 /* Alamofire.framework */;
+			productReference = 359747CFA08A55A74EC920AFCD2F5323 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2511DF280125F2908F875613E6876909 /* KeychainAccess-iOS */ = {
@@ -1262,7 +1262,7 @@
 			);
 			name = "KeychainAccess-iOS";
 			productName = "KeychainAccess-iOS";
-			productReference = B7399FE0223F9B7C1B5E29CD4A331634 /* KeychainAccess.framework */;
+			productReference = 56B833EC372E161F7FCA82F0943AE92A /* KeychainAccess.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4D8199C20C1BE5F5BCDBC8F8CB4BF089 /* Alamofire-iOS */ = {
@@ -1279,7 +1279,7 @@
 			);
 			name = "Alamofire-iOS";
 			productName = "Alamofire-iOS";
-			productReference = 683F3C80535E04928D6B7A281449C9EC /* Alamofire.framework */;
+			productReference = C01A7ECA228493382236299037CCDB68 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5A878DD99216B954D4147D6A3E1AE491 /* SwiftSpinner */ = {
@@ -1296,7 +1296,7 @@
 			);
 			name = SwiftSpinner;
 			productName = SwiftSpinner;
-			productReference = 448FCE90FE963DB0674C419F12EDC2B1 /* SwiftSpinner.framework */;
+			productReference = 5C4CEFC0FC9135B7F1393C39179D1C07 /* SwiftSpinner.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		78DE093D2802C5E9E13CB516F108A220 /* PromiseKit-iOS */ = {
@@ -1313,7 +1313,7 @@
 			);
 			name = "PromiseKit-iOS";
 			productName = "PromiseKit-iOS";
-			productReference = 2DDEE6ACD1677240BDC3EAC9403E3DE1 /* PromiseKit.framework */;
+			productReference = 44A4F355B37CA7C8B47E76100EF217C9 /* PromiseKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7D8ADCF2084F11EE1B1C95B612D9A58A /* KeychainAccess-watchOS */ = {
@@ -1330,45 +1330,7 @@
 			);
 			name = "KeychainAccess-watchOS";
 			productName = "KeychainAccess-watchOS";
-			productReference = C3B49956AD34CE658FC1DD5D0353A95F /* KeychainAccess.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		82C2A688F4E6949BB99839CE9A9AB688 /* PromiseKit-watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B531C67A889560DF481250E5F1A9A28F /* Build configuration list for PBXNativeTarget "PromiseKit-watchOS" */;
-			buildPhases = (
-				B5A97F3EA8F68B66971EB474B33063CF /* Sources */,
-				E8B4ED2A2D72F00FACCDF543DCD44C73 /* Frameworks */,
-				B4C02B37CBC34038183C90252D1F39A8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PromiseKit-watchOS";
-			productName = "PromiseKit-watchOS";
-			productReference = 20ECDF89AA589443CD31B44502C95D9C /* PromiseKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A49ED4C88E6803C1E136D164DA0E1AEE /* Pods-Bulldog Buck Balance */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E522E8B33F9ECC6106417C44D003ADC0 /* Build configuration list for PBXNativeTarget "Pods-Bulldog Buck Balance" */;
-			buildPhases = (
-				30A68C2FE22742CD107225A97380DF3E /* Sources */,
-				7AB48F8CFF0D99D220DF2D3401FE94E1 /* Frameworks */,
-				D1D850A2ECB4F5FBC0899ABFCB226CA7 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E1A9DFAFDFACDFA41D015D6410D9C9C0 /* PBXTargetDependency */,
-				065B7AC57B04265EBC4FD0A03E9C4563 /* PBXTargetDependency */,
-				BB688D3538077A7D6CFC453425AABA25 /* PBXTargetDependency */,
-				A334B42A5EF03FAFB152F5F8AD5FB110 /* PBXTargetDependency */,
-			);
-			name = "Pods-Bulldog Buck Balance";
-			productName = "Pods-Bulldog Buck Balance";
-			productReference = E1EA52E3798402E40954F7C3A7FB1AB4 /* Pods_Bulldog_Buck_Balance.framework */;
+			productReference = A1886BC845015835B311C5B19F7FCCD9 /* KeychainAccess.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A6E9CEC9E5ACFE69D21456CCB70BEEA0 /* KCFloatingActionButton */ = {
@@ -1385,28 +1347,28 @@
 			);
 			name = KCFloatingActionButton;
 			productName = KCFloatingActionButton;
-			productReference = 414B3186148E5A15C22E5FCE3A59036C /* KCFloatingActionButton.framework */;
+			productReference = 066EE22976E5612D0282230127EFD1AA /* KCFloatingActionButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B831FE5A6C518C66357AE5A422B5D33D /* Pods-Bulldog Buck Balance Extension */ = {
+		D0C6AF5AE99814A8615AD1CE4D03762B /* Pods-Bulldog Bucks - Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F084859328F453459A40B28B0AC552AD /* Build configuration list for PBXNativeTarget "Pods-Bulldog Buck Balance Extension" */;
+			buildConfigurationList = 86FC95230F94491E04507A3ADCE33DE9 /* Build configuration list for PBXNativeTarget "Pods-Bulldog Bucks - Watch" */;
 			buildPhases = (
-				C3586C09465433569E9DC355AD9F2E03 /* Sources */,
-				C2AA682FBC30DA29A63C01713BD877F3 /* Frameworks */,
-				2878916D2F9EE886957945CA5ED9C3CB /* Headers */,
+				09F661D687F798E990A4365AF920FA43 /* Sources */,
+				D86D74BBDAFB6411B94691D4A99DF0D7 /* Frameworks */,
+				7E9A544FB287FCE4471FC564F3B87367 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B4D3C16070796C9D3E415E538C8E3130 /* PBXTargetDependency */,
-				911D2ED8B490084407CB66A7BEE887AE /* PBXTargetDependency */,
-				E431E591513DC82C9278D172784AC2DA /* PBXTargetDependency */,
-				FEFFB733D57E34B34844E3B5DC2A581B /* PBXTargetDependency */,
+				F275F9DE0946AAE4AE52EE46D7F14D5A /* PBXTargetDependency */,
+				4AE761CC19827BA3F38B4B9A666CE837 /* PBXTargetDependency */,
+				923A6EA38B77D240B04A0C03EB0E8BE5 /* PBXTargetDependency */,
+				5071676723469BC6B7C80A135D590012 /* PBXTargetDependency */,
 			);
-			name = "Pods-Bulldog Buck Balance Extension";
-			productName = "Pods-Bulldog Buck Balance Extension";
-			productReference = DF996458877B844853838D3BBD2BE561 /* Pods_Bulldog_Buck_Balance_Extension.framework */;
+			name = "Pods-Bulldog Bucks - Watch";
+			productName = "Pods-Bulldog Bucks - Watch";
+			productReference = 878771D46B0C8D415FBE310F7AF15112 /* Pods_Bulldog_Bucks___Watch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DA30F5EE4A3D09EA571BCEF3787571BE /* Kanna-iOS */ = {
@@ -1423,7 +1385,45 @@
 			);
 			name = "Kanna-iOS";
 			productName = "Kanna-iOS";
-			productReference = 9F1F84FDC395E134CBF933F15C4C0BF9 /* Kanna.framework */;
+			productReference = 0DB632CA7E6E7C8388DEFC11ECC52955 /* Kanna.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E6DBB3E2E840B74B758191D355B811FD /* Pods-Bulldog Bucks - Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335A36EF247FDF67CBAA8BAD9399D122 /* Build configuration list for PBXNativeTarget "Pods-Bulldog Bucks - Watch Extension" */;
+			buildPhases = (
+				981833F451C70EDA23296BCAFED3D18F /* Sources */,
+				59B6B542615195D4BA4F04EA403E9DD0 /* Frameworks */,
+				9EB09F51EF7866E23D50E88AAFC05723 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB346AC128F9F9F90662466B7D689DC3 /* PBXTargetDependency */,
+				F537FA723F824DB5BEDAD313DBA7EECD /* PBXTargetDependency */,
+				C527E6D059AB8ECFA8E0E04B0BC20E71 /* PBXTargetDependency */,
+				F98D9ADB32FFA41545B9387138C5BD41 /* PBXTargetDependency */,
+			);
+			name = "Pods-Bulldog Bucks - Watch Extension";
+			productName = "Pods-Bulldog Bucks - Watch Extension";
+			productReference = EAD1B3FBC36DD9CD120EB403EEB240BE /* Pods_Bulldog_Bucks___Watch_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EBF87BB8B18C65890F9880AE4D627110 /* PromiseKit-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C65DD83B682EF9E046FF2A13919E91B7 /* Build configuration list for PBXNativeTarget "PromiseKit-watchOS" */;
+			buildPhases = (
+				4014A48515E07DFABFCD2554096885FB /* Sources */,
+				72DDFA4FA397B76CB4249DE76704A5CB /* Frameworks */,
+				C7AD580D0C0DA0173EB68C824923FE31 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PromiseKit-watchOS";
+			productName = "PromiseKit-watchOS";
+			productReference = ED6EAA9745EB1B57200EC973A58AA858 /* PromiseKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F95D0093C7B3D3ABEC4A632A9DFE6298 /* Pods-Bulldog Bucks */ = {
@@ -1446,7 +1446,7 @@
 			);
 			name = "Pods-Bulldog Bucks";
 			productName = "Pods-Bulldog Bucks";
-			productReference = FB1B1386473462FDA2211C503E7AD2B1 /* Pods_Bulldog_Bucks.framework */;
+			productReference = EF569E5F56040DAF8DA9A099BC0C22E9 /* Pods_Bulldog_Bucks.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FE955014E0980285B8A9F8D54C3B0234 /* Kanna-watchOS */ = {
@@ -1463,7 +1463,7 @@
 			);
 			name = "Kanna-watchOS";
 			productName = "Kanna-watchOS";
-			productReference = E93EC8BDE3B82565F3AD2B22F6450912 /* Kanna.framework */;
+			productReference = C784BD5458201D3E436C27AE5FDDB3B0 /* Kanna.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1483,7 +1483,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = FAAED22DFDC9AD3647331B6E40AE61AD /* Products */;
+			productRefGroup = 923540EE64F62943B35E0254CCD1A327 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1494,12 +1494,12 @@
 				A6E9CEC9E5ACFE69D21456CCB70BEEA0 /* KCFloatingActionButton */,
 				2511DF280125F2908F875613E6876909 /* KeychainAccess-iOS */,
 				7D8ADCF2084F11EE1B1C95B612D9A58A /* KeychainAccess-watchOS */,
-				A49ED4C88E6803C1E136D164DA0E1AEE /* Pods-Bulldog Buck Balance */,
-				B831FE5A6C518C66357AE5A422B5D33D /* Pods-Bulldog Buck Balance Extension */,
 				F95D0093C7B3D3ABEC4A632A9DFE6298 /* Pods-Bulldog Bucks */,
+				D0C6AF5AE99814A8615AD1CE4D03762B /* Pods-Bulldog Bucks - Watch */,
+				E6DBB3E2E840B74B758191D355B811FD /* Pods-Bulldog Bucks - Watch Extension */,
 				0CCDF2DF0D8B0256ABB1AC444A7FDDDA /* Pods-Bulldog Bucks - Widget */,
 				78DE093D2802C5E9E13CB516F108A220 /* PromiseKit-iOS */,
-				82C2A688F4E6949BB99839CE9A9AB688 /* PromiseKit-watchOS */,
+				EBF87BB8B18C65890F9880AE4D627110 /* PromiseKit-watchOS */,
 				5A878DD99216B954D4147D6A3E1AE491 /* SwiftSpinner */,
 			);
 		};
@@ -1512,6 +1512,14 @@
 			files = (
 				279C9E0549FEFEE2290A466FE62DC2BE /* Keychain.swift in Sources */,
 				0595F8820EBE7C729A464A49E0348034 /* KeychainAccess-watchOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09F661D687F798E990A4365AF920FA43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE24680A19DD239D025FE4E528405BDA /* Pods-Bulldog Bucks - Watch-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1540,14 +1548,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A68C2FE22742CD107225A97380DF3E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01031AFAC86AAF3805F82462F5D03933 /* Pods-Bulldog Buck Balance-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3723730E81A14B8E4784B5E5F240BC68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1570,6 +1570,43 @@
 				5991E162C47AFE360E7D5AE3A8EEBF89 /* TaskDelegate.swift in Sources */,
 				26A890304C5793BF8F1F16F290C22CB1 /* Timeline.swift in Sources */,
 				30E3A932E6C98BEF3CFBB612F0EF745C /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4014A48515E07DFABFCD2554096885FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8513FC7E0F807A067B1D4C10FC2BE397 /* after.m in Sources */,
+				A3E973ABECE03A54BCC7E5ACAE9B7459 /* after.swift in Sources */,
+				EFEA9E4A75E265B8877E1C160BECA280 /* afterlife.swift in Sources */,
+				6932F5721D0028241B7B810F1290E13D /* AnyPromise.m in Sources */,
+				64D863BCCDCCBC85B16CBA5049FD05DC /* AnyPromise.swift in Sources */,
+				48DC8443BBDFA21A17934757EC7694D8 /* dispatch_promise.m in Sources */,
+				E4D50A097E3FE33AB7E77D7E44E1AED6 /* DispatchQueue+Promise.swift in Sources */,
+				134BFE9FF3D0299F1AE2F5BCA35A27C1 /* Error.swift in Sources */,
+				643948BDEB9AC8DB33DD3B002177AF90 /* GlobalState.m in Sources */,
+				D4691C21B46883966D026D66F96D234F /* hang.m in Sources */,
+				E539DF8A3AACEDF7A63AF8D5149FA5EE /* join.m in Sources */,
+				385009FADE0849BCF100BEA23932EC8C /* join.swift in Sources */,
+				DAD1D562457127A5A60542DE8D4FA272 /* NSNotificationCenter+AnyPromise.m in Sources */,
+				34512782E83E8A032D0D067636F0EDA8 /* NSNotificationCenter+Promise.swift in Sources */,
+				7A64AE157C59F9FFB600D419234D0B2E /* NSObject+Promise.swift in Sources */,
+				9A38B0400E7EA26BBBBEE75F4576A23B /* NSTask+AnyPromise.m in Sources */,
+				A0B96701AD9ECAB4C6FDB3B28A76BA1E /* NSURLSession+AnyPromise.m in Sources */,
+				5629213EB6FA21919343F46724D2A476 /* NSURLSession+Promise.swift in Sources */,
+				66BAFC380DB10D01D2EE861948D02342 /* Process+Promise.swift in Sources */,
+				70CA931710F0DA2080014FA4CF2C7ED3 /* Promise+AnyPromise.swift in Sources */,
+				69C87A9255FF2C402C7F4650D9D8D974 /* Promise+Properties.swift in Sources */,
+				AE2A241E2F4EBA4B7A5E25B7F4525701 /* Promise.swift in Sources */,
+				2B7A4C05BBE9B301F6C2CE9235B5C28A /* PromiseKit-watchOS-dummy.m in Sources */,
+				98461E03B65ED94ADDBFB58FE8CE76C7 /* race.swift in Sources */,
+				406B6E8B40CB22A5A9B6C33D6CD0C398 /* State.swift in Sources */,
+				2ECD2E2547A5CAE71B49062C0FC64AC0 /* URLDataPromise.swift in Sources */,
+				2F9D820B0443B533A97E82F331AE8C1A /* when.m in Sources */,
+				05D1AEB0EDF0330267B2B6257789F1A6 /* when.swift in Sources */,
+				1FBF7B1D90B6FE35DB9AEDB370830947 /* wrap.swift in Sources */,
+				5F9D4D0B8FCE3C7F09F245D13970DE15 /* Zalgo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1613,49 +1650,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		981833F451C70EDA23296BCAFED3D18F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FB199BC4BFFD5FBC8EFA3D494636792 /* Pods-Bulldog Bucks - Watch Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A8E8247BB7C4BAF6FC63545F5E7B85D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DC6439DA44ED40BF4D65C269051368D0 /* Keychain.swift in Sources */,
 				84947F24FDFE2B54FFF8AD8D8057F478 /* KeychainAccess-iOS-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5A97F3EA8F68B66971EB474B33063CF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E53C71FAC335501E22CC153FA6CF151 /* after.m in Sources */,
-				6934EC691D96D8B9FC86E732D6B42489 /* after.swift in Sources */,
-				E66621134B9843EA1067FABCC26574DE /* afterlife.swift in Sources */,
-				D302DC6CE8ABF427681A3FED34B12F78 /* AnyPromise.m in Sources */,
-				91F102CBBD09F2CD7D6F95DB50DEE49A /* AnyPromise.swift in Sources */,
-				A5AB41C9F1F1A42AB23CD183836477B5 /* dispatch_promise.m in Sources */,
-				397096790430B4B9B42276DD7FB41521 /* DispatchQueue+Promise.swift in Sources */,
-				C105AA27611CC2F487DB8A9B16531634 /* Error.swift in Sources */,
-				4A8C893D9A3AB0695BC1E1CF513BE8CF /* GlobalState.m in Sources */,
-				15BB2B1902D93EB90CBDB2DD2EC7E9F9 /* hang.m in Sources */,
-				A532F9236593DA5E7C1C676C2393FC8A /* join.m in Sources */,
-				3E0014A5334DC17D86349455A50ABA59 /* join.swift in Sources */,
-				803F46C39AD04F775CB72E5594B2A2EA /* NSNotificationCenter+AnyPromise.m in Sources */,
-				66C287201D04DAACFF1688FEFEE50168 /* NSNotificationCenter+Promise.swift in Sources */,
-				4EEEAC74EE9FFD0532945C5FB47DE224 /* NSObject+Promise.swift in Sources */,
-				DB6B82EAFF406E4384B34700F147ED73 /* NSTask+AnyPromise.m in Sources */,
-				BC6674FF957BEB17E9B5684545B3D75E /* NSURLSession+AnyPromise.m in Sources */,
-				66815B9489E31C5DCE20844F297929DB /* NSURLSession+Promise.swift in Sources */,
-				1A949603B9364A88B945A999B663DE5D /* Process+Promise.swift in Sources */,
-				3535FB23DCBD9044C866EED6CD91EC7A /* Promise+AnyPromise.swift in Sources */,
-				D7EF0209F98494FD5DC3D4BA259B96D3 /* Promise+Properties.swift in Sources */,
-				19B1E41763DE558441F5961A4F6212FC /* Promise.swift in Sources */,
-				52274E74BD227878B06DEB777549DB53 /* PromiseKit-watchOS-dummy.m in Sources */,
-				643D15CAC99696D8BF28F42BBB67597E /* race.swift in Sources */,
-				94D540DE5DE8C99DFFB18039CC5C2054 /* State.swift in Sources */,
-				3B3E134182FD12662F4B41DEF4B0907A /* URLDataPromise.swift in Sources */,
-				B7DC117C2BA2C495D4EE1E47A4197249 /* when.m in Sources */,
-				D2C164E60BB77947A4F4C0C64E1A3DD6 /* when.swift in Sources */,
-				5CE598BDDA8DD035049BA3FF7DF5473B /* wrap.swift in Sources */,
-				6C82131F1E8F159EF0CF085F2DC3B04C /* Zalgo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1710,14 +1718,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3586C09465433569E9DC355AD9F2E03 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06A4A03465474C1A5010B2C9C6240C65 /* Pods-Bulldog Buck Balance Extension-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E1D2F0D0945F11F527F9E5BC1312A9EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1738,12 +1738,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		065B7AC57B04265EBC4FD0A03E9C4563 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Kanna-watchOS";
-			target = FE955014E0980285B8A9F8D54C3B0234 /* Kanna-watchOS */;
-			targetProxy = 219DB5FF62AD87363738F785128DE825 /* PBXContainerItemProxy */;
-		};
 		0F60D0D8437B8FBD6C567EC7162B8B8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "PromiseKit-iOS";
@@ -1768,17 +1762,23 @@
 			target = 2511DF280125F2908F875613E6876909 /* KeychainAccess-iOS */;
 			targetProxy = E6141694A3E62DF895108882C1EE70DC /* PBXContainerItemProxy */;
 		};
-		911D2ED8B490084407CB66A7BEE887AE /* PBXTargetDependency */ = {
+		4AE761CC19827BA3F38B4B9A666CE837 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Kanna-watchOS";
 			target = FE955014E0980285B8A9F8D54C3B0234 /* Kanna-watchOS */;
-			targetProxy = 52BF517DD5730C3AF2DA790B980D8B2D /* PBXContainerItemProxy */;
+			targetProxy = BA5CF3F950D0530AB9FD4D98444CB819 /* PBXContainerItemProxy */;
 		};
-		A334B42A5EF03FAFB152F5F8AD5FB110 /* PBXTargetDependency */ = {
+		5071676723469BC6B7C80A135D590012 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "PromiseKit-watchOS";
-			target = 82C2A688F4E6949BB99839CE9A9AB688 /* PromiseKit-watchOS */;
-			targetProxy = C5DDC3BC6AC6BACBD17F6C238CE9250D /* PBXContainerItemProxy */;
+			target = EBF87BB8B18C65890F9880AE4D627110 /* PromiseKit-watchOS */;
+			targetProxy = 0ED5ABC3EB6D697B59975134EA3188ED /* PBXContainerItemProxy */;
+		};
+		923A6EA38B77D240B04A0C03EB0E8BE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "KeychainAccess-watchOS";
+			target = 7D8ADCF2084F11EE1B1C95B612D9A58A /* KeychainAccess-watchOS */;
+			targetProxy = 202799E7A24A0D2D006F5F70F26E536C /* PBXContainerItemProxy */;
 		};
 		AFF96B2D547A3F59C8523D17A6E50EEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1786,23 +1786,17 @@
 			target = 5A878DD99216B954D4147D6A3E1AE491 /* SwiftSpinner */;
 			targetProxy = 904ECEDB5BDB2563F7E8A057BCE8D128 /* PBXContainerItemProxy */;
 		};
-		B4D3C16070796C9D3E415E538C8E3130 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire-watchOS";
-			target = 173E4104E4F2CE5ECC896A154802C6D5 /* Alamofire-watchOS */;
-			targetProxy = AD37004C3ADAA31930270BC6B6704943 /* PBXContainerItemProxy */;
-		};
-		BB688D3538077A7D6CFC453425AABA25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "KeychainAccess-watchOS";
-			target = 7D8ADCF2084F11EE1B1C95B612D9A58A /* KeychainAccess-watchOS */;
-			targetProxy = 9077D97D6F9FA8B9BA784872954D37FB /* PBXContainerItemProxy */;
-		};
 		C44FBD6BFE12A08B987CC1531A9025FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire-iOS";
 			target = 4D8199C20C1BE5F5BCDBC8F8CB4BF089 /* Alamofire-iOS */;
 			targetProxy = D6F038D52505BFDC147E82241681E075 /* PBXContainerItemProxy */;
+		};
+		C527E6D059AB8ECFA8E0E04B0BC20E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "KeychainAccess-watchOS";
+			target = 7D8ADCF2084F11EE1B1C95B612D9A58A /* KeychainAccess-watchOS */;
+			targetProxy = 1EBF7605C37186F560833F4D7549AC4D /* PBXContainerItemProxy */;
 		};
 		C6DCFA95001978FA1CEDF96CDFAAF2D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1822,29 +1816,35 @@
 			target = 78DE093D2802C5E9E13CB516F108A220 /* PromiseKit-iOS */;
 			targetProxy = ECC930AB2C35096CE177472C704111C1 /* PBXContainerItemProxy */;
 		};
-		E1A9DFAFDFACDFA41D015D6410D9C9C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire-watchOS";
-			target = 173E4104E4F2CE5ECC896A154802C6D5 /* Alamofire-watchOS */;
-			targetProxy = 3E4DAD8FC639594D0110081A0F6A0287 /* PBXContainerItemProxy */;
-		};
-		E431E591513DC82C9278D172784AC2DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "KeychainAccess-watchOS";
-			target = 7D8ADCF2084F11EE1B1C95B612D9A58A /* KeychainAccess-watchOS */;
-			targetProxy = 3D59DC0399B41E1392A4EBE59951482D /* PBXContainerItemProxy */;
-		};
 		E7C8F331A26E3B4B0B04E218F5A71345 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Kanna-iOS";
 			target = DA30F5EE4A3D09EA571BCEF3787571BE /* Kanna-iOS */;
 			targetProxy = 9FB196C9934AF2B45BDA4328C54F90DA /* PBXContainerItemProxy */;
 		};
-		FEFFB733D57E34B34844E3B5DC2A581B /* PBXTargetDependency */ = {
+		EB346AC128F9F9F90662466B7D689DC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire-watchOS";
+			target = 173E4104E4F2CE5ECC896A154802C6D5 /* Alamofire-watchOS */;
+			targetProxy = 8159BA09A63BBC89654C4FCF5F820E61 /* PBXContainerItemProxy */;
+		};
+		F275F9DE0946AAE4AE52EE46D7F14D5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire-watchOS";
+			target = 173E4104E4F2CE5ECC896A154802C6D5 /* Alamofire-watchOS */;
+			targetProxy = 4A98CA6360EF007F19B5C5793F1BCA72 /* PBXContainerItemProxy */;
+		};
+		F537FA723F824DB5BEDAD313DBA7EECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Kanna-watchOS";
+			target = FE955014E0980285B8A9F8D54C3B0234 /* Kanna-watchOS */;
+			targetProxy = 7E248FAA70E9DD291135F231937AB69F /* PBXContainerItemProxy */;
+		};
+		F98D9ADB32FFA41545B9387138C5BD41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "PromiseKit-watchOS";
-			target = 82C2A688F4E6949BB99839CE9A9AB688 /* PromiseKit-watchOS */;
-			targetProxy = 6F393BB16C8CB7AD6A7311CD6F5DDA85 /* PBXContainerItemProxy */;
+			target = EBF87BB8B18C65890F9880AE4D627110 /* PromiseKit-watchOS */;
+			targetProxy = 79AA2DD2BA008C3526B3428348411EC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1883,46 +1883,9 @@
 			};
 			name = Debug;
 		};
-		130AEC04A7856D70AC59E3DEEE634E52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D15DDA47DD6BBF90929B209B7F25D0F3 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Buck Balance Extension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Bulldog_Buck_Balance_Extension;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
-		};
 		19092898B73C601BC158630B1BFD3EC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 307DE532BB22EE83D3FF2DC74C1DB286 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */;
+			baseConfigurationReference = 404BE561C46EA5F0CDDADD3DE0FFE757 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1991,7 +1954,7 @@
 		};
 		22201B46DC9A5DF9D1D17A236143A427 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E0B7CC32CCECE2368AD68D421E2B981 /* Pods-Bulldog Bucks.release.xcconfig */;
+			baseConfigurationReference = EFBA9F1BBDDD37348B2CC974D131B78A /* Pods-Bulldog Bucks.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2057,6 +2020,39 @@
 			};
 			name = Debug;
 		};
+		3438B0415B14DC5CA19D7065353E8AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FB4CEF97A7EB17B308EAAC6DEDE8E7 /* PromiseKit-watchOS.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PromiseKit-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PromiseKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		43C9BE4EC03F64CBE02AF1333831D9A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5BBB5B87A530EAAC37860121BF62F6D /* Alamofire-watchOS.xcconfig */;
@@ -2089,6 +2085,43 @@
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
+		};
+		4CFB00BEF64E99C1CBED69A463519FA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7676691832B490B66D3DF39B5E2CF53D /* Pods-Bulldog Bucks - Watch.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Bulldog_Bucks___Watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
 		};
 		53C55B0983025776778E0DB2546E8893 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2191,7 +2224,7 @@
 		};
 		699403B39B97B281BB5F5FD8972DDDEF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6C89C575829D5DD202BCDA3522EDAF7 /* Pods-Bulldog Bucks - Widget.release.xcconfig */;
+			baseConfigurationReference = 83B55044A6921FD93FE02C7FAD4EBF95 /* Pods-Bulldog Bucks - Widget.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2255,42 +2288,6 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		71181554187B98A930487359090CA5B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7587E7B6F627B086C1B3C1AFFD28E6B /* Pods-Bulldog Buck Balance.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Buck Balance/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Bulldog_Buck_Balance;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -2405,39 +2402,6 @@
 			};
 			name = Debug;
 		};
-		8EB5D40ED5F83EE09276F35A322ACA01 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9FB4CEF97A7EB17B308EAAC6DEDE8E7 /* PromiseKit-watchOS.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PromiseKit-watchOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PromiseKit;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		8F6E636DC5735EBAC8AE4CE314CE0083 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6ADF96CA77E4D99EFFC61B9F585CFC2 /* KeychainAccess-iOS.xcconfig */;
@@ -2469,6 +2433,79 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		95E6F5B55FAAF4AB3120608BAC633AE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0061D54698C744DFC7013DD57D0FBDB1 /* Pods-Bulldog Bucks - Watch.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Bulldog_Bucks___Watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		9C0D727148984267B842483270E40BA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BECF453DFDF1D146C0FC0EE0F2BEF21F /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Bulldog_Bucks___Watch_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -2540,43 +2577,9 @@
 			};
 			name = Debug;
 		};
-		AB4EE54C69D5B899DDCEE248BF5BA1FE /* Debug */ = {
+		BDF800E9055F164D54B8100789ABF294 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9FB4CEF97A7EB17B308EAAC6DEDE8E7 /* PromiseKit-watchOS.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PromiseKit-watchOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PromiseKit;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		B63201446618C386B2833E41484A3412 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A973EE585658C6FEF8E7B5007AD71651 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */;
+			baseConfigurationReference = 6C0FEBE3744D5579143CD8AD4C5E5929 /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2590,17 +2593,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Buck Balance Extension/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch Extension/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Bulldog_Buck_Balance_Extension;
+				PRODUCT_NAME = Pods_Bulldog_Bucks___Watch_Extension;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -2609,43 +2612,6 @@
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
-		};
-		CA7065B6F0E68FCFA01FA41A91ACBB4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6A152B06E2FC07796F263C79B011CE3 /* Pods-Bulldog Buck Balance.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Bulldog Buck Balance/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Bulldog_Buck_Balance;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.0;
-			};
-			name = Debug;
 		};
 		CC567ECDC72232516177B2E12E8DE9F8 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2719,6 +2685,40 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DE19A252D05CFC5145F162AE2B77DD15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FB4CEF97A7EB17B308EAAC6DEDE8E7 /* PromiseKit-watchOS.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PromiseKit-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PromiseKit-watchOS/PromiseKit-watchOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PromiseKit;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -2857,7 +2857,7 @@
 		};
 		FDF35338C6242BC775AB4F4370EFC4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D045375F5FC6442E34A2D930077F78FF /* Pods-Bulldog Bucks.debug.xcconfig */;
+			baseConfigurationReference = CA124AC5368320AF29A30FC4354EDD20 /* Pods-Bulldog Bucks.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2912,6 +2912,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		335A36EF247FDF67CBAA8BAD9399D122 /* Build configuration list for PBXNativeTarget "Pods-Bulldog Bucks - Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C0D727148984267B842483270E40BA1 /* Debug */,
+				BDF800E9055F164D54B8100789ABF294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3C49C081E39DE894B5A01B450EC26965 /* Build configuration list for PBXNativeTarget "KeychainAccess-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2948,6 +2957,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		86FC95230F94491E04507A3ADCE33DE9 /* Build configuration list for PBXNativeTarget "Pods-Bulldog Bucks - Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFB00BEF64E99C1CBED69A463519FA3 /* Debug */,
+				95E6F5B55FAAF4AB3120608BAC633AE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AB92E599D179260C3F30F3C6F77933B7 /* Build configuration list for PBXNativeTarget "Alamofire-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2975,11 +2993,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B531C67A889560DF481250E5F1A9A28F /* Build configuration list for PBXNativeTarget "PromiseKit-watchOS" */ = {
+		C65DD83B682EF9E046FF2A13919E91B7 /* Build configuration list for PBXNativeTarget "PromiseKit-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB4EE54C69D5B899DDCEE248BF5BA1FE /* Debug */,
-				8EB5D40ED5F83EE09276F35A322ACA01 /* Release */,
+				DE19A252D05CFC5145F162AE2B77DD15 /* Debug */,
+				3438B0415B14DC5CA19D7065353E8AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2989,24 +3007,6 @@
 			buildConfigurations = (
 				8F6E636DC5735EBAC8AE4CE314CE0083 /* Debug */,
 				FAED8694EA1A9FA61C1D53F116BA9327 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E522E8B33F9ECC6106417C44D003ADC0 /* Build configuration list for PBXNativeTarget "Pods-Bulldog Buck Balance" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA7065B6F0E68FCFA01FA41A91ACBB4C /* Debug */,
-				71181554187B98A930487359090CA5B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F084859328F453459A40B28B0AC552AD /* Build configuration list for PBXNativeTarget "Pods-Bulldog Buck Balance Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				130AEC04A7856D70AC59E3DEEE634E52 /* Debug */,
-				B63201446618C386B2833E41484A3412 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

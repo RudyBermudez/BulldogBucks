@@ -39,12 +39,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Bulldog Buck Balance Extension.xcscheme</key>
+		<key>Pods-Bulldog Bucks - Watch Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Bulldog Buck Balance.xcscheme</key>
+		<key>Pods-Bulldog Bucks - Watch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -112,27 +112,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82C2A688F4E6949BB99839CE9A9AB688</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A49ED4C88E6803C1E136D164DA0E1AEE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B831FE5A6C518C66357AE5A422B5D33D</key>
+		<key>D0C6AF5AE99814A8615AD1CE4D03762B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DA30F5EE4A3D09EA571BCEF3787571BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6DBB3E2E840B74B758191D355B811FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBF87BB8B18C65890F9880AE4D627110</key>
 		<dict>
 			<key>primary</key>
 			<true/>

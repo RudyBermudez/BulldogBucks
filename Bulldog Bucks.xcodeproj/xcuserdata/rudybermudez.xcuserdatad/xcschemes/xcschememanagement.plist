@@ -4,15 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bulldog Buck Balance (Complication).xcscheme</key>
+		<key>Bulldog Bucks - Watch (Complication).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>3</integer>
 		</dict>
-		<key>Bulldog Buck Balance.xcscheme</key>
+		<key>Bulldog Bucks - Watch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Bulldog Bucks - Widget.xcscheme</key>
 		<dict>

@@ -12,7 +12,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Bulldog_Buck_Balance" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Bulldog_Bucks___Watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" hidden="YES" layout="vertical" id="441-ls-L8F" userLabel="errorGroup">
                             <items>

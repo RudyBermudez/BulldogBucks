@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Bulldog_Buck_Balance_ExtensionVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Bulldog_Buck_Balance_ExtensionVersionString[];
+FOUNDATION_EXPORT double Pods_Bulldog_Bucks___WatchVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Bulldog_Bucks___WatchVersionString[];
 

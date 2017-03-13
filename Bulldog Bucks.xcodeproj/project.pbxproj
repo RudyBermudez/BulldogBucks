@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0DEB502425CAFFDE634B3C22 /* Pods_Bulldog_Buck_Balance_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F40F414EF9E62852FD71C43 /* Pods_Bulldog_Buck_Balance_Extension.framework */; };
 		106DB19224626209DEA4C2C9 /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CAFCADD9AFDA53F23F5B5A /* Pods_Bulldog_Bucks___Widget.framework */; };
+		38B10173E51D667535F75D1C /* Pods_Bulldog_Bucks___Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98D84BE2048CD4D7A731F7D6 /* Pods_Bulldog_Bucks___Watch.framework */; };
+		3C205DDB96F2006966A713F4 /* Pods_Bulldog_Bucks___Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9710F4CC857BE742FF994E5 /* Pods_Bulldog_Bucks___Watch_Extension.framework */; };
 		47234DA41DE19ABF00C25C8F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47234DA31DE19ABF00C25C8F /* CustomAlert.swift */; };
 		472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */; };
 		472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */; };
@@ -20,12 +22,12 @@
 		4761DF0D1E47D9C8004755EB /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
 		476E50F61E74FDD5005CD02C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476E50F41E74FDD5005CD02C /* Interface.storyboard */; };
 		476E50F81E74FDD5005CD02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476E50F71E74FDD5005CD02C /* Assets.xcassets */; };
-		476E50FF1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		476E50FF1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		476E51041E74FDD5005CD02C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E51031E74FDD5005CD02C /* InterfaceController.swift */; };
 		476E51061E74FDD5005CD02C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */; };
 		476E51081E74FDD5005CD02C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E51071E74FDD5005CD02C /* ComplicationController.swift */; };
 		476E510A1E74FDD5005CD02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476E51091E74FDD5005CD02C /* Assets.xcassets */; };
-		476E510E1E74FDD5005CD02C /* Bulldog Buck Balance.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */; };
+		476E510E1E74FDD5005CD02C /* Bulldog Bucks - Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */; };
 		476E51191E750A63005CD02C /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
 		476E511B1E751B01005CD02C /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		477383E71E737062002053F0 /* DINPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472F331C1DE3DBAB001D4B4C /* DINPro-Regular.ttf */; };
@@ -83,7 +85,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				476E510E1E74FDD5005CD02C /* Bulldog Buck Balance.app in Embed Watch Content */,
+				476E510E1E74FDD5005CD02C /* Bulldog Bucks - Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +96,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				476E50FF1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex in Embed App Extensions */,
+				476E50FF1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +115,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		013637291A0A9EEF74E7C47A /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		4560E44659E91E4401C3C606 /* Pods_Bulldog_Buck_Balance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Buck_Balance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BCAB5AE4B339C5B0E25ACA /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
 		47234DA31DE19ABF00C25C8F /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
@@ -124,17 +127,16 @@
 		472F331C1DE3DBAB001D4B4C /* DINPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DINPro-Regular.ttf"; sourceTree = "<group>"; };
 		4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDBKeychain.swift; sourceTree = "<group>"; };
 		4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZagwebAPI.swift; sourceTree = "<group>"; };
-		476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulldog Buck Balance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulldog Bucks - Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		476E50F51E74FDD5005CD02C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		476E50F71E74FDD5005CD02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		476E50F91E74FDD5005CD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bulldog Buck Balance Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bulldog Bucks - Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		476E51031E74FDD5005CD02C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		476E51071E74FDD5005CD02C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		476E51091E74FDD5005CD02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		476E510B1E74FDD5005CD02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		476E511A1E750AFF005CD02C /* Bulldog Buck Balance Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Buck Balance Extension.entitlements"; sourceTree = "<group>"; };
 		477BE1671DE618B300F39E46 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		478497FA1DA0721700E8ADFA /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
 		478497FB1DA0721700E8ADFA /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
@@ -153,14 +155,20 @@
 		479448081D9A4409007847BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks.entitlements"; sourceTree = "<group>"; };
 		4794B01B1DE5126C00F71077 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
+		479C4D0E1E76826F005DAC22 /* Bulldog Bucks - Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks - Watch Extension.entitlements"; sourceTree = "<group>"; };
 		47BC3AB61DA09D29001C3FD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
 		4F40F414EF9E62852FD71C43 /* Pods_Bulldog_Buck_Balance_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Buck_Balance_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629616AC6B5667910919A048 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		65E6949883F01EE0066D448D /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
 		6A74392C9E0E7FA7CD591F60 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		8ACB8EA356AD879CA8628BAA /* Pods-Bulldog Bucks - Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch.debug.xcconfig"; sourceTree = "<group>"; };
+		8DD5E9B8E8242F74E2C7722D /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		959AB96D91F2D29E011B9582 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98D84BE2048CD4D7A731F7D6 /* Pods_Bulldog_Bucks___Watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Watch.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F84E5A93D8B8327F35F2F94 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension.release.xcconfig"; sourceTree = "<group>"; };
+		9FFA84CCE0260A6420A19FD2 /* Pods-Bulldog Bucks - Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch.release.xcconfig"; sourceTree = "<group>"; };
+		A9710F4CC857BE742FF994E5 /* Pods_Bulldog_Bucks___Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Watch_Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FEC397C2188390D6CD994B /* Pods-Bulldog Buck Balance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Buck Balance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance.release.xcconfig"; sourceTree = "<group>"; };
 		D1CAFCADD9AFDA53F23F5B5A /* Pods_Bulldog_Bucks___Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C1C8059BA0A7D705970B70 /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DEB502425CAFFDE634B3C22 /* Pods_Bulldog_Buck_Balance_Extension.framework in Frameworks */,
+				3C205DDB96F2006966A713F4 /* Pods_Bulldog_Bucks___Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DBA00B9A4D83F0D08830E8 /* Pods_Bulldog_Buck_Balance.framework in Frameworks */,
+				38B10173E51D667535F75D1C /* Pods_Bulldog_Bucks___Watch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +225,10 @@
 				65E6949883F01EE0066D448D /* Pods-Bulldog Bucks.release.xcconfig */,
 				629616AC6B5667910919A048 /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
 				F0C1C8059BA0A7D705970B70 /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
+				8ACB8EA356AD879CA8628BAA /* Pods-Bulldog Bucks - Watch.debug.xcconfig */,
+				9FFA84CCE0260A6420A19FD2 /* Pods-Bulldog Bucks - Watch.release.xcconfig */,
+				8DD5E9B8E8242F74E2C7722D /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */,
+				013637291A0A9EEF74E7C47A /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -252,27 +266,27 @@
 			path = Shared/API;
 			sourceTree = "<group>";
 		};
-		476E50F31E74FDD5005CD02C /* Bulldog Buck Balance */ = {
+		476E50F31E74FDD5005CD02C /* Bulldog Bucks Watch */ = {
 			isa = PBXGroup;
 			children = (
 				476E50F41E74FDD5005CD02C /* Interface.storyboard */,
 				476E50F71E74FDD5005CD02C /* Assets.xcassets */,
 				476E50F91E74FDD5005CD02C /* Info.plist */,
 			);
-			path = "Bulldog Buck Balance";
+			path = "Bulldog Bucks Watch";
 			sourceTree = "<group>";
 		};
-		476E51021E74FDD5005CD02C /* Bulldog Buck Balance Extension */ = {
+		476E51021E74FDD5005CD02C /* Bulldog Bucks Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				476E511A1E750AFF005CD02C /* Bulldog Buck Balance Extension.entitlements */,
+				479C4D0E1E76826F005DAC22 /* Bulldog Bucks - Watch Extension.entitlements */,
 				476E51031E74FDD5005CD02C /* InterfaceController.swift */,
 				476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */,
 				476E51071E74FDD5005CD02C /* ComplicationController.swift */,
 				476E51091E74FDD5005CD02C /* Assets.xcassets */,
 				476E510B1E74FDD5005CD02C /* Info.plist */,
 			);
-			path = "Bulldog Buck Balance Extension";
+			path = "Bulldog Bucks Watch Extension";
 			sourceTree = "<group>";
 		};
 		478497EB1DA06BA800E8ADFA /* Shared */ = {
@@ -311,8 +325,8 @@
 				478497EB1DA06BA800E8ADFA /* Shared */,
 				479447CB1D99F2C1007847BE /* Bulldog Bucks */,
 				479448021D9A4409007847BE /* Bulldog Bucks Widget */,
-				476E50F31E74FDD5005CD02C /* Bulldog Buck Balance */,
-				476E51021E74FDD5005CD02C /* Bulldog Buck Balance Extension */,
+				476E50F31E74FDD5005CD02C /* Bulldog Bucks Watch */,
+				476E51021E74FDD5005CD02C /* Bulldog Bucks Watch Extension */,
 				479447FF1D9A4409007847BE /* Frameworks */,
 				479447CA1D99F2C1007847BE /* Products */,
 				10CE779D9951235C223FEA97 /* Pods */,
@@ -325,8 +339,8 @@
 			children = (
 				479447C91D99F2C1007847BE /* Bulldog Bucks.app */,
 				479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */,
-				476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */,
-				476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */,
+				476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */,
+				476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,6 +366,8 @@
 				4F40F414EF9E62852FD71C43 /* Pods_Bulldog_Buck_Balance_Extension.framework */,
 				959AB96D91F2D29E011B9582 /* Pods_Bulldog_Bucks.framework */,
 				D1CAFCADD9AFDA53F23F5B5A /* Pods_Bulldog_Bucks___Widget.framework */,
+				98D84BE2048CD4D7A731F7D6 /* Pods_Bulldog_Bucks___Watch.framework */,
+				A9710F4CC857BE742FF994E5 /* Pods_Bulldog_Bucks___Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -397,9 +413,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		476E50F11E74FDD5005CD02C /* Bulldog Buck Balance */ = {
+		476E50F11E74FDD5005CD02C /* Bulldog Bucks - Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 476E51151E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance" */;
+			buildConfigurationList = 476E51151E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Watch" */;
 			buildPhases = (
 				68ED82B9607D392874030253 /* [CP] Check Pods Manifest.lock */,
 				476E50F01E74FDD5005CD02C /* Resources */,
@@ -412,14 +428,14 @@
 			dependencies = (
 				476E51011E74FDD5005CD02C /* PBXTargetDependency */,
 			);
-			name = "Bulldog Buck Balance";
+			name = "Bulldog Bucks - Watch";
 			productName = "Bulldog Buck Balance";
-			productReference = 476E50F21E74FDD5005CD02C /* Bulldog Buck Balance.app */;
+			productReference = 476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		476E50FD1E74FDD5005CD02C /* Bulldog Buck Balance Extension */ = {
+		476E50FD1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 476E51131E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance Extension" */;
+			buildConfigurationList = 476E51131E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Watch Extension" */;
 			buildPhases = (
 				C93DD87AAE07F77E3DFE6C92 /* [CP] Check Pods Manifest.lock */,
 				476E50FA1E74FDD5005CD02C /* Sources */,
@@ -432,9 +448,9 @@
 			);
 			dependencies = (
 			);
-			name = "Bulldog Buck Balance Extension";
+			name = "Bulldog Bucks - Watch Extension";
 			productName = "Bulldog Buck Balance Extension";
-			productReference = 476E50FE1E74FDD5005CD02C /* Bulldog Buck Balance Extension.appex */;
+			productReference = 476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		479447C81D99F2C1007847BE /* Bulldog Bucks */ = {
@@ -547,8 +563,8 @@
 			targets = (
 				479447C81D99F2C1007847BE /* Bulldog Bucks */,
 				479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */,
-				476E50F11E74FDD5005CD02C /* Bulldog Buck Balance */,
-				476E50FD1E74FDD5005CD02C /* Bulldog Buck Balance Extension */,
+				476E50F11E74FDD5005CD02C /* Bulldog Bucks - Watch */,
+				476E50FD1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -608,7 +624,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		423743B060B078851816AC5F /* [CP] Embed Pods Frameworks */ = {
@@ -698,7 +714,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Buck Balance/Pods-Bulldog Buck Balance-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7586027935CAE84FAD18842 /* [CP] Embed Pods Frameworks */ = {
@@ -713,7 +729,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Buck Balance Extension/Pods-Bulldog Buck Balance Extension-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C93DD87AAE07F77E3DFE6C92 /* [CP] Check Pods Manifest.lock */ = {
@@ -799,12 +815,12 @@
 /* Begin PBXTargetDependency section */
 		476E51011E74FDD5005CD02C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 476E50FD1E74FDD5005CD02C /* Bulldog Buck Balance Extension */;
+			target = 476E50FD1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension */;
 			targetProxy = 476E51001E74FDD5005CD02C /* PBXContainerItemProxy */;
 		};
 		476E510D1E74FDD5005CD02C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 476E50F11E74FDD5005CD02C /* Bulldog Buck Balance */;
+			target = 476E50F11E74FDD5005CD02C /* Bulldog Bucks - Watch */;
 			targetProxy = 476E510C1E74FDD5005CD02C /* PBXContainerItemProxy */;
 		};
 		4794480A1D9A4409007847BE /* PBXTargetDependency */ = {
@@ -852,13 +868,13 @@
 /* Begin XCBuildConfiguration section */
 		476E510F1E74FDD5005CD02C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4B4FCBF02C139B336973CB1 /* Pods-Bulldog Buck Balance.debug.xcconfig */;
+			baseConfigurationReference = 8ACB8EA356AD879CA8628BAA /* Pods-Bulldog Bucks - Watch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
-				IBSC_MODULE = Bulldog_Buck_Balance_Extension;
-				INFOPLIST_FILE = "Bulldog Buck Balance/Info.plist";
+				IBSC_MODULE = "$(PRODUCT_NAME:c99extidentifier)";
+				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -871,13 +887,13 @@
 		};
 		476E51101E74FDD5005CD02C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8FEC397C2188390D6CD994B /* Pods-Bulldog Buck Balance.release.xcconfig */;
+			baseConfigurationReference = 9FFA84CCE0260A6420A19FD2 /* Pods-Bulldog Bucks - Watch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
-				IBSC_MODULE = Bulldog_Buck_Balance_Extension;
-				INFOPLIST_FILE = "Bulldog Buck Balance/Info.plist";
+				IBSC_MODULE = "$(PRODUCT_NAME:c99extidentifier)";
+				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -890,12 +906,12 @@
 		};
 		476E51111E74FDD5005CD02C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A74392C9E0E7FA7CD591F60 /* Pods-Bulldog Buck Balance Extension.debug.xcconfig */;
+			baseConfigurationReference = 8DD5E9B8E8242F74E2C7722D /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Bulldog Buck Balance Extension/Bulldog Buck Balance Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks Watch Extension/Bulldog Bucks - Watch Extension.entitlements";
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
-				INFOPLIST_FILE = "Bulldog Buck Balance Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -909,12 +925,12 @@
 		};
 		476E51121E74FDD5005CD02C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F84E5A93D8B8327F35F2F94 /* Pods-Bulldog Buck Balance Extension.release.xcconfig */;
+			baseConfigurationReference = 013637291A0A9EEF74E7C47A /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Bulldog Buck Balance Extension/Bulldog Buck Balance Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks Watch Extension/Bulldog Bucks - Watch Extension.entitlements";
 				DEVELOPMENT_TEAM = NZ8449Y9W6;
-				INFOPLIST_FILE = "Bulldog Buck Balance Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bulldog Bucks Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -1100,7 +1116,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		476E51131E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance Extension" */ = {
+		476E51131E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				476E51111E74FDD5005CD02C /* Debug */,
@@ -1109,7 +1125,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		476E51151E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Buck Balance" */ = {
+		476E51151E74FDD5005CD02C /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				476E510F1E74FDD5005CD02C /* Debug */,
