@@ -1,7 +1,6 @@
 # ![](http://i.imgur.com/gA6Z00Y.png) Bulldog Bucks
 
-[![download](https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg)]
-(https://itunes.apple.com/us/app/bulldog-buck-balance/id1178478896)
+[![download](https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg)](https://itunes.apple.com/us/app/bulldog-buck-balance/id1178478896)
 
 #### The Bulldog Bucks App was designed for Gonzaga University students to quickly and easily check their Bulldog Buck balance.
 
