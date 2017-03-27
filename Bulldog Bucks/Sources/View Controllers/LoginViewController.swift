@@ -22,6 +22,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
 	
 	// MARK: - Properties
+    private let keychain = BDBKeychain.phoneKeychain
     
 	var delegate: LoginViewControllerDelegate?
 	
@@ -30,7 +31,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	}()
 	
     /// Class Instance of ZagwebClient
-	let client = ZagwebClient()
+	private let client = ZagwebClient()
 	
     
 	// MARK: - UIViewController
@@ -44,10 +45,6 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         setupGestureRecognizer()
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-	}
-	
     /**
      Login Action
      
@@ -79,7 +76,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      Checks if there is internet connection, then attempts to authenticate by calling `self.checkCredentials()`
      
      */
-    func login(studentID: String, PIN:String) {
+    private func login(studentID: String, PIN:String) {
         if isConnectedToNetwork() {
             checkCredentials(withStudentID: studentID, withPIN: PIN)
         } else {
@@ -94,7 +91,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      - When keyboard appears, `self.keyboardWillAppear()` is called
      - When keyboard disappers, `self.keyboardWillDisappear()` is called
      */
-    func setupNotificationCenter() {
+    private func setupNotificationCenter() {
         // Notification Center Observers
         notificationCenter.addObserver(self, selector: #selector(self.keyboardWillAppear(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         notificationCenter.addObserver(self, selector: #selector(self.keyboardWillDisappear(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
@@ -105,7 +102,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
      
      If a tap is recognized, `UIView.endEditing` is called
     */
-    func setupGestureRecognizer() {
+    private func setupGestureRecognizer() {
         // Keyboard Dismissal
         let tapper = UITapGestureRecognizer(target: view, action:#selector(UIView.endEditing))
         tapper.cancelsTouchesInView = false
@@ -149,16 +146,16 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         - withStudentID: The student ID of the user as a `String`
         - withPIN: The PIN of the user as a `String`
      */
-	func checkCredentials(withStudentID: String, withPIN: String) {
+	private func checkCredentials(withStudentID: String, withPIN: String) {
 		client.authenticate(withStudentID: withStudentID, withPIN: withPIN).then { (_) -> Void in
             
-            let success = Authentication.addCredentials(studentID: withStudentID, PIN: withPIN)
+            let success = self.keychain.addCredentials(studentID: withStudentID, PIN: withPIN)
             if success {
                 self.loginButton.startFinishAnimation {
                     self.delegate?.didLoginSuccessfully()
                 }
             } else {
-                throw AuthenticationError.DidNotSaveCredentials
+                throw KeychainError.DidNotSaveCredentials
             }
 			
 			
@@ -174,7 +171,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 }
 				
 			}
-            let _ = Authentication.deleteCredentials()
+            let _ = self.keychain.deleteCredentials()
 		}
 	}
 	

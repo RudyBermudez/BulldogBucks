@@ -21,8 +21,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Class Instance of ZagwebClient
     let client = ZagwebClient()
     
+    let keychain = BDBKeychain.phoneKeychain
 	
-    let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
+    let userDefaults = UserDefaults.standard
 
 	
     // MARK: - UIViewController
@@ -31,15 +32,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         preferredContentSize = CGSize(width: self.view.bounds.width, height: 100.0)
         setFontColor()
-        if Authentication.isLoggedIn() {
+        if keychain.isLoggedIn() {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
         }
-		update()
+        
 	}
 	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 	
     // MARK: - UI Helper Functions
     
@@ -57,7 +55,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Updates the `remainingBdbLabel` with the latest data from Zagweb
     func updateRemainderTextLabel() {
-        guard let credentials = Authentication.getCredentials() else {
+        guard let credentials = keychain.getCredentials() else {
             self.showErrorMessage(true)
             return
         }
@@ -107,8 +105,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func formatAmountLabel(withResult result: String) -> NSMutableAttributedString {
         
-        let dollarSignAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 30)!]
-        let amountAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 50)!]
+        let dollarSignAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30, weight: UIFontWeightRegular)]
+        let amountAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 50, weight: UIFontWeightRegular)]
+        
         
         
         let dollarSignPart = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
@@ -141,7 +140,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     /// Essentially the main function of the ViewController.
 	func update() {
-		if Authentication.isLoggedIn() {
+		if keychain.isLoggedIn() {
             if isConnectedToNetwork() {
                 activityIndicator.startAnimating()
                 updateRemainderTextLabel()
@@ -156,11 +155,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
-        if Authentication.isLoggedIn() {
-            self.updateTimeOfLastUpdate()
-        }
-		update()
-		completionHandler(NCUpdateResult.newData)
-	}
+        update()
+        completionHandler(.newData)
+    }
 	
 }

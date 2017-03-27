@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Bulldog_Bucks___Watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="center" hidden="YES" backgroundImage="Activity" contentMode="center" id="eCq-DI-z1r" userLabel="loadingGroup">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Loading data..." textAlignment="center" numberOfLines="2" id="1Q2-KD-sf6"/>
+                            </items>
+                        </group>
+                        <group width="1" height="1" alignment="left" hidden="YES" layout="vertical" id="441-ls-L8F" userLabel="errorGroup">
+                            <items>
+                                <label width="116" alignment="center" verticalAlignment="center" text="Unable to Update" textAlignment="center" numberOfLines="0" id="jdw-S4-g6h" userLabel="errorLabel"/>
+                            </items>
+                        </group>
+                        <group width="1" height="1" alignment="center" hidden="YES" layout="vertical" id="c0G-K7-hBD" userLabel="detailGroup">
+                            <items>
+                                <label width="120" height="28" alignment="center" text="Bulldog Bucks" textAlignment="center" minimumScaleFactor="0.69999999999999996" id="veP-An-l1g" userLabel="header">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="140" alignment="center" verticalAlignment="center" textAlignment="center" id="l0K-g5-cjc" userLabel="amountLabel">
+                                    <fontDescription key="font" type="system" pointSize="35"/>
+                                </label>
+                                <label width="114" height="25" alignment="center" verticalAlignment="bottom" textAlignment="center" minimumScaleFactor="0.5" id="Nu4-8Z-cEz" userLabel="footer">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="6qD-rG-3RA">
+                        <items>
+                            <menuItem title="Refresh" image="refresh" id="Bkp-7b-Tex" userLabel="reload Button">
+                                <connections>
+                                    <action selector="reloadButton" destination="AgC-eL-Hgc" id="oxL-sF-R9C"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="amountLabel" destination="l0K-g5-cjc" id="v9K-nJ-rVe"/>
+                        <outlet property="detailGroup" destination="c0G-K7-hBD" id="Ds1-3n-Bkr"/>
+                        <outlet property="errorGroup" destination="441-ls-L8F" id="R4m-LG-N8S"/>
+                        <outlet property="errorLabel" destination="jdw-S4-g6h" id="B5x-eV-c5C"/>
+                        <outlet property="footerLabel" destination="Nu4-8Z-cEz" id="mSB-gP-p9g"/>
+                        <outlet property="headerLabel" destination="veP-An-l1g" id="Zrj-0M-oMz"/>
+                        <outlet property="loadingGroup" destination="eCq-DI-z1r" id="Km4-do-yuy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="46.641025641025642"/>
+        </scene>
+    </scenes>
+</document>

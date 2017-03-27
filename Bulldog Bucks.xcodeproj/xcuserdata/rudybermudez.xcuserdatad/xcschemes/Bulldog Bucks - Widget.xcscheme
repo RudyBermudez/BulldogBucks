@@ -67,16 +67,33 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "479447C81D99F2C1007847BE"
-            BuildableName = "Bulldog Bucks.app"
-            BlueprintName = "Bulldog Bucks"
+            BlueprintIdentifier = "479447FD1D9A4409007847BE"
+            BuildableName = "Bulldog Bucks - Widget.appex"
+            BlueprintName = "Bulldog Bucks - Widget"
             ReferencedContainer = "container:Bulldog Bucks.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "479447FD1D9A4409007847BE"
+            BuildableName = "Bulldog Bucks - Widget.appex"
+            BlueprintName = "Bulldog Bucks - Widget"
+            ReferencedContainer = "container:Bulldog Bucks.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
