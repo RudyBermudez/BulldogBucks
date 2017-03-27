@@ -35,12 +35,7 @@ class InterfaceController: WKInterfaceController {
 		
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-        
-        // Start a timer that updates the time since last update
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
+    override func didAppear() {
         
         // Check to see if there is a balance stored in memory, if it cannot be found, update the display with new data
         guard let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate, let lastBalance = userDefaults.string(forKey: "lastBalance") else {
@@ -48,14 +43,23 @@ class InterfaceController: WKInterfaceController {
             return
         }
         
+        
         // Check to see if it has been 60 minutes from the last update,
         if NSDate().minutes(fromDate: timeOfLastUpdate) > 60 {
             // If it has been, then update
             updateDisplay()
         } else {
             // If not, update the label with the last balance
+            
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
             amountLabel.setText("$\(lastBalance)")
+            self.detailGroup.setHidden(false)
         }
+    }
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        
     }
     
     override func didDeactivate() {
@@ -81,9 +85,9 @@ class InterfaceController: WKInterfaceController {
                     self.loadingGroup.setHidden(true)
                     self.detailGroup.setHidden(false)
                     
-                    }.catch(execute: { (_) in
+                    }.catch { (_) in
                         self.showError(msg: "Trouble Getting Data")
-                    })
+                    }
                 
             } else {
                 self.showError()
@@ -100,7 +104,10 @@ class InterfaceController: WKInterfaceController {
     
     func updateTimeOfLastUpdate() {
         if let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate {
-            footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
+            DispatchQueue.main.async {
+                self.footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
+            }
+            
         }
     }
 

@@ -105,7 +105,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func formatAmountLabel(withResult result: String) -> NSMutableAttributedString {
         
-        let dollarSignAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 30)!]
+        let dollarSignAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30, weight: UIFontWeightRegular)]
         let amountAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 50, weight: UIFontWeightRegular)]
         
         
