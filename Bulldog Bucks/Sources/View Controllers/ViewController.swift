@@ -29,9 +29,9 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
     let lastDayOfSemester = Date(timeIntervalSince1970: 1494720000)
 	
 	/// Class Instance of ZagwebClient
-	let client = ZagwebClient()
+	private let client = ZagwebClient()
     
-    let keychain = BDBKeychain.phoneKeychain
+    private let keychain = BDBKeychain.phoneKeychain
     
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
@@ -72,7 +72,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
 
     /// Initialize the `KCFloatingActionButton` with a logout button and a refresh button
-	func initializeButtonItem(){
+	private func initializeButtonItem(){
         
         // Logout Button
 		let logoutItem = KCFloatingActionButtonItem()
@@ -106,7 +106,8 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         
 	}
 	
-    func showWebView() {
+    /// Presents Custom UIWebView
+    private func showWebView() {
         guard let credentials = keychain.getCredentials() else {
             self.logout()
             return
@@ -134,7 +135,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
     }
     
     /// Refresh data if active internet connection is present
-	func refresh() {
+	private func refresh() {
 		if isConnectedToNetwork() {
 			SwiftSpinner.show("Getting Fresh Data...").addTapHandler({ 
 				SwiftSpinner.hide()
@@ -147,7 +148,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
     
     /// Logs out the user. Deletes data from UserDefaults, deletes cookies, and shows `LoginViewController`
-	func logout() {
+	private func logout() {
         
         // Check to see if a username is stored in UserDefaults, if it is,
         // Set the value to be nil, set the PIN to be nil if it exists,
@@ -191,14 +192,14 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	}
 	
     /// Instantiates and shows `LoginViewController`
-    func showLoginPage(animated: Bool) {
+    private func showLoginPage(animated: Bool) {
 		let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
 		vc.delegate = self
         self.present(vc, animated: animated, completion: nil)
 	}
 	
     /// Updates the `dollarAmountLabel` & `centsLabel` with the latest data from Zagweb
-	func updateLabels() {
+	private func updateLabels() {
         guard let credentials = keychain.getCredentials() else {
             self.logout()
             return

@@ -8,23 +8,6 @@
 
 import UIKit
 
-//extension UIView {
-//	
-//    /**
-//     Set the background of current view with a gradient of two colors.
-//     - Note: The gradient is made from top to bottom
-//     - Parameters:
-//        - topColor: Instance of UIColor that represents the top of the view. This is the starting color of the gradient.
-//        - bottomColor: Instance of UIColor that represents the bottom of the view. This is the end color of the gradient.
-//     */
-//	func setGradientBackground(topColor: UIColor, bottomColor: UIColor) {
-//		let gradientLayer = CAGradientLayer()
-//		gradientLayer.colors = [ topColor.cgColor, bottomColor.cgColor]
-//		gradientLayer.locations = [ 0.0, 1.0]
-//		gradientLayer.frame = self.bounds
-//		self.layer.insertSublayer(gradientLayer, at: 0)
-//	}
-//}
 
 extension NSDate {
     

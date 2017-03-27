@@ -9,6 +9,13 @@
 import UIKit
 import WatchConnectivity
 
+
+/// `String` constant for `NSNotification.Name() for when the user logs out of the application`
+public let UserLoggedOutNotification = "UserLoggedOut"
+
+/// `String` constant for `NSNotification.Name() for when the user logs into the application`
+public let UserLoggedInNotificaiton = "UserLoggedIn"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -24,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if BDBKeychain.phoneKeychain.isLoggedIn() {
             sendUserLoginToWatch()
+        } else {
+            sendUserLogoutToWatch()
         }
         
         return true

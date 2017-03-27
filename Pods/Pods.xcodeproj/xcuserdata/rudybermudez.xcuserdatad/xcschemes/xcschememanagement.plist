@@ -8,99 +8,71 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Alamofire-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>KCFloatingActionButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Kanna-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>Kanna-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>KeychainAccess-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>KeychainAccess-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 		<key>Pods-Bulldog Bucks - Watch Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>17</integer>
 		</dict>
 		<key>Pods-Bulldog Bucks - Watch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>16</integer>
 		</dict>
 		<key>Pods-Bulldog Bucks - Widget.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>12</integer>
 		</dict>
 		<key>Pods-Bulldog Bucks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>11</integer>
 		</dict>
 		<key>PromiseKit-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>13</integer>
 		</dict>
 		<key>PromiseKit-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>14</integer>
 		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>15</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -135,17 +107,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7C97041E28177CF0C4657F4115FD9A23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7D8ADCF2084F11EE1B1C95B612D9A58A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
+		<key>A2129DACE251850933DC15124020F11D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0C6AF5AE99814A8615AD1CE4D03762B</key>
+		<key>A6E9CEC9E5ACFE69D21456CCB70BEEA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -156,11 +133,6 @@
 			<true/>
 		</dict>
 		<key>E6DBB3E2E840B74B758191D355B811FD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBF87BB8B18C65890F9880AE4D627110</key>
 		<dict>
 			<key>primary</key>
 			<true/>

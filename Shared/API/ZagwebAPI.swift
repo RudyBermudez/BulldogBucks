@@ -15,9 +15,9 @@ import Kanna
     Models the cases for potential errors in `ZagwebAPI`. Conforms to `Error` protocol
  
     - Cases:
-        - **noHeadersReturned:** Occurs in `ZagwebAPI.authenticate()` when no header is returned in the request. This means no cookies exist and all other methods will fail
+        - **noHeadersReturned:** Occurs in `ZagwebAPI.authenticationHelper()` when no header is returned in the request. This means no cookies exist and all other methods will fail
  
-        - **invalidCredentials:** Occurs in `ZagwebAPI.authenticate()` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
+        - **invalidCredentials:** Occurs in `ZagwebAPI.authenticationHelper()` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
  
         - **htmlCouldNotBeParsed:** Occurs in `ZagwebAPI.downloadHTML()` when the downloaded page html could not be parsed. This most likely means that the user is not authenticated
  */
@@ -40,14 +40,18 @@ enum ClientError: Error {
 	}
 }
 
-/**
- Models all required functions to authenticate and communicate with [zagweb.gonzaga.edu](https://zagweb.gonzaga.edu)
- 
- - Important: User must successfully authenticate before calling any other methods
- */
+
+/// Models all required functions to authenticate and communicate with [zagweb.gonzaga.edu](https://zagweb.gonzaga.edu)
+/// - Important: User must successfully authenticate before calling any other methods
 class ZagwebClient {
 	
     
+    
+    /// Makes the inital request to Zagweb
+    ///
+    /// Note: This is required to initialize the cookies properly
+    ///
+    /// - Returns: A `Promise` with an associated Void value
     private func setupRequest() -> Promise<Void> {
         return Promise { fulfill, reject in
             
@@ -79,19 +83,18 @@ class ZagwebClient {
      
      Checks to see if the authentication is successful by checking for the `SESSID` cookie.
      
-     - Important: This method must be called and must succeed before any other method is called.
+     - Important: The `setupRequest()` must be called before or else this method will fail.
      
-     - Note: Unfortunately, due to the poor Zagweb website. It is normal for the website to redirect to another URL on the first attempt to Post data. For that reason, the `ClientError.invalidCredentials` error is only 100% accurate after the second attempt. Most likely than not, the first attempt will fail
      
-     - Parameters: 
-        - withStudentID: The student ID of the user as a `String`
-        - withPIN: The PIN of the user as a `String`
+     - Parameters:
+     - withStudentID: The student ID of the user as a `String`
+     - withPIN: The PIN of the user as a `String`
      
-     - Throws: 
-        - `ClientError.noHeadersReturned` when no header is returned in the request. This means no cookies exist and all other methods will fail
-        - `ClientError.invalidCredentials` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
+     - Throws:
+     - `ClientError.noHeadersReturned` when no header is returned in the request. This means no cookies exist and all other methods will fail
+     - `ClientError.invalidCredentials` when the `SESSID` cookie is not found in the request header or if the cookie value is empty.
      
-     - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `[HTTPCookie]`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
+     - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `Void`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
      
      */
 	private func authenticationHelper(withStudentID: String, withPIN: String) -> Promise<Void> {
@@ -124,6 +127,15 @@ class ZagwebClient {
 		}
 	}
     
+    
+    /// Publc Authentication Wrapper Method
+    ///
+    /// Calls `setupRequest()` and then `authenticationHelper()`
+    ///
+    /// - Parameters:
+    ///     - withStudentID: The student ID of the user as a `String`
+    ///     - withPIN: The PIN of the user as a `String`
+    /// - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `Void`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
     func authenticate(withStudentID studentID: String, withPIN PIN: String) -> Promise <Void> {
         return Promise { fulfill, reject in
             
@@ -144,7 +156,7 @@ class ZagwebClient {
      
      - Throws: `ClientError.htmlCouldNotBeParsed` when the downloaded page html could not be parsed. This most likely means that the user is not authenticated.
      
-     - Returns: A fulfilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fulfilled and contain a `String` of the form "$235.32" that denotes the amount of Bulldog Bucks Remaining.  If the authentication fails, the `Promise` will be rejected and contain `ClientError.htmlCouldNotBeParsed`. The explanation of this `ClientError` is noted in the `Throws` Section of documentation.
+     - Returns: A fulfilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fulfilled and contain a `String` of the form "235.32" that denotes the amount of Bulldog Bucks Remaining.  If the authentication fails, the `Promise` will be rejected and contain `ClientError.htmlCouldNotBeParsed`. The explanation of this `ClientError` is noted in the `Throws` Section of documentation.
      */
 	private func downloadHTML() -> Promise<String> {
 		return Promise { fulfill, reject in
@@ -193,6 +205,10 @@ class ZagwebClient {
 		return nil
 	}
 	
+    
+    /// Un-authenticates the user from the zagweb service
+    ///
+    /// - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `Void`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
     public func logout() -> Promise<Void> {
         
         return Promise { fulfill, reject in
@@ -234,7 +250,7 @@ class ZagwebClient {
      
      - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
-    func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
+    public func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
         return Promise { fulfill, reject in
             
             firstly {

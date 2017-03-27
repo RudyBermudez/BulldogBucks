@@ -9,28 +9,19 @@
 import Foundation
 import KeychainAccess
 
-enum AuthenticationError: Error {
-    case DidNotSaveCredentials
-}
 
-protocol AuthenticationStateDelegate {
-    func didLoginSuccessfully(animated: Bool)
-    func didLogoutSuccessfully()
-}
 
-enum KeychainKey: String {
-    case studentID = "studentID"
-    case pin = "PIN"
-}
-
-public let UserLoggedOutNotification = "UserLoggedOut"
-public let UserLoggedInNotificaiton = "UserLoggedIn"
-
+/// Enum that models
 enum BDBKeychain {
     
+    /// Instance of Keychain used on the iOS target
     case phoneKeychain
+    
+    /// Instance of Keychain used on the watchOS target
     case watchKeychain
     
+    
+    /// Sets the keychain based off of the respected OS target
     private var keychain: Keychain {
         switch self {
         case .phoneKeychain:
@@ -42,7 +33,7 @@ enum BDBKeychain {
     }
     
     /**
-     Check UserDefaults to see if `studentID` and `PIN` exist and are not nil
+     Checks device Keychain to see if `studentID` and `PIN` exist and are not nil
      - Returns: Boolean representing whether the user is logged in
      */
     func isLoggedIn() -> Bool {
@@ -87,5 +78,26 @@ enum BDBKeychain {
         }
     }
 }
+
+/// Models Errors that can occur in the Keychain
+enum KeychainError: Error {
+    
+    /// Error thrown when Credentials could not be saved to the keychain
+    case DidNotSaveCredentials
+}
+
+
+/// Key Values for Keychain Access
+///
+/// These enums are used as the keyvalues used to access keychain data.
+/// This is helpful to have because string constants reduce errors
+///
+/// - studentID: rawValue contains the string 'studentID'
+/// - pin: rawValue contains the string 'PIN'
+enum KeychainKey: String {
+    case studentID = "studentID"
+    case pin = "PIN"
+}
+
 
 

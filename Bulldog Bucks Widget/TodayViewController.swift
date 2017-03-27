@@ -22,9 +22,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let client = ZagwebClient()
     
     let keychain = BDBKeychain.phoneKeychain
-    
 	
-    let userDefaults = UserDefaults(suiteName: "group.bdbMeter")!
+    let userDefaults = UserDefaults.standard
 
 	
     // MARK: - UIViewController
@@ -36,12 +35,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if keychain.isLoggedIn() {
             Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
         }
-		update()
+        
 	}
 	
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 	
     // MARK: - UI Helper Functions
     
@@ -110,7 +106,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func formatAmountLabel(withResult result: String) -> NSMutableAttributedString {
         
         let dollarSignAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 30)!]
-        let amountAttributes = [NSFontAttributeName: UIFont(name: "DINPro-Regular", size: 50)!]
+        let amountAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 50, weight: UIFontWeightRegular)]
+        
         
         
         let dollarSignPart = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
@@ -158,11 +155,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
-        if keychain.isLoggedIn() {
-            self.updateTimeOfLastUpdate()
-        }
-		update()
-		completionHandler(NCUpdateResult.newData)
-	}
+        update()
+        completionHandler(.newData)
+    }
 	
 }

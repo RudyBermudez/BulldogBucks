@@ -33,7 +33,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             // Use a switch statement to check the task type
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
-                // Be sure to complete the background task once you’re done.
+                print("Handling Background Task")
+                updateComplications()
                 backgroundTask.setTaskCompleted()
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
@@ -48,6 +49,17 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // make sure to complete unhandled task types
                 task.setTaskCompleted()
             }
+        }
+    }
+    
+    func updateComplications() {
+        let server = CLKComplicationServer.sharedInstance()
+        guard let complications = server.activeComplications,
+            complications.count > 0 else { return }
+        
+        for complication in complications  {
+            print("Complication Reloaded")
+            server.reloadTimeline(for: complication)
         }
     }
 

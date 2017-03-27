@@ -7,6 +7,7 @@
 //
 
 import ClockKit
+import WatchKit
 
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
@@ -32,15 +33,23 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(.showOnLockScreen)
     }
     
-    func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
-        // Update hourly
-        handler(NSDate(timeIntervalSinceNow: 60*60))
+
+    func scheduleBackgroundFetch() {
+        // Update Every Hour
+        let fireDate = Date(timeIntervalSinceNow: 60.0 * 60.0)
+        let userInfo = ["reason" : "background update"] as NSDictionary
+        
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
+            if (error == nil) {
+                print("successfully scheduled background task.")
+            }
+        }
     }
     
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        
+        print("Get Current Timeline Entry Did Begin")
         guard let credentials = keychain.getCredentials() else {
             switch complication.family {
             case .modularSmall:
@@ -75,15 +84,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             case .extraLarge:
                 handler(nil)
             }
+            print("Get Current Timeline Failed: No Credentials")
             return
         }
         
-        
+        print("Amount to make request")
         self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
             let dollars = balance.components(separatedBy: ".")[0]
             
             print("Complication Updated")
-            
+            self.scheduleBackgroundFetch()
             switch complication.family {
             case .modularSmall:
                 let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
@@ -93,11 +103,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             case .modularLarge:
                 let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
                 modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-                //modularTemplate.headerTextProvider.tintColor = UIColor(red: 94.0/255.0, green: 161.0/255.0, blue: 239.0/255.0, alpha: 1.0)
                 modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance)")
-                //modularTemplate.body1TextProvider.tintColor = UIColor.white
-                //modularTemplate.body2TextProvider = CLKRelativeDateTextProvider(date: Date(), style: CLKRelativeDateStyle.natural, units: .second)
-                //modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "Daily: $ 4.32")
                 let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
                 handler(timelineEntry)
             case .utilitarianSmall:
@@ -122,40 +128,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             }
             
             }.catch{ (error) in
-                print(error)
-                switch complication.family {
-                case .modularSmall:
-                    let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-                    modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-                    handler(timelineEntry)
-                case .modularLarge:
-                    let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
-                    modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-                    modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "Error Loading")
-                    modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-                    handler(timelineEntry)
-                case .utilitarianSmall:
-                    handler(nil)
-                case .utilitarianSmallFlat:
-                    let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-                    utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "--")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-                    handler(timelineEntry)
-                case .utilitarianLarge:
-                    let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-                    utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "Error Loading")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-                    handler(timelineEntry)
-                case .circularSmall:
-                    let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-                    circularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
-                    handler(timelineEntry)
-                case .extraLarge:
-                    handler(nil)
-                }
+                print("Get Current Timeline Failed: \(error.localizedDescription)")
             }
         
         

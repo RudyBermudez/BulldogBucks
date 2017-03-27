@@ -19,10 +19,6 @@ target 'Bulldog Bucks - Watch' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   platform :watchos, '3.0'
-  pod 'Kanna', '~> 2.0'
-  pod 'Alamofire', '~> 4.0'
-  pod "PromiseKit", "~> 4.0"
-  pod 'KeychainAccess'
   # Pods for Bulldog Buck Balance
 
 end
