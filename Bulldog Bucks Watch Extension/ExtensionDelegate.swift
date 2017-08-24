@@ -13,6 +13,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     let keychain = BDBKeychain.watchKeychain
     
+    lazy var notificationCenter: NotificationCenter = {
+        return NotificationCenter.default
+    }()
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         setupWatchConnectivity()
@@ -87,11 +91,13 @@ extension ExtensionDelegate: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         if let studentID = userInfo[KeychainKey.studentID.rawValue] as? String, let PIN = userInfo[KeychainKey.pin.rawValue] as? String {
             let _ = keychain.addCredentials(studentID: studentID, PIN: PIN)
+            notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedInNotificaiton), object: nil)
             print("Credentials Added to Watch")
         }
         if let shouldLogout = userInfo["logout"] as? Bool{
             if shouldLogout {
                 let _ = keychain.deleteCredentials()
+                self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
                 print("Credentials Removed from Watch")
             }
         }
