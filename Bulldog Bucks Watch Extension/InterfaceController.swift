@@ -23,16 +23,26 @@ class InterfaceController: WKInterfaceController {
 	@IBAction func reloadButton() {
 		updateDisplay()
 	}
+    
+    /// `String` constant for `NSNotification.Name() for when the user logs out of the application`
+    public static let UserLoggedOutNotification = "UserLoggedOut"
+    
+    /// `String` constant for `NSNotification.Name() for when the user logs into the application`
+    public static let UserLoggedInNotificaiton = "UserLoggedIn"
 	
 	let keychain = BDBKeychain.watchKeychain
     let client = ZagwebClient()
     let userDefaults = UserDefaults.standard
+    
+    lazy var notificationCenter: NotificationCenter = {
+        return NotificationCenter.default
+    }()
 	
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
-		
+		setupNotificationCenter()
     }
     
     override func didAppear() {
@@ -106,6 +116,23 @@ class InterfaceController: WKInterfaceController {
         if let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate {
             DispatchQueue.main.async {
                 self.footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
+            }
+            
+        }
+    }
+    
+    // MARK: - Notification Center
+    
+    private func setupNotificationCenter() {
+        notificationCenter.addObserver(forName: NSNotification.Name(InterfaceController.UserLoggedInNotificaiton), object: nil, queue: nil) { (_) -> Void in
+            DispatchQueue.main.async {
+                self.updateDisplay()
+            }
+        }
+        notificationCenter.addObserver(forName: NSNotification.Name(InterfaceController.UserLoggedOutNotification), object: nil, queue: nil) { (_) -> Void
+            in
+            DispatchQueue.main.async {
+                self.updateDisplay()
             }
             
         }
