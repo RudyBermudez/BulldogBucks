@@ -12,6 +12,9 @@ import WatchConnectivity
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     let keychain = BDBKeychain.watchKeychain
+    let client = ZagwebClient()
+    
+    let userDefaults = UserDefaults.standard
     
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
@@ -20,6 +23,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         setupWatchConnectivity()
+        scheduleBackgroundFetch()
     }
 
     func applicationDidBecomeActive() {
@@ -33,30 +37,45 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
-        for task in backgroundTasks {
-            // Use a switch statement to check the task type
-            switch task {
-            case let backgroundTask as WKApplicationRefreshBackgroundTask:
-                print("Handling Background Task")
-                updateComplications()
-                backgroundTask.setTaskCompleted()
-            case let snapshotTask as WKSnapshotRefreshBackgroundTask:
-                // Snapshot tasks have a unique completion call, make sure to set your expiration date
-                snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
-            case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
-                // Be sure to complete the connectivity task once you’re done.
-                connectivityTask.setTaskCompleted()
-            case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
-                // Be sure to complete the URL session task once you’re done.
-                urlSessionTask.setTaskCompleted()
-            default:
-                // make sure to complete unhandled task types
-                task.setTaskCompleted()
+        
+        for task : WKRefreshBackgroundTask in backgroundTasks {
+            print("received background task: ", task)
+            
+            if task is WKApplicationRefreshBackgroundTask {
+                // this task is completed below, our app will then suspend while the download session runs
+                print("Application task received")
+                // Handle downloading latest info
+                if let credentials = keychain.getCredentials() {
+                    print("User is logged in, beginning network request")
+                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
+                        self.userDefaults.set(balance, forKey: "lastBalance")
+                        self.userDefaults.set(Date(), forKey: "timeOfLastUpdate")
+                        print("Downloaded new data")
+                        
+                        self.updateComplication()
+                        print("Complication update requested")
+                        
+                        self.scheduleBackgroundFetch()
+                        print("Scheduled Next Background Fetch")
+                    }
+                } else {
+                    print("User is not logged in")
+                    self.updateComplication()
+                    print("Complication update requested")
+                    
+                    self.scheduleBackgroundFetch()
+                    print("Scheduled Next Background Fetch")
+                }
+                
+                
             }
+            print("Task Completed")
+            task.setTaskCompleted()
         }
+        
     }
     
-    func updateComplications() {
+    func updateComplication() {
         let server = CLKComplicationServer.sharedInstance()
         guard let complications = server.activeComplications,
             complications.count > 0 else { return }
@@ -66,6 +85,20 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             server.reloadTimeline(for: complication)
         }
     }
+    
+    func scheduleBackgroundFetch() {
+        // Update Every Hour
+        let fireDate = Date(timeIntervalSinceNow: 60 * 60)
+        let userInfo = ["lastActiveDate" : Date(),
+                        "reason" : "background update"] as NSDictionary
+        
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
+            if (error == nil) {
+                print("successfully scheduled background task.")
+            }
+        }
+    }
+    
 
 }
 
@@ -97,7 +130,10 @@ extension ExtensionDelegate: WCSessionDelegate {
         if let shouldLogout = userInfo["logout"] as? Bool{
             if shouldLogout {
                 let _ = keychain.deleteCredentials()
+                self.userDefaults.set(nil, forKey: "lastBalance")
+                self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
                 self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
+                updateComplication()
                 print("Credentials Removed from Watch")
             }
         }
