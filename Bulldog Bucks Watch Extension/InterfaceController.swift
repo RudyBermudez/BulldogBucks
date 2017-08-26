@@ -94,13 +94,16 @@ class InterfaceController: WKInterfaceController {
                     self.footerLabel.setText("Updated: \(date.timeAgoInWords)")
                     self.loadingGroup.setHidden(true)
                     self.detailGroup.setHidden(false)
-                    
+                    self.updateComplication()
                     }.catch { (_) in
                         self.showError(msg: "Trouble Getting Data")
                     }
                 
             } else {
                 self.showError()
+                self.userDefaults.set(nil, forKey: "lastBalance")
+                self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
+                self.updateComplication()
             }
         }
     }
@@ -118,6 +121,17 @@ class InterfaceController: WKInterfaceController {
                 self.footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
             }
             
+        }
+    }
+    
+    func updateComplication() {
+        let server = CLKComplicationServer.sharedInstance()
+        guard let complications = server.activeComplications,
+            complications.count > 0 else { return }
+        
+        for complication in complications  {
+            print("Complication Reloaded")
+            server.reloadTimeline(for: complication)
         }
     }
     

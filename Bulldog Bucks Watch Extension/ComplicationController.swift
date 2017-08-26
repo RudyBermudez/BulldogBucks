@@ -33,111 +33,91 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(.showOnLockScreen)
     }
     
-
-    func scheduleBackgroundFetch() {
-        // Update Every Hour
-        let fireDate = Date(timeIntervalSinceNow: 60.0 * 60.0)
-        let userInfo = ["reason" : "background update"] as NSDictionary
-        
-        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
-            if (error == nil) {
-                print("successfully scheduled background task.")
-            }
-        }
-    }
     
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         
         print("Get Current Timeline Entry Did Begin")
-        guard let credentials = keychain.getCredentials() else {
+        
+        guard let balance = UserDefaults.standard.string(forKey: "lastBalance") else {
+            
+            // In case there is no current balance set arbitary text
             switch complication.family {
             case .modularSmall:
                 let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-                modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                modularTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
                 let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
                 handler(timelineEntry)
             case .modularLarge:
                 let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
                 modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-                modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "Open App")
-                modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "to Login")
+                modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "BDB")
                 let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
                 handler(timelineEntry)
             case .utilitarianSmall:
                 handler(nil)
             case .utilitarianSmallFlat:
                 let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
                 let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
                 handler(timelineEntry)
             case .utilitarianLarge:
                 let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "Open App")
+                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
                 let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
                 handler(timelineEntry)
             case .circularSmall:
                 let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-                circularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                circularTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
                 let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
                 handler(timelineEntry)
             case .extraLarge:
                 handler(nil)
             }
-            print("Get Current Timeline Failed: No Credentials")
+
             return
         }
         
-        print("About to make request")
-        DispatchQueue.main.async {
-            self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
-                let dollars = balance.components(separatedBy: ".")[0]
-                
-                print("Complication Updated")
-                self.scheduleBackgroundFetch()
-                switch complication.family {
-                case .modularSmall:
-                    let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-                    modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-                    handler(timelineEntry)
-                case .modularLarge:
-                    let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
-                    modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-                    modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance)")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-                    handler(timelineEntry)
-                case .utilitarianSmall:
-                    handler(nil)
-                case .utilitarianSmallFlat:
-                    let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-                    utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-                    handler(timelineEntry)
-                case .utilitarianLarge:
-                    let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-                    utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(balance)")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-                    handler(timelineEntry)
-                case .circularSmall:
-                    let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-                    circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
-                    let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
-                    handler(timelineEntry)
-                case .extraLarge:
-                    handler(nil)
-                }
-                
-                }.catch{ (error) in
-                    print("Get Current Timeline Failed: \(error)")
-            }
+        
+        let dollars = balance.components(separatedBy: ".")[0]
+          
+        switch complication.family {
+        case .modularSmall:
+            let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
+            modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
+            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
+            handler(timelineEntry)
+        case .modularLarge:
+            let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
+            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
+            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance)")
+            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
+            handler(timelineEntry)
+        case .utilitarianSmall:
+            handler(nil)
+        case .utilitarianSmallFlat:
+            let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
+            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
+            handler(timelineEntry)
+        case .utilitarianLarge:
+            let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(balance)")
+            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
+            handler(timelineEntry)
+        case .circularSmall:
+            let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
+            circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
+            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
+            handler(timelineEntry)
+        case .extraLarge:
+            handler(nil)
         }
-        
-        
-        
+        print("Get Current Timeline Entry Did End")
+
     }
-    
+
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries prior to the given date
         handler(nil)
