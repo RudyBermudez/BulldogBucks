@@ -8,13 +8,12 @@
 
 import WatchKit
 import WatchConnectivity
+import RealmSwift
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     let keychain = BDBKeychain.watchKeychain
     let client = ZagwebClient()
-    
-    let userDefaults = UserDefaults.standard
     
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
@@ -22,6 +21,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
+        
+        let realmPath = directory?.appendingPathComponent("db.realm")
+        var config = Realm.Configuration()
+        config.fileURL = realmPath
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
+
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         setupWatchConnectivity()
         scheduleBackgroundFetch()
     }
@@ -47,9 +56,25 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // Handle downloading latest info
                 if let credentials = keychain.getCredentials() {
                     print("User is logged in, beginning network request")
-                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
-                        self.userDefaults.set(balance, forKey: "lastBalance")
-                        self.userDefaults.set(Date(), forKey: "timeOfLastUpdate")
+                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
+                        let newBalance = Balance()
+                        newBalance.amount = amount
+                        newBalance.date = Date()
+                        DispatchQueue.main.async {
+                            
+                            let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
+                            
+                            let realmPath = directory?.appendingPathComponent("db.realm")
+                            var config = Realm.Configuration()
+                            config.fileURL = realmPath
+                            Realm.Configuration.defaultConfiguration = config
+                            let realm = try! Realm()
+                            let balances = realm.objects(Balance.self)
+                            try! realm.write ({
+                                realm.add(newBalance)
+                            })
+                        }
+                        
                         print("Downloaded new data")
                         
                         self.updateComplication()
@@ -81,8 +106,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             complications.count > 0 else { return }
         
         for complication in complications  {
-            print("Complication Reloaded")
-            server.reloadTimeline(for: complication)
+            print("Complication Extended")
+            server.extendTimeline(for: complication)
         }
     }
     
@@ -130,8 +155,24 @@ extension ExtensionDelegate: WCSessionDelegate {
         if let shouldLogout = userInfo["logout"] as? Bool{
             if shouldLogout {
                 let _ = keychain.deleteCredentials()
-                self.userDefaults.set(nil, forKey: "lastBalance")
-                self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
+                
+                DispatchQueue.main.async {
+                    
+                    let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
+                    
+                    let realmPath = directory?.appendingPathComponent("db.realm")
+                    var config = Realm.Configuration()
+                    config.fileURL = realmPath
+                    Realm.Configuration.defaultConfiguration = config
+                    let realm = try! Realm()
+                    // Delete all objects from the realm
+                    try! realm.write {
+                        realm.deleteAll()
+                    }
+                }
+                
+
+                
                 self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
                 updateComplication()
                 print("Credentials Removed from Watch")

@@ -6,9 +6,5 @@
 	<array>
 		<string>group.bdbMeter</string>
 	</array>
-	<key>keychain-access-groups</key>
-	<array>
-		<string>$(AppIdentifierPrefix)co.rudybermudez.Bulldog-Bucks.watchkitapp.watchkitextension</string>
-	</array>
 </dict>
 </plist>

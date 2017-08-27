@@ -1,9 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Alamofire-iOS" "$PODS_CONFIGURATION_BUILD_DIR/Kanna-iOS" "$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess-iOS" "$PODS_CONFIGURATION_BUILD_DIR/PromiseKit-iOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Alamofire-iOS" "$PODS_CONFIGURATION_BUILD_DIR/Kanna-iOS" "$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess-iOS" "$PODS_CONFIGURATION_BUILD_DIR/PromiseKit-iOS" "$PODS_CONFIGURATION_BUILD_DIR/Realm-iOS" "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift-iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire-iOS/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Kanna-iOS/Kanna.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess-iOS/KeychainAccess.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/PromiseKit-iOS/PromiseKit.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "Kanna" -framework "KeychainAccess" -framework "PromiseKit"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire-iOS/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Kanna-iOS/Kanna.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess-iOS/KeychainAccess.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/PromiseKit-iOS/PromiseKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Realm-iOS/Realm.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RealmSwift-iOS/RealmSwift.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "Alamofire" -framework "Kanna" -framework "KeychainAccess" -framework "PromiseKit" -framework "Realm" -framework "RealmSwift"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

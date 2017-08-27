@@ -10,6 +10,7 @@ import UIKit
 import Kanna
 import SwiftSpinner
 import KCFloatingActionButton
+import RealmSwift
 
 class ViewController: UIViewController, LoginViewControllerDelegate {
 	
@@ -34,9 +35,19 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
     
     private let keychain = BDBKeychain.phoneKeychain
     
+    var realm: Realm!
+    
+    var realmToken: NotificationToken!
+    
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
     }()
+    
+    var balances: Results<Balance> {
+        get {
+            return realm.objects(Balance.self)
+        }
+    }
 	
 	// MARK: - UIViewController
 	
@@ -55,6 +66,11 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		initializeButtonItem()
+        realm = try! Realm()
+        realmToken = realm.addNotificationBlock { (note, realm2) in
+            print(self.realm.objects(Balance.self))
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
 	}
 	
     
@@ -178,6 +194,11 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
                 DispatchQueue.main.async {
                     self.showLoginPage(animated: true)
                     self.notificationCenter.post(name: Notification.Name(UserLoggedOutNotification), object: nil)
+                    
+                    // Delete all objects from the realm
+                    try! self.realm.write {
+                        self.realm.deleteAll()
+                    }
                 }
                 
             } else {
@@ -206,6 +227,18 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
             return
         }
 		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result) -> Void in
+            
+            let date = Date()
+            let newBalance = Balance()
+            newBalance.amount = result
+            newBalance.date = date
+            
+            DispatchQueue.main.async {
+                try! self.realm.write {
+                    self.realm.add(newBalance)
+                }
+            }
+            
             
             // Get the result and then break it up into dollars and cents
 			let array = result.components(separatedBy: ".")
