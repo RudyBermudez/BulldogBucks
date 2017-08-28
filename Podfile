@@ -32,7 +32,6 @@ target 'Bulldog Bucks - Watch Extension' do
   pod 'Alamofire'
   pod "PromiseKit"
   pod 'KeychainAccess'
-  pod 'RealmSwift'
   # Pods for Bulldog Buck Balance Extension
 
 end

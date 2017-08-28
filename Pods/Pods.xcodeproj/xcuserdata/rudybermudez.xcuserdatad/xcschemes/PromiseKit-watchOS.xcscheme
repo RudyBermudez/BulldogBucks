@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2733E40A90879A4842BE66BA49212E2B"
+               BlueprintIdentifier = "7C97041E28177CF0C4657F4115FD9A23"
                BuildableName = "PromiseKit.framework"
                BlueprintName = "PromiseKit-watchOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2733E40A90879A4842BE66BA49212E2B"
+            BlueprintIdentifier = "7C97041E28177CF0C4657F4115FD9A23"
             BuildableName = "PromiseKit.framework"
             BlueprintName = "PromiseKit-watchOS"
             ReferencedContainer = "container:Pods.xcodeproj">

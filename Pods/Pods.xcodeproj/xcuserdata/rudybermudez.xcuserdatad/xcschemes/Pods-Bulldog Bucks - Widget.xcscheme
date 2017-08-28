@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12FECE281A5CC76E70107227FC2211B8"
+               BlueprintIdentifier = "F7390BACE63405606A470CF030B60170"
                BuildableName = "Pods_Bulldog_Bucks___Widget.framework"
                BlueprintName = "Pods-Bulldog Bucks - Widget"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "12FECE281A5CC76E70107227FC2211B8"
+            BlueprintIdentifier = "F7390BACE63405606A470CF030B60170"
             BuildableName = "Pods_Bulldog_Bucks___Widget.framework"
             BlueprintName = "Pods-Bulldog Bucks - Widget"
             ReferencedContainer = "container:Pods.xcodeproj">

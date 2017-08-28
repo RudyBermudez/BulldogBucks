@@ -57,6 +57,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		if keychain.isLoggedIn() {
+            self.notificationCenter.post(name: Notification.Name(UserLoggedInNotificaiton), object: nil)
 			refresh()
         } else {
             logout()

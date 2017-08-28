@@ -8,7 +8,6 @@
 
 import WatchKit
 import Foundation
-import RealmSwift
 
 
 class InterfaceController: WKInterfaceController {
@@ -34,8 +33,6 @@ class InterfaceController: WKInterfaceController {
 	let keychain = BDBKeychain.watchKeychain
     let client = ZagwebClient()
     
-    var realm: Realm!
-    
     
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
@@ -44,24 +41,16 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-        
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        realm = try! Realm()
-        
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         // Configure interface objects here.
 		setupNotificationCenter()
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
     }
     
     override func didAppear() {
         
         // Check to see if there is a balance stored in memory, if it cannot be found, update the display with new data
         
-        guard let lastBalance = realm.objects(Balance.self).sorted(byKeyPath: "date", ascending: true).last else {
+        guard let lastBalance = BalanceListManager.balances.last else {
             updateDisplay()
             return
         }
@@ -74,7 +63,6 @@ class InterfaceController: WKInterfaceController {
         } else {
             // If not, update the label with the last balance
             
-            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
             amountLabel.setText("$\(lastBalance.amount)")
             self.detailGroup.setHidden(false)
         }
@@ -101,32 +89,23 @@ class InterfaceController: WKInterfaceController {
     
                     
                     self.amountLabel.setText("$\(amount)")
-                    
-                    let newBalance = Balance()
                     let date = NSDate()
-                    newBalance.amount = amount
-                    newBalance.date = date as Date
+                    
                     DispatchQueue.main.async {
-                        let realm = try! Realm()
-                        try! realm.write ({
-                            realm.add(newBalance)
-                        })
+                        let newBalance = Balance(amount: amount, date: date as Date)
+                        BalanceListManager.addBalance(balance: newBalance)
                     }
                     
-                    
-                    
-
                     self.footerLabel.setText("Updated: \(date.timeAgoInWords)")
                     self.loadingGroup.setHidden(true)
                     self.detailGroup.setHidden(false)
-                    self.updateComplication()
+                    self.reloadOrExtendData()
                     }.catch { (_) in
                         self.showError(msg: "Trouble Getting Data")
                     }
                 
             } else {
                 self.showError()
-                self.updateComplication()
             }
         }
     }
@@ -139,9 +118,8 @@ class InterfaceController: WKInterfaceController {
     }
     
     @objc func updateTimeOfLastUpdate() {
-        realm = try! Realm()
         
-        if let timeOfLastUpdate = realm.objects(Balance.self).sorted(byKeyPath: "date", ascending: true).last?.date as NSDate? {
+        if let timeOfLastUpdate = BalanceListManager.balances.last?.date as NSDate? {
             DispatchQueue.main.async {
                 self.footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
             }
@@ -150,15 +128,24 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func updateComplication() {
+    func reloadOrExtendData() {
+        
         let server = CLKComplicationServer.sharedInstance()
+        
         guard let complications = server.activeComplications,
             complications.count > 0 else { return }
         
-        for complication in complications  {
-            print("Complication Reloaded")
-            server.extendTimeline(for: complication)
+        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
+            for complication in complications {
+                server.extendTimeline(for: complication)
+            }
+        } else {
+            
+            for complication in complications  {
+                server.reloadTimeline(for: complication)
+            }
         }
+        
     }
     
     // MARK: - Notification Center
@@ -172,12 +159,7 @@ class InterfaceController: WKInterfaceController {
         notificationCenter.addObserver(forName: NSNotification.Name(InterfaceController.UserLoggedOutNotification), object: nil, queue: nil) { (_) -> Void
             in
             DispatchQueue.main.async {
-                // Delete all objects from the realm
-                self.realm = try! Realm()
-                try! self.realm.write {
-                    self.realm.deleteAll()
-                }
-
+                BalanceListManager.purgeBalanceList()
                 self.updateDisplay()
             }
             

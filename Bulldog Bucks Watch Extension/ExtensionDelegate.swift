@@ -8,7 +8,6 @@
 
 import WatchKit
 import WatchConnectivity
-import RealmSwift
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
@@ -21,16 +20,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-        
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-
-        
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         setupWatchConnectivity()
         scheduleBackgroundFetch()
     }
@@ -57,27 +46,17 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 if let credentials = keychain.getCredentials() {
                     print("User is logged in, beginning network request")
                     let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
-                        let newBalance = Balance()
-                        newBalance.amount = amount
-                        newBalance.date = Date()
+                        
+                        let date = Date()
                         DispatchQueue.main.async {
-                            
-                            let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-                            
-                            let realmPath = directory?.appendingPathComponent("db.realm")
-                            var config = Realm.Configuration()
-                            config.fileURL = realmPath
-                            Realm.Configuration.defaultConfiguration = config
-                            let realm = try! Realm()
-                            let balances = realm.objects(Balance.self)
-                            try! realm.write ({
-                                realm.add(newBalance)
-                            })
+                            let newBalance = Balance(amount: amount, date: date)
+                            BalanceListManager.addBalance(balance: newBalance)
                         }
+                        
                         
                         print("Downloaded new data")
                         
-                        self.updateComplication()
+                        self.reloadOrExtendData()
                         print("Complication update requested")
                         
                         self.scheduleBackgroundFetch()
@@ -85,8 +64,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                     }
                 } else {
                     print("User is not logged in")
-                    self.updateComplication()
                     print("Complication update requested")
+                    self.reloadOrExtendData()
                     
                     self.scheduleBackgroundFetch()
                     print("Scheduled Next Background Fetch")
@@ -100,15 +79,24 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
     }
     
-    func updateComplication() {
+    func reloadOrExtendData() {
+        
         let server = CLKComplicationServer.sharedInstance()
+        
         guard let complications = server.activeComplications,
             complications.count > 0 else { return }
         
-        for complication in complications  {
-            print("Complication Extended")
-            server.extendTimeline(for: complication)
+        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
+            for complication in complications {
+                server.extendTimeline(for: complication)
+            }
+        } else {
+
+            for complication in complications  {
+                server.reloadTimeline(for: complication)
+            }
         }
+       
     }
     
     func scheduleBackgroundFetch() {
@@ -157,24 +145,11 @@ extension ExtensionDelegate: WCSessionDelegate {
                 let _ = keychain.deleteCredentials()
                 
                 DispatchQueue.main.async {
-                    
-                    let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-                    
-                    let realmPath = directory?.appendingPathComponent("db.realm")
-                    var config = Realm.Configuration()
-                    config.fileURL = realmPath
-                    Realm.Configuration.defaultConfiguration = config
-                    let realm = try! Realm()
-                    // Delete all objects from the realm
-                    try! realm.write {
-                        realm.deleteAll()
-                    }
+                    BalanceListManager.purgeBalanceList()
                 }
                 
-
-                
                 self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
-                updateComplication()
+                reloadOrExtendData()
                 print("Credentials Removed from Watch")
             }
         }

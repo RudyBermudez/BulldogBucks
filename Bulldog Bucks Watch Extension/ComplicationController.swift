@@ -8,7 +8,6 @@
 
 import ClockKit
 import WatchKit
-import RealmSwift
 
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
@@ -24,16 +23,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-        
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-        let balances = realm.objects(Balance.self)
-        
-        guard let firstBalance = balances.first else {
+        guard let firstBalance = BalanceListManager.balances.first else {
             // No data is cached yet
             handler(nil)
             return
@@ -44,16 +34,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-        
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-        let balances = realm.objects(Balance.self)
-        
-        guard let lastBalance = balances.last else {
+        guard let lastBalance = BalanceListManager.balances.last else {
             // No data is cached yet
             handler(nil)
             return
@@ -72,89 +53,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         
         print("Get Current Timeline Entry Did Begin")
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
         
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-        let balances = realm.objects(Balance.self)
+        handler(timelineEntryFor(BalanceListManager.balances.last, family: complication.family))
         
-        guard let balance = balances.last?.amount else {
-            
-            // In case there is no current balance set arbitary text
-            switch complication.family {
-            case .modularSmall:
-                let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-                modularTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
-                let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-                handler(timelineEntry)
-            case .modularLarge:
-                let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
-                modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-                modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "BDB")
-                let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-                handler(timelineEntry)
-            case .utilitarianSmall:
-                handler(nil)
-            case .utilitarianSmallFlat:
-                let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
-                let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-                handler(timelineEntry)
-            case .utilitarianLarge:
-                let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
-                let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-                handler(timelineEntry)
-            case .circularSmall:
-                let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-                circularTemplate.textProvider = CLKSimpleTextProvider(text: "BDB")
-                let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
-                handler(timelineEntry)
-            case .extraLarge:
-                handler(nil)
-            }
-
-            return
-        }
-        
-        
-        let dollars = balance.components(separatedBy: ".")[0]
-          
-        switch complication.family {
-        case .modularSmall:
-            let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
-            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-            handler(timelineEntry)
-        case .modularLarge:
-            let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
-            modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance)")
-            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
-            handler(timelineEntry)
-        case .utilitarianSmall:
-            handler(nil)
-        case .utilitarianSmallFlat:
-            let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
-            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-            handler(timelineEntry)
-        case .utilitarianLarge:
-            let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(balance)")
-            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
-            handler(timelineEntry)
-        case .circularSmall:
-            let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-            circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
-            let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
-            handler(timelineEntry)
-        case .extraLarge:
-            handler(nil)
-        }
         print("Get Current Timeline Entry Did End")
 
     }
@@ -162,17 +63,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries prior to the given date
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
         
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-        let balances = realm.objects(Balance.self)
-        let balanceArray = Array(balances)
-        
-        var sortedBalances = balanceArray.filter {
+        var sortedBalances = BalanceListManager.balances.filter {
             $0.date.compare(date) == .orderedAscending
         }
         
@@ -192,17 +84,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after to the given date
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
         
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
-        let balances = realm.objects(Balance.self)
-        let balanceArray = Array(balances)
-        
-        var sortedBalances = balanceArray.filter {
+        var sortedBalances = BalanceListManager.balances.filter {
             $0.date.compare(date) == .orderedDescending
         }
         
@@ -216,6 +99,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
         
         handler(entries)
+    }
+    
+    func getTimelineAnimationBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineAnimationBehavior) -> Void) {
+        handler(.grouped)
     }
     
     // MARK: - Placeholder Templates
@@ -255,36 +142,69 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // MARK: Template Creation
-    func timelineEntryFor(_ balance: Balance, family: CLKComplicationFamily) -> CLKComplicationTimelineEntry? {
+    func timelineEntryFor(_ balance: Balance?, family: CLKComplicationFamily) -> CLKComplicationTimelineEntry? {
         
-        print(balance.amount)
-        let dollars = balance.amount.components(separatedBy: ".")[0]
+        
+        guard let balance = balance else {
+            
+            switch family {
+            case .modularSmall:
+                let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
+                modularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                return CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
+                
+            case .modularLarge:
+                let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
+                modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
+                modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "Open to login")
+                return CLKComplicationTimelineEntry(date: Date(), complicationTemplate: modularTemplate)
+                
+            case .utilitarianSmallFlat:
+                let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                return CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
+                
+            case .utilitarianLarge:
+                let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+                utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                return CLKComplicationTimelineEntry(date: Date(), complicationTemplate: utilitarianTemplate)
+                
+            case .circularSmall:
+                let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
+                circularTemplate.textProvider = CLKSimpleTextProvider(text: "--")
+                return CLKComplicationTimelineEntry(date: Date(), complicationTemplate: circularTemplate)
+                
+            default: return nil
+                
+            }
+            
+        }
         
         switch family {
         case .modularSmall:
             let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
+            modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(balance.shortTextForComplication)")
             return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: modularTemplate)
             
         case .modularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance)")
+            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance.longTextForComplication)")
             return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: modularTemplate)
             
         case .utilitarianSmallFlat:
             let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
+            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(balance.shortTextForComplication)")
             return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: utilitarianTemplate)
             
         case .utilitarianLarge:
             let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(balance)")
+            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(balance.longTextForComplication)")
             return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: utilitarianTemplate)
             
         case .circularSmall:
             let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-            circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dollars)")
+            circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(balance.shortTextForComplication)")
             return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: circularTemplate)
             
         default: return nil

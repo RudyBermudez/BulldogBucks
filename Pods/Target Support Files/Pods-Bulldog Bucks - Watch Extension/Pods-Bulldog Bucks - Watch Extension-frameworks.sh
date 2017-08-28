@@ -106,16 +106,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Kanna-watchOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-watchOS/KeychainAccess.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit-watchOS/PromiseKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Realm-watchOS/Realm.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift-watchOS/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kanna-watchOS/Kanna.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainAccess-watchOS/KeychainAccess.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit-watchOS/PromiseKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Realm-watchOS/Realm.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift-watchOS/RealmSwift.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
