@@ -14,8 +14,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     let keychain = BDBKeychain.watchKeychain
     let client = ZagwebClient()
     
-    let userDefaults = UserDefaults.standard
-    
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
     }()
@@ -47,12 +45,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // Handle downloading latest info
                 if let credentials = keychain.getCredentials() {
                     print("User is logged in, beginning network request")
-                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
-                        self.userDefaults.set(balance, forKey: "lastBalance")
-                        self.userDefaults.set(Date(), forKey: "timeOfLastUpdate")
+                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
+                        
+                        let date = Date()
+                        DispatchQueue.main.async {
+                            let newBalance = Balance(amount: amount, date: date)
+                            BalanceListManager.addBalance(balance: newBalance)
+                        }
+                        
+                        
                         print("Downloaded new data")
                         
-                        self.updateComplication()
+                        self.reloadOrExtendData()
                         print("Complication update requested")
                         
                         self.scheduleBackgroundFetch()
@@ -60,8 +64,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                     }
                 } else {
                     print("User is not logged in")
-                    self.updateComplication()
                     print("Complication update requested")
+                    self.reloadOrExtendData()
                     
                     self.scheduleBackgroundFetch()
                     print("Scheduled Next Background Fetch")
@@ -75,15 +79,24 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         
     }
     
-    func updateComplication() {
+    func reloadOrExtendData() {
+        
         let server = CLKComplicationServer.sharedInstance()
+        
         guard let complications = server.activeComplications,
             complications.count > 0 else { return }
         
-        for complication in complications  {
-            print("Complication Reloaded")
-            server.reloadTimeline(for: complication)
+        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
+            for complication in complications {
+                server.extendTimeline(for: complication)
+            }
+        } else {
+
+            for complication in complications  {
+                server.reloadTimeline(for: complication)
+            }
         }
+       
     }
     
     func scheduleBackgroundFetch() {
@@ -130,10 +143,13 @@ extension ExtensionDelegate: WCSessionDelegate {
         if let shouldLogout = userInfo["logout"] as? Bool{
             if shouldLogout {
                 let _ = keychain.deleteCredentials()
-                self.userDefaults.set(nil, forKey: "lastBalance")
-                self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
+                
+                DispatchQueue.main.async {
+                    BalanceListManager.purgeBalanceList()
+                }
+                
                 self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
-                updateComplication()
+                reloadOrExtendData()
                 print("Credentials Removed from Watch")
             }
         }

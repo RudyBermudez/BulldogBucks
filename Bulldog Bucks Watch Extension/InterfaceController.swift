@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController {
 	
 	let keychain = BDBKeychain.watchKeychain
     let client = ZagwebClient()
-    let userDefaults = UserDefaults.standard
+    
     
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
@@ -43,26 +43,27 @@ class InterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
 		setupNotificationCenter()
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
     }
     
     override func didAppear() {
         
         // Check to see if there is a balance stored in memory, if it cannot be found, update the display with new data
-        guard let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate, let lastBalance = userDefaults.string(forKey: "lastBalance") else {
+        
+        guard let lastBalance = BalanceListManager.balances.last else {
             updateDisplay()
             return
         }
         
         
         // Check to see if it has been 60 minutes from the last update,
-        if NSDate().minutes(fromDate: timeOfLastUpdate) > 60 {
+        if NSDate().minutes(fromDate: lastBalance.date as NSDate) > 60 {
             // If it has been, then update
             updateDisplay()
         } else {
             // If not, update the label with the last balance
             
-            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeOfLastUpdate), userInfo: nil, repeats: true)
-            amountLabel.setText("$\(lastBalance)")
+            amountLabel.setText("$\(lastBalance.amount)")
             self.detailGroup.setHidden(false)
         }
     }
@@ -84,26 +85,27 @@ class InterfaceController: WKInterfaceController {
             self.loadingGroup.setHidden(false)
             if let credentials = self.keychain.getCredentials() {
                 
-                self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (balance) -> Void in
+                self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
     
                     
-                    self.amountLabel.setText("$\(balance)")
+                    self.amountLabel.setText("$\(amount)")
                     let date = NSDate()
-                    self.userDefaults.set(balance, forKey: "lastBalance")
-                    self.userDefaults.set(date, forKey: "timeOfLastUpdate")
+                    
+                    DispatchQueue.main.async {
+                        let newBalance = Balance(amount: amount, date: date as Date)
+                        BalanceListManager.addBalance(balance: newBalance)
+                    }
+                    
                     self.footerLabel.setText("Updated: \(date.timeAgoInWords)")
                     self.loadingGroup.setHidden(true)
                     self.detailGroup.setHidden(false)
-                    self.updateComplication()
+                    self.reloadOrExtendData()
                     }.catch { (_) in
-                        self.showError(msg: "Trouble Getting Data")
+                        self.showError(msg: "Trouble Getting Data. Force touch to try again.")
                     }
                 
             } else {
                 self.showError()
-                self.userDefaults.set(nil, forKey: "lastBalance")
-                self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
-                self.updateComplication()
             }
         }
     }
@@ -115,24 +117,35 @@ class InterfaceController: WKInterfaceController {
         errorLabel.setText(msg)
     }
     
-    func updateTimeOfLastUpdate() {
-        if let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate {
+    @objc func updateTimeOfLastUpdate() {
+        
+        if let timeOfLastUpdate = BalanceListManager.balances.last?.date as NSDate? {
             DispatchQueue.main.async {
                 self.footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
             }
-            
+        } else {
+            print("Getting time of last update failed")
         }
     }
     
-    func updateComplication() {
+    func reloadOrExtendData() {
+        
         let server = CLKComplicationServer.sharedInstance()
+        
         guard let complications = server.activeComplications,
             complications.count > 0 else { return }
         
-        for complication in complications  {
-            print("Complication Reloaded")
-            server.reloadTimeline(for: complication)
+        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
+            for complication in complications {
+                server.extendTimeline(for: complication)
+            }
+        } else {
+            
+            for complication in complications  {
+                server.reloadTimeline(for: complication)
+            }
         }
+        
     }
     
     // MARK: - Notification Center
@@ -146,6 +159,7 @@ class InterfaceController: WKInterfaceController {
         notificationCenter.addObserver(forName: NSNotification.Name(InterfaceController.UserLoggedOutNotification), object: nil, queue: nil) { (_) -> Void
             in
             DispatchQueue.main.async {
+                BalanceListManager.purgeBalanceList()
                 self.updateDisplay()
             }
             

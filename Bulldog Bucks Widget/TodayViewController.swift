@@ -8,6 +8,7 @@
 
 import UIKit
 import NotificationCenter
+import RealmSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
 	
@@ -22,14 +23,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let client = ZagwebClient()
     
     let keychain = BDBKeychain.phoneKeychain
-	
-    let userDefaults = UserDefaults.standard
-
+    
+    var realm: Realm!
+    
+    var balances: Results<Balance> {
+        get {
+            
+            return realm.objects(Balance.self)
+        }
+    }
 	
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup Realm DB
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
+        let realmPath = directory?.appendingPathComponent("db.realm")
+        var config = Realm.Configuration()
+        config.fileURL = realmPath
+        Realm.Configuration.defaultConfiguration = config
+        realm = try! Realm()
+        
         preferredContentSize = CGSize(width: self.view.bounds.width, height: 100.0)
         setFontColor()
         if keychain.isLoggedIn() {
@@ -66,7 +82,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             self.activityIndicator.stopAnimating()
             let date = NSDate()
-            self.userDefaults.set(date, forKey: "timeOfLastUpdate")
+            let newBalance = Balance()
+            newBalance.amount = result
+            newBalance.date = date as Date
+            try! self.realm.write({
+                self.realm.add(newBalance)
+     
+            })
+            
+        
             self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
             }.catch { (error) in
                 if let error = error as? ClientError {
@@ -75,7 +99,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         self.showErrorMessage(true, withText: "Invalid Credentials")
                         self.activityIndicator.stopAnimating()
                     default:
-                        self.showErrorMessage(true, withText: "An error occured while trying to update your balance")
+                        self.showErrorMessage(true, withText: "An error occured while trying to update your balance. Please try again.")
                         self.activityIndicator.stopAnimating()
                         
                     }
@@ -122,7 +146,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     /// Updates the `timeUpdatedLabel` with the amount of time that has passed since the last update
     func updateTimeOfLastUpdate() {
-        if let timeOfLastUpdate = userDefaults.object(forKey: "timeOfLastUpdate") as? NSDate {
+        
+        if let timeOfLastUpdate = balances.last?.date as NSDate? {
             self.timeUpdatedLabel.text = "Updated: \(timeOfLastUpdate.timeAgoInWords)"
         } else {
             self.timeUpdatedLabel.text = "Updated: Never"
@@ -148,7 +173,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 showErrorMessage(true, withText: "No Active Connection to Internet")
             }
 		} else {
-            self.userDefaults.set(nil, forKey: "timeOfLastUpdate")
 			showErrorMessage(true)
 		}
 	}
