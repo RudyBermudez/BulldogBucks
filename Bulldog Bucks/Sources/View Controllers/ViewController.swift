@@ -66,11 +66,11 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		initializeButtonItem()
         realm = try! Realm()
-        realmToken = realm.addNotificationBlock { (note, realm2) in
-            print(self.realm.objects(Balance.self))
-        }
+		initializeButtonItem()
+        
+
+        // For Debugging DB
         print(Realm.Configuration.defaultConfiguration.fileURL!)
 	}
 	

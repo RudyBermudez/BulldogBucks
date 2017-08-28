@@ -37,8 +37,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
         
+        // Setup Realm DB
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
         let realmPath = directory?.appendingPathComponent("db.realm")
         var config = Realm.Configuration()
         config.fileURL = realmPath
@@ -146,7 +147,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Updates the `timeUpdatedLabel` with the amount of time that has passed since the last update
     func updateTimeOfLastUpdate() {
         
-        if let timeOfLastUpdate = balances.sorted(byKeyPath: "date", ascending: true).last?.date as NSDate? {
+        if let timeOfLastUpdate = balances.last?.date as NSDate? {
             self.timeUpdatedLabel.text = "Updated: \(timeOfLastUpdate.timeAgoInWords)"
         } else {
             self.timeUpdatedLabel.text = "Updated: Never"

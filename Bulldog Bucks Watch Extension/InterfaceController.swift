@@ -101,7 +101,7 @@ class InterfaceController: WKInterfaceController {
                     self.detailGroup.setHidden(false)
                     self.reloadOrExtendData()
                     }.catch { (_) in
-                        self.showError(msg: "Trouble Getting Data")
+                        self.showError(msg: "Trouble Getting Data. Force touch to try again.")
                     }
                 
             } else {
