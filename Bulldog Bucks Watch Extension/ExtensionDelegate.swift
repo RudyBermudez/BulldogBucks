@@ -100,8 +100,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     func scheduleBackgroundFetch() {
-        // Update Every Hour
-        let fireDate = Date(timeIntervalSinceNow: 60 * 60)
+        // Update Every Half-Hour
+        let fireDate = Date(timeIntervalSinceNow: 30 * 60)
         let userInfo = ["lastActiveDate" : Date(),
                         "reason" : "background update"] as NSDictionary
         

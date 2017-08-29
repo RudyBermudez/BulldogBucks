@@ -56,8 +56,8 @@ class InterfaceController: WKInterfaceController {
         }
         
         
-        // Check to see if it has been 60 minutes from the last update,
-        if NSDate().minutes(fromDate: lastBalance.date as NSDate) > 60 {
+        // Check to see if it has been 30 minutes from the last update,
+        if NSDate().minutes(fromDate: lastBalance.date as NSDate) > 30 {
             // If it has been, then update
             updateDisplay()
         } else {
@@ -101,7 +101,7 @@ class InterfaceController: WKInterfaceController {
                     self.detailGroup.setHidden(false)
                     self.reloadOrExtendData()
                     }.catch { (_) in
-                        self.showError(msg: "Trouble Getting Data. Force touch to try again.")
+                        self.showError(msg: "Trouble Getting Data.\nForce touch to try again.")
                     }
                 
             } else {
