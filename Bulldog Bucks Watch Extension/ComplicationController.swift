@@ -12,8 +12,6 @@ import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
-    let keychain = BDBKeychain.watchKeychain
-    let client = ZagwebClient()
     
     // MARK: - Timeline Configuration
     
@@ -107,7 +105,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getTimelineAnimationBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineAnimationBehavior) -> Void) {
-        handler(.grouped)
+        handler(.always)
+    }
+    
+    func reloadOrExtendData() {
+        
+        let server = CLKComplicationServer.sharedInstance()
+        
+        guard let complications = server.activeComplications,
+            complications.count > 0 else { return }
+        
+        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
+            for complication in complications {
+                server.extendTimeline(for: complication)
+            }
+        } else {
+            
+            for complication in complications  {
+                server.reloadTimeline(for: complication)
+            }
+        }
+        
     }
     
     // MARK: - Placeholder Templates
@@ -194,7 +212,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .modularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$ \(balance.longTextForComplication)")
+            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$\(balance.longTextForComplication)")
+            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: balance.date.description)
             return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: modularTemplate)
             
         case .utilitarianSmallFlat:
