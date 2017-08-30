@@ -20,6 +20,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        NSLog("Watch App finished launching")
         setupWatchConnectivity()
         scheduleBackgroundFetch()
     }
@@ -33,81 +34,68 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Use this method to pause ongoing tasks, disable timers, etc.
     }
 
+
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
         
         for task : WKRefreshBackgroundTask in backgroundTasks {
-            print("received background task: ", task)
+            NSLog("received background task: \(task)")
             
-            if task is WKApplicationRefreshBackgroundTask {
-                // this task is completed below, our app will then suspend while the download session runs
-                print("Application task received")
-                // Handle downloading latest info
-                if let credentials = keychain.getCredentials() {
-                    print("User is logged in, beginning network request")
-                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
-                        
-                        let date = Date()
-                        DispatchQueue.main.async {
-                            let newBalance = Balance(amount: amount, date: date)
-                            BalanceListManager.addBalance(balance: newBalance)
-                        }
-                        
-                        
-                        print("Downloaded new data")
-                        
-                        self.reloadOrExtendData()
-                        print("Complication update requested")
-                        
-                        self.scheduleBackgroundFetch()
-                        print("Scheduled Next Background Fetch")
-                    }
-                } else {
-                    print("User is not logged in")
-                    print("Complication update requested")
-                    self.reloadOrExtendData()
-                    
-                    self.scheduleBackgroundFetch()
-                    print("Scheduled Next Background Fetch")
+            if WKExtension.shared().applicationState == .background {
+                if task is WKApplicationRefreshBackgroundTask {
+                    NSLog("Application Refresh Background Task Started")
+                    downloadData()
                 }
-                
-                
+            } else {
+                scheduleBackgroundFetch(inMinutes: 5)
             }
-            print("Task Completed")
+            
             task.setTaskCompleted()
         }
         
     }
     
-    func reloadOrExtendData() {
-        
-        let server = CLKComplicationServer.sharedInstance()
-        
-        guard let complications = server.activeComplications,
-            complications.count > 0 else { return }
-        
-        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
-            for complication in complications {
-                server.extendTimeline(for: complication)
+        func downloadData() {
+            guard let credentials = keychain.getCredentials() else {
+                NSLog("Background: User is not logged in")
+                updateComplication()
+                scheduleBackgroundFetch()
+                return
             }
-        } else {
-
-            for complication in complications  {
-                server.reloadTimeline(for: complication)
+            NSLog("Background: User is logged in, attempting to connect to zagweb")
+            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
+                
+                let date = Date()
+                NSLog("Background: Data Successfully downloaded in background. \(amount) at \(date.description)")
+                let newBalance = Balance(amount: amount, date: date)
+                BalanceListManager.addBalance(balance: newBalance)
+                self.updateComplication()
+                self.scheduleBackgroundFetch()
+            }.catch { (error) in
+                NSLog(error.localizedDescription)
+                self.scheduleBackgroundFetch(inMinutes: 5)
             }
         }
-       
+        
+    func updateComplication() {
+        NSLog("Background: Requested Complication Update")
+        let complicationController = ComplicationController()
+        complicationController.reloadOrExtendData()
     }
     
-    func scheduleBackgroundFetch() {
+    
+    func scheduleBackgroundFetch(inMinutes: Double = 30) {
         // Update Every Half-Hour
-        let fireDate = Date(timeIntervalSinceNow: 30 * 60)
+        let fireDate = Date(timeIntervalSinceNow: inMinutes * 60)
         let userInfo = ["lastActiveDate" : Date(),
                         "reason" : "background update"] as NSDictionary
         
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: fireDate, userInfo: userInfo) { (error) in
             if (error == nil) {
-                print("successfully scheduled background task.")
+                NSLog("successfully scheduled background task in \(inMinutes) minutes")
+            } else {
+                print("Error while scheduling background task")
+                self.scheduleBackgroundFetch(inMinutes: 2)
             }
         }
     }
@@ -143,13 +131,9 @@ extension ExtensionDelegate: WCSessionDelegate {
         if let shouldLogout = userInfo["logout"] as? Bool{
             if shouldLogout {
                 let _ = keychain.deleteCredentials()
-                
-                DispatchQueue.main.async {
-                    BalanceListManager.purgeBalanceList()
-                }
-                
+                BalanceListManager.purgeBalanceList()
                 self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
-                reloadOrExtendData()
+                self.updateComplication()
                 print("Credentials Removed from Watch")
             }
         }
