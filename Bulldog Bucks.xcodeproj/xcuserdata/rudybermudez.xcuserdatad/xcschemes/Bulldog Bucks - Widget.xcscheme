@@ -43,6 +43,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "47ED9C751F5A178000AE4426"
+               BuildableName = "Bulldog BucksMainAppTests.xctest"
+               BlueprintName = "Bulldog BucksMainAppTests"
+               ReferencedContainer = "container:Bulldog Bucks.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

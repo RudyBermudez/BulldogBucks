@@ -51,6 +51,7 @@
 		47D10B401DE11B4B0041064C /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47DAF0771DE5166E00499185 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
+		47ED9C791F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED9C781F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift */; };
 		9836F5B9E62B51ABB4CFEB5D /* Pods_Bulldog_Bucks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F574CA4F2A1EEA017795D6 /* Pods_Bulldog_Bucks.framework */; };
 		D6A2B37F0915402BEDD37201 /* Pods_Bulldog_Bucks___Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D0AAB6E06B8388DE699F44 /* Pods_Bulldog_Bucks___Watch_Extension.framework */; };
 		DB503570174D059C0FECC118 /* Pods_Bulldog_Bucks___Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAE32D4F0A6BC3237F5CAD9 /* Pods_Bulldog_Bucks___Watch.framework */; };
@@ -77,6 +78,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 479447FD1D9A4409007847BE;
 			remoteInfo = "Bulldog Bucks Widget";
+		};
+		47ED9C7B1F5A178000AE4426 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479447C11D99F2C1007847BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 479447C81D99F2C1007847BE;
+			remoteInfo = "Bulldog Bucks";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -164,6 +172,9 @@
 		479C4D0E1E76826F005DAC22 /* Bulldog Bucks - Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks - Watch Extension.entitlements"; sourceTree = "<group>"; };
 		47BC3AB61DA09D29001C3FD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
+		47ED9C761F5A178000AE4426 /* Bulldog BucksMainAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bulldog BucksMainAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47ED9C781F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulldog_BucksMainAppTests.swift; sourceTree = "<group>"; };
+		47ED9C7A1F5A178000AE4426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0234D795A5F54E2B554CA6 /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		82F574CA4F2A1EEA017795D6 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6BC6803B277376F9FD608E /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +208,13 @@
 			files = (
 				479448011D9A4409007847BE /* NotificationCenter.framework in Frameworks */,
 				3F3C122763D315220DF82C65 /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ED9C731F5A178000AE4426 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +358,7 @@
 				479448021D9A4409007847BE /* Bulldog Bucks Widget */,
 				476E50F31E74FDD5005CD02C /* Bulldog Bucks Watch */,
 				476E51021E74FDD5005CD02C /* Bulldog Bucks Watch Extension */,
+				47ED9C771F5A178000AE4426 /* Bulldog BucksMainAppTests */,
 				479447FF1D9A4409007847BE /* Frameworks */,
 				479447CA1D99F2C1007847BE /* Products */,
 				2E5271D14D8D5C8A44CD7598 /* Pods */,
@@ -354,6 +373,7 @@
 				479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */,
 				476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */,
 				476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */,
+				47ED9C761F5A178000AE4426 /* Bulldog BucksMainAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -419,6 +439,15 @@
 				47BC3AB61DA09D29001C3FD2 /* ViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		47ED9C771F5A178000AE4426 /* Bulldog BucksMainAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				47ED9C781F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift */,
+				47ED9C7A1F5A178000AE4426 /* Info.plist */,
+			);
+			path = "Bulldog BucksMainAppTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,13 +536,31 @@
 			productReference = 479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		47ED9C751F5A178000AE4426 /* Bulldog BucksMainAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47ED9C7F1F5A178000AE4426 /* Build configuration list for PBXNativeTarget "Bulldog BucksMainAppTests" */;
+			buildPhases = (
+				47ED9C721F5A178000AE4426 /* Sources */,
+				47ED9C731F5A178000AE4426 /* Frameworks */,
+				47ED9C741F5A178000AE4426 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47ED9C7C1F5A178000AE4426 /* PBXTargetDependency */,
+			);
+			name = "Bulldog BucksMainAppTests";
+			productName = "Bulldog BucksMainAppTests";
+			productReference = 47ED9C761F5A178000AE4426 /* Bulldog BucksMainAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		479447C11D99F2C1007847BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
 					476E50F11E74FDD5005CD02C = {
@@ -571,6 +618,12 @@
 							};
 						};
 					};
+					47ED9C751F5A178000AE4426 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NZ8449Y9W6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 479447C81D99F2C1007847BE;
+					};
 				};
 			};
 			buildConfigurationList = 479447C41D99F2C1007847BE /* Build configuration list for PBXProject "Bulldog Bucks" */;
@@ -590,6 +643,7 @@
 				479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */,
 				476E50F11E74FDD5005CD02C /* Bulldog Bucks - Watch */,
 				476E50FD1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension */,
+				47ED9C751F5A178000AE4426 /* Bulldog BucksMainAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -631,6 +685,13 @@
 			files = (
 				479448071D9A4409007847BE /* MainInterface.storyboard in Resources */,
 				477383E71E737062002053F0 /* DINPro-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47ED9C741F5A178000AE4426 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,6 +938,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47ED9C721F5A178000AE4426 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47ED9C791F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -894,6 +963,11 @@
 			isa = PBXTargetDependency;
 			target = 479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */;
 			targetProxy = 479448091D9A4409007847BE /* PBXContainerItemProxy */;
+		};
+		47ED9C7C1F5A178000AE4426 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 479447C81D99F2C1007847BE /* Bulldog Bucks */;
+			targetProxy = 47ED9C7B1F5A178000AE4426 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1184,6 +1258,38 @@
 			};
 			name = Release;
 		};
+		47ED9C7D1F5A178000AE4426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog BucksMainAppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.rudybermudez.Bulldog-BucksMainAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bulldog Bucks.app/Bulldog Bucks";
+			};
+			name = Debug;
+		};
+		47ED9C7E1F5A178000AE4426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog BucksMainAppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.rudybermudez.Bulldog-BucksMainAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bulldog Bucks.app/Bulldog Bucks";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1231,6 +1337,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		47ED9C7F1F5A178000AE4426 /* Build configuration list for PBXNativeTarget "Bulldog BucksMainAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47ED9C7D1F5A178000AE4426 /* Debug */,
+				47ED9C7E1F5A178000AE4426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

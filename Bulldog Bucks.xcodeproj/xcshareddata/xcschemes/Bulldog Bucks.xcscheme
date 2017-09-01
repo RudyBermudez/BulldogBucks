@@ -26,25 +26,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "479447DC1D99F2C2007847BE"
-               BuildableName = "Bulldog BucksTests.xctest"
-               BlueprintName = "Bulldog BucksTests"
-               ReferencedContainer = "container:Bulldog Bucks.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "479447E71D99F2C2007847BE"
-               BuildableName = "Bulldog BucksUITests.xctest"
-               BlueprintName = "Bulldog BucksUITests"
+               BlueprintIdentifier = "47ED9C751F5A178000AE4426"
+               BuildableName = "Bulldog BucksMainAppTests.xctest"
+               BlueprintName = "Bulldog BucksMainAppTests"
                ReferencedContainer = "container:Bulldog Bucks.xcodeproj">
             </BuildableReference>
          </TestableReference>
