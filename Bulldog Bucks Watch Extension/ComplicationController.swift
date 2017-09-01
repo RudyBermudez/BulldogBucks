@@ -59,6 +59,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         handler(timelineEntryFor(BalanceListManager.balances.last, family: complication.family))
         
+        
         print("Get Current Timeline Entry Did End")
 
     }
@@ -202,7 +203,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             }
             
         }
-        
+        NSLog("Displaying Complication with balance \(balance.amount) from \(balance.date.description)")
         switch family {
         case .modularSmall:
             let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()

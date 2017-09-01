@@ -52,8 +52,9 @@ extension BalanceList {
     }
     
     static func loadBalances() -> [Balance] {
-        if let data = try? Data(contentsOf: URL(fileURLWithPath: storePath)) {
-            let savedBalances = NSKeyedUnarchiver.unarchiveObject(with: data) as! BalanceList
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: storePath)),
+            let savedBalances = NSKeyedUnarchiver.unarchiveObject(with: data) as? BalanceList {
+            
             return savedBalances.balances
         } else {
             // Default

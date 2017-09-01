@@ -99,7 +99,7 @@ class InterfaceController: WKInterfaceController {
                     self.detailGroup.setHidden(false)
                     self.updateComplication()
                     }.catch { (_) in
-                        self.showError(msg: "Trouble Getting Data.\nForce touch to try again.")
+                        self.showError(msg: "Trouble Getting Data.\n\nForce touch to try again.")
                     }
                 
             } else {
