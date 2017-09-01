@@ -1,0 +1,6 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+workspace: Bulldog Bucks.xcworkspace
+xcodeproj: Bulldog Bucks.xcodeproj
+scheme: Bulldog Bucks
