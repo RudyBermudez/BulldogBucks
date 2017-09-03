@@ -85,7 +85,7 @@ class InterfaceController: WKInterfaceController {
             self.loadingGroup.setHidden(false)
             if let credentials = self.keychain.getCredentials() {
                 
-                self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _) -> Void in
+                self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _) -> Void in
     
                     
                     self.amountLabel.setText("$\(amount)")

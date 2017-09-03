@@ -40,6 +40,11 @@ enum ClientError: Error {
 	}
 }
 
+enum CardState: String {
+    case frozen
+    case unfrozen
+}
+
 
 /// Models all required functions to authenticate and communicate with [zagweb.gonzaga.edu](https://zagweb.gonzaga.edu)
 /// - Important: User must successfully authenticate before calling any other methods
@@ -158,7 +163,7 @@ class ZagwebClient {
      
      - Returns: A fulfilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fulfilled and contain a `String` of the form "235.32" that denotes the amount of Bulldog Bucks Remaining.  If the authentication fails, the `Promise` will be rejected and contain `ClientError.htmlCouldNotBeParsed`. The explanation of this `ClientError` is noted in the `Throws` Section of documentation.
      */
-	private func downloadHTML() -> Promise<(String, [Transaction])> {
+	private func downloadHTML() -> Promise<(String, [Transaction], CardState)> {
 		return Promise { fulfill, reject in
 			let url = URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!
 			Alamofire.request(url, method: .post).validate().responseString(){ (response) in
@@ -181,7 +186,12 @@ class ZagwebClient {
                         return
                     }
                     print("Transactions Parsed")
-					fulfill(bulldogBucksRemaining, bulldogBuckTransactions)
+                    guard let zagcardState = self.parseCardStatusHTML(html: html) else {
+                        reject(ClientError.htmlCouldNotBeParsed)
+                        return
+                    }
+                    print("Card State Parsed")
+					fulfill(bulldogBucksRemaining, bulldogBuckTransactions, zagcardState)
 				case .failure(let error): reject(error); print("Error in Download HTML")
 				}
 			}
@@ -209,6 +219,23 @@ class ZagwebClient {
 		}
 		return nil
 	}
+    
+    /**
+     Parses HTML and returns the user's zag card state
+     */
+    private func parseCardStatusHTML(html: String) -> CardState? {
+        
+        if let doc = Kanna.HTML(html: html, encoding: .utf8),
+            let body = doc.body?.text {
+            if body.contains("Freeze my card now") {
+                return CardState.unfrozen
+            } else {
+                return CardState.frozen
+            }
+        } else {
+            return nil
+        }
+    }
     
     /**
      Parses HTML and returns an array of `Transaction`
@@ -261,6 +288,7 @@ class ZagwebClient {
     }
     
     
+    
     /// Un-authenticates the user from the zagweb service
     ///
     /// - Returns: A fufilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fufilled and contain `Void`. If the authenication fails, the `Promise` will be rejected and contain a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentaion.
@@ -305,21 +333,57 @@ class ZagwebClient {
      
      - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
-    public func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<(String, [Transaction])> {
+    public func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<(String, [Transaction], CardState)> {
         return Promise { fulfill, reject in
             
             firstly {
                 self.authenticate(withStudentID: withStudentID, withPIN: withPIN)
                 }
-            .then { (_) -> Promise<(String, [Transaction])> in
+            .then { (_) -> Promise<(String, [Transaction], CardState)> in
                 return self.downloadHTML()
                 }
-            .then { (balance, transactions) -> Void in
+            .then { (balance, transactions, cardState) -> Void in
                 let _ = self.logout()
-                fulfill(balance,transactions)
+                fulfill(balance,transactions, cardState)
                 }
             .catch{ (error) in
                 reject(error)
+            }
+        }
+    }
+    
+    
+    public func freezeUnfreezeZagcard(withStudentID: String, withPIN: String, desiredCardState: CardState) -> Promise<Void> {
+        return Promise { fulfill, reject in
+            
+            firstly {
+                self.authenticate(withStudentID: withStudentID, withPIN: withPIN)
+                }
+                .then { (_) -> Void in
+                    
+                    let headers = ["Content-Type":"application/x-www-form-urlencoded"]
+                    var body: [String : String]!
+                    
+                    switch desiredCardState {
+                    case .frozen : body = ["p_freeze":"1"]
+                    case .unfrozen: body = ["p_freeze":"0"]
+                    }
+                    
+                    Alamofire.request("https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions", method: .post, parameters: body, encoding: URLEncoding.default,headers: headers).validate().response() { (response) in
+                        if (response.error == nil) {
+                            fulfill()
+                            switch desiredCardState {
+                            case .frozen : print("Successfully Froze Zagcard")
+                            case .unfrozen: print("Successfully Unfroze Zagcard")
+                            }
+                        } else {
+                            reject(response.error!)
+                        }
+                    }
+                    
+                }
+                .catch{ (error) in
+                    reject(error)
             }
         }
     }
