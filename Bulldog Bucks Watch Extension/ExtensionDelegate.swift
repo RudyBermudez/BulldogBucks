@@ -66,8 +66,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 return
             }
             NSLog("Background: User is logged in, attempting to connect to zagweb")
-            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
-                
+            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in                
                 let date = Date()
                 NSLog("Background: Data Successfully downloaded in background. \(amount) at \(date.description)")
                 let newBalance = Balance(amount: amount, date: date)
