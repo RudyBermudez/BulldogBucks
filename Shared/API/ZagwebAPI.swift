@@ -158,7 +158,7 @@ class ZagwebClient {
      
      - Returns: A fulfilled or rejected `Promise`. If the authentication is successful, the `Promise` will be fulfilled and contain a `String` of the form "235.32" that denotes the amount of Bulldog Bucks Remaining.  If the authentication fails, the `Promise` will be rejected and contain `ClientError.htmlCouldNotBeParsed`. The explanation of this `ClientError` is noted in the `Throws` Section of documentation.
      */
-	private func downloadHTML() -> Promise<String> {
+	private func downloadHTML() -> Promise<(String, [Transaction])> {
 		return Promise { fulfill, reject in
 			let url = URL(string: "https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions")!
 			Alamofire.request(url, method: .post).validate().responseString(){ (response) in
@@ -171,12 +171,17 @@ class ZagwebClient {
                 
 				switch response.result {
 				case .success(let html):
-					guard let bulldogBucksRemaining = self.parseHTML(html: html) else {
+					guard let bulldogBucksRemaining = self.parseBalanceHTML(html: html) else {
 						reject(ClientError.htmlCouldNotBeParsed)
 						return
 					}
-                    print("HTML Parsed")
-					fulfill(bulldogBucksRemaining)
+                    print("Balance Parsed")
+                    guard let bulldogBuckTransactions = self.parseTransactionHTML(html: html) else {
+                        reject(ClientError.htmlCouldNotBeParsed)
+                        return
+                    }
+                    print("Transactions Parsed")
+					fulfill(bulldogBucksRemaining, bulldogBuckTransactions)
 				case .failure(let error): reject(error); print("Error in Download HTML")
 				}
 			}
@@ -190,7 +195,7 @@ class ZagwebClient {
      - Parameter html: HTML source from https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions as a String
      - Returns: If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If fails, returns nil
      */
-	private func parseHTML(html: String) -> String? {
+	private func parseBalanceHTML(html: String) -> String? {
 		
 		if let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8){
 			for name in doc.css("td, pllabel") {
@@ -204,7 +209,57 @@ class ZagwebClient {
 		}
 		return nil
 	}
-	
+    
+    /**
+     Parses HTML and returns an array of `Transaction`
+     
+     - Parameter html: HTML source from https://zagweb.gonzaga.edu/pls/gonz/hwgwcard.transactions as a String
+     - Returns: If successful, an array of type `Transaction`. If fails, returns nil
+     */
+    private func parseTransactionHTML(html: String) -> [Transaction]? {
+        var transactions: [Transaction] = []
+        
+        if let doc = Kanna.HTML(html: html, encoding: .utf8) {
+            
+            // Get all the tables that contain the classname `plaintable`
+            for table in doc.xpath("//table[contains(@class, 'plaintable')]") {
+                
+                // Look for the table that specifically has the text "Transaction Date"
+                if (table.content?.contains("Transaction Date"))! {
+                    
+                    // Get all of the rows in the table
+                    let rows = table.css("tr")
+                    
+                    for row in rows {
+                        // For each row in the table, 
+                        // 1. break the row up by '\n', 
+                        // 2. filter out the empty strings,
+                        // 3. trim out all the whitespace and new lines
+                        let rowData: [String]? = row.text?.components(separatedBy: "\n")
+                            .filter { $0 != "" }
+                            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines)}
+                        
+                        // 1. See if the row data can be unwrapped
+                        // 1. Check to see if the data has exactly 7 items in it, 
+                        // 2. Neglect the first row because it solely has labels in it
+                        // 3. See if the transaction can be parsed
+                        if let rowData = rowData, rowData.count == 7, rowData[0] != "Transaction Date",
+                            let transaction = Transaction(date: rowData[0], venue: rowData[1], amount: rowData[3], type: rowData[6].lowercased() ) {
+            
+                            // Assuming all checks pass, append the data
+                            transactions.append(transaction)
+                        }
+                    }
+                }
+            }
+        }
+        if transactions.isEmpty {
+            return nil
+        } else {
+            return transactions
+        }
+    }
+    
     
     /// Un-authenticates the user from the zagweb service
     ///
@@ -250,26 +305,22 @@ class ZagwebClient {
      
      - Returns: A fulfilled or rejected `Promise`. If successful, the amount of Bulldog Bucks remaining as String with format "235.21". If failed, a rejected `Promise` with a `ClientError`. The possible `ClientError` is noted in the `Throws` Section of documentation.
      */
-    public func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<String> {
+    public func getBulldogBucks(withStudentID: String, withPIN: String) -> Promise<(String, [Transaction])> {
         return Promise { fulfill, reject in
             
             firstly {
                 self.authenticate(withStudentID: withStudentID, withPIN: withPIN)
                 }
-            .then { (_) -> Promise<String> in
+            .then { (_) -> Promise<(String, [Transaction])> in
                 return self.downloadHTML()
                 }
-            .then { (result) -> Promise<(Void, String)> in
-                let logout = self.logout()
-                let result = Promise(value: result)
-                return when(fulfilled: logout, result)
+            .then { (balance, transactions) -> Void in
+                let _ = self.logout()
+                fulfill(balance,transactions)
                 }
-            .then { (results) in
-                fulfill(results.1)
-                }
-            .catch { (error) in
+            .catch{ (error) in
                 reject(error)
-                }
+            }
         }
     }
     
