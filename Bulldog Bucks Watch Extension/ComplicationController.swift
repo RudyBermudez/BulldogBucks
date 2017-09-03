@@ -114,7 +114,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let server = CLKComplicationServer.sharedInstance()
         
         guard let complications = server.activeComplications,
-            complications.count > 0 else { return }
+            complications.count > 0 else { print("Complication is not running. No reloadOrExtendData");return }
         
         if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
             for complication in complications {
@@ -238,5 +238,50 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         
     }
+    
+    // Deprecated Functions
+    // This form of complication updating will become deprecated in watchOS 4
+    
+    func downloadData() {
+        guard let credentials = BDBKeychain.watchKeychain.getCredentials() else {
+            NSLog("Background: User is not logged in")
+            return
+        }
+        NSLog("Background: User is logged in, attempting to connect to zagweb")
+        ZagwebClient().getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
+            let date = Date()
+            NSLog("Background: Data Successfully downloaded in background. \(amount) at \(date.description)")
+            let newBalance = Balance(amount: amount, date: date)
+            BalanceListManager.addBalance(balance: newBalance)
+            self.reloadOrExtendData()
+            }.catch { (error) in
+                NSLog(error.localizedDescription)
+        }
+    }
+    
+    func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
+        guard let lastUpdate = BalanceListManager.balances.last else {
+            handler(Date())
+            return
+        }
+        let minutesSinceLastUpdate = NSDate().minutes(fromDate: lastUpdate.date as NSDate)
+        if  minutesSinceLastUpdate > 30 {
+            handler(Date())
+        } else {
+            let nextUpdateInMin = Double(30 - minutesSinceLastUpdate)
+            handler(Date(timeIntervalSinceNow: 60 * nextUpdateInMin))
+        }
+        
+    }
+    
+    func requestedUpdateDidBegin() {
+        downloadData()
+    }
+    
+    func requestedUpdateBudgetExhausted() {
+        downloadData()
+    }
+    
+    
     
 }
