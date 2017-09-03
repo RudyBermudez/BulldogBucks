@@ -227,7 +227,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
             self.logout()
             return
         }
-		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result, transactions, cardState) -> Void in
+		client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result, transactions, cardState, swipesRemaining) -> Void in
             
             let date = Date()
             let newBalance = Balance()
@@ -242,7 +242,7 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
             
             // For Debugging
             print("Card State: \(cardState.rawValue)")
-            transactions.forEach { print($0.description) }
+            //transactions.forEach { print($0.description) }
             
             // Get the result and then break it up into dollars and cents
 			let array = result.components(separatedBy: ".")

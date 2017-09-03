@@ -75,7 +75,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.showErrorMessage(true)
             return
         }
-        client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result, _, _) -> Void in
+        client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result, _, _, _) -> Void in
             self.showErrorMessage(false)
             
             self.remainingBdbLabel.attributedText = self.formatAmountLabel(withResult: result)
