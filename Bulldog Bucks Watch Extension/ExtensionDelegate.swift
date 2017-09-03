@@ -45,7 +45,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // Handle downloading latest info
                 if let credentials = keychain.getCredentials() {
                     print("User is logged in, beginning network request")
-                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
+                    let _ = client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
                         
                         let date = Date()
                         DispatchQueue.main.async {
