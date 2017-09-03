@@ -66,7 +66,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 return
             }
             NSLog("Background: User is logged in, attempting to connect to zagweb")
-            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount) -> Void in
+            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
                 
                 let date = Date()
                 NSLog("Background: Data Successfully downloaded in background. \(amount) at \(date.description)")
@@ -87,7 +87,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     
-    func scheduleBackgroundFetch(inMinutes: Double = 2) {
+    func scheduleBackgroundFetch(inMinutes: Double = 30) {
         // Update Every Half-Hour
         let fireDate = Date(timeIntervalSinceNow: inMinutes * 60)
         let userInfo = ["lastActiveDate" : Date(),
