@@ -16,7 +16,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        if BalanceListManager.balances.isEmpty {
+        if ZagwebDataSetManager.dataSets.isEmpty {
             handler([])
         } else {
             handler([.backward])
@@ -26,7 +26,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         
-        guard let firstBalance = BalanceListManager.balances.first else {
+        guard let firstBalance = ZagwebDataSetManager.dataSets.first else {
             // No data is cached yet
             handler(nil)
             return
@@ -37,7 +37,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         
-        guard let lastBalance = BalanceListManager.balances.last else {
+        guard let lastBalance = ZagwebDataSetManager.dataSets.last else {
             // No data is cached yet
             handler(nil)
             return
@@ -57,7 +57,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         
         print("Get Current Timeline Entry Did Begin")
         
-        handler(timelineEntryFor(BalanceListManager.balances.last, family: complication.family))
+        handler(timelineEntryFor(ZagwebDataSetManager.dataSets.last, family: complication.family))
         
         
         print("Get Current Timeline Entry Did End")
@@ -68,7 +68,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the timeline entries prior to the given date
         
         
-        var sortedBalances = BalanceListManager.balances.filter {
+        var sortedBalances = ZagwebDataSetManager.dataSets.filter {
             $0.date.compare(date) == .orderedAscending
         }
         
@@ -89,7 +89,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // Call the handler with the timeline entries after to the given date
         
         
-        var sortedBalances = BalanceListManager.balances.filter {
+        var sortedBalances = ZagwebDataSetManager.dataSets.filter {
             $0.date.compare(date) == .orderedDescending
         }
         
@@ -116,7 +116,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         guard let complications = server.activeComplications,
             complications.count > 0 else { print("Complication is not running. No reloadOrExtendData");return }
         
-        if BalanceListManager.balances.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
+        if ZagwebDataSetManager.dataSets.last?.date.compare(server.latestTimeTravelDate) == .orderedDescending {
             for complication in complications {
                 server.extendTimeline(for: complication)
             }
@@ -166,10 +166,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // MARK: Template Creation
-    func timelineEntryFor(_ balance: Balance?, family: CLKComplicationFamily) -> CLKComplicationTimelineEntry? {
+    func timelineEntryFor(_ dataSet: ZagwebDataSet?, family: CLKComplicationFamily) -> CLKComplicationTimelineEntry? {
         
         
-        guard let balance = balance else {
+        guard let dataSet = dataSet else {
             
             switch family {
             case .modularSmall:
@@ -203,34 +203,34 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             }
             
         }
-        NSLog("Displaying Complication with balance \(balance.amount) from \(balance.date.description)")
+        NSLog("Displaying Complication with balance \(dataSet.bucksRemaining) from \(dataSet.date.description)")
         switch family {
         case .modularSmall:
             let modularTemplate = CLKComplicationTemplateModularSmallSimpleText()
-            modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(balance.shortTextForComplication)")
-            return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: modularTemplate)
+            modularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dataSet.shortTextBucksForComplication)")
+            return CLKComplicationTimelineEntry(date: dataSet.date, complicationTemplate: modularTemplate)
             
         case .modularLarge:
             let modularTemplate = CLKComplicationTemplateModularLargeStandardBody()
             modularTemplate.headerTextProvider = CLKSimpleTextProvider(text: "Bulldog Bucks")
-            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$\(balance.longTextForComplication)")
-            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: balance.date.description)
-            return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: modularTemplate)
+            modularTemplate.body1TextProvider = CLKSimpleTextProvider(text: "$\(dataSet.longTextBucksForComplication)")
+            modularTemplate.body2TextProvider = CLKSimpleTextProvider(text: "\(dataSet.swipesRemaining) Swipes")
+            return CLKComplicationTimelineEntry(date: dataSet.date, complicationTemplate: modularTemplate)
             
         case .utilitarianSmallFlat:
             let utilitarianTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(balance.shortTextForComplication)")
-            return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: utilitarianTemplate)
+            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dataSet.shortTextBucksForComplication)")
+            return CLKComplicationTimelineEntry(date: dataSet.date, complicationTemplate: utilitarianTemplate)
             
         case .utilitarianLarge:
             let utilitarianTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(balance.longTextForComplication)")
-            return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: utilitarianTemplate)
+            utilitarianTemplate.textProvider = CLKSimpleTextProvider(text: "$ \(dataSet.longTextBucksForComplication)")
+            return CLKComplicationTimelineEntry(date: dataSet.date, complicationTemplate: utilitarianTemplate)
             
         case .circularSmall:
             let circularTemplate = CLKComplicationTemplateCircularSmallSimpleText()
-            circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(balance.shortTextForComplication)")
-            return CLKComplicationTimelineEntry(date: balance.date, complicationTemplate: circularTemplate)
+            circularTemplate.textProvider = CLKSimpleTextProvider(text: "$\(dataSet.shortTextBucksForComplication)")
+            return CLKComplicationTimelineEntry(date: dataSet.date, complicationTemplate: circularTemplate)
             
         default: return nil
             
@@ -248,11 +248,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return
         }
         NSLog("Background: User is logged in, attempting to connect to zagweb")
-        ZagwebClient().getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
+        ZagwebClient().getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (bucks, _, _, swipes) -> Void in
             let date = Date()
-            NSLog("Background: Data Successfully downloaded in background. \(amount) at \(date.description)")
-            let newBalance = Balance(amount: amount, date: date)
-            BalanceListManager.addBalance(balance: newBalance)
+            NSLog("Background: Data Successfully downloaded in background. \(bucks) at \(date.description)")
+            let newDataSet = ZagwebDataSet(bucksRemaining: bucks, swipesRemaining: swipes, date: date)
+            ZagwebDataSetManager.add(dataSet: newDataSet)
+            
             self.reloadOrExtendData()
             }.catch { (error) in
                 NSLog(error.localizedDescription)
@@ -260,7 +261,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     func getNextRequestedUpdateDate(handler: @escaping (Date?) -> Void) {
-        guard let lastUpdate = BalanceListManager.balances.last else {
+        guard let lastUpdate = ZagwebDataSetManager.dataSets.last else {
             handler(Date())
             return
         }

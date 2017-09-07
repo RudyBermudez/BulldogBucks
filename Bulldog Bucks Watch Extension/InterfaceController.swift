@@ -14,6 +14,7 @@ class InterfaceController: WKInterfaceController {
 
 	@IBOutlet var headerLabel: WKInterfaceLabel!
 	@IBOutlet var amountLabel: WKInterfaceLabel!
+	@IBOutlet var swipesLabel: WKInterfaceLabel!
 	@IBOutlet var errorLabel: WKInterfaceLabel!
 	@IBOutlet var footerLabel: WKInterfaceLabel!
     @IBOutlet var loadingGroup: WKInterfaceGroup!
@@ -50,7 +51,7 @@ class InterfaceController: WKInterfaceController {
         
         // Check to see if there is a balance stored in memory, if it cannot be found, update the display with new data
         
-        guard let lastBalance = BalanceListManager.balances.last else {
+        guard let lastBalance = ZagwebDataSetManager.dataSets.last else {
             updateDisplay()
             return
         }
@@ -63,7 +64,7 @@ class InterfaceController: WKInterfaceController {
         } else {
             // If not, update the label with the last balance
             
-            amountLabel.setText("$\(lastBalance.amount)")
+            amountLabel.setText("$\(lastBalance.bucksRemaining)")
             self.detailGroup.setHidden(false)
         }
     }
@@ -85,20 +86,22 @@ class InterfaceController: WKInterfaceController {
             self.loadingGroup.setHidden(false)
             if let credentials = self.keychain.getCredentials() {
                 
-                self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in
+                self.client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, swipes) -> Void in
     
                     
                     self.amountLabel.setText("$\(amount)")
+					self.swipesLabel.setText("\(swipes) Swipes")
                     let date = NSDate()
                     
-                    let newBalance = Balance(amount: amount, date: date as Date)
-                    BalanceListManager.addBalance(balance: newBalance)
+                    let newDataSet = ZagwebDataSet(bucksRemaining: amount, swipesRemaining: swipes, date: date as Date)
+                    ZagwebDataSetManager.add(dataSet: newDataSet)
                     
                     self.footerLabel.setText("Updated: \(date.timeAgoInWords)")
                     self.loadingGroup.setHidden(true)
                     self.detailGroup.setHidden(false)
                     self.updateComplication()
-                    }.catch { (_) in
+                    }.catch { (error) in
+                        NSLog(error.localizedDescription)
                         self.showError(msg: "Trouble Getting Data.\n\nForce touch to try again.")
                     }
                 
@@ -122,7 +125,7 @@ class InterfaceController: WKInterfaceController {
     
     @objc func updateTimeOfLastUpdate() {
         
-        if let timeOfLastUpdate = BalanceListManager.balances.last?.date as NSDate? {
+        if let timeOfLastUpdate = ZagwebDataSetManager.dataSets.last?.date as NSDate? {
             DispatchQueue.main.async {
                 self.footerLabel.setText("Updated: \(timeOfLastUpdate.timeAgoInWords)")
             }
@@ -143,7 +146,7 @@ class InterfaceController: WKInterfaceController {
         notificationCenter.addObserver(forName: NSNotification.Name(InterfaceController.UserLoggedOutNotification), object: nil, queue: nil) { (_) -> Void
             in
             DispatchQueue.main.async {
-                BalanceListManager.purgeBalanceList()
+                ZagwebDataSetManager.purgeDataSets()
                 self.updateDisplay()
             }
             

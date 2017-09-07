@@ -20,11 +20,12 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 	@IBOutlet weak var userPinTextField: UITextField!
 	@IBOutlet weak var loginButton: TKTransitionSubmitButton!
     
-	
+	public static let storyboardIdentifier = "LoginViewController"
+    
 	// MARK: - Properties
     private let keychain = BDBKeychain.phoneKeychain
     
-	var delegate: LoginViewControllerDelegate?
+	var delegate: AuthenticationStateDelegate?
 	
 	lazy var notificationCenter: NotificationCenter = {
 		return NotificationCenter.default
@@ -152,6 +153,8 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
             let success = self.keychain.addCredentials(studentID: withStudentID, PIN: withPIN)
             if success {
                 self.loginButton.startFinishAnimation {
+                    self.userIDTextField.text = ""
+                    self.userPinTextField.text = ""
                     self.delegate?.didLoginSuccessfully()
                 }
             } else {
@@ -167,7 +170,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                     showAlert(target: self, title: error.domain())
                 default:
                     self.loginButton.returnToOriginalState()
-                    showAlert(target: self, title: error.domain())
+                    showAlert(target: self, title: "Networking Error", message: error.domain())
                 }
 				
 			}

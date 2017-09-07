@@ -11,6 +11,11 @@ import KeychainAccess
 
 
 
+protocol AuthenticationStateDelegate {
+    func didLoginSuccessfully()
+    func didLogoutSuccessfully()
+}
+
 /// Enum that models
 enum BDBKeychain {
     

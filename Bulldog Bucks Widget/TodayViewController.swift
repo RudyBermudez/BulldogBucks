@@ -8,7 +8,6 @@
 
 import UIKit
 import NotificationCenter
-import RealmSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
 	
@@ -24,27 +23,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     let keychain = BDBKeychain.phoneKeychain
     
-    var realm: Realm!
-    
-    var balances: Results<Balance> {
-        get {
-            
-            return realm.objects(Balance.self)
-        }
-    }
 	
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup Realm DB
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        realm = try! Realm()
         
         preferredContentSize = CGSize(width: self.view.bounds.width, height: 100.0)
         setFontColor()
@@ -69,29 +52,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         timeUpdatedLabel.isHidden = enabled
     }
 	
-    /// Updates the `remainingBdbLabel` with the latest data from Zagweb
-    func updateRemainderTextLabel() {
+    func downloadData() {
+        
         guard let credentials = keychain.getCredentials() else {
             self.showErrorMessage(true)
             return
         }
-        client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result, _, _, _) -> Void in
+        
+        client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (result, _, _, swipesRemaining) -> Void in
             self.showErrorMessage(false)
             
-            self.remainingBdbLabel.attributedText = self.formatAmountLabel(withResult: result)
-            
-            self.activityIndicator.stopAnimating()
             let date = NSDate()
-            let newBalance = Balance()
-            newBalance.amount = result
-            newBalance.date = date as Date
-            try! self.realm.write({
-                self.realm.add(newBalance)
-     
-            })
-            
+            let newDataSet = ZagwebDataSet(bucksRemaining: result, swipesRemaining: swipesRemaining, date: date as Date)
+            ZagwebDataSetManager.add(dataSet: newDataSet)
         
-            self.timeUpdatedLabel.text = "Updated: \(date.timeAgoInWords)"
+            
+            self.updateRemainderTextLabel()
+            
             }.catch { (error) in
                 if let error = error as? ClientError {
                     switch error {
@@ -103,14 +80,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                         self.activityIndicator.stopAnimating()
                         
                     }
-                } else {
-                    self.showErrorMessage(true, withText: "An error occured while trying to update your balance")
-                    self.activityIndicator.stopAnimating()
                 }
-                print(error)
+        }
+    }
+    
+    /// Updates the `remainingBdbLabel` with the latest data from Zagweb
+    func updateRemainderTextLabel() {
+        
+        
+        guard let lastBalance = ZagwebDataSetManager.dataSets.last else {
+            downloadData()
+            return
+        }
+        
+        // Check to see if it has been 5 minutes from the last update,
+        if NSDate().minutes(fromDate: lastBalance.date as NSDate) > 5 {
+             downloadData()
+        } else {
+            self.activityIndicator.stopAnimating()
+            self.timeUpdatedLabel.text = "Updated: \((lastBalance.date as NSDate).timeAgoInWords)"
+            self.remainingBdbLabel.attributedText = formatAmountLabel(withResult: lastBalance.bucksRemaining)
         }
         
     }
+        
     /// Sets labels `textColor = UIColor.white` if User is using iOS 9 and black if on iOS 10
     func setFontColor() {
         if #available(iOS 9, *) {
@@ -132,8 +125,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let dollarSignAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30, weight: UIFontWeightRegular)]
         let amountAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 50, weight: UIFontWeightRegular)]
         
-        
-        
         let dollarSignPart = NSMutableAttributedString(string: "$ ", attributes: dollarSignAttributes)
         let amountPart = NSMutableAttributedString(string: result, attributes: amountAttributes)
         
@@ -147,7 +138,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// Updates the `timeUpdatedLabel` with the amount of time that has passed since the last update
     func updateTimeOfLastUpdate() {
         
-        if let timeOfLastUpdate = balances.last?.date as NSDate? {
+        if let timeOfLastUpdate = ZagwebDataSetManager.dataSets.last?.date as NSDate? {
             self.timeUpdatedLabel.text = "Updated: \(timeOfLastUpdate.timeAgoInWords)"
         } else {
             self.timeUpdatedLabel.text = "Updated: Never"
@@ -179,8 +170,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 	
     // MARK: - NCWidgetProviding
     func widgetPerformUpdate(completionHandler: @escaping ((NCUpdateResult) -> Void)) {
+        
         update()
         completionHandler(.newData)
+        
     }
 	
 }

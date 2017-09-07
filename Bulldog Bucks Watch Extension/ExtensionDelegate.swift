@@ -66,11 +66,12 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 return
             }
             NSLog("Background: User is logged in, attempting to connect to zagweb")
-            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, _) -> Void in                
+            client.getBulldogBucks(withStudentID: credentials.studentID, withPIN: credentials.PIN).then { (amount, _, _, swipes) -> Void in
                 let date = Date()
                 NSLog("Background: Data Successfully downloaded in background. \(amount) at \(date.description)")
-                let newBalance = Balance(amount: amount, date: date)
-                BalanceListManager.addBalance(balance: newBalance)
+                let newDataSet = ZagwebDataSet(bucksRemaining: amount, swipesRemaining: swipes, date: date)
+                ZagwebDataSetManager.add(dataSet: newDataSet)
+    
                 self.updateComplication()
                 self.scheduleBackgroundFetch()
             }.catch { (error) in
@@ -133,7 +134,7 @@ extension ExtensionDelegate: WCSessionDelegate {
         if let shouldLogout = userInfo["logout"] as? Bool{
             if shouldLogout {
                 let _ = keychain.deleteCredentials()
-                BalanceListManager.purgeBalanceList()
+                ZagwebDataSetManager.purgeDataSets()
                 self.notificationCenter.post(name: Notification.Name(InterfaceController.UserLoggedOutNotification), object: nil)
                 self.updateComplication()
                 print("Credentials Removed from Watch")
