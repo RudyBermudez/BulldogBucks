@@ -36,7 +36,7 @@ enum ClientError: Error {
 		case .invalidCredentials:
 			return "Incorrect Student ID or PIN"
         case .noHeadersReturned:
-            return "No headers were returned."
+            return "Unable to complete the request.\nNo headers were returned."
         case .htmlCouldNotBeParsed:
             return "Failed to parse data source."
 		}

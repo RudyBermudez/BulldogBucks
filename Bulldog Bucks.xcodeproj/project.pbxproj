@@ -11,8 +11,6 @@
 		4705B2591F5BAB5D004FAEAF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705B2571F5BAB4D004FAEAF /* Transaction.swift */; };
 		4705B25A1F5BAB5E004FAEAF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705B2571F5BAB4D004FAEAF /* Transaction.swift */; };
 		4705B25B1F5BAB5F004FAEAF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705B2571F5BAB4D004FAEAF /* Transaction.swift */; };
-		470B05A01F51EF8000D48EF2 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B059E1F51EF8000D48EF2 /* Balance.swift */; };
-		470B05A31F51EF9300D48EF2 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B059E1F51EF8000D48EF2 /* Balance.swift */; };
 		47234DA41DE19ABF00C25C8F /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47234DA31DE19ABF00C25C8F /* CustomAlert.swift */; };
 		472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */; };
 		472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */; };
@@ -22,8 +20,6 @@
 		472F331D1DE3DBAB001D4B4C /* DINPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472F331C1DE3DBAB001D4B4C /* DINPro-Regular.ttf */; };
 		4761DF0C1E47D9C8004755EB /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
 		4761DF0D1E47D9C8004755EB /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
-		4767B3BA1F5395BE006AD1BE /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767B3B81F5395B7006AD1BE /* Balance.swift */; };
-		4767B3BC1F539742006AD1BE /* BalanceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4767B3BB1F539742006AD1BE /* BalanceList.swift */; };
 		476E50F61E74FDD5005CD02C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476E50F41E74FDD5005CD02C /* Interface.storyboard */; };
 		476E50F81E74FDD5005CD02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476E50F71E74FDD5005CD02C /* Assets.xcassets */; };
 		476E50FF1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -50,14 +46,37 @@
 		479448071D9A4409007847BE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479448051D9A4409007847BE /* MainInterface.storyboard */; };
 		4794480B1D9A4409007847BE /* Bulldog Bucks - Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4797116C1E75CC940060DC97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
-		47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BC3AB61DA09D29001C3FD2 /* ViewController.swift */; };
+		47AEC5921F60C85000CAB36A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
+		47BF33091F5CF52C005D162E /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33081F5CF52C005D162E /* TransactionViewController.swift */; };
+		47BF330C1F5DC6E7005D162E /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF330B1F5DC6E7005D162E /* TransactionTableViewCell.swift */; };
+		47BF330E1F5DDC0D005D162E /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF330D1F5DDC0D005D162E /* GenericCollectionViewCell.swift */; };
+		47BF33101F5E1400005D162E /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF330F1F5E1400005D162E /* ButtonCollectionViewCell.swift */; };
+		47BF33121F5E313C005D162E /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33111F5E313C005D162E /* DetailCollectionViewCell.swift */; };
+		47BF33151F5E3FD8005D162E /* ZagwebDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33131F5E3FD8005D162E /* ZagwebDataSet.swift */; };
+		47BF33161F5E3FD8005D162E /* ZagwebDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33141F5E3FD8005D162E /* ZagwebDataSetManager.swift */; };
+		47BF33171F5E3FDC005D162E /* ZagwebDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33131F5E3FD8005D162E /* ZagwebDataSet.swift */; };
+		47BF33181F5E3FDD005D162E /* ZagwebDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33131F5E3FD8005D162E /* ZagwebDataSet.swift */; };
+		47BF33191F5E3FE2005D162E /* ZagwebDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33141F5E3FD8005D162E /* ZagwebDataSetManager.swift */; };
+		47BF331A1F5E3FE2005D162E /* ZagwebDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33141F5E3FD8005D162E /* ZagwebDataSetManager.swift */; };
 		47D10B401DE11B4B0041064C /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
 		47DAF0771DE5166E00499185 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
+		47EC152F1F5F6376004EDECD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479448001D9A4409007847BE /* NotificationCenter.framework */; };
+		47EC15321F5F6376004EDECD /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EC15311F5F6376004EDECD /* TodayViewController.swift */; };
+		47EC15351F5F6376004EDECD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EC15331F5F6376004EDECD /* MainInterface.storyboard */; };
+		47EC15391F5F6376004EDECD /* Bulldog Bucks - Swipes Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 47EC152E1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		47EC153D1F5F6445004EDECD /* ZagwebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */; };
+		47EC153E1F5F6451004EDECD /* BDBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */; };
+		47EC153F1F5F6B48004EDECD /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4705B2571F5BAB4D004FAEAF /* Transaction.swift */; };
+		47EC15401F5F9CC0004EDECD /* ZagwebDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33131F5E3FD8005D162E /* ZagwebDataSet.swift */; };
+		47EC15411F5F9CF5004EDECD /* ZagwebDataSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BF33141F5E3FD8005D162E /* ZagwebDataSetManager.swift */; };
+		47EC15421F5F9D3E004EDECD /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE1671DE618B300F39E46 /* NetworkReachability.swift */; };
+		47EC15431F5F9D5D004EDECD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F33191DE3D5E5001D4B4C /* Extensions.swift */; };
 		47ED9C791F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ED9C781F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift */; };
 		4FD985B394922C1542A06D4F /* Pods_Bulldog_Bucks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE52BB75C2A9FF77FDC30725 /* Pods_Bulldog_Bucks.framework */; };
 		5532250FD1D30AA48FCF139D /* Pods_Bulldog_Bucks___Watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108DE8F867AE914B810CC086 /* Pods_Bulldog_Bucks___Watch.framework */; };
 		9B7CC4758AE70CF6FE70542A /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AD922576AEF5251449E394 /* Pods_Bulldog_Bucks___Widget.framework */; };
+		B6F451753B0216EFA4FB92B3 /* Pods_Bulldog_Bucks___Swipes_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2DD01B59571AD97ED9DD5F /* Pods_Bulldog_Bucks___Swipes_Widget.framework */; };
 		DD0D01CF468979350E524430 /* Pods_Bulldog_Bucks___Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C634AFDE877D7BD6C0F1D2B7 /* Pods_Bulldog_Bucks___Watch_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +101,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 479447FD1D9A4409007847BE;
 			remoteInfo = "Bulldog Bucks Widget";
+		};
+		47EC15371F5F6376004EDECD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479447C11D99F2C1007847BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47EC152D1F5F6376004EDECD;
+			remoteInfo = "Bulldog Bucks Swipes Widget";
 		};
 		47ED9C7B1F5A178000AE4426 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -122,6 +148,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				4794480B1D9A4409007847BE /* Bulldog Bucks - Widget.appex in Embed App Extensions */,
+				47EC15391F5F6376004EDECD /* Bulldog Bucks - Swipes Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +161,6 @@
 		2D3B0904DC0D5337113456AE /* Pods-Bulldog Bucks - Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Widget/Pods-Bulldog Bucks - Widget.release.xcconfig"; sourceTree = "<group>"; };
 		419FB610336D91890E621897 /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		4705B2571F5BAB4D004FAEAF /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		470B059E1F51EF8000D48EF2 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		47234DA31DE19ABF00C25C8F /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		472F330E1DE2BC6A001D4B4C /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
 		472F330F1DE2BC6A001D4B4C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
@@ -145,8 +171,6 @@
 		4761DF0B1E47D9C8004755EB /* BDBKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDBKeychain.swift; sourceTree = "<group>"; };
 		4765FC1B1DDFC6FA00BB2EBB /* ZagwebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZagwebAPI.swift; sourceTree = "<group>"; };
 		4767B3B41F525AF3006AD1BE /* Bulldog Bucks - Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks - Watch.entitlements"; sourceTree = "<group>"; };
-		4767B3B81F5395B7006AD1BE /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		4767B3BB1F539742006AD1BE /* BalanceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceList.swift; sourceTree = "<group>"; };
 		476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bulldog Bucks - Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		476E50F51E74FDD5005CD02C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		476E50F71E74FDD5005CD02C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,8 +199,19 @@
 		479448081D9A4409007847BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks.entitlements"; sourceTree = "<group>"; };
 		479C4D0E1E76826F005DAC22 /* Bulldog Bucks - Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks - Watch Extension.entitlements"; sourceTree = "<group>"; };
-		47BC3AB61DA09D29001C3FD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		47BF33081F5CF52C005D162E /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		47BF330B1F5DC6E7005D162E /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		47BF330D1F5DDC0D005D162E /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
+		47BF330F1F5E1400005D162E /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		47BF33111F5E313C005D162E /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		47BF33131F5E3FD8005D162E /* ZagwebDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZagwebDataSet.swift; sourceTree = "<group>"; };
+		47BF33141F5E3FD8005D162E /* ZagwebDataSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZagwebDataSetManager.swift; sourceTree = "<group>"; };
 		47D10B421DE1735D0041064C /* Bulldog Bucks Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks Widget.entitlements"; sourceTree = "<group>"; };
+		47EC152E1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bulldog Bucks - Swipes Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47EC15311F5F6376004EDECD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		47EC15341F5F6376004EDECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		47EC15361F5F6376004EDECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47EC15441F5F9EE6004EDECD /* Bulldog Bucks - Swipes Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bulldog Bucks - Swipes Widget.entitlements"; sourceTree = "<group>"; };
 		47ED9C761F5A178000AE4426 /* Bulldog BucksMainAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bulldog BucksMainAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47ED9C781F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulldog_BucksMainAppTests.swift; sourceTree = "<group>"; };
 		47ED9C7A1F5A178000AE4426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,7 +220,10 @@
 		75C5213BB2EB1798286D34B6 /* Pods-Bulldog Bucks - Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD039F73FFC974CA032E9B4 /* Pods-Bulldog Bucks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.debug.xcconfig"; sourceTree = "<group>"; };
 		8DD35E2B6672372B94F41366 /* Pods-Bulldog Bucks - Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Watch Extension/Pods-Bulldog Bucks - Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		9ACF2AD4C6267034627D0F8E /* Pods-Bulldog Bucks - Swipes Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Swipes Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Swipes Widget/Pods-Bulldog Bucks - Swipes Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		AE52BB75C2A9FF77FDC30725 /* Pods_Bulldog_Bucks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bulldog_Bucks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2DD01B59571AD97ED9DD5F /* Pods_Bulldog_Bucks___Swipes_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Swipes_Widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFE2B6F0B18965927B846BC8 /* Pods-Bulldog Bucks - Swipes Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks - Swipes Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks - Swipes Widget/Pods-Bulldog Bucks - Swipes Widget.release.xcconfig"; sourceTree = "<group>"; };
 		C634AFDE877D7BD6C0F1D2B7 /* Pods_Bulldog_Bucks___Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Bulldog_Bucks___Watch_Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6595EA8065A3A605ED0BFF3 /* Pods-Bulldog Bucks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bulldog Bucks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +251,15 @@
 			files = (
 				479448011D9A4409007847BE /* NotificationCenter.framework in Frameworks */,
 				9B7CC4758AE70CF6FE70542A /* Pods_Bulldog_Bucks___Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47EC152B1F5F6376004EDECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47EC152F1F5F6376004EDECD /* NotificationCenter.framework in Frameworks */,
+				B6F451753B0216EFA4FB92B3 /* Pods_Bulldog_Bucks___Swipes_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +292,8 @@
 				419FB610336D91890E621897 /* Pods-Bulldog Bucks - Watch Extension.release.xcconfig */,
 				10A12FFA7C1A9C04F568E86E /* Pods-Bulldog Bucks - Widget.debug.xcconfig */,
 				2D3B0904DC0D5337113456AE /* Pods-Bulldog Bucks - Widget.release.xcconfig */,
+				9ACF2AD4C6267034627D0F8E /* Pods-Bulldog Bucks - Swipes Widget.debug.xcconfig */,
+				AFE2B6F0B18965927B846BC8 /* Pods-Bulldog Bucks - Swipes Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -252,8 +301,9 @@
 		470B059D1F51EF8000D48EF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				47BF33131F5E3FD8005D162E /* ZagwebDataSet.swift */,
+				47BF33141F5E3FD8005D162E /* ZagwebDataSetManager.swift */,
 				4705B2571F5BAB4D004FAEAF /* Transaction.swift */,
-				470B059E1F51EF8000D48EF2 /* Balance.swift */,
 			);
 			name = Models;
 			path = Shared/Models;
@@ -292,15 +342,6 @@
 			path = Shared/API;
 			sourceTree = "<group>";
 		};
-		4767B3B71F5395B7006AD1BE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4767B3B81F5395B7006AD1BE /* Balance.swift */,
-				4767B3BB1F539742006AD1BE /* BalanceList.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		476E50F31E74FDD5005CD02C /* Bulldog Bucks Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +355,6 @@
 		476E51021E74FDD5005CD02C /* Bulldog Bucks Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4767B3B71F5395B7006AD1BE /* Models */,
 				479C4D0E1E76826F005DAC22 /* Bulldog Bucks - Watch Extension.entitlements */,
 				476E51031E74FDD5005CD02C /* InterfaceController.swift */,
 				476E51051E74FDD5005CD02C /* ExtensionDelegate.swift */,
@@ -357,11 +397,13 @@
 		479447C01D99F2C1007847BE = {
 			isa = PBXGroup;
 			children = (
+				47EC15441F5F9EE6004EDECD /* Bulldog Bucks - Swipes Widget.entitlements */,
 				4767B3B41F525AF3006AD1BE /* Bulldog Bucks - Watch.entitlements */,
 				4794B0191DE5061C00F71077 /* Bulldog Bucks.entitlements */,
 				478497EB1DA06BA800E8ADFA /* Shared */,
 				479447CB1D99F2C1007847BE /* Bulldog Bucks */,
 				479448021D9A4409007847BE /* Bulldog Bucks Widget */,
+				47EC15301F5F6376004EDECD /* Bulldog Bucks Swipes Widget */,
 				476E50F31E74FDD5005CD02C /* Bulldog Bucks Watch */,
 				476E51021E74FDD5005CD02C /* Bulldog Bucks Watch Extension */,
 				47ED9C771F5A178000AE4426 /* Bulldog BucksMainAppTests */,
@@ -380,6 +422,7 @@
 				476E50F21E74FDD5005CD02C /* Bulldog Bucks - Watch.app */,
 				476E50FE1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension.appex */,
 				47ED9C761F5A178000AE4426 /* Bulldog BucksMainAppTests.xctest */,
+				47EC152E1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -405,6 +448,7 @@
 				108DE8F867AE914B810CC086 /* Pods_Bulldog_Bucks___Watch.framework */,
 				C634AFDE877D7BD6C0F1D2B7 /* Pods_Bulldog_Bucks___Watch_Extension.framework */,
 				74AD922576AEF5251449E394 /* Pods_Bulldog_Bucks___Widget.framework */,
+				AF2DD01B59571AD97ED9DD5F /* Pods_Bulldog_Bucks___Swipes_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -432,6 +476,7 @@
 		4794B0161DE502AD00F71077 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47BF330A1F5DC69C005D162E /* Cell Models */,
 				472F32F91DE2B6FA001D4B4C /* Custom Login Animation */,
 				478D1A091DFF6BF000B25164 /* WebViewController.swift */,
 			);
@@ -442,9 +487,30 @@
 			isa = PBXGroup;
 			children = (
 				479447CE1D99F2C1007847BE /* LoginViewController.swift */,
-				47BC3AB61DA09D29001C3FD2 /* ViewController.swift */,
+				47BF33081F5CF52C005D162E /* TransactionViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		47BF330A1F5DC69C005D162E /* Cell Models */ = {
+			isa = PBXGroup;
+			children = (
+				47BF330B1F5DC6E7005D162E /* TransactionTableViewCell.swift */,
+				47BF330D1F5DDC0D005D162E /* GenericCollectionViewCell.swift */,
+				47BF330F1F5E1400005D162E /* ButtonCollectionViewCell.swift */,
+				47BF33111F5E313C005D162E /* DetailCollectionViewCell.swift */,
+			);
+			path = "Cell Models";
+			sourceTree = "<group>";
+		};
+		47EC15301F5F6376004EDECD /* Bulldog Bucks Swipes Widget */ = {
+			isa = PBXGroup;
+			children = (
+				47EC15311F5F6376004EDECD /* TodayViewController.swift */,
+				47EC15331F5F6376004EDECD /* MainInterface.storyboard */,
+				47EC15361F5F6376004EDECD /* Info.plist */,
+			);
+			path = "Bulldog Bucks Swipes Widget";
 			sourceTree = "<group>";
 		};
 		47ED9C771F5A178000AE4426 /* Bulldog BucksMainAppTests */ = {
@@ -517,6 +583,7 @@
 			dependencies = (
 				4794480A1D9A4409007847BE /* PBXTargetDependency */,
 				476E510D1E74FDD5005CD02C /* PBXTargetDependency */,
+				47EC15381F5F6376004EDECD /* PBXTargetDependency */,
 			);
 			name = "Bulldog Bucks";
 			productName = "Bulldog Bucks";
@@ -540,6 +607,25 @@
 			name = "Bulldog Bucks - Widget";
 			productName = "Bulldog Bucks Widget";
 			productReference = 479447FE1D9A4409007847BE /* Bulldog Bucks - Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		47EC152D1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47EC153A1F5F6376004EDECD /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Swipes Widget" */;
+			buildPhases = (
+				2A6DBCA0ECADACB8EEFC115F /* [CP] Check Pods Manifest.lock */,
+				47EC152A1F5F6376004EDECD /* Sources */,
+				47EC152B1F5F6376004EDECD /* Frameworks */,
+				47EC152C1F5F6376004EDECD /* Resources */,
+				1E857C2799BEC0956B567E1D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bulldog Bucks - Swipes Widget";
+			productName = "Bulldog Bucks Swipes Widget";
+			productReference = 47EC152E1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		47ED9C751F5A178000AE4426 /* Bulldog BucksMainAppTests */ = {
@@ -624,6 +710,19 @@
 							};
 						};
 					};
+					47EC152D1F5F6376004EDECD = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NZ8449Y9W6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 					47ED9C751F5A178000AE4426 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = NZ8449Y9W6;
@@ -647,6 +746,7 @@
 			targets = (
 				479447C81D99F2C1007847BE /* Bulldog Bucks */,
 				479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */,
+				47EC152D1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget */,
 				476E50F11E74FDD5005CD02C /* Bulldog Bucks - Watch */,
 				476E50FD1E74FDD5005CD02C /* Bulldog Bucks - Watch Extension */,
 				47ED9C751F5A178000AE4426 /* Bulldog BucksMainAppTests */,
@@ -694,6 +794,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47EC152C1F5F6376004EDECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47EC15351F5F6376004EDECD /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		47ED9C741F5A178000AE4426 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,24 +820,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks/Pods-Bulldog Bucks-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/KCFloatingActionButton/KCFloatingActionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/DGElasticPullToRefresh/DGElasticPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna-iOS/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess-iOS/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit-iOS/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KCFloatingActionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGElasticPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -754,6 +858,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1E857C2799BEC0956B567E1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Swipes Widget/Pods-Bulldog Bucks - Swipes Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1FCF26FA2CE42F52ED8253A7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,6 +886,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bulldog Bucks - Watch/Pods-Bulldog Bucks - Watch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A6DBCA0ECADACB8EEFC115F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bulldog Bucks - Swipes Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4AB8FEE4FA3C9096B4ABA809 /* [CP] Embed Pods Frameworks */ = {
@@ -900,13 +1037,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				476E51061E74FDD5005CD02C /* ExtensionDelegate.swift in Sources */,
+				47BF33191F5E3FE2005D162E /* ZagwebDataSetManager.swift in Sources */,
 				4797116C1E75CC940060DC97 /* Extensions.swift in Sources */,
 				476E511B1E751B01005CD02C /* ZagwebAPI.swift in Sources */,
 				476E51041E74FDD5005CD02C /* InterfaceController.swift in Sources */,
 				476E51081E74FDD5005CD02C /* ComplicationController.swift in Sources */,
-				4767B3BA1F5395BE006AD1BE /* Balance.swift in Sources */,
-				4767B3BC1F539742006AD1BE /* BalanceList.swift in Sources */,
 				476E51191E750A63005CD02C /* BDBKeychain.swift in Sources */,
+				47BF33181F5E3FDD005D162E /* ZagwebDataSet.swift in Sources */,
 				4705B2591F5BAB5D004FAEAF /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -916,20 +1053,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				477BE1681DE618B300F39E46 /* NetworkReachability.swift in Sources */,
+				47BF330C1F5DC6E7005D162E /* TransactionTableViewCell.swift in Sources */,
+				47BF330E1F5DDC0D005D162E /* GenericCollectionViewCell.swift in Sources */,
 				47D47F321DDFCCCC0094D448 /* ZagwebAPI.swift in Sources */,
 				472F33131DE2BC6A001D4B4C /* FadeTransition.swift in Sources */,
+				47BF33151F5E3FD8005D162E /* ZagwebDataSet.swift in Sources */,
+				47BF33161F5E3FD8005D162E /* ZagwebDataSetManager.swift in Sources */,
 				472F33141DE2BC6A001D4B4C /* SpinerLayer.swift in Sources */,
 				4761DF0C1E47D9C8004755EB /* BDBKeychain.swift in Sources */,
-				47BC3AB71DA09D29001C3FD2 /* ViewController.swift in Sources */,
 				479447CF1D99F2C1007847BE /* LoginViewController.swift in Sources */,
 				472F33151DE2BC6A001D4B4C /* TransitionSubmitButton.swift in Sources */,
+				47BF33091F5CF52C005D162E /* TransactionViewController.swift in Sources */,
 				478D1A0A1DFF6BF000B25164 /* WebViewController.swift in Sources */,
 				479447CD1D99F2C1007847BE /* AppDelegate.swift in Sources */,
 				472F33121DE2BC6A001D4B4C /* CGRectEx.swift in Sources */,
 				472F331A1DE3D5E5001D4B4C /* Extensions.swift in Sources */,
-				470B05A01F51EF8000D48EF2 /* Balance.swift in Sources */,
 				47234DA41DE19ABF00C25C8F /* CustomAlert.swift in Sources */,
+				47BF33101F5E1400005D162E /* ButtonCollectionViewCell.swift in Sources */,
 				4705B2581F5BAB4D004FAEAF /* Transaction.swift in Sources */,
+				47BF33121F5E313C005D162E /* DetailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,8 +1084,24 @@
 				479448041D9A4409007847BE /* TodayViewController.swift in Sources */,
 				47DAF0771DE5166E00499185 /* Extensions.swift in Sources */,
 				4761DF0D1E47D9C8004755EB /* BDBKeychain.swift in Sources */,
-				470B05A31F51EF9300D48EF2 /* Balance.swift in Sources */,
+				47BF33171F5E3FDC005D162E /* ZagwebDataSet.swift in Sources */,
+				47BF331A1F5E3FE2005D162E /* ZagwebDataSetManager.swift in Sources */,
 				477BE1691DE618B300F39E46 /* NetworkReachability.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47EC152A1F5F6376004EDECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47EC153E1F5F6451004EDECD /* BDBKeychain.swift in Sources */,
+				47EC153D1F5F6445004EDECD /* ZagwebAPI.swift in Sources */,
+				47EC15421F5F9D3E004EDECD /* NetworkReachability.swift in Sources */,
+				47EC15431F5F9D5D004EDECD /* Extensions.swift in Sources */,
+				47EC15411F5F9CF5004EDECD /* ZagwebDataSetManager.swift in Sources */,
+				47EC153F1F5F6B48004EDECD /* Transaction.swift in Sources */,
+				47EC15401F5F9CC0004EDECD /* ZagwebDataSet.swift in Sources */,
+				47EC15321F5F6376004EDECD /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +1110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4705B25A1F5BAB5E004FAEAF /* Transaction.swift in Sources */,
+				47AEC5921F60C85000CAB36A /* Extensions.swift in Sources */,
 				47ED9C791F5A178000AE4426 /* Bulldog_BucksMainAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -973,6 +1132,11 @@
 			isa = PBXTargetDependency;
 			target = 479447FD1D9A4409007847BE /* Bulldog Bucks - Widget */;
 			targetProxy = 479448091D9A4409007847BE /* PBXContainerItemProxy */;
+		};
+		47EC15381F5F6376004EDECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47EC152D1F5F6376004EDECD /* Bulldog Bucks - Swipes Widget */;
+			targetProxy = 47EC15371F5F6376004EDECD /* PBXContainerItemProxy */;
 		};
 		47ED9C7C1F5A178000AE4426 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1010,6 +1174,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				479448061D9A4409007847BE /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		47EC15331F5F6376004EDECD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47EC15341F5F6376004EDECD /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1100,6 +1272,7 @@
 		479447EF1D99F2C2007847BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1151,6 +1324,7 @@
 		479447F01D99F2C2007847BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1268,6 +1442,42 @@
 			};
 			name = Release;
 		};
+		47EC153B1F5F6376004EDECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ACF2AD4C6267034627D0F8E /* Pods-Bulldog Bucks - Swipes Widget.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks - Swipes Widget.entitlements";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog Bucks Swipes Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.Bulldog-Bucks-Swipes-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		47EC153C1F5F6376004EDECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFE2B6F0B18965927B846BC8 /* Pods-Bulldog Bucks - Swipes Widget.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Bulldog Bucks - Swipes Widget.entitlements";
+				DEVELOPMENT_TEAM = NZ8449Y9W6;
+				INFOPLIST_FILE = "Bulldog Bucks Swipes Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.rudybermudez.Bulldog-Bucks.Bulldog-Bucks-Swipes-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		47ED9C7D1F5A178000AE4426 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1344,6 +1554,15 @@
 			buildConfigurations = (
 				4794480D1D9A4409007847BE /* Debug */,
 				4794480E1D9A4409007847BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47EC153A1F5F6376004EDECD /* Build configuration list for PBXNativeTarget "Bulldog Bucks - Swipes Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47EC153B1F5F6376004EDECD /* Debug */,
+				47EC153C1F5F6376004EDECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

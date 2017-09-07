@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R9t-LQ-zfy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="Jxa-ON-df9">
+            <objects>
+                <viewController id="R9t-LQ-zfy" customClass="TodayViewController" customModule="Bulldog_Bucks___Swipes_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LWk-mn-qih"/>
+                        <viewControllerLayoutGuide type="bottom" id="XWo-PK-cef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="9tv-6F-9uj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Open the App to Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebZ-ao-ydx">
+                                <rect key="frame" x="46.5" y="45.5" width="227" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3os-NN-4nN" userLabel="Remaining BulldogBucks Label">
+                                <rect key="frame" x="160" y="23.5" width="0.0" height="33"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="0.74553189210000004" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XL6-qm-AcF">
+                                <rect key="frame" x="150" y="30" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-cj-qXu">
+                                <rect key="frame" x="160" y="81" width="0.0" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-nn-3vQ" userLabel="OpenAppButton">
+                                <rect key="frame" x="46.5" y="38.5" width="227" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="openMainApp" destination="R9t-LQ-zfy" eventType="touchUpInside" id="PP5-7m-RaN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ebZ-ao-ydx" firstAttribute="centerX" secondItem="9tv-6F-9uj" secondAttribute="centerX" id="5V1-Fb-uZQ"/>
+                            <constraint firstItem="z1h-cj-qXu" firstAttribute="centerX" secondItem="9tv-6F-9uj" secondAttribute="centerX" id="5ln-Q4-aMN"/>
+                            <constraint firstItem="XL6-qm-AcF" firstAttribute="centerY" secondItem="3os-NN-4nN" secondAttribute="centerY" id="66L-sG-0dS"/>
+                            <constraint firstItem="3os-NN-4nN" firstAttribute="centerY" secondItem="9tv-6F-9uj" secondAttribute="centerY" constant="-15" id="9xy-pk-weI"/>
+                            <constraint firstItem="MrJ-nn-3vQ" firstAttribute="height" secondItem="3os-NN-4nN" secondAttribute="height" id="Fvc-St-Xcm"/>
+                            <constraint firstItem="MrJ-nn-3vQ" firstAttribute="centerX" secondItem="9tv-6F-9uj" secondAttribute="centerX" id="GXW-Sf-xiG"/>
+                            <constraint firstItem="3os-NN-4nN" firstAttribute="centerX" secondItem="9tv-6F-9uj" secondAttribute="centerX" id="Pbr-bj-GR9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="z1h-cj-qXu" secondAttribute="bottom" constant="5" id="SIC-Ew-v3g"/>
+                            <constraint firstItem="MrJ-nn-3vQ" firstAttribute="centerY" secondItem="9tv-6F-9uj" secondAttribute="centerY" id="Sjy-06-Mc7"/>
+                            <constraint firstItem="XL6-qm-AcF" firstAttribute="centerX" secondItem="3os-NN-4nN" secondAttribute="centerX" id="VNS-7e-W6d"/>
+                            <constraint firstItem="z1h-cj-qXu" firstAttribute="top" secondItem="ebZ-ao-ydx" secondAttribute="bottom" constant="15" id="Zl1-Qq-3Pg"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ebZ-ao-ydx" secondAttribute="trailing" constant="15" id="fLa-na-yn2"/>
+                            <constraint firstItem="MrJ-nn-3vQ" firstAttribute="width" secondItem="ebZ-ao-ydx" secondAttribute="width" id="ga9-oB-EZy"/>
+                            <constraint firstItem="ebZ-ao-ydx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9tv-6F-9uj" secondAttribute="leadingMargin" constant="15" id="l7B-an-1dn"/>
+                            <constraint firstItem="ebZ-ao-ydx" firstAttribute="centerY" secondItem="9tv-6F-9uj" secondAttribute="centerY" id="syk-Ky-Qsa"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="110"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="XL6-qm-AcF" id="nEf-Xq-d2i"/>
+                        <outlet property="errorMessageLabel" destination="ebZ-ao-ydx" id="3NX-9t-QmL"/>
+                        <outlet property="remainingBdbLabel" destination="3os-NN-4nN" id="KXV-70-0Jl"/>
+                        <outlet property="timeUpdatedLabel" destination="z1h-cj-qXu" id="pcn-pj-5em"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHo-9f-F3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>

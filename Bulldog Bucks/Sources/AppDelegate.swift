@@ -8,7 +8,6 @@
 
 import UIKit
 import WatchConnectivity
-import RealmSwift
 
 
 /// `String` constant for `NSNotification.Name() for when the user logs out of the application`
@@ -21,20 +20,14 @@ public let UserLoggedInNotificaiton = "UserLoggedIn"
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var storyboard: UIStoryboard?
+    var navigationController: UINavigationController?
     
     lazy var notificationCenter: NotificationCenter = {
         return NotificationCenter.default
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        // Setup Realm DB
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bdbMeter")
-        let realmPath = directory?.appendingPathComponent("db.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmPath
-        Realm.Configuration.defaultConfiguration = config
-        
         
         setupWatchConnectivity()
         setupNotificationCenter()
@@ -44,6 +37,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             sendUserLogoutToWatch()
         }
+        
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        navigationController = UINavigationController()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: LoginViewController.storyboardIdentifier) as! LoginViewController
+        
+        loginVC.delegate = self
+        navigationController?.pushViewController(loginVC, animated: false)
+        
+        if BDBKeychain.phoneKeychain.isLoggedIn() {
+            let transactionVC = storyboard?.instantiateViewController(withIdentifier: TransactionViewController.storyboardIdentifier) as! TransactionViewController
+            transactionVC.delegate = self
+            navigationController?.pushViewController(transactionVC, animated: false)
+        }
+        
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
         
         return true
     }
@@ -70,6 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+
+    
+    
     // MARK: - Notification Center
     
     private func setupNotificationCenter() {
@@ -88,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-
+// MARK : - Watch Delegate Methods
 extension AppDelegate: WCSessionDelegate {
     
     func setupWatchConnectivity() {
@@ -159,3 +177,23 @@ extension AppDelegate: WCSessionDelegate {
     
     
 }
+
+extension AppDelegate: AuthenticationStateDelegate {
+    
+    func didLoginSuccessfully() {
+        self.notificationCenter.post(name: Notification.Name(UserLoggedInNotificaiton), object: nil)
+        let transactionsVC = storyboard?.instantiateViewController(withIdentifier: TransactionViewController.storyboardIdentifier) as! TransactionViewController
+        
+        transactionsVC.delegate = self
+        navigationController?.pushViewController(transactionsVC, animated: true)
+    }
+    
+    func didLogoutSuccessfully() {
+        self.notificationCenter.post(name: Notification.Name(UserLoggedOutNotification), object: nil)
+        let _ = navigationController?.popToRootViewController(animated: true)
+    }
+    
+}
+
+
+
